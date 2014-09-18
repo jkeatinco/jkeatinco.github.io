@@ -382,7 +382,7 @@ var Share = me.GUI_Object.extend({
                     shareText
              ),
              link: url,
-             picture: 'http://jkeatinco.github.io/data/img/clumsy.png'
+             picture: 'https://jkeatinco.github.io/data/img/clumsy.png'
             }
         );
         return false;
