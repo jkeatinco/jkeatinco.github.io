@@ -321,7 +321,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
         this.parent(new me.Vector2d(x, y), 10, 10);
 
         // local copy of the global score
-        this.stepsFont = new me.Font('gamefont', 80, '#000', 'center');
+        this.stepsFont = new me.Font('gamefont', 80, '#FFF', 'center');
 
         // make sure we use screen coordinates
         this.floating = true;
@@ -456,7 +456,7 @@ game.TitleScreen = me.ScreenObject.extend({
                     this.parent(new me.Vector2d(), 100, 100);
                     //this.font = new me.Font('Arial Black', 20, 'black', 'left');
                     this.text = me.device.touch ? 'Tap to start' : 'PRESS SPACE OR CLICK LEFT MOUSE BUTTON TO START \n\t\t\t\t\t\t\t\t\t\t\tPRESS "M" TO MUTE SOUND';
-                    this.font = new me.Font('gamefont', 20, '#000');
+                    this.font = new me.Font('gamefont', 20, '#fff');
             },
             update: function () {
                     return true;
