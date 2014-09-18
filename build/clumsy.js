@@ -364,7 +364,7 @@ var BackgroundLayer = me.ImageLayer.extend({
 var Share = me.GUI_Object.extend({
     init: function(x, y) {
         var settings = {};
-        settings.image = "share";
+        settings.image = "blank";
         settings.spritewidth = 150;
         settings.spriteheight = 75;
         this.parent(x, y, settings);
