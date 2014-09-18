@@ -361,34 +361,6 @@ var BackgroundLayer = me.ImageLayer.extend({
     }
 });
 
-var Share = me.GUI_Object.extend({
-    init: function(x, y) {
-        var settings = {};
-        settings.image = "blank";
-        settings.spritewidth = 150;
-        settings.spriteheight = 75;
-        this.parent(x, y, settings);
-    },
-
-    onClick: function(event) {
-        var shareText = 'Just made ' + game.data.steps + ' steps on Clippy Jam! Can you beat me? Try online here!';
-        var url = 'http://jkeatinco.github.io';
-        FB.ui(
-            {
-             method: 'feed',
-             name: 'My Clippy Jam Score!',
-             caption: "Share to your friends",
-             description: (
-                    shareText
-             ),
-             link: url,
-             picture: 'http://jkeatinco.github.io/data/img/clumsy.png'
-            }
-        );
-        return false;
-    }
-
-});
 
 var Tweet = me.GUI_Object.extend({
     init: function(x, y) {
