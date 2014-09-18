@@ -37,7 +37,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
         this.parent(new me.Vector2d(x, y), 10, 10);
 
         // local copy of the global score
-        this.stepsFont = new me.Font('gamefont', 80, '#000', 'center');
+        this.stepsFont = new me.Font('gamefont', 80, '#FFF', 'center');
 
         // make sure we use screen coordinates
         this.floating = true;
