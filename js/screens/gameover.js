@@ -76,7 +76,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                 // zero size
                 // renderable
                 this.parent(new me.Vector2d(), 100, 100);
-                this.font = new me.Font('gamefont', 40, 'black', 'left');
+                this.font = new me.Font('gamefont', 40, 'white', 'left');
                 this.steps = 'Steps: ' + game.data.steps.toString();
                 this.topSteps= 'Higher Step: ' + me.save.topSteps.toString();
             },
