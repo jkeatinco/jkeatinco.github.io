@@ -371,7 +371,7 @@ var Share = me.GUI_Object.extend({
     },
 
     onClick: function(event) {
-       window.open=("http://www.facebook.com/sharer.php?u=<http://jkeatinco.github.io/>");
+       window.open=("http://www.facebook.com/sharer.php?u=<http://jkeatinco.github.io/>")
         return false;
     }
 
