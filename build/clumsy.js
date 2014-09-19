@@ -361,7 +361,23 @@ var BackgroundLayer = me.ImageLayer.extend({
     }
 });
 
+var Share = me.GUI_Object.extend({
+    init: function(x, y) {
+        var settings = {};
+        settings.image = "share";
+        settings.spritewidth = 150;
+        settings.spriteheight = 75;
+        this.parent(x, y, settings);
+    },
 
+    onClick: function(event) {
+        var shareText = 'Just made ' + game.data.steps + ' steps on Clippy Jam! Can you beat me? Try online here!';
+        var url = 'http://jkeatinco.github.io';
+       window.open=('http://www.facebook.com/sharer.php?u=<http://jkeatinco.github.io/>');
+        return false;
+    }
+
+});
 
 var Tweet = me.GUI_Object.extend({
     init: function(x, y) {
