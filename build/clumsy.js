@@ -361,21 +361,7 @@ var BackgroundLayer = me.ImageLayer.extend({
     }
 });
 
-var Share = me.GUI_Object.extend({
-    init: function(x, y) {
-        var settings = {};
-        settings.image = "share";
-        settings.spritewidth = 150;
-        settings.spriteheight = 75;
-        this.parent(x, y, settings);
-    },
 
-    onClick: function(event) {
-       window.open=("http://www.facebook.com/sharer.php?u=<http://jkeatinco.github.io/>")
-        return false;
-    }
-
-});
 
 var Tweet = me.GUI_Object.extend({
     init: function(x, y) {
