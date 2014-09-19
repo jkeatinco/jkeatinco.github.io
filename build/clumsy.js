@@ -372,19 +372,7 @@ var Share = me.GUI_Object.extend({
 
     onClick: function(event) {
         var shareText = 'Just made ' + game.data.steps + ' steps on Clippy Jam! Can you beat me? Try online here!';
-        var url = 'http://jkeatinco.github.io';
-        FB.ui(
-            {
-             method: 'feed',
-             name: 'My Clippy Jam Score!',
-             caption: "Share to your friends",
-             description: (
-                    shareText
-             ),
-             link: url,
-             picture: 'http://jkeatinco.github.io/data/img/clumsy.png'
-            }
-        );
+        var url = 'http://www.facebook.com/sharer.php?u=<http://jkeatinco.github.io/>';
         return false;
     }
 
