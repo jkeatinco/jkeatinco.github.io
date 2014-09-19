@@ -364,16 +364,27 @@ var BackgroundLayer = me.ImageLayer.extend({
 var Share = me.GUI_Object.extend({
     init: function(x, y) {
         var settings = {};
-        
-        settings.spritewidth = 150;
-        settings.spriteheight = 75;
+        settings.image = "share";
+        settings.spritewidth = 0;
+        settings.spriteheight = 0;
         this.parent(x, y, settings);
     },
 
     onClick: function(event) {
         var shareText = 'Just made ' + game.data.steps + ' steps on Clippy Jam! Can you beat me? Try online here!';
         var url = 'http://jkeatinco.github.io';
-       window.open=('http://www.facebook.com/sharer.php?u=<http://jkeatinco.github.io/>');
+        FB.ui(
+            {
+             method: 'feed',
+             name: 'My Clippy Jam Score!',
+             caption: "Share to your friends",
+             description: (
+                    shareText
+             ),
+             link: url,
+             picture: 'http:/jkeatinco.github.io/data/img/clumsy.png'
+            }
+        );
         return false;
     }
 
@@ -391,7 +402,7 @@ var Tweet = me.GUI_Object.extend({
     onClick: function(event) {
         var shareText = 'Just made ' + game.data.steps + ' steps on Clippy Jam! Can you beat me? Try online here!';
         var url = 'http://jkeatinco.github.io';
-        var hashtags = 'clippyjam, game, clumsybird,melonjs'
+        var hashtags = 'clippyjam,game,clumsybird,melonjs'
         window.open('https://twitter.com/intent/tweet?text=' + shareText + '&hashtags=' + hashtags + '&count=' + url + '&url=' + url, 'Tweet!', 'height=300,width=400')
         return false;
     }
