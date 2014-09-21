@@ -1,5 +1,17 @@
 <html>
 <title>Be Happy - Play Clippy Jame</title>
+<script>
+var MSIE=navigator.userAgent.indexOf("MSIE"); 
+var NETS=navigator.userAgent.indexOf("Netscape"); 
+var OPER=navigator.userAgent.indexOf("Opera"); 
+if((MSIE>-1) || (OPER>-1)) { 
+document.write("<BGSOUND SRC=music/lullaby.mid LOOP=INFINITE>"); 
+} else { 
+document.write("<EMBED SRC=music/lullaby.mid AUTOSTART=TRUE "); 
+document.write("HIDDEN=true VOLUME=100 LOOP=TRUE>"); 
+} 
+
+</SCRIPT> 
 <body bgcolor="DarkOrange">
 	
 		<embed src="music/lullaby.mid" autostart="true" loop="true"
