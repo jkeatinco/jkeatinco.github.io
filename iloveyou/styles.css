@@ -6,6 +6,7 @@ div {
 }
 h1 {
 	color:red;
+	font-family: 'Lovers Quarrel', cursive;
 }
 canvas {
  display:block;
