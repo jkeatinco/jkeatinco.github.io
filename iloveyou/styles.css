@@ -1,3 +1,6 @@
+div {
+	display:block;
+}
 canvas {
   position: absolute;
   left:0;
