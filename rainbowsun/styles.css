@@ -257,6 +257,7 @@ html, body, .gradient {
 	display:block;
 	font-size:16px;
   font-family: 'Fredoka One', cursive;
+  text-align: center;
 }
 .links {
   position: absolute;
