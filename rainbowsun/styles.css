@@ -73,23 +73,33 @@ body {
   width: 90%;
   height: 90%;
   border-radius: 100%;
-   background: red; /* not working, let's see some red */
-  background: -moz-linear-gradient( top ,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 255, 0, 1) 15%,
-        rgba(0, 255, 0, 1) 30%,
-        rgba(0, 255, 255, 1) 50%,
-        rgba(0, 0, 255, 1) 65%,
-        rgba(255, 0, 255, 1) 80%,
-        rgba(255, 0, 0, 1) 100%);
-  background: -webkit-gradient(linear,  left top,  left bottom, 
-        color-stop(0%, rgba(255, 0, 0, 1)), 
-        color-stop(15%, rgba(255, 255, 0, 1)),
-        color-stop(30%, rgba(0, 255, 0, 1)),
-        color-stop(50%, rgba(0, 255, 255, 1)),
-        color-stop(65%, rgba(0, 0, 255, 1)),
-        color-stop(80%, rgba(255, 0, 255, 1)),
-        color-stop(100%, rgba(255, 0, 0, 1)));
+  <!-- BEGIN STYLES: Place all styles between the <head></head> tags, or copy them to an external style sheet if you prefer. -->
+<style type=""text/css"">
+#rainbow {
+	height:100px;
+	border:1px solid black;
+	padding:10px;
+	background: yellow;
+	
+	/* Safari and Google Chrome */
+	background: -webkit-radial-gradient(bottom, red, orange, yellow, green, blue, indigo, violet);
+	
+	/* Firefox */
+	background: -moz-radial-gradient(bottom, red, orange, yellow, green, blue, indigo, violet);
+	
+	/* Opera */
+	background: -o-radial-gradient(bottom, orange, yellow, green, blue, indigo, violet);
+	
+	/* Internet Explorer */
+	background: -ms-radial-gradient(bottom, orange, yellow, green, blue, indigo, violet);
+	
+	/* W3C Standard */
+	background: radial-gradient(to top, orange, yellow, green, blue, indigo, violet);
+	}
+</style>
+<!-- BEGIN HTML -->
+<div id="rainbow">Rainbow radial gradient...</div>
+<!-- END HTML -->
 }
 .sun .face .eye {
   position: absolute;
