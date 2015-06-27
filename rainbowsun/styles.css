@@ -1,6 +1,7 @@
 body {
   width: 100%;
   height: 100%;
+  background-color: #0093FF;
   overflow: hidden;
 }
 
@@ -21,7 +22,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 5%;
-  background-color: #FF0000;
+  background-color: #FFFFFF;
 }
 .sun .orays::before {
   content: "";
@@ -37,7 +38,7 @@ body {
   width: 120%;
   height: 120%;
   border-radius: 100%;
-  background-color: #FF0000;
+  background-color: #FFFFFF;
   transform: scale(1.05);
 }
 .sun .rays {
@@ -48,7 +49,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 5%;
-  background-color: #FFA500;
+  background-color: #FFB02B;
 }
 .sun .rays::before {
   content: "";
@@ -74,16 +75,15 @@ body {
   width: 90%;
   height: 90%;
   border-radius: 100%;
-  background-color: #FFFF00;
+  background-color: #FFEC00;
 }
-
 .sun .face .eye {
   position: absolute;
   top: 40%;
   width: 7%;
   height: 7%;
   border-radius: 100%;
-  background-color: #000000;
+  background-color: #756B01;
   transform: translateY(-50%);
   animation: blink 15s infinite;
 }
@@ -115,7 +115,7 @@ body {
   width: 30%;
   height: 16%;
   border-radius: 20% 20% 60% 60% / 30% 30% 100% 100%;
-  background-color: #000000;
+  background-color: #756B01;
   overflow: hidden;
   transform: translate(0);
 }
@@ -168,6 +168,7 @@ body {
     transform: scale(1.05) rotate(360deg);
   }
 }
+
 
 
 
