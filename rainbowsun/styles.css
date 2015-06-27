@@ -26,10 +26,12 @@ body {
 .sun .orays::before {
   content: "";
   transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
 }
 .sun .orays::after {
   content: "";
   transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
 }
 .sun .oface {
   position: absolute;
@@ -39,9 +41,11 @@ body {
   border-radius: 100%;
   background-color: #FF0000;
   transform: scale(1.05);
+  -webkit-transform: scale(1.05);
 }
 .sun .rays {
   animation: spin 10s infinite linear;
+  -webkit-animation: spin 10s infinite linear;
 }
 .sun .rays, .sun .rays::before, .sun .rays::after {
   position: absolute;
@@ -53,10 +57,12 @@ body {
 .sun .rays::before {
   content: "";
   transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
 }
 .sun .rays::after {
   content: "";
   transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
 }
 .sun .face {
   position: relative;
@@ -86,6 +92,8 @@ body {
   background-color: #000000;
   transform: translateY(-50%);
   animation: blink 15s infinite;
+  -webkit-transform: translateY(-50%);
+  -webkit-animation: blink 15s infinite;
 }
 .sun .face .left.eye {
   left: 25%;
@@ -101,6 +109,7 @@ body {
   border-radius: 100%;
   background-color: rgba(255, 176, 43, 0.6);
   transform: scale(2.5, 0.75);
+  -webkit-transform: scale(2.5, 0.75);
 }
 .sun .face .left.cheek {
   left: 25%;
@@ -118,6 +127,7 @@ body {
   background-color: #000000;
   overflow: hidden;
   transform: translate(0);
+  -webkit-transform: translate(0);
 }
 .sun .face .mouth::after {
   content: "";
@@ -195,18 +205,18 @@ body {
 }
 @-webkit-keyframes spin {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
   }
 }
 @-webkit-keyframes ospin {
   0% {
-    transform: scale(1.05) rotate(0deg);
+    -webkit-transform: scale(1.05) rotate(0deg);
   }
   100% {
-    transform: scale(1.05) rotate(360deg);
+    -webkit-transform: scale(1.05) rotate(360deg);
   }
 }
 
