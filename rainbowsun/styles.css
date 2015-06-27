@@ -64,6 +64,7 @@ body {
   width: 120%;
   height: 120%;
   border-radius: 100%;
+  background-color: #FFB02B;
 }
 .sun .face::before {
   content: "";
