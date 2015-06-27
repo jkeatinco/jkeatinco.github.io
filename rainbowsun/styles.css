@@ -251,14 +251,7 @@ html, body, .gradient {
   background-position: top left;
   padding: 0 1080px 1080px 0;
 }
-.unicornz {
-	z-index: 100000;
-	display:inline-block;
-}
-.thingy {
-	z-index: 10000000000;
-	display:inline-block;
-}
+
 .clickin {
 	width: 100%;
 	display:block;
