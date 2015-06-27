@@ -252,7 +252,7 @@ html, body, .gradient {
   padding: 0 1080px 1080px 0;
 }
 .unicornz {
-	z-index: 10000000000;
+	z-index: 100000;
 	display:inline-block;
 }
 .thingy {
