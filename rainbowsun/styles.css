@@ -73,12 +73,8 @@ body {
   width: 90%;
   height: 90%;
   border-radius: 100%;
-  <!-- BEGIN STYLES: Place all styles between the <head></head> tags, or copy them to an external style sheet if you prefer. -->
-<style type=""text/css"">
-#rainbow {
-	height:100px;
-	border:1px solid black;
-	padding:10px;
+
+	height:100%;
 	background: yellow;
 	
 	/* Safari and Google Chrome */
@@ -96,10 +92,7 @@ body {
 	/* W3C Standard */
 	background: radial-gradient(to top, orange, yellow, green, blue, indigo, violet);
 	}
-</style>
-<!-- BEGIN HTML -->
-<div id="rainbow">Rainbow radial gradient...</div>
-<!-- END HTML -->
+
 }
 .sun .face .eye {
   position: absolute;
