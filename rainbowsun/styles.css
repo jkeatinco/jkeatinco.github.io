@@ -279,4 +279,7 @@ html, body, .gradient {
 .clickin {
 	width: 100%;
 	top: 200px;
+	position:absolute;
+	font-size:12px;
+
 }
