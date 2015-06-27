@@ -276,3 +276,7 @@ html, body, .gradient {
 	z-index: 10000000000;
 	display:inline-block;
 }
+.clickin {
+	width: 100%;
+	margin-bottom: 20px;
+}
