@@ -65,7 +65,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 5%;
-  background-color: #00FF00;
+  background-color: #FFA500;
 }
 .sun .rays::before {
   content: "";
