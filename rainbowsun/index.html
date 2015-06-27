@@ -1,11 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
+	<meta charset=utf-8 />
 	<title>Rainbow Sun</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href='http://fonts.googleapis.com/css?family=Lovers+Quarrel' rel='stylesheet' type='text/css'>
 <script src="heart.js"></script>
+<!-- jQuery from google -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		
+		<!-- unicornize js file -->
+		<script src="js/jquery.unicornblast.js"></script>
+		<script>
+			$(window).load(function() {
+				$("#button").unicornblast();
+				$('#button').unicornblast({
+					start : 'konamiCode'
+				});
+			});
+		</script>
 </head>
 <body>
+	<a href="" id="button">Click me</a> to make this page so much happier. <br/> <br/>
+		
+		Try the konami code by pressing the keys: &uarr; &uarr; &darr; &darr; &larr; &rarr; &larr; &rarr; B A</a>
 <div class="gradient"></div>
 <div class="sun">
   <div class="orays"></div>
