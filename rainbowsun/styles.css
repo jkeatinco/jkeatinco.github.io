@@ -255,7 +255,8 @@ html, body, .gradient {
 .clickin {
 	width: 100%;
 	display:block;
-	font-size:12px;
+	font-size:16px;
+  font-family: 'Fredoka One', cursive;
 }
 .links {
   position: absolute;
