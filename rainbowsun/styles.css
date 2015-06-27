@@ -262,6 +262,7 @@ html, body, .gradient {
 .links {
   display: block;
   width:100%;
+  position:relative;
 }
 .button {
   width:100%;
