@@ -74,7 +74,7 @@ body {
   height: 90%;
   border-radius: 100%;
 
-	height:100%;
+	height:90%;
 	background: yellow;
 	
 	/* Safari and Google Chrome */
@@ -93,7 +93,6 @@ body {
 	background: radial-gradient(to top, orange, yellow, green, blue, indigo, violet);
 	}
 
-}
 .sun .face .eye {
   position: absolute;
   top: 40%;
