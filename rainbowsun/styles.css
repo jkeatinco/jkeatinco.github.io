@@ -73,24 +73,7 @@ body {
   width: 90%;
   height: 90%;
   border-radius: 100%;
-
-	height:90%;
-	background: yellow;
-	
-	/* Safari and Google Chrome */
-	background: -webkit-radial-gradient(bottom, red, orange, yellow, green, blue, indigo, violet);
-	
-	/* Firefox */
-	background: -moz-radial-gradient(bottom, red, orange, yellow, green, blue, indigo, violet);
-	
-	/* Opera */
-	background: -o-radial-gradient(bottom, orange, yellow, green, blue, indigo, violet);
-	
-	/* Internet Explorer */
-	background: -ms-radial-gradient(bottom, orange, yellow, green, blue, indigo, violet);
-	
-	/* W3C Standard */
-	background: radial-gradient(to top, orange, yellow, green, blue, indigo, violet);
+  background-color: #FFFF00
 	}
 
 .sun .face .eye {
