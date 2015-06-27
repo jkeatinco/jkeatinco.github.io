@@ -54,7 +54,7 @@ body {
   width: 120%;
   height: 120%;
   border-radius: 100%;
-  background-color: #FFA500;
+  background-color: #FF0000;
   transform: scale(1.05);
 }
 .sun .rays {
