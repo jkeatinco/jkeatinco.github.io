@@ -46,7 +46,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+html { 
+  background: url(images/redwhiteandblue.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 /* Center the container */
 #container {
