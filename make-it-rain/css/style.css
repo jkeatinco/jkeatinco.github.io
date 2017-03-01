@@ -7,7 +7,7 @@ html {
 }
 
 .container {
-  background-color: black;
+  background-color: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
