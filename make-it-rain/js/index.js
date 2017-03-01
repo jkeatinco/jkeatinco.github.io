@@ -22,8 +22,8 @@ $(document).ready(function() {
 });
                   
 function initAnimation() {
-  numMoney = 500
-  speedOffset = 35
+  numMoney = 300
+  speedOffset = 15
   speedRange = 3
   numImages = 7
   frameRate = 1000 / 30 // 30 frames per second
