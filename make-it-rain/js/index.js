@@ -23,9 +23,9 @@ $(document).ready(function() {
                   
 function initAnimation() {
   numMoney = 300
-  speedOffset = 15
+  speedOffset = 10
   speedRange = 3
-  numImages = 7
+  numImages = 6
   frameRate = 1000 / 30 // 30 frames per second
   animationLength = 10000 // 10 seconds
   
@@ -74,7 +74,7 @@ function draw() {
     money.currentFrame += 1
     money.y += money.speed
     money.angle += money.direction * 0.1
-    radius = money.direction * (5 + (index % 3))
+    radius = money.direction * (10 + (index % 6))
     money.x += Math.sin((money.currentFrame + index) / (2 * Math.PI)) * radius 
   })
 }
