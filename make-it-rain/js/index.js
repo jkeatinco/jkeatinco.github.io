@@ -74,7 +74,7 @@ function draw() {
     money.currentFrame += 1
     money.y += money.speed
     money.angle += money.direction * 0.1
-    radius = money.direction * (10 + (index % 6))
+    radius = money.direction * (5 + (index % 3))
     money.x += Math.sin((money.currentFrame + index) / (2 * Math.PI)) * radius 
   })
 }
