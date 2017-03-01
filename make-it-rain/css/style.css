@@ -1,0 +1,37 @@
+.container {
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.rain-maker {
+  display: block;
+  font-size: 3em;
+  padding: 0.5em 0.7em;
+  background-color: gold;
+  border: none;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+.rain-maker:hover {
+  background-color: #e6c200;
+}
+.rain-maker:active {
+  background-color: #ccac00;
+}
+
+.rain {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
