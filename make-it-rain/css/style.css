@@ -29,7 +29,8 @@ html {
   border: none;
   font-weight: bold;
   font-family: Helvetica;
-  cursor: pointer; cursor: hand;
+  cursor: pointer; 
+  cursor: hand;
   color:white;
 }
 .rain-maker:hover {
