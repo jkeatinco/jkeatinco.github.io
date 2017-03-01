@@ -1,3 +1,11 @@
+html { 
+  background: url(../img/desert.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .container {
   background-color: black;
   display: -webkit-box;
@@ -17,16 +25,16 @@
   display: block;
   font-size: 3em;
   padding: 0.5em 0.7em;
-  background-color: gold;
+  background-color: #87cefa;
   border: none;
   font-weight: bold;
   font-family: Helvetica;
 }
 .rain-maker:hover {
-  background-color: #e6c200;
+  background-color: #9fd7fb;
 }
 .rain-maker:active {
-  background-color: #ccac00;
+  background-color: #79b9e1;
 }
 
 .rain {
