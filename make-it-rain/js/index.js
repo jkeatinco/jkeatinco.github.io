@@ -25,7 +25,7 @@ function initAnimation() {
   numMoney = 300
   speedOffset = 15
   speedRange = 3
-  numImages = 7
+  numImages = 4
   frameRate = 1000 / 30 // 30 frames per second
   animationLength = 10000 // 10 seconds
   
