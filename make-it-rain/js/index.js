@@ -51,7 +51,7 @@ function initAnimation() {
     }
 
     imageIndex = _.random(numImages)
-    money.image.src = "https://dl.dropboxusercontent.com/u/58679421/make_it_rain_images/money_" + 
+    money.image.src = "http://jkeatinco.github.io/make-it-rain/img/doggy" + 
       imageIndex + ".png"
     fallingMoney.push(money)
   })
