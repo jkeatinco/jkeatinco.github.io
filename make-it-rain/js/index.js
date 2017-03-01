@@ -22,10 +22,10 @@ $(document).ready(function() {
 });
                   
 function initAnimation() {
-  numMoney = 300
-  speedOffset = 15
+  numMoney = 500
+  speedOffset = 35
   speedRange = 3
-  numImages = 4
+  numImages = 2
   frameRate = 1000 / 30 // 30 frames per second
   animationLength = 10000 // 10 seconds
   

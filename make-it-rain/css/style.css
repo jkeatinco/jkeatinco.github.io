@@ -30,6 +30,7 @@ html {
   font-weight: bold;
   font-family: Helvetica;
   cursor: pointer; cursor: hand;
+  color:white;
 }
 .rain-maker:hover {
   background-color: #9fd7fb;
