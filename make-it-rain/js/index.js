@@ -23,8 +23,8 @@ $(document).ready(function() {
                   
 function initAnimation() {
   numMoney = 500
-  speedOffset = 100
-  speedRange = 7
+  speedOffset = 35
+  speedRange = 3
   numImages = 7
   frameRate = 1000 / 30 // 30 frames per second
   animationLength = 10000 // 10 seconds
