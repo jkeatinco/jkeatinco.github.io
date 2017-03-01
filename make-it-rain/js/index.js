@@ -51,7 +51,7 @@ function initAnimation() {
     }
 
     imageIndex = _.random(numImages)
-    money.image.src = "../../img/doggy" + 
+    money.image.src = "../img/doggy" + 
       imageIndex + ".png"
     fallingMoney.push(money)
   })
