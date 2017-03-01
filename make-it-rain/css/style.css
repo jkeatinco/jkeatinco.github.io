@@ -29,12 +29,15 @@ html {
   border: none;
   font-weight: bold;
   font-family: Helvetica;
+  cursor: pointer; cursor: hand;
 }
 .rain-maker:hover {
   background-color: #9fd7fb;
+  cursor: pointer; cursor: hand;
 }
 .rain-maker:active {
   background-color: #79b9e1;
+  cursor: pointer; cursor: hand;
 }
 
 .rain {
