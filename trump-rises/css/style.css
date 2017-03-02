@@ -38,7 +38,8 @@ html {
   width: 100%;
   height: 50%;
   top: 50%;
-  background: radial-gradient(at 50% 0%, #007, #004);
+  background: url(../img/city.png);
+  /*background: radial-gradient(at 50% 0%, #007, #004);*/
   z-index: 60;
 }
 
