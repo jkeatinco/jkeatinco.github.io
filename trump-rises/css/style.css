@@ -1,6 +1,12 @@
 html {
   background: black;
 }
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
 
 .container,
 .sea,
@@ -63,7 +69,7 @@ html {
 @keyframes rise {
   0% {
     /*top: 50%;*/
-    top:190%;
+    top:100%;
   }
   100% {
     /*top: 15%;*/

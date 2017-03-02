@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>CSS Sunrise Animation</title>
-  
-  
+  <script
+        src="http://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
   
       <link rel="stylesheet" href="css/style.css">
 
   
 </head>
 
-<body>
+<body class="preload">
   <div class="container">
   <div class="sky"></div>
   <div class="sea">
@@ -25,7 +27,10 @@
   <div class="fin">
   <div class="wave"></div></div>
 </div>
-  
-  
+  <script>
+  $(window).load(function() {
+  $("body").removeClass("preload");
+});
+  </script>
 </body>
 </html>
