@@ -155,7 +155,7 @@ html {
   animation: mover 25s linear infinite 1.5s, flap .5s linear alternate infinite 1.5s;
 }
 
-.fin {
+/*.fin {
   border: 30px solid black;
   top: 90%;
   left: 100%;
@@ -174,7 +174,7 @@ html {
   border-right: 50px solid transparent;
   transform: rotatez(6deg);
   z-index: 60;
-}
+}*/
 
 @keyframes swim {
   0% {
