@@ -49,13 +49,13 @@ html {
 }
 
 .sun {
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   left: 45%;
   z-index: 40;
   /*background: linear-gradient(#ff0, #d00);*/
-  background: url(../img/trump-sun.png);
+  background: url(../img/trump-sun.png) no-repeat center center fixed
   box-shadow: 0 0 40px 6px #f20, 0 0 150px 10px #f33;
   animation: rise 24s ease forwards;
 }
