@@ -64,7 +64,7 @@ html {
   /*background: linear-gradient(#ff0, #d00);*/
   background: url(../img/trump-sun.png) no-repeat;
   box-shadow: 0 0 40px 6px #f20, 0 0 150px 10px #f33;
-  animation: rise 34s ease forwards;
+  animation: rise 24s ease forwards;
 }
 
 @keyframes rise {
@@ -74,7 +74,7 @@ html {
   }
   100% {
     /*top: 15%;*/
-    top:1%;
+    top:-20%;
   }
 }
 
