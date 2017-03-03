@@ -2,10 +2,11 @@ html {
   background: black;
 }
 .preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
+  transition: all 0s linear !important;
+  -webkit-transition: all 0s linear !important;
+  -moz-transition: all 0s linear !important;
+  -ms-transition: all 0s linear !important;
+  -o-transition: all 0s linear !important;
 }
 
 .container,
