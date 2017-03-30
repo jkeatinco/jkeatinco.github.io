@@ -70,11 +70,11 @@ html {
 @keyframes rise {
   0% {
     /*top: 50%;*/
-    top:80%;
+    top:100%;
   }
   100% {
     /*top: 15%;*/
-    top:-20%;
+    top:10%;
   }
 }
 
