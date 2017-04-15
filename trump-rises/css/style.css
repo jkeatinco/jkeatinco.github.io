@@ -104,16 +104,17 @@ html {
   opacity: 1;
   top: 50px;
   left: 00px;
-  width: 10px;
-  height: 8px;
-  border: 2px solid black;
+  width: 100px;
+  height: 30px;
+  /*border: 2px solid black;*/
   border-radius: 50%;
   border-top-color: transparent;
   border-left-color: transparent;
   border-bottom-color: transparent;
-  transform: rotateZ(-75deg);
+  /*transform: rotateZ(-75deg);*/
   animation: move 25s linear infinite, flap .5s linear alternate infinite;
   z-index: 70;
+  background-image:url(../img/leavin-on-a-jet-plane.png);
 }
 
 .birdr {
