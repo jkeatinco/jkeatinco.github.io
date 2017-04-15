@@ -43,7 +43,7 @@ var controls = {
 	alpha : 1,
 	color : 200,
 	auto : false,
-	opacity : 0,
+	opacity : 1,
 	saturation : 100,
 	lightness : 50,
 	back : 100,
