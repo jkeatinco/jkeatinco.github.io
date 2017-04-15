@@ -131,7 +131,7 @@ html {
   border-top-color: transparent;*/
   /*transform: rotateZ(75deg);*/
   /*margin: 0px 8px;*/
-  animation: move 25s linear infinite 1.5s;
+  animation: move 25s linear infinite 2s;
   background-image:url(../img/leavin-on-a-jet-plane.png);
 }
 
