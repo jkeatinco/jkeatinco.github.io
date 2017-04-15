@@ -59,7 +59,7 @@ function Rain(X, Y, nombre) {
 		nombre = nombreb;
 	}
 	while (nombre--) {
-		particules.push( 
+		particules.push(
 		{
 			vitesseX : (Math.random() * 0.25),
 			vitesseY : (Math.random() * 9) + 1,
@@ -76,7 +76,7 @@ function explosion(X, Y, couleur, nombre) {
 		nombre = nombrebase;
 	}
 	while (nombre--) {
-		gouttes.push( 
+		gouttes.push(
 		{
 			vitesseX : (Math.random() * 4-2	),
 			vitesseY : (Math.random() * -4 ),
@@ -98,23 +98,23 @@ function rendu(ctx) {
 	ctx.save();
 	ctx.fillStyle = 'rgba('+controls.red+','+controls.green+','+controls.blue+',' + controls.alpha + ')';
 	ctx.fillRect(0, 0, width, height);
-	
+
 	var particuleslocales = particules;
 	var goutteslocales = gouttes;
 	var tau = Math.PI * 2;
 
 	for (var i = 0, particulesactives; particulesactives = particuleslocales[i]; i++) {
-			
+
 		ctx.globalAlpha = particulesactives.alpha;
 		ctx.fillStyle = particulesactives.couleur;
 		ctx.fillRect(particulesactives.X, particulesactives.Y, particulesactives.vitesseY/4, particulesactives.vitesseY);
 	}
 
 	for (var i = 0, gouttesactives; gouttesactives = goutteslocales[i]; i++) {
-			
+
 		ctx.globalAlpha = gouttesactives.alpha;
 		ctx.fillStyle = gouttesactives.couleur;
-		
+
 		ctx.beginPath();
 		ctx.arc(gouttesactives.X, gouttesactives.Y, gouttesactives.radius, 0, tau);
 		ctx.fill();
@@ -144,7 +144,7 @@ function rendu(ctx) {
 			ctx.stroke();
 		}
 	ctx.restore();
-	
+
 	if (controls.auto) {
 		controls.color += controls.speed;
 		if (controls.color >=360) {
@@ -157,7 +157,7 @@ function update() {
 
 	var particuleslocales = particules;
 	var goutteslocales = gouttes;
-	
+
 	for (var i = 0, particulesactives; particulesactives = particuleslocales[i]; i++) {
 		particulesactives.X += particulesactives.vitesseX;
 		particulesactives.Y += particulesactives.vitesseY+5;
@@ -224,9 +224,9 @@ window.onload = function() {
 	gui.add(controls, 'Object', ['Nothing','Circle','Umbrella', 'Cup']);
 	gui.add(window, 'Screenshot');
 	var Background = gui.addFolder('Background color');
-	Background.add(controls, 'red', 0, 255).step(1);
-	Background.add(controls, 'green', 0, 255).step(1);
-	Background.add(controls, 'blue', 0, 255).step(1);
+	Background.add(controls, 'red', 0, 55).step(1);
+	Background.add(controls, 'green', 0, 5).step(1);
+	Background.add(controls, 'blue', 0, 25).step(1);
 };
 
 (function boucle() {
