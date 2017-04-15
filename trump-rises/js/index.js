@@ -43,7 +43,7 @@ var controls = {
 	alpha : 1,
 	color : 200,
 	auto : false,
-	opacity : 1,
+	opacity : 0,
 	saturation : 100,
 	lightness : 50,
 	back : 100,
@@ -224,9 +224,9 @@ window.onload = function() {
 	gui.add(controls, 'Object', ['Nothing','Circle','Umbrella', 'Cup']);
 	gui.add(window, 'Screenshot');
 	var Background = gui.addFolder('Background color');
-	Background.add(controls, 'red', 0, 55).step(1);
-	Background.add(controls, 'green', 0, 5).step(1);
-	Background.add(controls, 'blue', 0, 25).step(1);
+	Background.add(controls, 'red', 0, 255).step(1);
+	Background.add(controls, 'green', 0, 255).step(1);
+	Background.add(controls, 'blue', 0, 255).step(1);
 };
 
 (function boucle() {
