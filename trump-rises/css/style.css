@@ -148,6 +148,7 @@ html {
   /*transform: rotateZ(-90deg);*/
   animation: move 25s linear infinite 1.5s/*, flap .5s linear alternate infinite 1.5s*/;
   z-index: 70;
+  background-image:url(../img/leavin-on-a-jet-plane.png);
 }
 
 .birdr1 {
@@ -164,6 +165,7 @@ html {
   /*transform: rotateZ(90deg);*/
   margin: 0px 8px;
   animation: mover 25s linear infinite 1.5s/*, flap .5s linear alternate infinite 1.5s*/;
+  background-image:url(../img/leavin-on-a-jet-plane.png);
 }
 
 /*.fin {
