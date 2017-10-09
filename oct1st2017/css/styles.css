@@ -1,0 +1,4 @@
+.blend-gradient {
+  background: -webkit-linear-gradient(91deg, rgb(255, 65, 54), rgb(255, 133, 27));
+  background: linear-gradient(91deg, rgb(255, 65, 54), rgb(255, 133, 27));
+}
