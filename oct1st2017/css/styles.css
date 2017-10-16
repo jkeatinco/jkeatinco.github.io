@@ -187,3 +187,9 @@ h1 {
   color: #fff;
   text-align: center;
 }
+
+
+/* The 58 Index */
+.sidebar-link,
+.sidebar-link:hover,
+.sidebar-linke:focus{color:#000000;}
