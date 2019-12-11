@@ -26,11 +26,17 @@
                  var result = parseFloat(xhr.responseText);
                  var resultElement = document.getElementById('result');
                  if (result == 0) {
-                     resultElement.className = 'bg-danger';
-                     resultElement.innerHTML = 'Your review was NEGATIVE!';
+                    $('#exampleModal').modal('show');
+                    //  resultElement.className = 'bg-danger';
+                     resultElement.innerHTML = '<h2>😡 Negative Review</h2><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class="embed - container"><iframe id="negative-Review" src="" style="border:0"></iframe></div>';
+                     var urls = ['https://giphy.com/embed/aQGqcObSxfixy', 'https://giphy.com/embed/YQ6RNHJU84wmc', 'https://giphy.com/embed/LOy0V6ILKYoLu' ];
+                     document.getElementById('negative-Review').setAttribute('src', urls[Math.round(Math.random() * urls.length)]);
                  } else {
-                     resultElement.className = 'bg-success';
-                     resultElement.innerHTML = 'Your review was POSITIVE!';
+                    $('#exampleModal').modal('show');
+                    //  resultElement.className = 'bg-success';
+                     resultElement.innerHTML = '<h2>🤗 Positive Review</h2><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class="embed - container"><iframe id="success-Review" src="" style="border:0"></iframe></div>';
+                     var urls = ['https://giphy.com/embed/l2YWtqm1NkjAFSIKc', 'https://giphy.com/embed/3oKIPkMhoaMlhtarF6', 'https://giphy.com/embed/6PyrLt9Yh7cA0'];
+                     document.getElementById('success-Review').setAttribute('src', urls[Math.round(Math.random() * urls.length)]);
                  }
              }
              xhr.open (oFormElement.method, oFormElement.action, true);
@@ -39,89 +45,80 @@
              return false;
          }
         </script>
-
     </head>
     <body>
-
-        <div>
-            <div class='center'>
-                <div class='title'>👿 Mean 👧 GAIrls 🎥 Movie Review Attitude 🕵️‍♀️ Detector</div>
-                <p>
-                   Write a 🤗 positive or 😡 negative review of the movie Mean Girls and let the Mean 🕵️‍♀️ GAIrl figure out your attitude.
-                </p>
-                <p>Inspired by <a href="https://www.youtube.com/watch?v=KAOmTMCtGkI" target="_blank">🎥 Mean Girls</a></p>
-                <div class='content'>
-                    <form method="POST" action="https://l11rasi1lb.execute-api.us-east-1.amazonaws.com/prod"
-                        onsubmit="return submitForm(this);">
-                        <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
-                        <div class="form-group">
-                            <label for="review">Review:</label>
-                            <textarea class="form-control" rows="5" id="review">Please write your review here.</textarea>
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                    <h1 class="bg-success" id="result"></h1>
-                    
-                    <div class='no-display'>
-                        <input id='file-input' class='no-display' type='file' name='file' accept='image/*'
-                            onchange='showPicked(this)'>
-                    </div>
-                    <button class='choose-file-button' type='button' onclick='showPicker()'>📷 Take Photo</button>
-                    <div class='analyze' style="padding-bottom:30px;">
-                        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>🕵️
-                            Examine</button>
-                    </div>
-                    <div class='upload-label'>
-                        <label id='upload-label'>No file chosen</label>
-                    </div>
-                    <div>
-                        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-                    </div>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">👵 GrandmAI's thinks this is a...</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class='result-label'>
-                                        <h2 id='result-label'></h2>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class='choose-file-button' data-dismiss="modal">👎 Nope! Sorry
-                                        GrandmAI.</button>
-                                    <button type="button" class='analyze-button' data-dismiss="modal">👍 Yup! You are a genius
-                                        GrandmaAI.</button>
-                                </div>
+        <div class='center'>
+            <div class='title'>👿 Mean 👧 GAIrls 🎥 Movie Review Attitude 🕵️‍♀️ Detector</div>
+            <p>
+                Write a 🤗 positive or 😡 negative review of the movie Mean Girls and let the 👿 Mean 👧 GAIrl 🕵️‍♀️ figure out your attitude.
+            </p>
+            <p>Inspired by <a href="https://www.youtube.com/watch?v=KAOmTMCtGkI" target="_blank">🎥 Mean Girls</a></p>
+            <div class='content'>
+                <form method="POST" action="https://l11rasi1lb.execute-api.us-east-1.amazonaws.com/prod"
+                    onsubmit="return submitForm(this);">
+                    <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" id="review" placeholder="Please write your 🤗 positive or 😡 negative review here"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
-                <footer class="blockquote-footer">Made with 💜 by <cite title="Source Title"><a
-                            href="https://twitter.com/jkeatin" target="_blank">jkeatin</a></cite></footer>
-                <footer class="blockquote-footer">Thanks to <cite title="Source Title"><a
-                            href="https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t" target="_blank">Udacity</a></cite> |
-                    <cite title="Source Title"><a href="https://aws.amazon.com/" target="_blank"><i class="fab fa-amazon"></i> Amazon Web Services</a></cite></footer>
+                    <button type="submit" class="analyze-button">🕵️‍♀️ Send For Analysis</button>
+                </form>
+                
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">👿 Mean 👧 GAIrl's thinks this is a...</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- <div class='result-label'>
+                                    <h2 id='result-label'></h2>
+                                </div> -->
+                                <div id="result"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class='choose-file-button' data-dismiss="modal">👎 Nope! Sorry
+                                    Mean GAIrl.</button>
+                                <button type="button" class='analyze-button' data-dismiss="modal">👍 Yup! Thanks
+                                    Mean GAIrl.</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <footer class="blockquote-footer">Made with 💜 by <cite title="Source Title"><a
+                        href="https://twitter.com/jkeatin" target="_blank">jkeatin</a></cite></footer>
+            <footer class="blockquote-footer">Thanks to <cite title="Source Title"><a
+                        href="https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t" target="_blank">Udacity</a></cite> |
+                <cite title="Source Title"><a href="https://aws.amazon.com/" target="_blank"><i class="fab fa-amazon"></i> Amazon Web Services</a></cite></footer>
         </div>
-       
-        <script>
-            $('#exampleModal').modal({ show: false })
-        </script>
+    <script>
+        $('#exampleModal').modal({ show: false })
+    </script>
+    <script>
+        (function () {
+                var urls = ['https://giphy.com/embed/l2YWtqm1NkjAFSIKc', 'https://giphy.com/embed/3oKIPkMhoaMlhtarF6'];
+                function swap() {
+                    document.getElementById('success-Review').setAttribute('src', urls[Math.round(Math.random() * urls.length)]);
+                }
 
-
-        <div class="container">
-            <h1>👿 Mean 👧 GAIrls 🎥 Movie Review Attitude 🕵️‍♀️ Detector</h1>
-            <p>Enter your review below and click submit to find out...</p>
-            
-        </div>
-        <script>
-            $('#exampleModal').modal({ show: false })
-        </script>
+                // Mozilla, Opera and webkit nightlies currently support this event
+                if (document.addEventListener) {
+                    window.addEventListener('load', swap, false);
+                    // If IE event model is used
+                } else if (document.attachEvent) {
+                    window.attachEvent('onload', swap);
+                }
+            })();
+    </script>
     </body>
 </html>
