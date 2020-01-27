@@ -360,8 +360,11 @@
 
 })(jQuery, window);
 
-for (var n = 0; n < 3; ++n)
-    $("#lazy" + n).lazyload();
+$("div").each(function (index) {
+  $("#lazy" + index.lazyload());
+});
+
+
 
 
 
