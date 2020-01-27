@@ -363,10 +363,11 @@
 </script>
 
 <script>
-
-  for (i = 0; i < 3; i++) {
-      $("#lazy" + i +"").lazyload();
-    }
+  $(document).ready(function () {        
+    for (i = 0; i < 3; i++) {
+        $("#lazy" + i + "").lazyload();
+      } });
+ 
 
 
   // $("#lazy").lazyload();
