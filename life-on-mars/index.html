@@ -17,20 +17,21 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script type="text/javascript">
+    // place your images in this array
+    var random_images_array = ['00000001.JPG', '00000003.JPG', '00000005.JPG', '00000007.JPG'];
 
-  
+    function getRandomImage(imgAr, path) {
+      path = path || 'img/'; // default path here
+      var num = Math.floor(Math.random() * imgAr.length);
+      var img = imgAr[num];
+      var imgStr = '<div id="'+ num +'" class="carousel-item" data-background="' + path + img + '>';
+      
+
+      document.write(imgStr); document.close();
+    }
+
+  </script>
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -115,7 +116,7 @@
   <section class="py-5">
     <div class="container">
       <h1 class="display-4">Life on Mars... 👽 🚀 🌌</h1>
-      <p class="lead">is a collection of mostly previously black and white raw images from the <a href="https://mars.nasa.gov/msl/multimedia/raw-images/?order=sol+desc%2Cinstrument_sort+asc%2Csample_type_sort+asc%2C+date_taken+desc&per_page=50&page=0&mission=msl">Mars Curiosity Rover</a> ran through <a href="https://github.com/jantic/DeOldify" target="_blank">DeOldify</a> These images are not meant to be an accurate representation of the true color on the surface of Mars but will hopefully offer you an insightful new perspective of our neighboring planet.</p>
+      <p class="lead">is a collection of mostly previously black and white raw images from the <a href="https://mars.nasa.gov/msl/multimedia/raw-images/?order=sol+desc%2Cinstrument_sort+asc%2Csample_type_sort+asc%2C+date_taken+desc&per_page=50&page=0&mission=msl">Mars Curiosity Rover</a> ran through <a href="https://github.com/jantic/DeOldify" target="_blank">DeOldify</a> These images are not meant to be an accurate representation of the color of the surface of Mars but hopefully offers you an insightful new perspective of the planet.</p>
     </div>
   </section>
   <div class="container">
@@ -123,7 +124,17 @@
         target="_blank">jkeatin</a></cite></footer>
   </div>
 
- 
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 
   <script>
   /*
@@ -354,22 +365,6 @@ $("#layzy").lazyload();
 $("#layzy2").lazyload();
 $("#layzy3").lazyload();
 
-
-</script>
-
-<script type="text/javascript">
-  // place your images in this array
-  var random_images_array = ['00000001.JPG', '00000003.JPG', '00000005.JPG', '00000007.JPG'];
-
-  function getRandomImage(imgAr, path) {
-    path = path || 'img/'; // default path here
-    var num = Math.floor(Math.random() * imgAr.length);
-    var img = imgAr[num];
-    var imgStr = '<div id="' + num + '" class="carousel-item" data-background="' + path + img + '>';
-    $('#' + num).lazyload();
-
-    document.write(imgStr); document.close();
-  }
 
 </script>
 
