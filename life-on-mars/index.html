@@ -28,7 +28,7 @@
     function getRandomImage(imgAr, path) {
       path = path || 'img/'; // default path here
       var num = Math.floor(Math.random() * imgAr.length);
-      var img = imgAr.splice(num, 1)[0];
+      var img = imgAr[num];
       var imgStr = '<div id=lazy'+ num +' class="carousel-item" data-background="' + path + img + '">';
       
 
@@ -331,33 +331,6 @@
             <!-- <h2 class="display-4">Third Slide</h2> -->
             <p class="lead"><p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in DeOldify | Not a True Color Representation</p></p>
           </div>
-        </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <script type="text/javascript">getRandomImage(random_images_array)</script>
-        <div class="carousel-caption d-none d-md-block">
-          <!-- <h2 class="display-4">Third Slide</h2> -->
-          <p class="lead">
-            <p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in DeOldify | Not a True Color Representation</p>
-          </p>
-        </div>
-        </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <script type="text/javascript">getRandomImage(random_images_array)</script>
-        <div class="carousel-caption d-none d-md-block">
-          <!-- <h2 class="display-4">Third Slide</h2> -->
-          <p class="lead">
-            <p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in DeOldify | Not a True Color Representation</p>
-          </p>
-        </div>
-        </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <script type="text/javascript">getRandomImage(random_images_array)</script>
-        <div class="carousel-caption d-none d-md-block">
-          <!-- <h2 class="display-4">Third Slide</h2> -->
-          <p class="lead">
-            <p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in DeOldify | Not a True Color Representation</p>
-          </p>
-        </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
         <script type="text/javascript">getRandomImage(random_images_array)</script>
