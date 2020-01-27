@@ -17,19 +17,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <script type="text/javascript">
-    // place your images in this array
-    var random_images_array = ['00000001.JPG', '00000003.JPG', '00000005.JPG', '00000007.JPG'];
-
-    function getRandomImage(imgAr, path) {
-      path = path || 'img/'; // default path here
-      var num = Math.floor(Math.random() * imgAr.length);
-      var img = imgAr[num];
-      var imgStr = '<div id="lazy2" class="carousel-item" data-background="' + path + img + '>';
-      document.write(imgStr); document.close();
-    }
-
-  </script>
+  
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -363,6 +351,22 @@ $("#layzy").lazyload();
 $("#layzy2").lazyload();
 $("#layzy3").lazyload();
 
+
+</script>
+
+<script type="text/javascript">
+  // place your images in this array
+  var random_images_array = ['00000001.JPG', '00000003.JPG', '00000005.JPG', '00000007.JPG'];
+
+  function getRandomImage(imgAr, path) {
+    path = path || 'img/'; // default path here
+    var num = Math.floor(Math.random() * imgAr.length);
+    var img = imgAr[num];
+    var imgStr = '<div id="' + num + '" class="carousel-item" data-background="' + path + img + '>';
+    $('#' + num).lazyload();
+
+    document.write(imgStr); document.close();
+  }
 
 </script>
 
