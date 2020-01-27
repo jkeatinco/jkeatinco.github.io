@@ -28,7 +28,7 @@
     function getRandomImage(imgAr, path) {
       path = path || 'img/'; // default path here
       var num = Math.floor(Math.random() * imgAr.length);
-      var img = imgAr.splice(random, 1);
+      var img = imgAr.splice(num, 1);
       var imgStr = '<div id=lazy'+ num +' class="carousel-item" data-background="' + path + img + '">';
       
 
