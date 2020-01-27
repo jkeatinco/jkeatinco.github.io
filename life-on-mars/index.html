@@ -25,7 +25,7 @@
       path = path || 'img/'; // default path here
       var num = Math.floor(Math.random() * imgAr.length);
       var img = imgAr[num];
-      var imgStr = '<div id="'+ num +'" class="carousel-item" data-background="' + path + img + '>';
+      var imgStr = '<div id=lazy"'+ num +'" class="carousel-item" data-background="' + path + img + '>';
       
 
       document.write(imgStr); document.close();
@@ -80,7 +80,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" data-background="img/00001187.jpg" id="layzy">
+        <div class="carousel-item active" data-background="img/00001187.jpg" id="lazy">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h2 class="display-4">First Slide</h2> -->
             <p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in DeOldify | Not a True Color Representation</p>
@@ -94,7 +94,7 @@
           </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" data-background="img/00001187.jpg" id="layzy3">
+        <div class="carousel-item" data-background="img/00001187.jpg" id="lazy3">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h2 class="display-4">Third Slide</h2> -->
             <p class="lead"><p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in DeOldify | Not a True Color Representation</p></p>
@@ -360,10 +360,9 @@
 
 })(jQuery, window);
 
+for (var n = 0; n < 3; ++n)
+    $("#lazy" + n).lazyload();
 
-$("#layzy").lazyload();
-$("#layzy2").lazyload();
-$("#layzy3").lazyload();
 
 
 </script>
