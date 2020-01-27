@@ -98,7 +98,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-.carousel-item {
+.slideimg {
   height: 100vh;
   min-height: 350px;
   background: no-repeat center center scroll;
