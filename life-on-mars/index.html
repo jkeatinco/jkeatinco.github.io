@@ -68,7 +68,7 @@
           style="background-image: url('img/00001187.jpg')">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h2 class="display-4">First Slide</h2> -->
-            <p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in Deoldify | Not a True Color Representation</p>
+            <p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in DeOldify | Not a True Color Representation</p>
           </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -101,7 +101,7 @@
   <section class="py-5">
     <div class="container">
       <h1 class="display-4">Life on Mars... 👽 🚀 🌌</h1>
-      <p class="lead">is a collection of thousands of mostly previously black and white raw images from the <a href="https://mars.nasa.gov/msl/multimedia/raw-images/?order=sol+desc%2Cinstrument_sort+asc%2Csample_type_sort+asc%2C+date_taken+desc&per_page=50&page=0&mission=msl">Mars Curiosity Rover</a> ran through <a href="https://github.com/jantic/DeOldify" target="_blank">DeOldify</a> These images are not meant to be an accurate representation of the color of the surface of Mars but offers an insightful new perspective of the planet.</p>
+      <p class="lead">is a collection of thousands of mostly previously black and white raw images from the <a href="https://mars.nasa.gov/msl/multimedia/raw-images/?order=sol+desc%2Cinstrument_sort+asc%2Csample_type_sort+asc%2C+date_taken+desc&per_page=50&page=0&mission=msl">Mars Curiosity Rover</a> ran through <a href="https://github.com/jantic/DeOldify" target="_blank">DeOldify</a> These images are not meant to be an accurate representation of the color of the surface of Mars but hopefully offers you an insightful new perspective of the planet.</p>
     </div>
   </section>
   <footer class="blockquote-footer">Made with 💜 by <cite title="Source Title"><a href="https://twitter.com/jkeatin"
@@ -118,6 +118,28 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+
+
+  <script src="img/getimages.php"></script>
+  
+  <script type="text/javascript">
+
+    var curimg = 0
+    function rotateimages() {
+      document.getElementById("slideshow").setAttribute("src", "pics/" + galleryarray[curimg])
+      curimg = (curimg < galleryarray.length - 1) ? curimg + 1 : 0
+    }
+
+    window.onload = function () {
+      setInterval("rotateimages()", 2500)
+    }
+  </script>
+  
+  <div style="width: 170px; height: 160px">
+    <img id="slideshow" src="pics/bear.gif" />
+  </div>
+
+
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
