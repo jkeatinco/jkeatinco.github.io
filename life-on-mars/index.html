@@ -28,7 +28,7 @@
     function getRandomImage(imgAr, path) {
       path = path || 'img/'; // default path here
       var num = Math.floor(Math.random() * imgAr.length);
-      var img = imgAr.splice(num, 1);
+      var img = imgAr.splice(num, 1)[0];
       var imgStr = '<div id=lazy'+ num +' class="carousel-item" data-background="' + path + img + '">';
       
 
@@ -312,7 +312,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" data-background="img/00001187.jpg" id="lazy0">
+        <div class="carousel-item active" data-background="img/00001187.jpg" id="lazy">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h2 class="display-4">First Slide</h2> -->
             <p class="lead">Courtesy NASA/JPL-Caltech | Image Colorized in DeOldify | Not a True Color Representation</p>
@@ -368,6 +368,7 @@
   <script src="js/main.js"></script>
 
   <script>
+  $("#lazy").lazyload();
   $("#lazy0").lazyload();
   $("#lazy1").lazyload();
   $("#lazy2").lazyload();
