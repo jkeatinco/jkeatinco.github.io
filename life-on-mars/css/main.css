@@ -108,6 +108,9 @@ textarea {
   -o-background-size: cover;
   background-size: cover;
 } */
+.slide-container {
+  margin-top:56px;
+}
 .slick-slide img {
   width: 100%;
 }
