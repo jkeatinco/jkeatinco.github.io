@@ -111,6 +111,18 @@ textarea {
 .slide-container {
   margin-top:56px;
 }
+.slide {
+  position: relative;
+}
+
+.slide__caption {
+  bottom: 0;
+  min-height: 80px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
 .slick-slide img {
   width: 100%;
 }
