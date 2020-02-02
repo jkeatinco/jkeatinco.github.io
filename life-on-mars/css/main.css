@@ -117,17 +117,19 @@ textarea {
 
 .slide__caption {
   bottom: 0;
-  min-height: 80px;
+  min-height: 35px;
   left: 0;
   position: absolute;
   width: 100%;
   z-index: 2;
+  color: white;
+  background: rgba(0,0,0,0.5);
 }
 .slick-slide img {
   width: 100%;
 }
 .slick-prev:before, .slick-next:before{
-  color:#79DB75;
+  color:#fff;
 }
 .slick-next {
   right: 12px;
