@@ -27,7 +27,7 @@
       path = path || 'img/'; // default path here
       var num = Math.floor(Math.random() * imgAr.length);
       var img = imgAr[num];
-      var imgStr = '<div id=lazy'+ num +' class="slideimg"><img src="'  + path + img +'" ></div>';
+      var imgStr = '<div id=lazy'+ num +' class="slideimg"><img src="'  + path + img +'" >';
       
 
       document.write(imgStr); document.close();
@@ -76,9 +76,10 @@
   
   <header>
     <div class="your-class">
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
+      <div class="slideimg"><img src="img/00000001.JPG"></div>
+      <div class="slideimg"><img src="img/00000003.JPG"></div>
+      <div class="slideimg"><img src="img/00000005.JPG"></div>
+      <div class="slideimg"><img src="img/00000007.JPG"></div>
     </div>
     
   </header>
@@ -112,7 +113,22 @@
 
   <script>
     $(document).ready(function () {
-        $('.your-class').slick({
+      $.fn.randomize = function (selector) {
+        var $elems = selector ? $(this).find(selector) : $(this).children(),
+          $parents = $elems.parent();
+
+        $parents.each(function () {
+          $(this).children(selector).sort(function (childA, childB) {
+            // * Prevent last slide from being reordered
+            if ($(childB).index() !== $(this).children(selector).length - 1) {
+              return Math.round(Math.random()) - 0.5;
+            }
+          }.bind(this)).detach().appendTo(this);
+        });
+
+        return this;
+      };
+        $('.your-class').randomize().slick({
 
         });
     });
