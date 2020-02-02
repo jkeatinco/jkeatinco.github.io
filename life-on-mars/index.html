@@ -76,21 +76,10 @@
   
   <header>
     <div class="your-class">
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
-      <script>getRandomImage(random_images_array)</script>
+      <div class="slideimg"><img data-lazy="img/00000001.JPG"></div>
+      <div class="slideimg"><img data-lazy="img/00000003.JPG"></div>
+      <div class="slideimg"><img data-lazy="img/00000005.JPG"></div>
+      <div class="slideimg"><img data-lazy="img/00000007.JPG"></div>
     </div>
     
   </header>
@@ -140,6 +129,7 @@
         return this;
       };
         $('.your-class').randomize().slick({
+           lazyLoad: 'ondemand'
 
         });
     });
