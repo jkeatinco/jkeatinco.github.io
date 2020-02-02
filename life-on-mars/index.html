@@ -78,10 +78,10 @@
   <header>
     <div class="container-fluid">
       <div class="your-class">
-        <div class="slideimg"><img data-lazy="img/00000001.JPG"></div>
-        <div class="slideimg"><img data-lazy="img/00000003.JPG"></div>
-        <div class="slideimg"><img data-lazy="img/00000005.JPG"></div>
-        <div class="slideimg"><img data-lazy="img/00000007.JPG"></div>
+        <div class="slideimg"><img data-lazy="img/00008581.jpg"></div>
+        <div class="slideimg"><img data-lazy="img/00043175.jpg"></div>
+        <div class="slideimg"><img data-lazy="img/00052891.jpg"></div>
+        <div class="slideimg"><img data-lazy="img/00043135.jpg"></div>
       </div>
     </div>
     
@@ -132,8 +132,9 @@
         return this;
       };
         $('.your-class').randomize().slick({
-           lazyLoad: 'ondemand'
-
+           lazyLoad: 'ondemand',
+           autoplay: true,
+           autoplaySpeed: 5000
         });
     });
   </script>
