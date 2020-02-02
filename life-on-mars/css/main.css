@@ -109,16 +109,22 @@ textarea {
   background-size: cover;
 } */
 .slick-slide img {
-  width:100%;
+  width: 100%;
 }
 .slick-prev:before, .slick-next:before{
-    color:#79DB75;
+  color:#79DB75;
+}
+.slick-next {
+  right: 12px;
+}
+.slick-prev {
+  left: 12px;
 }
 
-.slick-prev, .slick-next {
+/* .slick-prev, .slick-next {
   height:50px;
   width:50px;
-}
+} */
 /* ==========================================================================
    Helper classes
    ========================================================================== */
