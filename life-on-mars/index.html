@@ -27,7 +27,7 @@
       path = path || 'img/'; // default path here
       var num = Math.floor(Math.random() * imgAr.length);
       var img = imgAr[num];
-      var imgStr = '<div id=lazy'+ num +' class="carousel-item" data-background="' + path + img + '">';
+      var imgStr = '<div id=lazy'+ num +' class="slideimg"><img src="'  + path + img +'" ></div>';
       
 
       document.write(imgStr); document.close();
@@ -76,9 +76,9 @@
   
   <header>
     <div class="your-class">
-      <div class="slideimg"><img src="img/00000001.JPG"></div>
-      <div class="slideimg"><img src="img/00000001.JPG"></div>
-      <div class="slideimg"><img src="img/00000001.JPG"></div>
+      <script>getRandomImage(random_images_array)</script>
+      <script>getRandomImage(random_images_array)</script>
+      <script>getRandomImage(random_images_array)</script>
     </div>
     
   </header>
