@@ -108,11 +108,20 @@ textarea {
   -o-background-size: cover;
   background-size: cover;
 } */
+body {
+  background:black;
+  color:white;
+}
+.black-navbar {
+  background: rgba(0,0,0,0.5);
+}
 .sm-fnt {
   font-size: 0.7rem;
 }
 .slide-container {
-  margin-top:56px;
+  margin-top:0px;
+  padding-left:0px;
+  padding-right:0px;
 }
 .slide {
   position: relative;
