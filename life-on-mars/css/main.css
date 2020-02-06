@@ -114,7 +114,7 @@ textarea {
   background-size: cover;
 } */
 body {
-  background:black;
+  background:none!important;
   color:white;
 }
 .black-navbar {
