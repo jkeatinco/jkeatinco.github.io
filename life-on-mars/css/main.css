@@ -155,7 +155,7 @@ body {
   left: 12px;
   z-index: 1;
 }
-.slick-track
+/* .slick-track
 {
     display: flex !important;
 }
@@ -163,7 +163,7 @@ body {
 .slick-slide
 {
     height: inherit !important;
-}
+} */
 
 .slick-track { display: flex !important; } .slick-slide { height: inherit !important; display: flex !important; justify-content: center; align-items: center; }
 /* .slick-slide > div { height: 100%; } */
