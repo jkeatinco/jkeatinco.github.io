@@ -168,8 +168,7 @@ body {
 .slick-slide
 {
   display:flex!important;
-  /* height: auto!important; */
-  height:500px;
+  height: auto!important;
 } 
 .slick-lightbox-slick-item-inner {
   margin:auto;
