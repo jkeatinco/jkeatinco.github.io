@@ -141,6 +141,7 @@ body {
   z-index: 2;
   color: white;
   background: rgba(0,0,0,0.5);
+  display:none;
 }
 /* .slick-slide img {
   width: 100%;
