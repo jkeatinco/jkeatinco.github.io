@@ -143,10 +143,11 @@ body {
   background: rgba(0,0,0,0.5);
 }
 .slick-slide img {
-  width: 100%;
+  width: auto;
   object-fit: cover;
   object-position: center;
-  height:auto;
+  height: auto;
+  margin: auto;
 }
 .slick-prev:before, .slick-next:before{
   color:#fff;
@@ -167,7 +168,8 @@ body {
 .slick-slide
 {
   display:flex!important;
-  height: auto!important;
+  /* height: auto!important; */
+  height:500px;
 } 
 .slick-lightbox-slick-item-inner {
   margin:auto;
