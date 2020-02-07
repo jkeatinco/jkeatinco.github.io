@@ -144,8 +144,8 @@ body {
 }
 .slick-slide img {
   width: 100%;
-  object-fit: cover;
-  object-position: center;
+  /* object-fit: cover;
+  object-position: center; */
 }
 .slick-prev:before, .slick-next:before{
   color:#fff;
