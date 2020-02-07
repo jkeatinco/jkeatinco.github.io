@@ -171,6 +171,12 @@ body {
   margin:auto;
   margin-top:52px;
 }
+.slick-lightbox .slick-next {
+  display:none!important;
+}
+.slick-lightbox .slick-prev {
+  display:none!important;
+}
 
 
 /* .slick-prev, .slick-next {
