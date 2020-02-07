@@ -143,11 +143,10 @@ body {
   background: rgba(0,0,0,0.5);
 }
 .slick-slide img {
-  width: auto;
+  width: 100%;
   object-fit: cover;
   object-position: center;
-  height: auto;
-  margin: auto;
+  height:auto;
 }
 .slick-prev:before, .slick-next:before{
   color:#fff;
@@ -162,7 +161,6 @@ body {
 .slick-track
 {
   display: flex !important;
-  align-items: center;
 }
 
 .slick-slide
