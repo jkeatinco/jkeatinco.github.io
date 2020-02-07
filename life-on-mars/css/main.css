@@ -153,6 +153,7 @@ body {
 }
 .slick-next {
   right: 12px;
+  z-index: 10;
 }
 .slick-prev {
   left: 12px;
