@@ -167,7 +167,7 @@ body {
 } */
 
 .slick-track { display: flex !important; } .slick-slide { height: inherit !important; display: flex !important; justify-content: center; align-items: center; }
-.slick-slide > div { height: 100%; }
+
 /* .slick-prev, .slick-next {
   height:50px;
   width:50px;
