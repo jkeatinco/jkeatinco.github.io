@@ -144,8 +144,9 @@ body {
 }
 .slick-slide img {
   width: 100%;
-  /* object-fit: cover;
-  object-position: center; */
+  object-fit: cover;
+  object-position: center;
+  height:auto;
 }
 .slick-prev:before, .slick-next:before{
   color:#fff;
@@ -157,16 +158,17 @@ body {
   left: 12px;
   z-index: 1;
 } 
-/* .slick-track
+.slick-track
 {
   display: flex !important;
+  align-items: center;
 }
 
 .slick-slide
 {
   display:flex!important;
   height: auto!important;
-}  */
+} 
 .slick-lightbox-slick-item-inner {
   margin:auto;
   margin-top:52px;
