@@ -146,7 +146,7 @@ body {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  height:auto;
+  height:100%;
 }
 .slick-prev:before, .slick-next:before{
   color:#fff;
@@ -165,8 +165,8 @@ body {
 
 .slick-slide
 {
-  display:flex!important;
-  height: auto!important;
+  display:block;
+  height: 600px!important;
 } 
 .slick-lightbox-slick-item-inner {
   margin:auto;
