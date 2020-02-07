@@ -167,6 +167,10 @@ body {
   display:flex!important;
   height: auto!important;
 } 
+.slick-lightbox-slick-item-inner {
+  margin:auto;
+  margin-top:52px;
+}
 
 
 /* .slick-prev, .slick-next {
