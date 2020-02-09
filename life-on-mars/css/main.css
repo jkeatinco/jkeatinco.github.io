@@ -117,6 +117,14 @@ body {
   background:none!important;
   color:white;
 }
+img {
+  -webkit-touch-callout: default;
+  -webkit-user-select: default;
+  -khtml-user-select: default;
+  -moz-user-select: default;
+  -ms-user-select: default;
+  user-select: default;
+}
 .black-navbar {
   background: rgba(0,0,0,0.5);
 }
