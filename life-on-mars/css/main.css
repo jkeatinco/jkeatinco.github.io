@@ -158,6 +158,7 @@ img {
 }
 .slick-prev:before, .slick-next:before{
   color:#fff;
+  font-size:45px;
 }
 .slick-next {
   right: 12px;
