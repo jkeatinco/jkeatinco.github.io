@@ -1,12 +1,47 @@
-<html>
+<!doctype html>
+<html class="no-js" lang="">
 
 <head>
-    <title>🦠 Cornoavirus AR Model</title>
     <meta charset="utf-8">
+    <title>🦠 Cornoavirus AR Model</title>
+    <meta name="description" content="Coronavirus 3d AR Model">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="css/uikit.min.css" />
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="uk-section">
+        <div class="uk-container">
+    
+            <h1 class="uk-heading-medium">🤠 Howdy!</h1>
+            <div class="uk-cover-container">
+                <model-viewer src="coronavirus3d.glb" ios-src="coronavirus3d.usdz" ar auto-rotate camera-controls
+                    background-color="#70BCD1" shadow-intensity="1" alt="A 3D model of coronavirus" uk-cover>
+                </model-viewer>
+            </div>
+        </div>
+    </div>
+    <footer class="uk-text-small">
+        <a href="https://spline.design/coronavirus3d/" target="_blank">Used Model from project Made by @alelepd that was
+            Rendered in Spline with ThreeJS. Show that project some 💜</a>
+    </footer>
+
+    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+    <script src="js/vendor/uikit.min.js"></script>
+    <script src="js/vendor/uikit-icons.min.js"></script>
     <!-- 💁 Include both scripts below to support all browsers! -->
     
     <!-- Loads <model-viewer> for modern browsers: -->
@@ -16,22 +51,19 @@
     <!-- Loads <model-viewer> for old browsers like IE11: -->
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
     </script>
-</head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    
 
-<body>
-    <div class="uk-section">
-        <div class="uk-container">
-
-            <h1 class="uk-heading-medium">🤠 Howdy!</h1>
-            <div class="uk-cover-container">
-                <model-viewer src="coronavirus3d.glb" ios-src="coronavirus3d.usdz" ar auto-rotate camera-controls
-                    background-color="#70BCD1" shadow-intensity="1" alt="A 3D model of coronavirus" uk-cover>
-                </model-viewer>
-            </div>
-        </div>
-    </div>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
-<footer class="uk-text-small">
-    <a href="https://spline.design/coronavirus3d/" target="_blank">Used Model from project Made by @alelepd that was Rendered in Spline with ThreeJS. Show that project some 💜</a>
-</footer>
+
 </html>
