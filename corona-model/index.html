@@ -19,12 +19,16 @@
 </head>
 
 <body>
-    <div class="uk-container">
+    <div class="uk-section">
+        <div class="uk-container">
 
-        <h1 class="uk-heading-medium">🤠 Howdy!</h1>
-        <model-viewer src="coronavirus3d.glb" ios-src="coronavirus3d.usdz" ar auto-rotate camera-controls
-            background-color="#70BCD1" shadow-intensity="1" alt="A 3D model of coronavirus">
-        </model-viewer>
+            <h1 class="uk-heading-medium">🤠 Howdy!</h1>
+            <div class="uk-cover-container">
+                <model-viewer src="coronavirus3d.glb" ios-src="coronavirus3d.usdz" ar auto-rotate camera-controls
+                    background-color="#70BCD1" shadow-intensity="1" alt="A 3D model of coronavirus" uk-cover>
+                </model-viewer>
+            </div>
+        </div>
     </div>
 </body>
 <footer class="uk-text-small">
