@@ -79,7 +79,6 @@ fae54c3c88968df8abe629c2889be7bd = Assets/Textures/steering_black.png
 0x583b9bbb2ea02b49 -    6357846527207025481 - TinyRacing.CarInputs
 0x59c9bb509a91d293 -    6469908294559453843 - Unity.Tiny.Animation.TinyAnimationClipRef
 0x5b03da03aea614c9 -    6558325191731451081 - Unity.Entities.LinkedEntityGroup
-0x5e8ec1b300dd276f -    6813596260815939439 - Unity.Tiny.Rendering.SimpleMeshRenderer
 0x5efcf391a178ffd0 -    6844613340501180368 - Unity.Tiny.Audio.AudioClipLoadFromFileAudioFile
 0x6248c71b7d0516bc -    7082129334915634876 - TinyRacing.UINumberMaterial
 0x645b5769b50b2b2e -    7231469738194053934 - Unity.Transforms.LocalToWorld
