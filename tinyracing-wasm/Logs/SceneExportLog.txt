@@ -10,8 +10,6 @@ e8dd3b7d26fd6d16eb6c749cc33d21d8 = Assets/Audio/Crash.mp3
 c191d79e762a5c56d7e4141a47a07d47 = Assets/Audio/Powerup.mp3
 a5b5006c295bac1813f192b14f6259f6 = Assets/Materials/Textures/Billboard.png
 5801b2ed664acb1ae42f8a5bcdcd64e8 = Assets/Materials/Textures/Cone.png
-9c1f59a8469e55a0c310d07852af55cb = Assets/Materials/Textures/Kart_Kart_Material_AlbedoAO_Pink.png
-59d6638e4b7e8aaccc4fc9f5f426d4a2 = Assets/Materials/Textures/Kart_Kart_Material_MetallicSmoothness.png
 8df76df07a7373d6c0ad5c99f80b90e8 = Assets/Materials/Textures/Oil.png
 280810710d6f05853ec42a19b495f691 = Assets/Materials/Textures/UI/made-with-unity.png
 909c715064827523f10db9020a99b895 = Assets/Materials/Textures/UI/Title.png
@@ -116,7 +114,6 @@ fae54c3c88968df8abe629c2889be7bd = Assets/Textures/steering_black.png
 0xb73c94c3b09fe66b -   13203591775746254443 - TinyRacing.ButtonRightTag
 0xba8a47d9cfdd9315 -   13441635038661546773 - Unity.Tiny.Audio.Audio2dPanning
 0xbcbe4bdfd4054e4f -   13600391349412384335 - Unity.Tiny.Audio.AudioListener
-0xbd9ccc7da6c9e1d8 -   13663020209576468952 - Unity.Tiny.Audio.AudioPitch
 0xbdffac2ef43682e8 -   13690850709895283432 - Unity.Tiny.Audio.AudioSource
 0xc00f091094163833 -   13839290146741434419 - TinyRacing.UINumbers
 0xc0cfecf96348f1ed -   13893583931318006253 - Unity.Tiny.Rendering.LitMaterial
