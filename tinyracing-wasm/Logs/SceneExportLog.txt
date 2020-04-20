@@ -9,6 +9,7 @@ e8dd3b7d26fd6d16eb6c749cc33d21d8 = Assets/Audio/Crash.mp3
 5c90673fe46cd9125560e1c0b05c3d66 = Assets/Audio/Music.mp3
 c191d79e762a5c56d7e4141a47a07d47 = Assets/Audio/Powerup.mp3
 a5b5006c295bac1813f192b14f6259f6 = Assets/Materials/Textures/Billboard.png
+92a363cf78186758660d3cfac4efb50e = Assets/Materials/Textures/Billboard2.png
 5801b2ed664acb1ae42f8a5bcdcd64e8 = Assets/Materials/Textures/Cone.png
 8df76df07a7373d6c0ad5c99f80b90e8 = Assets/Materials/Textures/Oil.png
 280810710d6f05853ec42a19b495f691 = Assets/Materials/Textures/UI/made-with-unity.png
@@ -54,6 +55,7 @@ fae54c3c88968df8abe629c2889be7bd = Assets/Textures/steering_black.png
 0x1973289d3a305310 -    1833854129021145872 - Unity.Tiny.ConfigurationTag
 0x1c9f29b36fbbe74b -    2062413005009446731 - TinyRacing.Race
 0x20b245c491cdefee -    2356022265630289902 - Unity.Transforms.Rotation
+0x234bfb148ae59828 -    2543402480228997160 - Unity.Physics.PhysicsGravityFactor
 0x23a9cb538791a1b0 -    2569808622008770992 - TinyRacing.AI
 0x23ef028ae7362020 -    2589291106369151008 - Unity.Tiny.Audio.AudioClip
 0x265a1e670469f7dd -    2763554749149738973 - Unity.Tiny.Rendering.VertexShaderBinData
@@ -84,6 +86,7 @@ fae54c3c88968df8abe629c2889be7bd = Assets/Textures/steering_black.png
 0x69cb2cf63bf18b03 -    7623236230333958915 - Unity.Tiny.Audio.AudioDistanceAttenuation
 0x6edd745e641dcda7 -    7988669262780550567 - Unity.Tiny.Image2DLoadFromFile
 0x70e3dc0b284144d5 -    8134587292439364821 - Unity.Tiny.Rendering.SimpleMaterial
+0x7107dc50024a9b17 -    8144720687316769559 - Unity.Entities.Disabled
 0x7858cc430a5bd1c6 -    8671905670810554822 - Unity.Tiny.Particles.EmitterInitialRotation
 0x79c43ba8b53ae1d5 -    8774203569805648341 - Unity.Tiny.Audio.AudioClipLoadFromFile
 0x82c26d3bcc21f880 -    9422213474007775360 - Unity.Tiny.Rendering.AutoMovingDirectionalLight
