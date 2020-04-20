@@ -37,6 +37,8 @@ af72d1c4fd8e9b256dff946a8bcfbdfb = Assets/Textures/Number9.png
 c5ec4e826e38ad1393950d34d5dc9bde = Assets/Textures/PressAnyKeyToStart.png
 fae54c3c88968df8abe629c2889be7bd = Assets/Textures/steering_black.png
 673786bc8e761f5387642af81bc5c7cd = Assets/Textures/steering_white.png
+386fab0b7f8e49b2fbbe801bc38519ee = Assets/Tiger/Materials/NormalMap.png
+89b92b2f3c5ae096680bf58021572ace = Assets/Tiger/Materials/texture.png
 46b433b264c69cbd39f04ad2e5d12be8 = Configuration
 
 
