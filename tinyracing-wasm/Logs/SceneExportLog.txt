@@ -8,6 +8,7 @@ e8dd3b7d26fd6d16eb6c749cc33d21d8 = Assets/Audio/Crash.mp3
 21a79c78c300a01e53c54143596595d1 = Assets/Audio/Motor.mp3
 5c90673fe46cd9125560e1c0b05c3d66 = Assets/Audio/Music.mp3
 c191d79e762a5c56d7e4141a47a07d47 = Assets/Audio/Powerup.mp3
+a231530df51c114f1c3a544eb8b9c051 = Assets/DigitalKonstrukt/Prototyping_Pack_Free/Resources/Textures/proto_1.png
 a5b5006c295bac1813f192b14f6259f6 = Assets/Materials/Textures/Billboard.png
 92a363cf78186758660d3cfac4efb50e = Assets/Materials/Textures/Billboard2.png
 5801b2ed664acb1ae42f8a5bcdcd64e8 = Assets/Materials/Textures/Cone.png
