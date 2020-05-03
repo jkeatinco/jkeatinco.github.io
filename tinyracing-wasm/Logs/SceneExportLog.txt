@@ -95,6 +95,7 @@ fae54c3c88968df8abe629c2889be7bd = Assets/Textures/steering_black.png
 0x82c26d3bcc21f880 -    9422213474007775360 - Unity.Tiny.Rendering.AutoMovingDirectionalLight
 0x85448609e5fbc174 -    9602947682532049268 - Unity.Tiny.Rendering.MeshBounds
 0x879bf9259e401d9e -    9771677756474531230 - Unity.Tiny.Image2D
+0x8884a5c469a59a68 -    9837169749088639592 - Unity.Tiny.Rendering.SimpleMeshRenderData
 0x89b80e63451ee5d6 -    9923697598435091926 - TinyRacing.Smoke
 0x8bc804b860f09388 -   10072305756560987016 - Unity.Physics.PhysicsVelocity
 0x93059436a0bc9a51 -   10594036660804819537 - Unity.Entities.Prefab
