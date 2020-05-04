@@ -1,53 +1,49 @@
 [     0s] Build frontend of artifacts\buildprogram\buildprogram_buildprogram.dag ran (build file timestamp changed: ../PackageCache/com.unity.dots.runtime@0.24.0-preview.1/bee~/BuildProgramBuildProgramSources)
 [BUSY 6s] Csc artifacts/buildprogram/buildprogram_buildprogram.exe (+2 others)
-[4/6 11s] Csc artifacts/buildprogram/buildprogram_buildprogram.exe (+2 others)
+[4/6  8s] Csc artifacts/buildprogram/buildprogram_buildprogram.exe (+2 others)
 [     0s] Destroying Roslyn Shared Compiler Server
-[    13s] Build frontend of artifacts\buildprogram\tundra_buildprogram.dag ran (build file timestamp changed: ../PackageCache/com.unity.dots.runtime@0.24.0-preview.1/bee~/BuildProgramBuildProgramSources)
-[ 1/13  0s] CSProject D:/Unity/ProjectTinySamples-master/TinyRacing/Library/PackageCache/com.unity.dots.runtime@0.24.0-preview.1/bee~/BuildProgramBuildProgramSources/buildprogrambuildprogram.gen.csproj
+[    10s] Build frontend of artifacts\buildprogram\tundra_buildprogram.dag ran (build file timestamp changed: ../PackageCache/com.unity.dots.runtime@0.24.0-preview.1/bee~/BuildProgramBuildProgramSources)
+[ 7/13  0s] CSProject D:/Unity/ProjectTinySamples-master/TinyRacing/Library/PackageCache/com.unity.dots.runtime@0.24.0-preview.1/bee~/BuildProgramBuildProgramSources/buildprogrambuildprogram.gen.csproj
 [BUSY   6s] Csc artifacts/buildprogrambuildprogram.exe/Release/buildprogrambuildprogram.exe (+2 others)
-[11/13 13s] Csc artifacts/buildprogrambuildprogram.exe/Release/buildprogrambuildprogram.exe (+2 others)
+[11/13 15s] Csc artifacts/buildprogrambuildprogram.exe/Release/buildprogrambuildprogram.exe (+2 others)
 [       0s] Destroying Roslyn Shared Compiler Server
 Warning: BuildConfiguration 'tinyracing-wasm' specified 'EnableBurst', but target (wasm) does not support burst yet. Not using burst.
 No asmdef found for Unity.Tiny.Interpolation
 No asmdef found for Unity.ZeroJobs
-[       2s] Executed build program. Created build graph with 1136 nodes.
-[    31s] Build frontend of artifacts\tundra_tinyracing-wasm_tag.dag ran (build file timestamp changed: ../PackageCache/com.unity.dots.runtime@0.24.0-preview.1/bee~/BuildProgramBuildProgramSources)
-[           0s] Delete 7 artifact files that are no longer in use. (like ..\..\Builds\tinyracing-wasm\Data\c191d79e762a5c56d7e4141a47a07d47)
-[  17/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/c8d2de3e6bc4aa1b85594883919778f3
-[  18/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/fae54c3c88968df8abe629c2889be7bd
-[  19/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ab0761da2a51c32e2615a68509584819
-[  20/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2d64951bcbe1207bbc4428bd48372e6e
-[  21/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/7e32ce129f8c57e7e00f7c1fa375250b
-[  22/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/46b433b264c69cbd39f04ad2e5d12be8
-[  23/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/673786bc8e761f5387642af81bc5c7cd
-[  24/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/97162039e7f37ef4ca7440c5715f50be
-[  25/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/bc3c5d55c3bacd14b54a3db8cf949399
-[  26/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/909c715064827523f10db9020a99b895
-[  27/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/c5ec4e826e38ad1393950d34d5dc9bde
-[  28/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/280810710d6f05853ec42a19b495f691
-[  29/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/449946fd57371d5c42920bb00a50bf55
-[  30/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/4b36d6ee6514da05751d9686ff3da9ae
-[  31/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b25e8cbe0c495400f8c59808b247e69a
-[  32/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/a231530df51c114f1c3a544eb8b9c051
-[  33/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/386fab0b7f8e49b2fbbe801bc38519ee
-[  34/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/a5b5006c295bac1813f192b14f6259f6
-[  35/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/89b92b2f3c5ae096680bf58021572ace
-[  36/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/92a363cf78186758660d3cfac4efb50e
-[  37/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/aab797e9eec8805fb0b0a05e06091af9
-[  38/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ffaa5d7921d081cd42b1cc4d188f317a
-[  39/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/af72d1c4fd8e9b256dff946a8bcfbdfb
-[  40/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/65d5fbc38183100ec77bafab84861788
-[  41/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b428c1199fcb250b43ecc6508f5c7933
-[  42/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ad9f50e074e96e6dcb06e0d003872bba
-[  43/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/fb938b7923ddc981c8055f0083baa709
-[  44/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/d85957014e39ac2b6633b84bfe644da6
-[  45/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/f24cae80b439bd77d3d4a0431ad79207
-[  48/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/6f8a0afafeb011d229556ecb72b64f2b
-[  55/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2cd9007690621096b89af05f593f8663
-[  56/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2de1e48a0df415974f1e4ab70eee6a39
-[  61/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/5b670003415d5cee62e802c8835f9b6a
-[  65/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/d3ec4d9e4ef0f636d0cca73b5ebfe80f
-[  66/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b70f45140f925850edf80c4bfc55c293
-[  90/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b125e80a461b2aff3c19ae88268c26c2
-[ 113/1108  0s] CopyTool ../../Builds/tinyracing-wasm/Data/6a2e3521eb2c61916960fbf40b0f628a
-*** Bee build success (37.08 seconds), 37 items updated
+[       1s] Executed build program. Created build graph with 1137 nodes.
+[    28s] Build frontend of artifacts\tundra_tinyracing-wasm_tag.dag ran (build file timestamp changed: ../PackageCache/com.unity.dots.runtime@0.24.0-preview.1/bee~/BuildProgramBuildProgramSources)
+[  17/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2d64951bcbe1207bbc4428bd48372e6e
+[  18/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/673786bc8e761f5387642af81bc5c7cd
+[  19/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/fae54c3c88968df8abe629c2889be7bd
+[  20/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/7e32ce129f8c57e7e00f7c1fa375250b
+[  21/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/449946fd57371d5c42920bb00a50bf55
+[  22/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/bc3c5d55c3bacd14b54a3db8cf949399
+[  23/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ab0761da2a51c32e2615a68509584819
+[  23/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/c8d2de3e6bc4aa1b85594883919778f3
+[  25/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/97162039e7f37ef4ca7440c5715f50be
+[  26/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/46b433b264c69cbd39f04ad2e5d12be8
+[  27/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/909c715064827523f10db9020a99b895
+[  28/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/4b36d6ee6514da05751d9686ff3da9ae
+[  29/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/89b92b2f3c5ae096680bf58021572ace
+[  30/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/a5b5006c295bac1813f192b14f6259f6
+[  31/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/92a363cf78186758660d3cfac4efb50e
+[  32/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ffaa5d7921d081cd42b1cc4d188f317a
+[  33/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b25e8cbe0c495400f8c59808b247e69a
+[  34/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/a231530df51c114f1c3a544eb8b9c051
+[  35/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/280810710d6f05853ec42a19b495f691
+[  36/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/386fab0b7f8e49b2fbbe801bc38519ee
+[  37/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/aab797e9eec8805fb0b0a05e06091af9
+[  38/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/c5ec4e826e38ad1393950d34d5dc9bde
+[  39/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/fb938b7923ddc981c8055f0083baa709
+[  40/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/d85957014e39ac2b6633b84bfe644da6
+[  41/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/af72d1c4fd8e9b256dff946a8bcfbdfb
+[  42/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/65d5fbc38183100ec77bafab84861788
+[  47/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/6f8a0afafeb011d229556ecb72b64f2b
+[  48/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b428c1199fcb250b43ecc6508f5c7933
+[  49/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ad9f50e074e96e6dcb06e0d003872bba
+[ 120/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2de1e48a0df415974f1e4ab70eee6a39
+[ 121/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2cd9007690621096b89af05f593f8663
+[ 122/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/f24cae80b439bd77d3d4a0431ad79207
+[ 254/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/5b670003415d5cee62e802c8835f9b6a
+[ 263/1109  0s] CopyTool ../../Builds/tinyracing-wasm/Data/24ef48214de113ba419eee45e040a061
+*** Bee build success (38.06 seconds), 34 items updated
