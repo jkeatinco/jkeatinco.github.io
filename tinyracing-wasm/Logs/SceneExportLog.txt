@@ -1,7 +1,8 @@
 ::Exported Assets::
 24ef48214de113ba419eee45e040a061 = Assets/Audio/195954__minian89__death-blood-splatter.mp3
 1d9969205b767c02f4ccc85e6f3ff640 = Assets/Audio/344903__aegersum__monster-deep-growl.wav
-d3ec4d9e4ef0f636d0cca73b5ebfe80f = Assets/Audio/485076__inspectorj__heartbeat-regular-single-01-01-loop.wav
+b18e97dacd408d961812496fdad3909a = Assets/Audio/391508__the-funktasm__voice-engine.wav
+dc144f8f2f1264184d3e823fb8527e02 = Assets/Audio/439410__asteroiderer__putrid-heartbeat.wav
 6a2e3521eb2c61916960fbf40b0f628a = Assets/Audio/81042__rock-savage__blood-hitting-window.wav
 b70f45140f925850edf80c4bfc55c293 = Assets/Audio/bensound-evolution.mp3
 cc88be905fec3e173243deb46efd885a = Assets/Audio/Countdown.mp3
