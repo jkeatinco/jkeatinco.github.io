@@ -13,6 +13,7 @@ b125e80a461b2aff3c19ae88268c26c2 = Assets/Audio/Powerup13.wav
 a231530df51c114f1c3a544eb8b9c051 = Assets/DigitalKonstrukt/Prototyping_Pack_Free/Resources/Textures/proto_1.png
 a5b5006c295bac1813f192b14f6259f6 = Assets/Materials/Textures/Billboard.png
 92a363cf78186758660d3cfac4efb50e = Assets/Materials/Textures/Billboard2.png
+44197f2c816ba8b34207bcc05a762bdc = Assets/Materials/Textures/Billboard3.png
 b25e8cbe0c495400f8c59808b247e69a = Assets/Materials/Textures/Blood.png
 280810710d6f05853ec42a19b495f691 = Assets/Materials/Textures/UI/made-with-unity.png
 909c715064827523f10db9020a99b895 = Assets/Materials/Textures/UI/Title.png
