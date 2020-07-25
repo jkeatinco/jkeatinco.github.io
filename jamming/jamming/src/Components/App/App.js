@@ -5,6 +5,8 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 import TopArtists from '../TopArtists/TopArtists';
+import TopSearchResults from '../TopSearchResults/TopSearchResults';
+import Login from '../Login/Login';
 import Spotify from '../../util/Spotify';
 
 class App extends React.Component {
@@ -13,8 +15,10 @@ class App extends React.Component {
 
     this.state = {
       searchResults: [],
-      playlistName: 'My Playlist',
-      playlistTracks: []
+      playlistName: 'Your SpottyPotty Playlist',
+      playlistTracks: [],
+      items:[],
+      topSearchResults: []
     };
 
     this.addTrack = this.addTrack.bind(this);
@@ -50,7 +54,7 @@ class App extends React.Component {
     const trackUris = this.state.playlistTracks.map(track => track.uri);
     Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
       this.setState( {
-        playlistName: 'New Playlist',
+        playlistName: 'Your SpottyPotty Playlist',
         playlistTracks: []
       })
     })
@@ -62,29 +66,53 @@ class App extends React.Component {
     })
   }
 
+  
+
   topArtists() {
-    Spotify.topArtists();
+    Spotify.topArtists().then(playlistTracks => {
+      this.setState({ playlistTracks: playlistTracks});
+    });
   }
 
   render() {
     return (
       <div>
-        <h1>Ja<span className="highlight">mmm</span>ing</h1>
+        <h1>🚽 Spotty<span className="highlight">Potty</span></h1>
         <div className="App">
-          <SearchBar onSearch={this.search}/>
+          <Login playlistName={this.state.playlistName}
+            playlistTracks={this.state.playlistTracks}
+            onRemove={this.removeTrack}
+            onNameChange={this.updatePlaylistName}
+            onTopArtist={this.topArtists} />
+          {/* <SearchBar onSearch={this.search}/> */}
+          <TopArtists playlistName={this.state.playlistName}
+            playlistTracks={this.state.playlistTracks}
+            onRemove={this.removeTrack}
+            onNameChange={this.updatePlaylistName}
+            onTopArtist={this.topArtists}
+            onSave={this.savePlaylist} />
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults}
+            {/* <SearchResults searchResults={this.state.searchResults}
                            onAdd={this.addTrack} />
+            <TopSearchResults topSearchResults={this.state.topSearchResults}
+              onAdd={this.addTrack} /> */}
             <Playlist playlistName = {this.state.playlistName}
                       playlistTracks = {this.state.playlistTracks}
                       onRemove={this.removeTrack}
                       onNameChange={this.updatePlaylistName}
                       onSave={this.savePlaylist} />
-            <TopArtists playlistName={this.state.playlistName}
-              playlistTracks={this.state.playlistTracks}
-              onRemove={this.removeTrack}
-              onNameChange={this.updatePlaylistName}
-              onTopArtist={this.topArtists} />
+          </div>
+          <div className="footerdiv"><p>🤟 from the 🚽 by <a href="https://twitter.com/jkeatin" target="_blank">@jkeatin</a></p></div>
+
+         
+          <div id="myModal" className="modal">
+
+                    
+            <div className="modal-content">
+              <span className="close">&times;</span>
+              <h2 className="modal-text"> Your SpottyPotty Playlist was Saved! 🙌</h2>
+            </div>
+
           </div>
         </div>
       </div>

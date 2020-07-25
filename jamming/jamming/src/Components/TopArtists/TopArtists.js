@@ -2,9 +2,9 @@ import React from 'react';
 
 import './TopArtists.css';
 
-import TrackList from '../TrackList/TrackList';
+import ArtistList from '../ArtistList/ArtistList';
 
-class Playlist extends React.Component {
+class TopArtists extends React.Component {
 
     constructor(props) {
         super(props);
@@ -20,16 +20,16 @@ class Playlist extends React.Component {
 
     render() {
         return (
-            <div className="Playlist">
+            <div className="TopArtists">
                 
-                <input defaultValue={"New Playlist"} onChange={this.handleNameChange} />
-                <TrackList tracks={this.props.playlistTracks}
+                {/* <input defaultValue={"New Playlist"} onChange={this.handleNameChange} /> */}
+                {/* <ArtistList items={this.props.ArtistList}
                     onRemove={this.props.onRemove}
-                    isRemoval={true} />
-                <button className="Playlist-save" onClick={this.props.onTopArtist} >SHOW TOP ARTISTS</button>
+                    isRemoval={true} /> */}
+                <button className="TopArtists-save" onClick={this.props.onTopArtist} >SHOW YOUR TOP ARTISTS TOP SONGS</button>
             </div>
         )
     }
 }
 
-export default Playlist;
+export default TopArtists;
