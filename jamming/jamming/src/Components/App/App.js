@@ -18,7 +18,8 @@ class App extends React.Component {
       playlistName: 'Your SpottyPotty Playlist',
       playlistTracks: [],
       items:[],
-      topSearchResults: []
+      topSearchResults: [],
+      display_name:'🤠 Howdy! Looks like you still need to login 😊.'
     };
 
     this.addTrack = this.addTrack.bind(this);
@@ -27,6 +28,7 @@ class App extends React.Component {
     this.savePlaylist = this.savePlaylist.bind(this);
     this.search = this.search.bind(this);
     this.topArtists = this.topArtists.bind(this);
+    this.login = this.login.bind(this);
   }
 
   addTrack(track) {
@@ -74,6 +76,25 @@ class App extends React.Component {
     });
   }
 
+  login() {
+    Spotify.login().then(display_name => {
+      console.log(display_name);
+      this.setState({
+        display_name: "🤠 Howdy " + display_name + "! You can now show your top artists' tracks by pressing the button below. After that, your playlist will be full of 100 sweet songs that you can then save to a playlist if you want 😊. Feel free to rename the playlist to your ❤️s content as well."});
+    });
+  }
+
+  componentDidMount() {
+    if (window.location.href.indexOf("access_token") > -1) {
+      Spotify.login().then(display_name => {
+        console.log(display_name);
+        this.setState({
+          display_name: "🤠 Howdy " + display_name + "! You can now show your top artists' tracks by pressing the button below. After that, your playlist will be full of 100 sweet songs that you can then save to a playlist if you want 😊. Feel free to rename the playlist to your ❤️s content as well."
+        });
+      });
+    }
+  }
+
   render() {
     return (
       <div>
@@ -83,7 +104,8 @@ class App extends React.Component {
             playlistTracks={this.state.playlistTracks}
             onRemove={this.removeTrack}
             onNameChange={this.updatePlaylistName}
-            onTopArtist={this.topArtists} />
+            onLogin={this.login}
+            display_name={this.state.display_name} />
           {/* <SearchBar onSearch={this.search}/> */}
           <TopArtists playlistName={this.state.playlistName}
             playlistTracks={this.state.playlistTracks}

@@ -40,18 +40,12 @@ const Spotify = {
             }).then(response => {
                 return response.json();
             }).then(jsonResponse => {
-                if (!jsonResponse.items) {
+                if (!jsonResponse.display_name) {
                     return [];
                 }
                 console.log(jsonResponse);
-                return jsonResponse.items.map(items => ({
-                    id: items.id,
-                    name: items.name
-
-                    // artist: track.artists[0].name,
-                    // album: track.album.name,
-                    // uri: track.uri
-                }))
+                console.log(jsonResponse.display_name);
+                return jsonResponse.display_name;
             })
     },
 

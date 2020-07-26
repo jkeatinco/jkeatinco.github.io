@@ -11,7 +11,7 @@ class LoginList extends React.Component {
 
         this.state = {
            
-            items: [],
+            display_name: this.props.display_name,
           
         };
     }
@@ -20,9 +20,9 @@ class LoginList extends React.Component {
         return (
             <div className="LoginList">
                 {
-                    this.props.items.map(item => {
-                        return <Login item={item} key={item.id} onAdd={this.props.onAdd} onRemove={this.props.onRemove}isRemoval={this.props.isRemoval} />
-                    })
+                   <Login display_name={this.props.display_name} />
+                        // <Login items={display_name} key={items.id} onAdd={this.props.onAdd} onRemove={this.props.onRemove}isRemoval={this.props.isRemoval} />
+                   
                 }
             </div>
         )
