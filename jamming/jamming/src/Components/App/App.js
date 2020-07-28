@@ -80,7 +80,7 @@ class App extends React.Component {
     Spotify.login().then(display_name => {
       console.log(display_name);
       this.setState({
-        display_name: "🤠 Howdy " + display_name + "! You can now show your top artists' tracks by pressing the button below. After that, your playlist will be full of 100 sweet songs that you can then save to a playlist if you want 😊. Feel free to rename the playlist to your ❤️s content as well."});
+        display_name: "🤠 Howdy " + display_name + "! You can now show your top artists' tracks by pressing the button below. After that, your playlist will be full of 100 sweet songs that you can then save to Spotify if you want 😊. Feel free to rename the playlist to your ❤️s content as well."});
     });
   }
 
@@ -89,7 +89,7 @@ class App extends React.Component {
       Spotify.login().then(display_name => {
         console.log(display_name);
         this.setState({
-          display_name: "🤠 Howdy " + display_name + "! You can now show your top artists' tracks by pressing the button below. After that, your playlist will be full of 100 sweet songs that you can then save to a playlist if you want 😊. Feel free to rename the playlist to your ❤️s content as well."
+          display_name: "🤠 Howdy " + display_name + "! You can now show your top artists' tracks by pressing the button below. After that, your playlist will be full of 100 sweet songs that you can then save to Spotify if you want 😊. Feel free to rename the playlist to your ❤️s content as well."
         });
       });
     }
@@ -130,11 +130,10 @@ class App extends React.Component {
           <div id="myModal" className="modal">
 
                     
-            <div className="modal-content">
+            <div id="spottyPottySaved" className="modal-content">
               <span className="close">&times;</span>
-              <h2 className="modal-text"> Your SpottyPotty Playlist was Saved! 🙌</h2>
+              <h2 className="modal-text"> Your SpottyPotty Playlist was Saved! 🙌</h2><br></br>
             </div>
-
           </div>
         </div>
       </div>

@@ -95,12 +95,23 @@ const Spotify = {
 
             }).then(response => response.json()
             ).then(jsonResponse => {
+                console.log(jsonResponse);
                 const playlistId = jsonResponse.id;
+                const playlistLink = jsonResponse.external_urls.spotify;
+                console.log(playlistLink);
                 // Get the modal
                 var modal = document.getElementById("myModal");
 
                 // Get the button that opens the modal
                 var btn = document.getElementById("myBtn");
+
+                // append playlist link button to modal
+                function addPlaylistButton(link) {
+                    document.getElementById("spottyPottySaved").innerHTML +=
+                        "<div class='btnshare'><a class='playlistbtn' target='_blank' href='" + link + "'>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=" + link + "'>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url=" + link +"'>Share Playlist on Twitter</a></div>";
+                } 
+
+                addPlaylistButton(playlistLink);
 
                 // Get the <span> element that closes the modal
                 var span = document.getElementsByClassName("close")[0];
@@ -334,6 +345,14 @@ const Spotify = {
                             album: tracks.album.name,
                             uri: tracks.uri
                         }))
+                        //How to Grab first two tracks for next playlist
+                        // var a = value[0].tracks.slice(0, 2).map(tracks => ({
+                        //     id: tracks.id,
+                        //     name: tracks.name,
+                        //     artist: tracks.artists[0].name,
+                        //     album: tracks.album.name,
+                        //     uri: tracks.uri
+                        // }))
                         var b = value[1].tracks.map(tracks => ({
                             id: tracks.id,
                             name: tracks.name,

@@ -108,6 +108,36 @@ a {
   cursor: pointer;
 } 
 
+.btnshare {
+  display: block;
+  /* flex-direction: column; */
+  align-items: center;
+  /* width: 37%; */
+  width:100%;
+  max-height: 950px;
+  padding: 1.27rem 0rem 1.27rem 0rem;
+}
+
+.playlistbtn {
+  cursor: pointer;
+  width: 10rem;
+  padding: .77rem;
+  border-radius: 54px;
+  border-width: 0px;
+  margin-top: 1.27rem;
+  background-color: #6c41ec;
+  text-align: center;
+  font-size: .83rem;
+  transition: background-color .25s;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.playlistbtn:hover {
+  background-color: rgba(108, 65, 233, .7);
+}
+
 
 @media only screen and (max-width: 1020px) {
   .App-playlist {
