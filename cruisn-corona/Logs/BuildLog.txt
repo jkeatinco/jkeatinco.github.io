@@ -1,34 +1,61 @@
-[  17/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/7e32ce129f8c57e7e00f7c1fa375250b
-[  18/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/673786bc8e761f5387642af81bc5c7cd
-[  19/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2d64951bcbe1207bbc4428bd48372e6e
-[  20/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/fae54c3c88968df8abe629c2889be7bd
-[  21/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ab0761da2a51c32e2615a68509584819
+[  17/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2d64951bcbe1207bbc4428bd48372e6e
+[  18/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/7e32ce129f8c57e7e00f7c1fa375250b
+[  19/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/fae54c3c88968df8abe629c2889be7bd
+[  20/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ab0761da2a51c32e2615a68509584819
+[  21/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/673786bc8e761f5387642af81bc5c7cd
 [  22/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/c8d2de3e6bc4aa1b85594883919778f3
 [  23/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/46b433b264c69cbd39f04ad2e5d12be8
 [  24/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/97162039e7f37ef4ca7440c5715f50be
-[  25/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/909c715064827523f10db9020a99b895
-[  26/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/280810710d6f05853ec42a19b495f691
-[  27/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/449946fd57371d5c42920bb00a50bf55
-[  28/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/bc3c5d55c3bacd14b54a3db8cf949399
+[  25/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/bc3c5d55c3bacd14b54a3db8cf949399
+[  26/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/449946fd57371d5c42920bb00a50bf55
+[  27/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/909c715064827523f10db9020a99b895
+[  28/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/280810710d6f05853ec42a19b495f691
 [  29/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/c5ec4e826e38ad1393950d34d5dc9bde
-[  30/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/4b36d6ee6514da05751d9686ff3da9ae
-[  31/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b25e8cbe0c495400f8c59808b247e69a
+[  30/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b25e8cbe0c495400f8c59808b247e69a
+[  31/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/4b36d6ee6514da05751d9686ff3da9ae
 [  32/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/a231530df51c114f1c3a544eb8b9c051
-[  33/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/8da8aef51b2df77538152be1b6c7ed85
-[  34/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/89b92b2f3c5ae096680bf58021572ace
-[  35/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ce2e108f334f51292a6908fb76e84d97
-[  36/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ffaa5d7921d081cd42b1cc4d188f317a
-[  37/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/af72d1c4fd8e9b256dff946a8bcfbdfb
-[  38/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/aab797e9eec8805fb0b0a05e06091af9
-[  39/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/fb938b7923ddc981c8055f0083baa709
-[  40/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/f479323bf6385c94d592af86128218f9
+[  33/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/89b92b2f3c5ae096680bf58021572ace
+[  34/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ce2e108f334f51292a6908fb76e84d97
+[  35/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/f479323bf6385c94d592af86128218f9
+[  36/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/8da8aef51b2df77538152be1b6c7ed85
+[  37/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ffaa5d7921d081cd42b1cc4d188f317a
+[  38/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/af72d1c4fd8e9b256dff946a8bcfbdfb
+[  39/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/aab797e9eec8805fb0b0a05e06091af9
+[  40/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/6f8a0afafeb011d229556ecb72b64f2b
 [  41/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/d85957014e39ac2b6633b84bfe644da6
-[  42/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/f24cae80b439bd77d3d4a0431ad79207
-[  49/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/6f8a0afafeb011d229556ecb72b64f2b
-[  77/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/65d5fbc38183100ec77bafab84861788
-[  99/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b428c1199fcb250b43ecc6508f5c7933
-[ 110/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ad9f50e074e96e6dcb06e0d003872bba
-[ 117/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/5b670003415d5cee62e802c8835f9b6a
-[ 162/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2de1e48a0df415974f1e4ab70eee6a39
-[ 418/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2cd9007690621096b89af05f593f8663
-*** Bee build success (0.42 seconds), 33 items updated
+[  42/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/65d5fbc38183100ec77bafab84861788
+[  43/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/fb938b7923ddc981c8055f0083baa709
+[  44/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/f24cae80b439bd77d3d4a0431ad79207
+[  45/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b428c1199fcb250b43ecc6508f5c7933
+[  46/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/ad9f50e074e96e6dcb06e0d003872bba
+[  47/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2de1e48a0df415974f1e4ab70eee6a39
+[  48/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/5b670003415d5cee62e802c8835f9b6a
+[  49/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/2cd9007690621096b89af05f593f8663
+[  50/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/098c74280f80096dcf50d92fa1484deb
+[  51/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/cc88be905fec3e173243deb46efd885a
+[  52/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/51b52cadad3c41c5752859ef350ac315
+[  53/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b70f45140f925850edf80c4bfc55c293
+[  56/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b125e80a461b2aff3c19ae88268c26c2
+[  71/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/6a2e3521eb2c61916960fbf40b0f628a
+[  74/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/dc144f8f2f1264184d3e823fb8527e02
+[ 153/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/1d9969205b767c02f4ccc85e6f3ff640
+[ 553/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/24ef48214de113ba419eee45e040a061
+[ 657/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/c8500991b703a916bc00cabe6aeac970
+[ 659/1110  0s] CopyTool ../../Builds/tinyracing-wasm/Data/b18e97dacd408d961812496fdad3909a
+[1036/1110  1s] Csc artifacts/TinyRacing.dll/tinyracing-wasm/TinyRacing.dll (+2 others)
+[1037/1110  1s] ILPostProcessorRunner artifacts/TinyRacing/tinyracing-wasm/post_ilprocessing/TinyRacing.dll (+pdb)
+[1038/1110  3s] TypeRegGen artifacts/TinyRacing/tinyracing-wasm/post_typereg/TinyRacing.dll (+69 others)
+[1039/1110  5s] UnityLinker artifacts/TinyRacing/tinyracing-wasm_stripped/TinyRacing.dll (+69 others)
+[BUSY       6s] Il2Cpp artifacts/TinyRacing/tinyracing-wasm_stripped/il2cpp-src/driver.cpp (+63 others)
+[1040/1110 13s] Il2Cpp artifacts/TinyRacing/tinyracing-wasm_stripped/il2cpp-src/driver.cpp (+63 others)
+Running il2cpp.exe in server GC mode.
+[1104/1110  4s] C_WebGL_wasm artifacts/TinyRacing/tinyracing-wasm/ydfs/TinyRacing.o
+[BUSY       6s] Link_WebGL_wasm artifacts/TinyRacing/tinyracing-wasm/TinyRacing.html (+wasm,js)
+[BUSY      16s] Link_WebGL_wasm artifacts/TinyRacing/tinyracing-wasm/TinyRacing.html (+wasm,js)
+[BUSY      26s] Link_WebGL_wasm artifacts/TinyRacing/tinyracing-wasm/TinyRacing.html (+wasm,js)
+[1105/1110 32s] Link_WebGL_wasm artifacts/TinyRacing/tinyracing-wasm/TinyRacing.html (+wasm,js)
+[1106/1110  0s] CopyTool ../../Builds/tinyracing-wasm/TinyRacing.wasm
+[1107/1110  0s] CopyTool ../../Builds/tinyracing-wasm/TinyRacing.js
+[1108/1110  0s] CopyTool ../../Builds/tinyracing-wasm/TinyRacing.html
+[           0s] Destroying Roslyn Shared Compiler Server
+*** Bee build success (65.09 seconds - 0:01:05), 54 items updated
