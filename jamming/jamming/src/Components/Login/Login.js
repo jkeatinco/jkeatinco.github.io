@@ -47,8 +47,8 @@ class Login extends React.Component {
                     {/* <h3>{this.props.item.name}</h3>
                     <p>{this.props.item.id}</p> */}
                 </div>
-                <p>While on the Spotty<span className="highlight">Potty</span> 🚽, easily create a playlist on your Spotify with the top 10 most popular songs from each of your top 10 most listened to artists. That is 100 songs of pure bliss. Just don't forget the 🧻.</p>
-                <button className="Login-login" onClick={this.props.onLogin} >LOGIN TO SPOTIFY</button>
+                <p>While on the Spotty<span className="highlight">Potty</span> 🚽, easily create a custom playlist on your Spotify with your top artists. Choose from either the new Christmas Playlist, 10 (Top Artists) x 10 (Top Artists Tracks) Playlist, or the NEW 50 (Top Artists) x 2 (Top Artists Tracks) Playlist. Just don't forget the 🧻.</p>
+                <button id="Login-Btn" className="Login-login" onClick={this.props.onLogin} >LOGIN TO SPOTIFY</button>
                 <p className="myNameDisplay">{this.props.display_name}</p>
             </div>
         )

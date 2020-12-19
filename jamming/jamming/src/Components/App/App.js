@@ -28,6 +28,8 @@ class App extends React.Component {
     this.savePlaylist = this.savePlaylist.bind(this);
     this.search = this.search.bind(this);
     this.topArtists = this.topArtists.bind(this);
+    this.topArtistsOld = this.topArtistsOld.bind(this);
+    this.topChristmas = this.topChristmas.bind(this);
     this.login = this.login.bind(this);
   }
 
@@ -72,15 +74,46 @@ class App extends React.Component {
 
   topArtists() {
     Spotify.topArtists().then(playlistTracks => {
-      this.setState({ playlistTracks: playlistTracks});
+      this.setState({ 
+        playlistName: '10 x 10 SpottyPotty Playlist',
+        playlistTracks: playlistTracks});
+    });
+  }
+
+  topArtistsOld() {
+    Spotify.topArtistsOld().then(playlistTracks => {
+      this.setState({ 
+        playlistName: '50 x 2 SpottyPotty Playlist',
+        playlistTracks: playlistTracks });
+    });
+  }
+
+  topChristmas() {
+    Spotify.topChristmas().then(playlistTracks => {
+      this.setState({ 
+        playlistName: 'Christmas SpottyPotty Playlist',
+        playlistTracks: playlistTracks });
     });
   }
 
   login() {
     Spotify.login().then(display_name => {
       console.log(display_name);
+
+      document.getElementById("Login-Btn").style.visibility = "hidden";
+
+      var playlistSaveBtns = document.getElementsByClassName('Playlist-save');
+      for (var i = 0; i < playlistSaveBtns.length; i++) {
+        playlistSaveBtns[i].style.visibility = "visible";
+      }
+
+      var playlistBtns = document.getElementsByClassName('TopArtists-save');
+      for (var i = 0; i < playlistBtns.length; i++) {
+        playlistBtns[i].style.visibility = "visible";
+      }
+
       this.setState({
-        display_name: "🤠 Howdy " + display_name + "! You can now show your top artists' tracks by pressing the button below. After that, your playlist will be full of 100 sweet songs that you can then save to Spotify if you want 😊. Feel free to rename the playlist to your ❤️s content as well."});
+        display_name: "🤠 Howdy " + display_name + "! You can now generate the SpottyPotty playlist of your choice by pressing one of the buttons below. After that, your playlist will be full of some sweet songs that you can then save to Spotify if you want 😊. Feel free to rename the playlist to your ❤️s content as well."});
     });
   }
 
@@ -88,8 +121,21 @@ class App extends React.Component {
     if (window.location.href.indexOf("access_token") > -1) {
       Spotify.login().then(display_name => {
         console.log(display_name);
+
+        document.getElementById("Login-Btn").style.visibility = "hidden";
+
+        var playlistSaveBtns = document.getElementsByClassName('Playlist-save');
+        for (var i = 0; i < playlistSaveBtns.length; i++) {
+          playlistSaveBtns[i].style.visibility = "visible";
+        }
+
+        var playlistBtns = document.getElementsByClassName('TopArtists-save');
+        for (var i = 0; i < playlistBtns.length; i++) {
+          playlistBtns[i].style.visibility = "visible";
+        }
+
         this.setState({
-          display_name: "🤠 Howdy " + display_name + "! You can now show your top artists' tracks by pressing the button below. After that, your playlist will be full of 100 sweet songs that you can then save to Spotify if you want 😊. Feel free to rename the playlist to your ❤️s content as well."
+          display_name: "🤠 Howdy " + display_name + "! You can now generate the SpottyPotty playlist of your choice by pressing one of the buttons below. After that, your playlist will be full of some sweet songs that you can then save to Spotify if you want 😊. Feel free to rename the playlist to your ❤️s content as well."
         });
       });
     }
@@ -112,6 +158,8 @@ class App extends React.Component {
             onRemove={this.removeTrack}
             onNameChange={this.updatePlaylistName}
             onTopArtist={this.topArtists}
+            onTopArtistOld={this.topArtistsOld}
+            onTopChristmas={this.topChristmas}
             onSave={this.savePlaylist} />
           <div className="App-playlist">
             {/* <SearchResults searchResults={this.state.searchResults}
@@ -127,14 +175,21 @@ class App extends React.Component {
           <div className="footerdiv"><p>🤟 from the 🚽 by <a href="https://twitter.com/jkeatin" target="_blank">@jkeatin</a></p></div>
 
          
-          <div id="myModal" className="modal">
-
-                    
+          <div id="myModal" className="modal">        
             <div id="spottyPottySaved" className="modal-content">
               <span className="close">&times;</span>
               <h2 className="modal-text"> Your SpottyPotty Playlist was Saved! 🙌</h2><br></br>
             </div>
           </div>
+
+          <div id="myModalloading" className="modal">
+            <div id="spottyPottyLoading" className="modal-content">
+              <span className="close">&times;</span>
+              <h2 className="modal-text"> 🎅 Santa is putting together your playlist... <i class="fas fa-sleigh fa-pulse"></i></h2><br></br>
+              <progress value="0" max="55" id="progressBar"></progress>
+            </div>
+          </div>
+
         </div>
       </div>
     )

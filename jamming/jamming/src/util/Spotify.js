@@ -6,7 +6,7 @@ let accessToken;
 const Spotify = {
 
     getAccessToken() {
-        if(accessToken) {
+        if (accessToken) {
             return accessToken;
         }
 
@@ -14,7 +14,7 @@ const Spotify = {
         const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
         const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
 
-        if(accessTokenMatch && expiresInMatch) {
+        if (accessTokenMatch && expiresInMatch) {
             accessToken = accessTokenMatch[1];
             const expiresIn = Number(expiresInMatch[1]);
             // this clears the parameters allowing us to grab a new access token when it expires
@@ -49,29 +49,29 @@ const Spotify = {
             })
     },
 
-    
+
     search(term) {
         const accessToken = Spotify.getAccessToken();
-        return fetch(`https://api.spotify.com/v1/artists/${term}/top-tracks?country=US`, 
-        {
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            }
-        }).then(response => {
-            return response.json();
-        }).then(jsonResponse => {
-            if (!jsonResponse.tracks) {
-                return [];
-            }
-            // console.log(jsonResponse);
-            return jsonResponse.tracks.map(track => ({
-                id: track.id,
-                name: track.name,
-                artist: track.artists[0].name,
-                album: track.album.name,
-                uri: track.uri
-            }))
-        })
+        return fetch(`https://api.spotify.com/v1/artists/${term}/top-tracks?country=US`,
+            {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            }).then(response => {
+                return response.json();
+            }).then(jsonResponse => {
+                if (!jsonResponse.tracks) {
+                    return [];
+                }
+                // console.log(jsonResponse);
+                return jsonResponse.tracks.map(track => ({
+                    id: track.id,
+                    name: track.name,
+                    artist: track.artists[0].name,
+                    album: track.album.name,
+                    uri: track.uri
+                }))
+            })
     },
 
     savePlaylist(name, trackUris) {
@@ -80,74 +80,127 @@ const Spotify = {
         }
 
         const accessToken = Spotify.getAccessToken();
-        const headers = { Authorization: `Bearer ${accessToken}`};
+        const headers = { Authorization: `Bearer ${accessToken}` };
         let userId;
 
-        return fetch(`https://api.spotify.com/v1/me`, {headers: headers}
+        return fetch(`https://api.spotify.com/v1/me`, { headers: headers }
         ).then(response => response.json()
         ).then(jsonResponse => {
             userId = jsonResponse.id;
-            return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, 
-            {
-                headers: headers,
-                method: 'POST',
-                body: JSON.stringify({ name: name})
-
-            }).then(response => response.json()
-            ).then(jsonResponse => {
-                console.log(jsonResponse);
-                const playlistId = jsonResponse.id;
-                const playlistLink = jsonResponse.external_urls.spotify;
-                console.log(playlistLink);
-                // Get the modal
-                var modal = document.getElementById("myModal");
-
-                // Get the button that opens the modal
-                var btn = document.getElementById("myBtn");
-
-                // append playlist link button to modal
-                function addPlaylistButton(link) {
-                    document.getElementById("spottyPottySaved").innerHTML +=
-                        "<div class='btnshare'><a class='playlistbtn' target='_blank' href='" + link + "'>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=" + link + "'>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url=" + link +"'>Share Playlist on Twitter</a></div>";
-                } 
-
-                addPlaylistButton(playlistLink);
-
-                // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("close")[0];
-
-                // When the user clicks on the button, open the modal
-                function myfunction () {
-                    modal.style.display = "block";
-                }
-                myfunction();
-
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function () {
-                    modal.style.display = "none";
-                }
-
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function (event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                } 
-
-                return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+            return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`,
                 {
                     headers: headers,
                     method: 'POST',
-                    body: JSON.stringify({ uris: trackUris})
+                    body: JSON.stringify({ name: name })
+
+                }).then(response => response.json()
+                ).then(jsonResponse => {
+                    console.log(jsonResponse);
+                    const playlistId = jsonResponse.id;
+                    const playlistLink = jsonResponse.external_urls.spotify;
+                    console.log(playlistLink);
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+
+                    // Get the button that opens the modal
+                    var btn = document.getElementById("myBtn");
+
+                    // append playlist link button to modal
+                    function addPlaylistButton(link) {
+                       
+                        document.getElementById("spottyPottySaved").innerHTML +=
+                            "<div class='btnshare'><a class='playlistbtn' target='_blank' href='" + link + "'>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=" + link + "'>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url=" + link + "'>Share Playlist on Twitter</a></div>";
+                    }
+                    // NEED TO REMOVE OLD LINK FIRST!!!!!!!!!!
+
+                    addPlaylistButton(playlistLink);
+
+                    // Get the <span> element that closes the modal
+                    var span = document.getElementsByClassName("close")[0];
+
+                    // When the user clicks on the button, open the modal
+                    function myfunction() {
+                        modal.style.display = "block";
+                    }
+                    myfunction();
+
+                    function removeElementsByClass(className) {
+                        var elements = document.getElementsByClassName(className);
+                        while (elements.length > 0) {
+                            elements[0].parentNode.removeChild(elements[0]);
+                        }
+                    }
+
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
+                        removeElementsByClass("btnshare");
+                        modal.style.display = "none";
+                    }
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                       
+                        if (event.target == modal) {
+                            removeElementsByClass("btnshare");
+                            modal.style.display = "none";
+                        }
+                    }
+
+                    return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+                        {
+                            headers: headers,
+                            method: 'POST',
+                            body: JSON.stringify({ uris: trackUris })
+                        })
                 })
-            })
         });
     },
 
     topArtists() {
+        // Get the modal
+        var modal = document.getElementById("myModalloading");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // append playlist link button to modal
+        // function loadingPlaylist() {
+        //     document.getElementById("spottyPottyLoading").innerHTML +=
+        //         "<div class='btnshare'><a class='playlistbtn' target='_blank' href=''>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u='>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url='>Share Playlist on Twitter</a></div>";
+        // }
+        // NEED TO REMOVE OLD LINK FIRST!!!!!!!!!!
+
+        // loadingPlaylist();
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        function myfunction() {
+            modal.style.display = "block";
+        }
+        myfunction();
+
+        // When the user clicks on the button, open the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
         const accessToken = Spotify.getAccessToken();
         let userId;
-        return fetch(`https://api.spotify.com/v1/me/top/artists`,
+        return fetch(`https://api.spotify.com/v1/me/top/artists?limit=10&time_range=short_term`,
             {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
@@ -162,189 +215,67 @@ const Spotify = {
                 return jsonResponse.items.map(items => ({
                     id: items.id,
                     name: items.name
-                   
+
                     // artist: track.artists[0].name,
                     // album: track.album.name,
                     // uri: track.uri
-                }))}).then
-            (items => { 
-                console.log(items);
-                var name = items[0]['id'];
-                var namea = items[1]['id'];
-                var nameb = items[2]['id'];
-                var namec = items[3]['id'];
-                var named = items[4]['id'];
-                var namee = items[5]['id'];
-                var namef = items[6]['id'];
-                var nameg = items[7]['id'];
-                var nameh = items[8]['id'];
-                var namei = items[9]['id'];
-                // var namej = items[10]['id'];
-                // var namek = items[11]['id'];
-                // var namel = items[12]['id'];
-                // var namem = items[13]['id'];
-                // var namen = items[14]['id'];
-                // var nameo = items[15]['id'];
-                // var namep = items[16]['id'];
-                // var nameq = items[17]['id'];
-                // var namer = items[18]['id'];
-                // var names = items[19]['id'];
-                return Promise.all([
-                    fetch(`https://api.spotify.com/v1/artists/${name}/top-tracks?country=US`,
-                        {
-                        headers: {
-                            Authorization: `Bearer ${accessToken}`
-                        }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${namea}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${nameb}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${namec}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${named}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${namee}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${namef}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${nameg}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${nameh}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    fetch(`https://api.spotify.com/v1/artists/${namei}/top-tracks?country=US`,
-                        {
-                            headers: {
-                                Authorization: `Bearer ${accessToken}`
-                            }
-                        }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${namej}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${namek}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${namel}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${namem}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${namen}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${nameo}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${namep}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${nameq}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${namer}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                    // fetch(`https://api.spotify.com/v1/artists/${names}/top-tracks?country=US`,
-                    //     {
-                    //         headers: {
-                    //             Authorization: `Bearer ${accessToken}`
-                    //         }
-                    //     }).then(value => value.json()),
-                ])
+                }))
+            }).then
+            (items => {
+                // console.log(items);
+                var scope = [];
+                for (var i = 0; i < items.length; i++) {
+                    scope[i] = items[i]['id'];   // create scope.counter1, scope.counter2,...)
+                }
+                console.log(scope);
+                console.log(scope.length);
+               
+                var fetches = [];
+                for (let i = 0; i < scope.length; i++) {
+                    console.log(scope[i]);
+                    fetches.push(
+                        fetch(`https://api.spotify.com/v1/artists/${scope[i]}/top-tracks?country=US`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`
+                                }
+                            }).then(value => value.json())
+                            
+                    );
+                }
+               return Promise.all(fetches)
+           
 
-                // return fetch(`https://api.spotify.com/v1/artists/${name}/top-tracks?country=US`,
-                //     {
-                //         headers: {
-                //             Authorization: `Bearer ${accessToken}`
-                //         }
-                    // })
-                    // .then(value => {
-                    //     return value.json();
-                    // })
-                    .then(value => {
-                        console.log(value);
-                        if (!value[0].tracks) {
-                            return [];
-                        }
-                        console.log(value);
-                        // var resultObject = value.reduce(function (result, currentObject) {
-                        //     for (var key in currentObject) {
-                        //         if (currentObject.hasOwnProperty(key)) {
-                        //             result[key] = currentObject[key];
-                        //         }
-                        //     }
-                        //     return result;
-                        // }, {});
 
-                        // console.log(resultObject);
-
-                        var a = value[0].tracks.map(tracks => ({
+              
+                .then(value => {
+                    console.log(value);
+                    if (!value[0].tracks) {
+                        return [];
+                    }
+                    console.log(value.length);
+                    var final = [];
+                     for (let i = 0; i < value.length; i++) {
+                      final.push(value[i].tracks.map(tracks => ({
                             id: tracks.id,
                             name: tracks.name,
                             artist: tracks.artists[0].name,
                             album: tracks.album.name,
                             uri: tracks.uri
-                        }))
+                        })
+                    ))
+                }
+
+
+                   
+
+                   
+                    console.log(final);
+                    closeModal();
+                    return final.flat();
+
+                    
+                        
                         //How to Grab first two tracks for next playlist
                         // var a = value[0].tracks.slice(0, 2).map(tracks => ({
                         //     id: tracks.id,
@@ -353,249 +284,915 @@ const Spotify = {
                         //     album: tracks.album.name,
                         //     uri: tracks.uri
                         // }))
-                        var b = value[1].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        var c = value[2].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        var d = value[3].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        var e = value[4].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        var f = value[5].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        var g = value[6].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        var h = value[7].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        var i = value[8].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        var j = value[9].tracks.map(tracks => ({
-                            id: tracks.id,
-                            name: tracks.name,
-                            artist: tracks.artists[0].name,
-                            album: tracks.album.name,
-                            uri: tracks.uri
-                        }))
-                        // var k = value[10].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var l = value[11].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var m = value[12].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var n = value[13].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var o = value[14].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var p = value[15].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var q = value[16].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var r = value[17].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var s = value[18].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        // var t = value[19].tracks.map(tracks => ({
-                        //     id: tracks.id,
-                        //     name: tracks.name,
-                        //     artist: tracks.artists[0].name,
-                        //     album: tracks.album.name,
-                        //     uri: tracks.uri
-                        // }))
-                        var final = a.concat(b,c,d,e,f,g,h,i,j); //,k,l,m,n,o,p,q,r,s,t);
-                       
-                        console.log(final);
-                        return final;
-
                        
                         
+
+
                     })
+
+            })
+
+    },
+
+
+
+
+    topArtistsOld() {
+
+        // Get the modal
+        var modal = document.getElementById("myModalloading");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // append playlist link button to modal
+        // function loadingPlaylist() {
+        //     document.getElementById("spottyPottyLoading").innerHTML +=
+        //         "<div class='btnshare'><a class='playlistbtn' target='_blank' href=''>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u='>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url='>Share Playlist on Twitter</a></div>";
+        // }
+        // NEED TO REMOVE OLD LINK FIRST!!!!!!!!!!
+
+        // loadingPlaylist();
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        function myfunction() {
+            modal.style.display = "block";
+        }
+        myfunction();
+
+        // When the user clicks on the button, open the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        const accessToken = Spotify.getAccessToken();
+        let userId;
+        return fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term`,
+            {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            }).then(response => {
+                return response.json();
+            }).then(jsonResponse => {
+                if (!jsonResponse.items) {
+                    return [];
+                }
+                console.log(jsonResponse);
+                return jsonResponse.items.map(items => ({
+                    id: items.id,
+                    name: items.name
+
+                    // artist: track.artists[0].name,
+                    // album: track.album.name,
+                    // uri: track.uri
+                }))
+            }).then
+            (items => {
+                // console.log(items);
+                var scope = [];
+                for (var i = 0; i < items.length; i++) {
+                    scope[i] = items[i]['id'];   // create scope.counter1, scope.counter2,...)
+                }
+                console.log(scope);
+                console.log(scope.length);
+
+                var fetches = [];
+                for (let i = 0; i < scope.length; i++) {
+                    console.log(scope[i]);
+                    fetches.push(
+                        fetch(`https://api.spotify.com/v1/artists/${scope[i]}/top-tracks?country=US`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`
+                                }
+                            }).then(value => value.json())
+
+                    );
+                }
+                return Promise.all(fetches)
+
+
+
+
+                    .then(value => {
+                        console.log(value);
+                        if (!value[0].tracks) {
+                            return [];
+                        }
+                        console.log(value.length);
+                        var final = [];
+                        for (let i = 0; i < value.length; i++) {
+                            final.push(value[i].tracks.slice(0, 2).map(tracks => ({
+                                id: tracks.id,
+                                name: tracks.name,
+                                artist: tracks.artists[0].name,
+                                album: tracks.album.name,
+                                uri: tracks.uri
+                            })
+                            ))
+                        }
+
+
+
+
+
+                        console.log(final);
+                        closeModal();
+                        return final.flat();
+
+
+
+                        //How to Grab first two tracks for next playlist
+                        // var a = value[0].tracks.slice(0, 2).map(tracks => ({
+                        //     id: tracks.id,
+                        //     name: tracks.name,
+                        //     artist: tracks.artists[0].name,
+                        //     album: tracks.album.name,
+                        //     uri: tracks.uri
+                        // }))
+
+
+
+
+                    })
+
+            })
+
+    },
+
+
+
+
+    topChristmas() {
+        // Get the modal
+        var modal = document.getElementById("myModalloading");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        var timeleft = 55;
+        var downloadTimer = setInterval(function () {
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+            }
+            document.getElementById("progressBar").value = 55 - timeleft;
+            timeleft -= 1;
+        }, 1000);
+
+        // append playlist link button to modal
+        // function loadingPlaylist() {
+        //     document.getElementById("spottyPottyLoading").innerHTML +=
+        //         "<div class='btnshare'><a class='playlistbtn' target='_blank' href=''>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u='>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url='>Share Playlist on Twitter</a></div>";
+        // }
+        // NEED TO REMOVE OLD LINK FIRST!!!!!!!!!!
+
+        // loadingPlaylist();
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        function myfunction() {
+            modal.style.display = "block";
+        }
+        myfunction();
+
+        // When the user clicks on the button, open the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        const accessToken = Spotify.getAccessToken();
+        let userId;
+        var mytopartists= [];
+
+        mytopartists.push(
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=short_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response=> response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=short_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=medium_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=medium_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=long_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=long_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json())
+        );
+        console.log(mytopartists);
+        return Promise.all(mytopartists)
+        // return fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term`,
+        //     {
+        //         headers: {
+        //             Authorization: `Bearer ${accessToken}`
+        //         }
+        //     })
+        // .then(response => {
+        //         return response.json();
+        //     })
+        .then(response => {
+            if (!response[0].items) {
+                return [];
+            }
+            var items= [];
+            for(var k = 0; k < response.length; k++)
+            {
+                console.log(response[k]);
+                items.push(response[k].items.map(items => ({
+                    id: items.id,
+                    name: items.name
+
+                    // artist: track.artists[0].name,
+                    // album: track.album.name,
+                    // uri: track.uri
+                })))
+
+            }
+            
+            console.log(items);
+            return items.flat();
+               
+            }).then
+            (items => {
+                // console.log(items);
+                var scope = [];
+                for (var i = 0; i < items.length; i++) {
+                    scope[i] = items[i]['name'];   // create scope.counter1, scope.counter2,...)
+                }
+                console.log(scope);
+                console.log(scope.length);
+                let uniquescope = [];
+                scope.forEach((c) => {
+                    if (!uniquescope.includes(c)) {
+                        uniquescope.push(c);
+                    }
+                });
+                console.log(uniquescope);
+                var fetches = [];
+
+                function fetchRetry(url, options = {}, retries = 100, backoff = 9000) {
+                    /* 1 */
+                    const retryCodes = [408, 429, 492, 500, 502, 503, 504, 522, 524]
+                    return fetch(url, options)
+                        .then(res => {
+                            if (res.ok) return res.json()
+
+                            if (retries > 0 && retryCodes.includes(res.status)) {
+                                setTimeout(() => {
+                                    /* 2 */
+                                    return fetchRetry(url, options, retries - 1, backoff * 1.2) /* 3 */
+                                }, backoff) /* 2 */
+                            } else {
+                                throw new Error(res)
+                            }
+                        })
+                        .catch(console.error)
+                }
+
+                var myfetches = [];
+
+                function go(uniquescope) {
+                    // console.log(uniquescope);
                     
-                })
-                
-            },
+                   for (let i = 0; i < 50; i++) {
+                       if (uniquescope[i] != null) {
+                           console.log(uniquescope[i]);
+                           fetches.push(
+                               fetchRetry(`https://api.spotify.com/v1/search?query=track%3Achristmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                   headers: {
+                                       Authorization: `Bearer ${accessToken}`
+                                   }
+                               }, 1, 9000),
+                           );
+                       }
+                       else {
+                           console.log(i);
+                       }
+
+                    }
+                   
+                        // fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asanta+NOT+Barbara+NOT+Monica+NOT+Cruz+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                        //     headers: {
+                        //         Authorization: `Bearer ${accessToken}`
+                        //     }
+                        // }, 100, 9000),
+                        // fetchRetry(`https://api.spotify.com/v1/search?query=track%3Axmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                        //     headers: {
+                        //         Authorization: `Bearer ${accessToken}`
+                        //     }
+                        // }, 100, 9000),
+                        // fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asnowman+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                        //     headers: {
+                        //         Authorization: `Bearer ${accessToken}`
+                        //     }
+                        // }, 100, 9000)
+
+                        // fetch(`https://api.spotify.com/v1/search?query=track%3Achristmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`,
+                        //     {
+                        //         headers: {
+                        //             Authorization: `Bearer ${accessToken}`
+                        //         }
+                        //     }).then(value => value.json()),
+
+                        // fetch(`https://api.spotify.com/v1/search?query=track%3Asanta+NOT+Barbara+NOT+Monica+NOT+Cruz+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`,
+                        //     {
+                        //         headers: {
+                        //             Authorization: `Bearer ${accessToken}`
+                        //         }
+                        //     }).then(value => value.json()),
+
+                        // fetch(`https://api.spotify.com/v1/search?query=track%3Axmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`,
+                        //     {
+                        //         headers: {
+                        //             Authorization: `Bearer ${accessToken}`
+                        //         }
+                        //     }).then(value => value.json()),
+                        // fetch(`https://api.spotify.com/v1/search?query=track%3Asnowman+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`,
+                        //     {
+                        //         headers: {
+                        //             Authorization: `Bearer ${accessToken}`
+                        //         }
+                        //     }).then(value => value.json())
 
 
-                // var names = x;
-                // console.log(names.object);
+                   
 
-                // let requests = names.map(name => fetch(`https://api.spotify.com/v1/artists/${names}/top-tracks?country=US`,
-                
-                //     {
-                //         headers: {
-                //             Authorization: `Bearer ${accessToken}`
-                //         }
+                   
+
+                    // for (let i = 0; i < uniquescope.length; i++) {
+                    //     // console.log(uniquescope[i]);
+                    //     fetches.push(
+                    //         fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asanta+NOT+Barbara+NOT+Monica+NOT+Cruz+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                    //             headers: {
+                    //                 Authorization: `Bearer ${accessToken}`
+                    //             }
+                    //         }, 100, 9000),
+                    //     );
+                    // }
+
+                   
+
+                    // for (let i = 0; i < uniquescope.length; i++) {
+                    //     // console.log(uniquescope[i]);
+                    //     fetches.push(
+                    //         fetchRetry(`https://api.spotify.com/v1/search?query=track%3Axmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                    //             headers: {
+                    //                 Authorization: `Bearer ${accessToken}`
+                    //             }
+                    //         }, 100, 9000),
+                    //     );
+                    // }
+
+                  
+
+                    // for (let i = 0; i < uniquescope.length; i++) {
+                    //     // console.log(uniquescope[i]);
+                    //     fetches.push(
+                    //         fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asnowman+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                    //             headers: {
+                    //                 Authorization: `Bearer ${accessToken}`
+                    //             }
+                    //         }, 100, 9000),
+                    //     );
+                    // }
+                    
+                    // if (i < uniquescope.length) {
+                    //     i++;
+                    //     console.log(i);
+                    //     setTimeout(function () {
+                    //         go(uniquescope, i);
+                    //     }, 300);
+                            
+                    // }
+                    // else {
+                    //     myfetches = Promise.all(fetches);
+                    //     return myfetches;
+                    // }
+                    // return myfetches;
+                }
+                // var i = 0;
+                //  if (i < uniquescope.length) {
+                //         i++;
+                //         console.log(i);
+                //         setTimeout(function () {
+                //             go(uniquescope, i);
+                //         }, 300);
                 //     }
                 
-                // ));
-
-                // Promise.all(requests)
-                //     .then(responses => {
-                //         // all responses are resolved successfully
-                //         for (let response of responses) {
-                //             alert(`${response.url}: ${response.status}`); // shows 200 for every url
-                //         }
-
-                //         return responses;
-                //     })
-                //     // map array of responses into an array of response.json() to read their content
-                //     .then(responses => Promise.all(responses.map(r => r.json())))
-                //     // all JSON answers are parsed: "users" is the array of them
-                //     .then(tracks => tracks.forEach(track => alert(track.name)));
-
-
-                // getAll(x);
-                // async function getAll(data) {
-                //     var promises = [];
-                // for (var i = 0; i < 20; i++) {
-                //     await promises.push(Spotify.search(x[i].id))
+                // // go(uniquescope, 0);
+                // else {
+                // return Promise.all(fetches)
                 // }
-                //     Promise.all(promises).then(function () {
-                //         console.log("done");
-                //         console.log(promises[1]);
-                //         // promises.map(response => response.json())
-                //         // console.log(response.json());
-                //         return promises.map(promises => ({
-                //             id: promises.id,
-                //             name: promises.name
-                //             // artist: track.artist[0].name,
-                //             // album: track.album.name,
-                //             // uri: track.uri
-                //         }))
-                //     });
-                   
-                // }    
+                go(uniquescope);
+                var myfetches = Promise.all(fetches);
+                console.log(myfetches);
+                return myfetches
+                // for (let i = 0; i < uniquescope.length; i++) {
+                //     console.log(uniquescope[i]);
+                //     fetches.push(
+                       
 
-                // Promise.all(promises.map(function () {
-                //     console.log(promises)
-                //         return { id: promises.id, name: promises.name };
-                //     }));
+                //         fetch(`https://api.spotify.com/v1/search?query=track%3Achristmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`,
+                //             {
+                //                 headers: {
+                //                     Authorization: `Bearer ${accessToken}`
+                //                 }
+                //             }).then(value => value.json()),
 
-                // Promise.all(filenames.map(function (filename) {
-                //     return fsPromise.readFileAsync(articlesPath + '/' + filename, 'utf8').then(function (content) {
-                //         return { content: content, filename: filename };
-                //     });
-                // })).then(Lazy);
-                    // promises.push(Spotify.search(x[i].id));
-                    
-                    // console.log(promises);
-                    // if (i == 19) {
-                    //     Promise.all([promises]).then((values) => {
-                    //       return values;
-                    //     }).then(
-                    //     values.map(items => ({
-                    //         id: items.id,
-                    //         name: items.name
-                    //     })))
-                    //     console.log(values);
-                    //     return values;
-                        // console.log(promises);
-                        // return promises;
-                    // }
-                    // if(i==19){
-                    //     var mypromise = Promise.all([promises]).then((values) => {
-                    //      return values;
-                    //     }).then((mypromise) => {
-                    //         console.log(mypromise);
-                    //         console.log(mypromise[0][0]);
-                    //     })
+                //         fetch(`https://api.spotify.com/v1/search?query=track%3Asanta+NOT+Barbara+NOT+Monica+NOT+Cruz+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`,
+                //             {
+                //                 headers: {
+                //                     Authorization: `Bearer ${accessToken}`
+                //                 }
+                //             }).then(value => value.json()),
                         
-                        // promises.map(items => ({
-                        //     id: items.id,
-                        //     name: items.name
-                        // }))
-                        // console.log(promises);
-                        // return promises;
-                    // }
+                //         fetch(`https://api.spotify.com/v1/search?query=track%3Axmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`,
+                //             {
+                //                 headers: {
+                //                     Authorization: `Bearer ${accessToken}`
+                //                 }
+                //             }).then(value => value.json()),
+                //         fetch(`https://api.spotify.com/v1/search?query=track%3Asnowman+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`,
+                //             {
+                //                 headers: {
+                //                     Authorization: `Bearer ${accessToken}`
+                //                 }
+                //             }).then(value => value.json())
+
+
+                //     );
                 // }
-                
-                // return x;
+                // return Promise.all(fetches)
+                .then(results => {
+                    var delay = 5000;
+                    return new Promise(resolve => setTimeout(resolve, delay, results));
+                })
+                .then(results =>{
+                    console.log(results);
+                    var fetches = [];
+                       for (let i = 0; i < 50; i++) {
+                           if (uniquescope[i] != null) {
+                               // console.log(uniquescope[i]);
+                               results.push(
+                                   fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asanta+NOT+Barbara+NOT+Monica+NOT+Cruz+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                       headers: {
+                                           Authorization: `Bearer ${accessToken}`
+                                       }
+                                   }, 1, 9000),
+                               );
+                           }
+                           else {
+                               console.log(i);
+                           }
+                   
+                }
+                var myfetches = Promise.all(results);
+                console.log(myfetches);
+                return myfetches
+            })
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 0; i < 50; i++) {
+                            if (uniquescope[i] != null) {
+                                // console.log(uniquescope[i]);
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Axmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+                            }
+                            else {
+                                console.log(i);
+                            }
+                            
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 0; i < 50; i++) {
+                            if (uniquescope[i] != null) {
+                                // console.log(uniquescope[i]);
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asnowman+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+
+                            }
+                            else {
+                                console.log(i);
+                            }
+                            
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+                    //NEXT 50!!!!!!!!!!!!!!!!!!
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 49; i < 99; i++) {
+                            if (uniquescope[i] != null) {
+                                // console.log(uniquescope[i]);
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Achristmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+                            }
+                            else {
+                                console.log(i);
+                            }
+                           
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 49; i < 99; i++) {
+                            if (uniquescope[i] != null) {
+                                // console.log(uniquescope[i]);
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asanta+NOT+Barbara+NOT+Monica+NOT+Cruz+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+                            }
+                            else {
+                                console.log(i);
+                            }
+                           
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 49; i < 99; i++) {
+                            if (uniquescope[i] != null) {
+                                // console.log(uniquescope[i]);
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Axmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+                            }
+                            else {
+                                console.log(i);
+                            }
+                           
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 49; i < 99; i++) {
+                            if (uniquescope[i] != null) {
+                                // console.log(uniquescope[i]);
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asnowman+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+                            }
+                            else {
+                                console.log(i);
+                            }
+                            
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+
+
+
+                    //NEXT 50!!!!!!!!!!!!!!!!!!
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 99; i < 149; i++) {
+                            if (uniquescope[i] != null) {
+
+                                // console.log(uniquescope[i]);
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Achristmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+
+                            }
+
+                            else {
+                                console.log(i);
+                            }
+                            
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 99; i < 149; i++) {
+                            if (uniquescope[i] != null) {
+                                // console.log(uniquescope[i]);
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asanta+NOT+Barbara+NOT+Monica+NOT+Cruz+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+
+                            }
+
+                            else {
+                                console.log(i);
+                            }
+                           
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 99; i < 149; i++) {
+                            // console.log(uniquescope[i]);
+                            if (uniquescope[i] != null) {
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Axmas+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+                            }
+                            else {
+                                console.log(i);
+                            }
+                            
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+                    .then(results => {
+                        var delay = 5000;
+                        return new Promise(resolve => setTimeout(resolve, delay, results));
+                    })
+
+                    .then(results => {
+                        console.log(results);
+                        var fetches = [];
+                        for (let i = 99; i < 149; i++) {
+                            // console.log(uniquescope[i]);
+                            if(uniquescope[i] != null)
+                            {
+                                results.push(
+                                    fetchRetry(`https://api.spotify.com/v1/search?query=track%3Asnowman+artist%3A%22${uniquescope[i]}%22&type=track&offset=0&limit=1`, {
+                                        headers: {
+                                            Authorization: `Bearer ${accessToken}`
+                                        }
+                                    }, 1, 9000),
+                                );
+                            }
+                            else {
+                                console.log(i);
+                            }
+                            
+                            
+                        }
+                        var myfetches = Promise.all(results);
+                        console.log(myfetches);
+                        return myfetches
+                    })
+
+
             
-  
+
+
+
+                    .then(value => {
+                        console.log(value);
+                        if (!value[0].tracks) {
+                            return [];
+                        }
+                        console.log(value.length);
+                        value = value.filter(function (element) {
+                            return element !== undefined;
+                        });
+                        console.log(value.length);
+                        var final = [];
+                        for (let i = 0; i < value.length; i++) {
+                            // console.log(value[i].tracks.items);
+                            if (value[i] == 'undefined')
+                            {
+                                console.log(value[i]);
+                            }
+                            final.push(value[i].tracks.items.slice(0, 1).map(tracks => ({
+                                id: tracks.id,
+                                name: tracks.name,
+                                artist: tracks.artists[0].name,
+                                album: tracks.album.name,
+                                uri: tracks.uri
+                            })
+                            ))
+                        }
+
+                        var theflattening = final.flat();
+
+                        var finalflat = [];
+
+                        for (let j = 0; j < theflattening.length; j++)
+                        {
+                            
+                            if (scope.indexOf(theflattening[j].artist) != -1)
+                            {
+                                
+                               finalflat.push(theflattening[j]);
+                            }
+                           
+                        }
+                        
+
+                        finalflat = finalflat.filter((v, i, a) => a.findIndex(t => (JSON.stringify(t) === JSON.stringify(v))) === i);
+
+
+                        console.log(finalflat);
+                        closeModal();
+                       
+                        if (finalflat.length > 100)
+                        {
+                            return finalflat.slice(0,100);
+                        }
+                        else {
+                            return finalflat;
+                        }
+                        
+                        // return theflattening;
+
+
+
+                        //How to Grab first two tracks for next playlist
+                        // var a = value[0].tracks.slice(0, 2).map(tracks => ({
+                        //     id: tracks.id,
+                        //     name: tracks.name,
+                        //     artist: tracks.artists[0].name,
+                        //     album: tracks.album.name,
+                        //     uri: tracks.uri
+                        // }))
+
+
+
+
+                    })
+
+            })
+
+    },
+
+
+
+
 
 
     topTracks(artistid) {

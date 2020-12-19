@@ -21,12 +21,12 @@ class Playlist extends React.Component {
     render() {
         return (
             <div className="Playlist">
-                <input defaultValue={"Your SpottyPotty Playlist"} onChange={this.handleNameChange}/>
-                <div className="buttonPlaylist"><button className="Playlist-save" onClick={this.props.onSave} style={{ paddingTop: ".77rem", paddingRight: ".77rem", paddingLeft: ".77rem", paddingBottom: ".77rem", minHeight: "45px", marginBottom:"1.27rem" }}>SAVE TO SPOTIFY</button></div><br></br><br></br>
+                <input defaultValue={this.props.playlistName} onChange={this.handleNameChange}/>
+                <div className="buttonPlaylist"><button className="Playlist-save" onClick={this.props.onSave} style={{ paddingTop: ".77rem", paddingRight: ".77rem", paddingLeft: ".77rem", paddingBottom: ".77rem", minHeight: "45px", marginBottom:"1.27rem", visibility:"hidden" }}>SAVE TO SPOTIFY</button></div><br></br><br></br>
                 <TrackList tracks={this.props.playlistTracks}
                             onRemove={this.props.onRemove} 
                             isRemoval={true} />
-                <div className="buttonPlaylist"><button className="Playlist-save" onClick={this.props.onSave} style={{ paddingTop: ".77rem", paddingRight: ".77rem", paddingLeft: ".77rem", paddingBottom: ".77rem", minHeight: "45px", marginBottom: "1.27rem" }}>SAVE TO SPOTIFY</button></div><br></br><br></br>
+                <div className="buttonPlaylist"><button className="Playlist-save" onClick={this.props.onSave} style={{ paddingTop: ".77rem", paddingRight: ".77rem", paddingLeft: ".77rem", paddingBottom: ".77rem", minHeight: "45px", marginBottom: "1.27rem", visibility:"hidden" }}>SAVE TO SPOTIFY</button></div><br></br><br></br>
             </div>
         )
     }
