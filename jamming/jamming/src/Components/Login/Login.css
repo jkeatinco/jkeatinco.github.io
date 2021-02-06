@@ -4,7 +4,7 @@
   align-items: center;
   /* overflow-y: scroll; */
   /* width: 100%; */
-  max-height: 950px;
+  /* max-height: 950px; */
   padding: 2.27rem 1.16rem 1.27rem 1.16rem;
   /* background-color: rgba(1, 12, 63, 0.7); */
   /* box-shadow: 0 4px 2px 2px #000000; */
@@ -67,6 +67,10 @@ p .highlight {
 }
 .myNameDisplay {
   padding: 1.77rem 0;
+}
+
+.LoginP-Padding {
+  margin-top:2rem;
 }
 
 

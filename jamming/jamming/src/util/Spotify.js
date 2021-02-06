@@ -1,6 +1,6 @@
 const clientId = '';
-const redirectUri = 'https://spottypotty.surge.sh';
-// const redirectUri = 'http://localhost:3000';
+// const redirectUri = 'https://spottypotty.surge.sh';
+const redirectUri = 'http://localhost:3000';
 let accessToken;
 
 const Spotify = {
@@ -109,7 +109,7 @@ const Spotify = {
                     function addPlaylistButton(link) {
                        
                         document.getElementById("spottyPottySaved").innerHTML +=
-                            "<div class='btnshare'><a class='playlistbtn' target='_blank' href='" + link + "'>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=" + link + "'>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url=" + link + "'>Share Playlist on Twitter</a></div>";
+                            "<div class='btnshare'><a class='playlistbtn' target='_blank' href='" + link + "'>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=" + link + "'>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url=" + link + "'>Share Playlist on Twitter</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/donate/2812440489084919/'>Donate to Charity!</a></div>";
                     }
                     // NEED TO REMOVE OLD LINK FIRST!!!!!!!!!!
 
@@ -1169,6 +1169,178 @@ const Spotify = {
                         }
                         
                         // return theflattening;
+
+
+
+                        //How to Grab first two tracks for next playlist
+                        // var a = value[0].tracks.slice(0, 2).map(tracks => ({
+                        //     id: tracks.id,
+                        //     name: tracks.name,
+                        //     artist: tracks.artists[0].name,
+                        //     album: tracks.album.name,
+                        //     uri: tracks.uri
+                        // }))
+
+
+
+
+                    })
+
+            })
+
+    },
+
+    myRunningPlaylist() {
+
+        // Get the modal
+        var modal = document.getElementById("myModalloading");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // append playlist link button to modal
+        // function loadingPlaylist() {
+        //     document.getElementById("spottyPottyLoading").innerHTML +=
+        //         "<div class='btnshare'><a class='playlistbtn' target='_blank' href=''>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u='>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url='>Share Playlist on Twitter</a></div>";
+        // }
+        // NEED TO REMOVE OLD LINK FIRST!!!!!!!!!!
+
+        // loadingPlaylist();
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        function myfunction() {
+            modal.style.display = "block";
+        }
+        myfunction();
+
+        // When the user clicks on the button, open the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        const accessToken = Spotify.getAccessToken();
+        let userId;
+        return fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term`,
+            {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            }).then(response => {
+                return response.json();
+            }).then(jsonResponse => {
+                if (!jsonResponse.items) {
+                    return [];
+                }
+                console.log(jsonResponse);
+                return jsonResponse.items.map(items => ({
+                    id: items.id,
+                    name: items.name
+
+                    // artist: track.artists[0].name,
+                    // album: track.album.name,
+                    // uri: track.uri
+                }))
+            }).then
+            (items => {
+                // console.log(items);
+                var scope = [];
+                for (var i = 0; i < items.length; i++) {
+                    scope[i] = items[i]['id'];   // create scope.counter1, scope.counter2,...)
+                }
+                console.log(scope);
+                console.log(scope.length);
+
+                function shuffle(array) {
+                    var currentIndex = array.length, temporaryValue, randomIndex;
+
+                    // While there remain elements to shuffle...
+                    while (0 !== currentIndex) {
+
+                        // Pick a remaining element...
+                        randomIndex = Math.floor(Math.random() * currentIndex);
+                        currentIndex -= 1;
+
+                        // And swap it with the current element.
+                        temporaryValue = array[currentIndex];
+                        array[currentIndex] = array[randomIndex];
+                        array[randomIndex] = temporaryValue;
+                    }
+
+                    return array;
+                }
+
+                // Used like so
+               
+                shuffle(scope);
+                console.log(scope);
+                scope.length = 5;
+                const tempo = encodeURIComponent('170');
+                const danceability = encodeURIComponent('1.0');
+                const energy = encodeURIComponent('1.0');
+                const tartempo = encodeURIComponent('180');
+
+                var fetches = [];
+                
+                    console.log(scope);
+                    fetches.push(
+                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${scope}&min_tempo=${tempo}&target_danceability=${danceability}&energy=${energy}&limit=100`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`
+                                }
+                            }).then(value => value.json())
+
+                    );
+               
+                return Promise.all(fetches)
+
+
+                    .then(value => {
+                        console.log(value);
+                        if (!value[0].tracks) {
+                            return [];
+                        }
+                        console.log(value.length);
+                        var final = [];
+                        for (let i = 0; i < value.length; i++) {
+                            final.push(value[i].tracks.map(tracks => ({
+                                id: tracks.id,
+                                name: tracks.name,
+                                artist: tracks.artists[0].name,
+                                album: tracks.album.name,
+                                uri: tracks.uri
+                            })
+                            ))
+                        }
+
+
+
+
+
+                   
+
+
+
+
+                        console.log(final);
+                        closeModal();
+                        return final.flat();
 
 
 

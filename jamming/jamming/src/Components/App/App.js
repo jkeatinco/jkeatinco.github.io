@@ -30,6 +30,7 @@ class App extends React.Component {
     this.topArtists = this.topArtists.bind(this);
     this.topArtistsOld = this.topArtistsOld.bind(this);
     this.topChristmas = this.topChristmas.bind(this);
+    this.myRunningPlaylist = this.myRunningPlaylist.bind(this);
     this.login = this.login.bind(this);
   }
 
@@ -96,11 +97,22 @@ class App extends React.Component {
     });
   }
 
+  myRunningPlaylist() {
+    Spotify.myRunningPlaylist().then(playlistTracks => {
+      this.setState({
+        playlistName: 'Running SpottyPotty Playlist',
+        playlistTracks: playlistTracks
+      });
+    });
+  }
+
   login() {
     Spotify.login().then(display_name => {
       console.log(display_name);
 
       document.getElementById("Login-Btn").style.visibility = "hidden";
+      document.getElementById("Login-p").style.display = "none";
+      document.getElementById("Login-pp").style.display = "none";
 
       var playlistSaveBtns = document.getElementsByClassName('Playlist-save');
       for (var i = 0; i < playlistSaveBtns.length; i++) {
@@ -123,6 +135,8 @@ class App extends React.Component {
         console.log(display_name);
 
         document.getElementById("Login-Btn").style.visibility = "hidden";
+        document.getElementById("Login-p").style.display = "none";
+        document.getElementById("Login-pp").style.display = "none";
 
         var playlistSaveBtns = document.getElementsByClassName('Playlist-save');
         for (var i = 0; i < playlistSaveBtns.length; i++) {
@@ -160,6 +174,7 @@ class App extends React.Component {
             onTopArtist={this.topArtists}
             onTopArtistOld={this.topArtistsOld}
             onTopChristmas={this.topChristmas}
+            onMyRunningPlaylist={this.myRunningPlaylist}
             onSave={this.savePlaylist} />
           <div className="App-playlist">
             {/* <SearchResults searchResults={this.state.searchResults}
@@ -185,7 +200,7 @@ class App extends React.Component {
           <div id="myModalloading" className="modal">
             <div id="spottyPottyLoading" className="modal-content">
               <span className="close">&times;</span>
-              <h2 className="modal-text"> 🎅 Santa is putting together your playlist... <i class="fas fa-sleigh fa-pulse"></i></h2><br></br>
+              <h2 className="modal-text"> 🧬 Genetically engineering your playlist... <i className="fas fa-atom fa-spin"></i></h2><br></br>
               <progress value="0" max="55" id="progressBar"></progress>
             </div>
           </div>
