@@ -205,6 +205,13 @@ class App extends React.Component {
             </div>
           </div>
 
+          <div id="myModalerror" className="modal">
+            <div id="spottyPottyError" className="modal-content">
+              <span className="close">&times;</span>
+              <h2 className="modal-text"> 😔 Sorry, something screwed up. Please try again 🙏</h2><br></br>
+            </div>
+          </div>
+
         </div>
       </div>
     )

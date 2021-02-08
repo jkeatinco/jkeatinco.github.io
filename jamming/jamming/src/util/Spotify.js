@@ -159,6 +159,7 @@ const Spotify = {
     topArtists() {
         // Get the modal
         var modal = document.getElementById("myModalloading");
+        var modalerror = document.getElementById("myModalerror");
 
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
@@ -181,16 +182,23 @@ const Spotify = {
         }
         myfunction();
 
+        function myfunctionerror() {
+            modalerror.style.display = "block";
+        }
+        
+
         // When the user clicks on the button, open the modal
         function closeModal() {
             modal.style.display = "none";
         }
-
+        
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
         }
+
+       
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
@@ -198,6 +206,7 @@ const Spotify = {
                 modal.style.display = "none";
             }
         }
+       
         const accessToken = Spotify.getAccessToken();
         let userId;
         return fetch(`https://api.spotify.com/v1/me/top/artists?limit=10&time_range=short_term`,
@@ -266,13 +275,40 @@ const Spotify = {
                     ))
                 }
 
+                    if (final.length < 10) 
+                    {
+                        var modalerror = document.getElementById("myModalerror");
+                        var span = document.getElementsByClassName("close")[2];
+                        console.log(span);
+                        function myfunctionerror() {
+                            modalerror.style.display = "block";
+                        }
+                        myfunctionerror();
+                        function closeModalerror() {
+                            modalerror.style.display = "none";
+                        }
+                        span.onclick = function () {
+                            modalerror.style.display = "none";
+                        }
+                        
+                        window.onclick = function (event) {
+                            if (event.target == modalerror) {
+                                modalerror.style.display = "none";
+                            }
+                        }
+                        closeModal();
+                        final.length = 0;
+                        return final;
+                    }
+                    
+                   else {
+                        console.log(final);
+                        closeModal();
+                        return final.flat();
+                   }
 
                    
-
-                   
-                    console.log(final);
-                    closeModal();
-                    return final.flat();
+                    
 
                     
                         
@@ -409,13 +445,42 @@ const Spotify = {
                             ))
                         }
 
+                        if (final.length < 50)
+                        {
 
+                            var modalerror = document.getElementById("myModalerror");
+                            var span = document.getElementsByClassName("close")[2];
+                            console.log(span);
+                            function myfunctionerror() {
+                                modalerror.style.display = "block";
+                            }
+                            myfunctionerror();
+                            function closeModalerror() {
+                                modalerror.style.display = "none";
+                            }
+                            span.onclick = function () {
+                                modalerror.style.display = "none";
+                            }
 
+                            window.onclick = function (event) {
+                                if (event.target == modalerror) {
+                                    modalerror.style.display = "none";
+                                }
+                            }
 
+                            closeModal();
+                            final.length = 0;
+                            return final;
+                        }
+                        
 
+                        else {
+
+                        
                         console.log(final);
                         closeModal();
                         return final.flat();
+                        }
 
 
 
@@ -1158,13 +1223,44 @@ const Spotify = {
 
 
                         console.log(finalflat);
-                        closeModal();
+                        
+
+                            if (finalflat.length < 5)
+                            {
+
+                                var modalerror = document.getElementById("myModalerror");
+                                var span = document.getElementsByClassName("close")[2];
+                                console.log(span);
+                                function myfunctionerror() {
+                                    modalerror.style.display = "block";
+                                }
+                                myfunctionerror();
+                                function closeModalerror() {
+                                    modalerror.style.display = "none";
+                                }
+                                span.onclick = function () {
+                                    modalerror.style.display = "none";
+                                }
+
+                                window.onclick = function (event) {
+                                    if (event.target == modalerror) {
+                                        modalerror.style.display = "none";
+                                    }
+                                }
+
+                                closeModal();
+                                finalflat.length = 0;
+                                return final;
+                            }
+                        
                        
-                        if (finalflat.length > 100)
+                        else if (finalflat.length > 100)
                         {
+                                closeModal();
                             return finalflat.slice(0,100);
                         }
                         else {
+                                closeModal();
                             return finalflat;
                         }
                         
@@ -1287,9 +1383,9 @@ const Spotify = {
 
                 // Used like so
                
-                shuffle(scope);
-                console.log(scope);
-                scope.length = 5;
+                // shuffle(scope);
+                // console.log(scope);
+                // scope.length = 5;
                 const tempo = encodeURIComponent('170');
                 const danceability = encodeURIComponent('1.0');
                 const energy = encodeURIComponent('1.0');
@@ -1297,16 +1393,43 @@ const Spotify = {
 
                 var fetches = [];
                 
-                    console.log(scope);
+                console.log(scope);
+                shuffle(scope);
+
+                const artistsr = scope;
+
+                const n = 5 //get the first 5 items
+
+                const artistsrArray = artistsr.slice(0, n)
+                artistsrArray.length = 5;
+
+                shuffle(scope);
+
+                const artistsrr = scope;
+
+                const artistsrrArray = artistsrr.slice(0, n)
+                artistsrrArray.length = 5;
+
+               
                     fetches.push(
-                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${scope}&min_tempo=${tempo}&target_danceability=${danceability}&energy=${energy}&limit=100`,
+                        
+
+                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${artistsrArray}&tartempo=${tartempo}&target_danceability=${danceability}&energy=${energy}&limit=100`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`
+                                }
+                            }).then(value => value.json()),
+                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${artistsrrArray}&tartempo=${tartempo}&target_danceability=${danceability}&energy=${energy}&limit=100`,
                             {
                                 headers: {
                                     Authorization: `Bearer ${accessToken}`
                                 }
                             }).then(value => value.json())
 
+
                     );
+               
                
                 return Promise.all(fetches)
 
@@ -1329,18 +1452,55 @@ const Spotify = {
                             ))
                         }
 
-
-
-
-
-                   
-
-
-
-
                         console.log(final);
-                        closeModal();
-                        return final.flat();
+                        var finalflat = [];
+                        finalflat = final.flat();
+                        shuffle(finalflat);
+                        finalflat = finalflat.filter((v, i, a) => a.findIndex(t => (JSON.stringify(t) === JSON.stringify(v))) === i);
+                        console.log(finalflat);
+                        if (finalflat.length < 50)
+                        {
+                            var modalerror = document.getElementById("myModalerror");
+                            var span = document.getElementsByClassName("close")[2];
+                            console.log(span);
+                            function myfunctionerror() {
+                                modalerror.style.display = "block";
+                            }
+                            myfunctionerror();
+                            function closeModalerror() {
+                                modalerror.style.display = "none";
+                            }
+                            span.onclick = function () {
+                                modalerror.style.display = "none";
+                            }
+
+                            window.onclick = function (event) {
+                                if (event.target == modalerror) {
+                                    modalerror.style.display = "none";
+                                }
+                            }
+                            closeModal();
+                            final.length = 0;
+                            return final;
+                            
+                        }
+
+                        else if (finalflat.length > 100) {
+                            closeModal();
+                            return finalflat.slice(0, 100);
+                        }
+                        else {
+                            closeModal();
+                            return finalflat;
+                        }
+
+                       
+                        
+
+
+
+
+                        
 
 
 
