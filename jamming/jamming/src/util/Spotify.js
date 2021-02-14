@@ -1332,26 +1332,76 @@ const Spotify = {
 
         const accessToken = Spotify.getAccessToken();
         let userId;
-        return fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&time_range=long_term`,
-            {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`
-                }
-            }).then(response => {
-                return response.json();
-            }).then(jsonResponse => {
-                if (!jsonResponse.items) {
+        var fetchess = []
+        fetchess.push(
+
+
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=short_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=short_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=medium_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=medium_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=long_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=long_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json())
+
+
+        );
+
+                console.log(fetchess);
+        return Promise.all(fetchess)
+            .then(response => {
+                if (!response[0].items) {
                     return [];
                 }
-                console.log(jsonResponse);
-                return jsonResponse.items.map(items => ({
-                    id: items.id,
-                    name: items.name
+                var items = [];
+                for (var k = 0; k < response.length; k++) {
+                    console.log(response[k]);
+                    items.push(response[k].items.map(items => ({
+                        id: items.id,
+                        name: items.name
 
-                    // artist: track.artists[0].name,
-                    // album: track.album.name,
-                    // uri: track.uri
-                }))
+                        // artist: track.artists[0].name,
+                        // album: track.album.name,
+                        // uri: track.uri
+                    })))
+
+                }
+
+                console.log(items);
+                items = items.flat();
+                items = items.filter((v, i, a) => a.findIndex(t => (JSON.stringify(t) === JSON.stringify(v))) === i);
+                console.log(items);
+                return items.flat();
+
             }).then
             (items => {
                 // console.log(items);
@@ -1390,11 +1440,13 @@ const Spotify = {
                 const danceability = encodeURIComponent('1.0');
                 const energy = encodeURIComponent('1.0');
                 const tartempo = encodeURIComponent('180');
+                const popularity = encodeURIComponent('100');
 
                 var fetches = [];
                 
-                console.log(scope);
+               
                 shuffle(scope);
+                console.log(scope);
 
                 const artistsr = scope;
 
@@ -1404,23 +1456,46 @@ const Spotify = {
                 artistsrArray.length = 5;
 
                 shuffle(scope);
+                console.log(scope);
 
                 const artistsrr = scope;
 
                 const artistsrrArray = artistsrr.slice(0, n)
                 artistsrrArray.length = 5;
 
+                const artistsrrr = scope;
+
+                const artistsrrrArray = artistsrrr.slice(0, n)
+                artistsrrrArray.length = 5;
+
+                const artistsrrrr = scope;
+
+                const artistsrrrrArray = artistsrrrr.slice(0, n)
+                artistsrrrrArray.length = 5;
+
                
                     fetches.push(
                         
 
-                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${artistsrArray}&tartempo=${tartempo}&target_danceability=${danceability}&energy=${energy}&limit=100`,
+                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${artistsrArray}&min_tempo=${tempo}&target_popularity=${popularity}&target_energy=${energy}&target_danceability=${danceability}&limit=100`,
                             {
                                 headers: {
                                     Authorization: `Bearer ${accessToken}`
                                 }
                             }).then(value => value.json()),
-                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${artistsrrArray}&tartempo=${tartempo}&target_danceability=${danceability}&energy=${energy}&limit=100`,
+                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${artistsrrArray}&min_tempo=${tempo}&target_popularity=${popularity}&target_energy=${energy}&target_danceability=${danceability}&limit=100`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`
+                                }
+                            }).then(value => value.json()),
+                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${artistsrrrArray}&min_tempo=${tempo}&target_popularity=${popularity}&target_energy=${energy}&target_danceability=${danceability}&limit=100`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${accessToken}`
+                                }
+                            }).then(value => value.json()),
+                        fetch(`https://api.spotify.com/v1/recommendations/?seed_artists=${artistsrrrrArray}&min_tempo=${tempo}&target_popularity=${popularity}&target_energy=${energy}&target_danceability=${danceability}&limit=100`,
                             {
                                 headers: {
                                     Authorization: `Bearer ${accessToken}`
@@ -1458,7 +1533,7 @@ const Spotify = {
                         shuffle(finalflat);
                         finalflat = finalflat.filter((v, i, a) => a.findIndex(t => (JSON.stringify(t) === JSON.stringify(v))) === i);
                         console.log(finalflat);
-                        if (finalflat.length < 50)
+                        if (finalflat.length < 30)
                         {
                             var modalerror = document.getElementById("myModalerror");
                             var span = document.getElementsByClassName("close")[2];
