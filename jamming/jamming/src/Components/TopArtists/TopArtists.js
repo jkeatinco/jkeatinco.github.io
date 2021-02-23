@@ -20,7 +20,7 @@ class TopArtists extends React.Component {
 
     render() {
         return (
-            <div className="TopArtists">
+            <div id="topArtistsId" className="TopArtists" style={{ display: "none" }}>
                 
                 {/* <input defaultValue={"New Playlist"} onChange={this.handleNameChange} /> */}
                 {/* <ArtistList items={this.props.ArtistList}

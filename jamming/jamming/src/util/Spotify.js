@@ -1,6 +1,6 @@
 const clientId = '';
-// const redirectUri = 'https://spottypotty.surge.sh';
-const redirectUri = 'http://localhost:3000';
+const redirectUri = 'https://spottypotty.surge.sh';
+// const redirectUri = 'http://localhost:3000';
 let accessToken;
 
 const Spotify = {
@@ -1463,10 +1463,16 @@ const Spotify = {
                 const artistsrrArray = artistsrr.slice(0, n)
                 artistsrrArray.length = 5;
 
+                shuffle(scope);
+                console.log(scope);
+
                 const artistsrrr = scope;
 
                 const artistsrrrArray = artistsrrr.slice(0, n)
                 artistsrrrArray.length = 5;
+
+                shuffle(scope);
+                console.log(scope);
 
                 const artistsrrrr = scope;
 

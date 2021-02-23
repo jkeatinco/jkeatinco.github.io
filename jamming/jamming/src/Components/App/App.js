@@ -110,9 +110,10 @@ class App extends React.Component {
     Spotify.login().then(display_name => {
       console.log(display_name);
 
-      document.getElementById("Login-Btn").style.visibility = "hidden";
+      document.getElementById("Login-Btn").style.display = "none";
       document.getElementById("Login-p").style.display = "none";
       document.getElementById("Login-pp").style.display = "none";
+      document.getElementById("topArtistsId").style.display = "flex";
 
       var playlistSaveBtns = document.getElementsByClassName('Playlist-save');
       for (var i = 0; i < playlistSaveBtns.length; i++) {
@@ -134,9 +135,10 @@ class App extends React.Component {
       Spotify.login().then(display_name => {
         console.log(display_name);
 
-        document.getElementById("Login-Btn").style.visibility = "hidden";
+        document.getElementById("Login-Btn").style.display = "none";
         document.getElementById("Login-p").style.display = "none";
         document.getElementById("Login-pp").style.display = "none";
+        document.getElementById("topArtistsId").style.display = "flex";
 
         var playlistSaveBtns = document.getElementsByClassName('Playlist-save');
         for (var i = 0; i < playlistSaveBtns.length; i++) {

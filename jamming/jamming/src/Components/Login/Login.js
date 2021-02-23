@@ -48,8 +48,10 @@ class Login extends React.Component {
                     <p>{this.props.item.id}</p> */}
                 </div>
                 <p id="Login-p">While on the Spotty<span className="highlight">Potty</span> 🚽, easily create a custom playlist on your Spotify with your top artists. Choose from either the NEW Goggins Running Playlist, 10 (Top Artists) x 10 (Top Artists Tracks) Playlist, 50 (Top Artists) x 2 (Top Artists Tracks) Playlist, or the seasonal Christmas Playlist. Just don't forget the 🧻.</p>
+                
+                <button id="Login-Btn" className="Login-login" onClick={this.props.onLogin} >LOGIN TO SPOTIFY <i className="fas fa-sign-in-alt"></i></button>
+
                 <p id="Login-pp" className="LoginP-Padding">P.S. I created the Goggins Running Playlist because I am going to torture myself and raise money for charity. The Goggins Challenge is a 4X4X48 Run (4 Miles every 4 hours for 48 hours) and it is kicking off March 5th @ 8pm PST. If you feel like checking out the charity I'm raising money for visit this <a href="https://www.facebook.com/donate/2812440489084919/" target="_blank">nifty 🔗 link on Facebook</a>. Thanks everyone and hope you enjoy the playlists!</p>
-                <button id="Login-Btn" className="Login-login" onClick={this.props.onLogin} >LOGIN TO SPOTIFY</button>
                 <p className="myNameDisplay">{this.props.display_name}</p>
             </div>
         )
