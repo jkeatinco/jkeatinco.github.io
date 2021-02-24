@@ -31,6 +31,7 @@ class App extends React.Component {
     this.topArtistsOld = this.topArtistsOld.bind(this);
     this.topChristmas = this.topChristmas.bind(this);
     this.myRunningPlaylist = this.myRunningPlaylist.bind(this);
+    this.myGogginsRunningPlaylist = this.myGogginsRunningPlaylist.bind(this);
     this.login = this.login.bind(this);
   }
 
@@ -106,6 +107,16 @@ class App extends React.Component {
     });
   }
 
+  myGogginsRunningPlaylist() {
+    Spotify.myGogginsRunningPlaylist().then(playlistTracks => {
+      this.setState({
+        playlistName: 'Goggins Running SpottyPotty Playlist',
+        playlistTracks: playlistTracks
+      });
+    });
+  }
+
+
   login() {
     Spotify.login().then(display_name => {
       console.log(display_name);
@@ -177,6 +188,7 @@ class App extends React.Component {
             onTopArtistOld={this.topArtistsOld}
             onTopChristmas={this.topChristmas}
             onMyRunningPlaylist={this.myRunningPlaylist}
+            onMyGogginsRunningPlaylist={this.myGogginsRunningPlaylist}
             onSave={this.savePlaylist} />
           <div className="App-playlist">
             {/* <SearchResults searchResults={this.state.searchResults}

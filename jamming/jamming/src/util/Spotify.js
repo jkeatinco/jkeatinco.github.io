@@ -1,6 +1,6 @@
 const clientId = '';
-const redirectUri = 'https://spottypotty.surge.sh';
-// const redirectUri = 'http://localhost:3000';
+// const redirectUri = 'https://spottypotty.surge.sh';
+const redirectUri = 'http://localhost:3000';
 let accessToken;
 
 const Spotify = {
@@ -1604,7 +1604,306 @@ const Spotify = {
     },
 
 
+    myGogginsRunningPlaylist() {
 
+        // Get the modal
+        var modal = document.getElementById("myModalloading");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // append playlist link button to modal
+        // function loadingPlaylist() {
+        //     document.getElementById("spottyPottyLoading").innerHTML +=
+        //         "<div class='btnshare'><a class='playlistbtn' target='_blank' href=''>Check out your Playlist on Spotify</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u='>Share Playlist on Facebook</a></div><div class='btnshare'><a class='playlistbtn' target='_blank' href='https://twitter.com/intent/tweet?text=My%20SpottyPotty%20Playlist&hashtags=NowPlaying,SpottyPotty,Spotify&url='>Share Playlist on Twitter</a></div>";
+        // }
+        // NEED TO REMOVE OLD LINK FIRST!!!!!!!!!!
+
+        // loadingPlaylist();
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        function myfunction() {
+            modal.style.display = "block";
+        }
+        myfunction();
+
+        // When the user clicks on the button, open the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        const accessToken = Spotify.getAccessToken();
+        let userId;
+        var fetchess = []
+        fetchess.push(
+
+
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=short_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=short_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=medium_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=medium_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=49&time_range=long_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json()),
+            fetch(`https://api.spotify.com/v1/me/top/artists?limit=50&offset=49&time_range=long_term`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                }).then(response => response.json())
+
+
+        );
+
+        console.log(fetchess);
+        return Promise.all(fetchess)
+            .then(response => {
+                if (!response[0].items) {
+                    return [];
+                }
+                var items = [];
+                for (var k = 0; k < response.length; k++) {
+                    console.log(response[k]);
+                    items.push(response[k].items.map(items => ({
+                        id: items.id,
+                        name: items.name
+
+                        // artist: track.artists[0].name,
+                        // album: track.album.name,
+                        // uri: track.uri
+                    })))
+
+                }
+
+                console.log(items);
+                items = items.flat();
+                items = items.filter((v, i, a) => a.findIndex(t => (JSON.stringify(t) === JSON.stringify(v))) === i);
+                console.log(items);
+                return items.flat();
+
+            }).then
+            (items => {
+                // console.log(items);
+                var scope = [];
+                for (var i = 0; i < items.length; i++) {
+                    scope[i] = items[i]['id'];   // create scope.counter1, scope.counter2,...)
+                }
+                console.log(scope);
+                console.log(scope.length);
+
+                function shuffle(array) {
+                    var currentIndex = array.length, temporaryValue, randomIndex;
+
+                    // While there remain elements to shuffle...
+                    while (0 !== currentIndex) {
+
+                        // Pick a remaining element...
+                        randomIndex = Math.floor(Math.random() * currentIndex);
+                        currentIndex -= 1;
+
+                        // And swap it with the current element.
+                        temporaryValue = array[currentIndex];
+                        array[currentIndex] = array[randomIndex];
+                        array[randomIndex] = temporaryValue;
+                    }
+
+                    return array;
+                }
+
+                // Used like so
+
+                // shuffle(scope);
+                // console.log(scope);
+                // scope.length = 5;
+                const tempo = encodeURIComponent('170');
+                const danceability = encodeURIComponent('1.0');
+                const energy = encodeURIComponent('1.0');
+                const tartempo = encodeURIComponent('180');
+                const popularity = encodeURIComponent('100');
+
+                var fetches = [];
+
+
+                shuffle(scope);
+                console.log(scope);
+
+                const artistsr = scope;
+
+                const n = 5 //get the first 5 items
+
+                const artistsrArray = artistsr.slice(0, n)
+                artistsrArray.length = 5;
+
+                shuffle(scope);
+                console.log(scope);
+
+                const artistsrr = scope;
+
+                const artistsrrArray = artistsrr.slice(0, n)
+                artistsrrArray.length = 5;
+
+                shuffle(scope);
+                console.log(scope);
+
+                const artistsrrr = scope;
+
+                const artistsrrrArray = artistsrrr.slice(0, n)
+                artistsrrrArray.length = 5;
+
+                shuffle(scope);
+                console.log(scope);
+
+                const artistsrrrr = scope;
+
+                const artistsrrrrArray = artistsrrrr.slice(0, n)
+                artistsrrrrArray.length = 5;
+
+
+                fetches.push(
+
+                   
+                    
+                    fetch(`https://api.spotify.com/v1/albums/6GfrOuXqJrJjcldIstEz6A`,
+                        {
+                            headers: {
+                                Authorization: `Bearer ${accessToken}`
+                            }
+                        }).then(value => value.json())
+
+
+                );
+
+
+                return Promise.all(fetches)
+
+
+                    .then(value => {
+                        console.log(value);
+                        if (!value[0].tracks) {
+                            return [];
+                        }
+                        console.log(value.length);
+                        console.log(value[0]);
+
+                        var final = [];
+                        for (let i = 0; i < value.length; i++) {
+                            final.push(value[i].tracks.items.map(tracks => ({
+                                id: tracks.id,
+                                name: tracks.name,
+                                artist: tracks.artists[0].name,
+                                album: value[i].name,
+                                uri: tracks.uri
+                            })
+                            ))
+                        }
+
+                        console.log(final);
+                        var finalflat = [];
+                        finalflat = final.flat();
+                        // shuffle(finalflat);
+                        finalflat = finalflat.filter((v, i, a) => a.findIndex(t => (JSON.stringify(t) === JSON.stringify(v))) === i);
+                        console.log(finalflat);
+                        if (finalflat.length < 1) {
+                            var modalerror = document.getElementById("myModalerror");
+                            var span = document.getElementsByClassName("close")[2];
+                            console.log(span);
+                            function myfunctionerror() {
+                                modalerror.style.display = "block";
+                            }
+                            myfunctionerror();
+                            function closeModalerror() {
+                                modalerror.style.display = "none";
+                            }
+                            span.onclick = function () {
+                                modalerror.style.display = "none";
+                            }
+
+                            window.onclick = function (event) {
+                                if (event.target == modalerror) {
+                                    modalerror.style.display = "none";
+                                }
+                            }
+                            closeModal();
+                            final.length = 0;
+                            return final;
+
+                        }
+
+                        else if (finalflat.length > 100) {
+                            closeModal();
+                            return finalflat.slice(2, 3);
+                        }
+                        else {
+                            closeModal();
+                            return finalflat.slice(2, 3);
+                        }
+
+
+
+
+
+
+
+
+
+
+
+                        //How to Grab first two tracks for next playlist
+                        // var a = value[0].tracks.slice(0, 2).map(tracks => ({
+                        //     id: tracks.id,
+                        //     name: tracks.name,
+                        //     artist: tracks.artists[0].name,
+                        //     album: tracks.album.name,
+                        //     uri: tracks.uri
+                        // }))
+
+
+
+
+                    })
+
+            })
+
+    },
 
 
 
