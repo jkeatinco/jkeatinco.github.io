@@ -19,6 +19,8 @@ const colors = ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3'
 let bunnyPosition = 0;
 let score = 0;
 let audioEnabled = false;
+let userInteracted = false;
+
 audioControl.addEventListener('click', () => {
     audioEnabled = !audioEnabled;
 
@@ -37,23 +39,13 @@ function startGame() {
     requestAnimationFrame(dropEggs);
 }
 
-startBtn.addEventListener('click', () => {
-    unlockAudioContext(); // Add this line
-    startGame();
-    startGameLoop();
-});
 
 
 function playEggCollectSound() {
-    if (audioEnabled) {
+    if (audioEnabled && userInteracted) {
         eggCollectSound.currentTime = 0;
         eggCollectSound.play();
     }
-}
-
-function playEggCollectSound() {
-    eggCollectSound.currentTime = 0;
-    eggCollectSound.play();
 }
 
 function resetGame() {
@@ -205,11 +197,30 @@ function unlockAudioContext() {
 
 
 
-leftBtn.addEventListener('touchstart', () => moveBunny('left'));
-rightBtn.addEventListener('touchstart', () => moveBunny('right'));
+startBtn.addEventListener('click', () => {
+    userInteracted = true;
+    unlockAudioContext();
+    startGame();
+    startGameLoop();
+});
 
-leftBtn.addEventListener('mousedown', () => moveBunny('left'));
-rightBtn.addEventListener('mousedown', () => moveBunny('right'));
+leftBtn.addEventListener('touchstart', () => {
+    userInteracted = true;
+    moveBunny('left');
+});
+rightBtn.addEventListener('touchstart', () => {
+    userInteracted = true;
+    moveBunny('right');
+});
+
+leftBtn.addEventListener('mousedown', () => {
+    userInteracted = true;
+    moveBunny('left');
+});
+rightBtn.addEventListener('mousedown', () => {
+    userInteracted = true;
+    moveBunny('right');
+});
 
 leftBtn.addEventListener('mouseup', () => clearInterval(moveInterval));
 rightBtn.addEventListener('mouseup', () => clearInterval(moveInterval));
