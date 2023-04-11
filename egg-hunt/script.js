@@ -40,6 +40,7 @@ function startGame() {
 startBtn.addEventListener('click', () => {
     unlockAudioContext(); // Add this line
     startGame();
+    startGameLoop();
 });
 
 
@@ -224,11 +225,31 @@ restartBtn.addEventListener('click', () => {
 });
 
 // Replace the existing setInterval call with the following variable
-let dropEggsInterval = setInterval(() => {
-    createEgg();
-    dropEggs();
+// let dropEggsInterval = setInterval(() => {
+//     createEgg();
+//     dropEggs();
+//     requestAnimationFrame(createEggs);
+// }, 500);
+
+function startGameLoop() {
     requestAnimationFrame(createEggs);
-}, 500);
+    requestAnimationFrame(dropEggs);
+}
+
+function playSilentBuffer() {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const context = new AudioContext();
+    const buffer = context.createBuffer(1, 1, 22050);
+    const source = context.createBufferSource();
+    source.buffer = buffer;
+    source.connect(context.destination);
+    source.start(0);
+  }
+
+document.addEventListener('touchstart', playSilentBuffer, { once: true });
+document.addEventListener('mousedown', playSilentBuffer, { once: true });
+
+  
 
 document.addEventListener('touchstart', function unlockAudioContext() {
     if (typeof eggCollectSound.context !== 'undefined' && eggCollectSound.context.state === 'suspended') {
