@@ -8,12 +8,33 @@ const gameOverElement = document.getElementById('gameOver');
 const restartBtn = document.getElementById('restartBtn');
 const videoUrl = "https://www.youtube.com/embed/7rjbYU8bNhQ?rel=0";
 const eggCollectSound = document.getElementById('eggCollectSound');
+const audioControl = document.getElementById('audioControl');
+
 
 
 const colors = ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
 
 let bunnyPosition = 0;
 let score = 0;
+let audioEnabled = false;
+audioControl.addEventListener('click', () => {
+    audioEnabled = !audioEnabled;
+
+    if (audioEnabled) {
+        audioControl.querySelector('.fa-volume-mute').style.display = 'none';
+        audioControl.querySelector('.fa-volume-up').style.display = 'inline';
+    } else {
+        audioControl.querySelector('.fa-volume-mute').style.display = 'inline';
+        audioControl.querySelector('.fa-volume-up').style.display = 'none';
+    }
+});
+
+function playEggCollectSound() {
+    if (audioEnabled) {
+        eggCollectSound.currentTime = 0;
+        eggCollectSound.play();
+    }
+}
 
 function playEggCollectSound() {
     eggCollectSound.currentTime = 0;
@@ -158,6 +179,14 @@ function clearEggs() {
         gameContainer.removeChild(egg);
     });
 }
+
+// function to unlock audio context
+function unlockAudioContext() {
+    if (typeof eggCollectSound.context !== 'undefined' && eggCollectSound.context.state === 'suspended') {
+      eggCollectSound.context.resume();
+    }
+  }
+  
 
 
 

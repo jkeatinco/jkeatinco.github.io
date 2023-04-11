@@ -131,3 +131,17 @@ button:hover {
     background-color: pink;
     color: white;
 }
+
+.audio-control {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    z-index: 20;
+}
+
+.audio-control:focus {
+    outline: none;
+}
