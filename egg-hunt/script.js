@@ -6,7 +6,7 @@ const rightBtn = document.getElementById('rightBtn');
 const scoreElement = document.getElementById('score');
 const gameOverElement = document.getElementById('gameOver');
 const restartBtn = document.getElementById('restartBtn');
-const videoUrl = "https://www.youtube.com/embed/7rjbYU8bNhQ?autoplay=1&rel=0";
+const videoUrl = "https://www.youtube.com/embed/7rjbYU8bNhQ?rel=0";
 const eggCollectSound = document.getElementById('eggCollectSound');
 
 
