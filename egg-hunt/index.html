@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunny Egg Collector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score">Eggs Collected: <span id="score">0</span></div>
+        <div class="bunny" style="width: 50px; height: 50px;"></div>
+        <div class="game-over" id="gameOver">
+        <h1>Game Over</h1>
+          <div class="video-wrapper">
+            <iframe id="youtubeVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        <button id="restartBtn">Restart</button>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="control-btn" id="leftBtn">Left</button>
+        <button class="control-btn" id="rightBtn">Right</button>
+    </div>
+    <audio id="eggCollectSound" src="audio/egg_collect.wav" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

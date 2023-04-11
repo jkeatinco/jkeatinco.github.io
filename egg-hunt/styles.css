@@ -1,0 +1,129 @@
+/* styles.css */
+html {
+    touch-action: manipulation;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+.bunny {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url('images/bunny.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    height: 20vh;
+}
+
+.control-btn {
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    touch-action: none;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+}
+
+.game-over {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    z-index: 10;
+}
+
+#restartBtn {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+/* styles.css */
+.explosion {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: explode 0.5s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    font-size: 1.25rem;
+    color: white;
+    background-color: lightpink;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: pink;
+    color: white;
+}
