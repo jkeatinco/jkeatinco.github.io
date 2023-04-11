@@ -7,9 +7,17 @@ const scoreElement = document.getElementById('score');
 const gameOverElement = document.getElementById('gameOver');
 const restartBtn = document.getElementById('restartBtn');
 const videoUrl = "https://www.youtube.com/embed/7rjbYU8bNhQ?rel=0";
-const eggCollectSound = document.getElementById('eggCollectSound');
+// const eggCollectSound = document.getElementById('eggCollectSound');
+const eggCollectSound = new Howl({
+    src: ['audio/egg_collect.mp3'],
+    autoplay: false,
+    loop: false,
+    volume: 1,
+  });
+  
 const audioControl = document.getElementById('audioControl');
 const startBtn = document.getElementById('startBtn');
+
 
 
 
@@ -43,10 +51,9 @@ function startGame() {
 
 function playEggCollectSound() {
     if (audioEnabled && userInteracted) {
-        eggCollectSound.currentTime = 0;
-        eggCollectSound.play();
+      eggCollectSound.play();
     }
-}
+  }
 
 function resetGame() {
     bunny.style.width = '50px';
