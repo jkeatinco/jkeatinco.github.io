@@ -26,7 +26,7 @@ const colors = ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3'
 
 let bunnyPosition = 0;
 let score = 0;
-let audioEnabled = false;
+let audioEnabled = true;
 let userInteracted = false;
 
 audioControl.addEventListener('click', () => {
