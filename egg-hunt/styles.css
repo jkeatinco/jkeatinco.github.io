@@ -10,6 +10,8 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    max-width:400px;
+    margin:auto;
 }
 
 .game-container {
