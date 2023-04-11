@@ -9,6 +9,8 @@ const restartBtn = document.getElementById('restartBtn');
 const videoUrl = "https://www.youtube.com/embed/7rjbYU8bNhQ?rel=0";
 const eggCollectSound = document.getElementById('eggCollectSound');
 const audioControl = document.getElementById('audioControl');
+const startBtn = document.getElementById('startBtn');
+
 
 
 
@@ -28,6 +30,18 @@ audioControl.addEventListener('click', () => {
         audioControl.querySelector('.fa-volume-up').style.display = 'none';
     }
 });
+
+function startGame() {
+    startBtn.style.display = 'none';
+    requestAnimationFrame(createEggs);
+    requestAnimationFrame(dropEggs);
+}
+
+startBtn.addEventListener('click', () => {
+    unlockAudioContext(); // Add this line
+    startGame();
+});
+
 
 function playEggCollectSound() {
     if (audioEnabled) {

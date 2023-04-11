@@ -145,3 +145,12 @@ button:hover {
 .audio-control:focus {
     outline: none;
 }
+
+.game-control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    z-index: 20;
+}
