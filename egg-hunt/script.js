@@ -15,6 +15,11 @@ const colors = ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3'
 let bunnyPosition = 0;
 let score = 0;
 
+function playEggCollectSound() {
+    eggCollectSound.currentTime = 0;
+    eggCollectSound.play();
+}
+
 function resetGame() {
     bunny.style.width = '50px';
     bunny.style.height = '50px';
@@ -78,7 +83,7 @@ function dropEggs(currentTime) {
             score++;
             scoreElement.textContent = score;
             eggCollectSound.currentTime = 0;
-            eggCollectSound.play();
+            playEggCollectSound();
 
             if (score >= 10) {
                 gameOverElement.style.display = 'block';
@@ -181,3 +186,10 @@ let dropEggsInterval = setInterval(() => {
     dropEggs();
     requestAnimationFrame(createEggs);
 }, 500);
+
+document.addEventListener('touchstart', function unlockAudioContext() {
+    if (typeof eggCollectSound.context !== 'undefined' && eggCollectSound.context.state === 'suspended') {
+        eggCollectSound.context.resume();
+    }
+    document.removeEventListener('touchstart', unlockAudioContext);
+});
