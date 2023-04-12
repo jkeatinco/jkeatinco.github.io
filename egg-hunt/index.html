@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bunny Egg Collector</title>
+    <title>🐇 Hoppin' with Ebenezer: A Suburban Easter Tale: 🐇 Bunny Egg 🥚 Collector Game</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRCZ3CK0VW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MRCZ3CK0VW');
+</script>
 <body>
     <div class="game-container">
         <!-- Add this audio control button within the body -->
@@ -14,7 +22,7 @@
           <i class="fas fa-volume-mute" style="display:none;"></i>
           <i class="fas fa-volume-up" style="display:inline;"></i>
         </button>
-        <button id="startBtn" class="game-control">Start</button>
+        <button id="startBtn" class="game-control">Start Game <i class="fa-solid fa-play"></i></button>
 
         <div class="score">Eggs Collected 🥚: <span id="score">0</span></div>
         <div class="bunny" style="width: 50px; height: 50px;"></div>
@@ -23,13 +31,22 @@
           <div class="video-wrapper">
               <iframe id="youtubeVideo" src="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen playsinline></iframe>
           </div>
-          <button id="restartBtn">Restart</button>
+          <button id="restartBtn">Restart <i class="fa-solid fa-arrows-rotate"></i></button>
       </div>
     </div>
     <div class="controls">
-        <button class="control-btn" id="leftBtn">Left</button>
-        <button class="control-btn" id="rightBtn">Right</button>
+        <button class="control-btn" id="leftBtn"><i class="fa-solid fa-circle-left"></i> Left</button>
+        <button class="control-btn" id="rightBtn">Right <i class="fa-solid fa-circle-right"></i></button>
     </div>
+    <footer>
+        <div class="footer-content">
+          <p>Made with 💜 by</p><br>
+          <a href="https://twitter.com/jkeatin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i> @jkeatin</a>
+          <a href="https://www.youtube.com/channel/UCs2BpPQQ4ckZXQMtN3CyP_A" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> @JeffKeating</a>
+          <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">🤖 ChatGPT</a>
+          <a href="https://www.midjourney.com" target="_blank" rel="noopener noreferrer">🤖 Midjourney</a>
+        </div>
+      </footer>
     <audio id="eggCollectSound" src="audio/egg_collect.mp3" preload="auto"></audio>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <script src="script.js"></script>
