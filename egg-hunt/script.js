@@ -113,8 +113,8 @@ function dropEggs(currentTime) {
         if (rect.left + rect.width > bunnyRect.left && rect.left < bunnyRect.left + bunnyRect.width && rect.top + rect.height > bunnyRect.top) {
             gameContainer.removeChild(egg);
            createExplosion(egg.style.backgroundColor, rect.left, rect.top);
-            bunny.style.width = parseInt(bunny.style.width) + 5 + 'px';
-            bunny.style.height = parseInt(bunny.style.height) + 5 + 'px';
+            bunny.style.width = parseInt(bunny.style.width) + 15 + 'px';
+            bunny.style.height = parseInt(bunny.style.height) + 15 + 'px';
             score++;
             scoreElement.textContent = score;
             eggCollectSound.currentTime = 0;
