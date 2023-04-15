@@ -114,7 +114,7 @@ function dropEggs(currentTime) {
         const bunnyRect = bunny.getBoundingClientRect();
         if (rect.left + rect.width > bunnyRect.left && rect.left < bunnyRect.left + bunnyRect.width && rect.top + rect.height > bunnyRect.top) {
             gameContainer.removeChild(egg);
-           createExplosion(egg.style.backgroundColor, rect.left, rect.top);
+            createExplosion(egg.style.backgroundColor, parseInt(egg.style.left), parseInt(egg.style.top));
             bunny.style.width = parseInt(bunny.style.width) + 15 + 'px';
             bunny.style.height = parseInt(bunny.style.height) + 15 + 'px';
             score++;
@@ -183,10 +183,21 @@ function createExplosion(color, x, y) {
     explosion.style.top = y + 'px';
     gameContainer.appendChild(explosion);
 
-    setTimeout(() => {
-        gameContainer.removeChild(explosion);
-    }, 500);
+    let scaleFactor = 1;
+    let fadeOut = 1;
+    const explosionEffect = setInterval(() => {
+        scaleFactor += 0.1;
+        fadeOut -= 0.05;
+        explosion.style.transform = `scale(${scaleFactor})`;
+        explosion.style.opacity = fadeOut;
+
+        if (fadeOut <= 0) {
+            clearInterval(explosionEffect);
+            gameContainer.removeChild(explosion);
+        }
+    }, 20);
 }
+
 
 // Add this function to remove all eggs
 function clearEggs() {
