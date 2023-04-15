@@ -7,6 +7,7 @@ const scoreElement = document.getElementById('score');
 const gameOverElement = document.getElementById('gameOver');
 const restartBtn = document.getElementById('restartBtn');
 const videoUrl = "https://www.youtube.com/embed/7rjbYU8bNhQ?rel=0";
+const gameTitle = document.getElementById('gameTitle');
 // const eggCollectSound = document.getElementById('eggCollectSound');
 const eggCollectSound = new Howl({
     src: ['audio/egg_collect.mp3'],
@@ -43,6 +44,7 @@ audioControl.addEventListener('click', () => {
 
 function startGame() {
     startBtn.style.display = 'none';
+    gameTitle.style.display = 'none';
     requestAnimationFrame(createEggs);
     requestAnimationFrame(dropEggs);
 }

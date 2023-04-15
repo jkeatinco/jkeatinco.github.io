@@ -157,6 +157,18 @@ button:hover {
     z-index: 20;
 }
 
+.title-control {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    margin: auto;
+    z-index: 20;
+    text-align:center;
+}
+
 footer {
 	background-color: #333;
 	color: #fff;
