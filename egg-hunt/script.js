@@ -14,27 +14,16 @@ const eggCollectSound = new Howl({
     autoplay: false,
     loop: false,
     volume: 1,
+    html5: true,
   });
 
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const audioContext = new AudioContext();
-  
-  let backgroundMusic = new Howl({
-      src: ['audio/background_music.mp3'],
-      autoplay: false,
-      loop: true,
-      volume: 0.5,
-      onplayerror: function () {
-          backgroundMusic.once('unlock', function () {
-              backgroundMusic.play();
-          });
-      },
-      onload: function () {
-          if (audioEnabled && userInteracted) {
-              backgroundMusic.play();
-          }
-      },
-  });
+  const backgroundMusic = new Howl({
+    src: ['audio/background_music.mp3'],
+    autoplay: false,
+    loop: true,
+    volume: 0.5,
+    html5: true,
+});
   
 const audioControl = document.getElementById('audioControl');
 const startBtn = document.getElementById('startBtn');
