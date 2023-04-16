@@ -1,3 +1,3 @@
 jkeatinco.github.io
 ===================
-Right now I'm just exploring and trying things out. 
+Just making a whole lot of weird things when I can because, why not 😁
