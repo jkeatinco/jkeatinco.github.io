@@ -15,6 +15,26 @@ const eggCollectSound = new Howl({
     loop: false,
     volume: 1,
   });
+
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  const audioContext = new AudioContext();
+  
+  let backgroundMusic = new Howl({
+      src: ['audio/background_music.mp3'],
+      autoplay: false,
+      loop: true,
+      volume: 0.5,
+      onplayerror: function () {
+          backgroundMusic.once('unlock', function () {
+              backgroundMusic.play();
+          });
+      },
+      onload: function () {
+          if (audioEnabled && userInteracted) {
+              backgroundMusic.play();
+          }
+      },
+  });
   
 const audioControl = document.getElementById('audioControl');
 const startBtn = document.getElementById('startBtn');
@@ -47,6 +67,11 @@ function startGame() {
     gameTitle.style.display = 'none';
     requestAnimationFrame(createEggs);
     requestAnimationFrame(dropEggs);
+
+    // Play the background music
+    if (audioEnabled && userInteracted) {
+        backgroundMusic.play();
+    }
 }
 
 
@@ -65,6 +90,9 @@ function resetGame() {
     score = 0;
     scoreElement.textContent = score;
     gameOverElement.style.display = 'none';
+    if (audioEnabled && userInteracted) {
+        backgroundMusic.play();
+    }
 }
 
 function createEgg() {
@@ -132,9 +160,16 @@ function dropEggs(currentTime) {
         egg.style.top = rect.top + (deltaTime * dropSpeed) + 'px';
     });
 
-    if (gameOverElement.style.display !== 'block') {
+    if (gameOverElement.style.display === 'block') {
+        // Stop the background music
+        backgroundMusic.stop();
+    } else {
         requestAnimationFrame(dropEggs);
     }
+
+    // if (gameOverElement.style.display !== 'block') {
+    //     requestAnimationFrame(dropEggs);
+    // }
 }
 
 // function moveBunny(direction) {

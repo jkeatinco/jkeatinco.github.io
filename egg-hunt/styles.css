@@ -5,7 +5,7 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Pacifico', cursive;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -118,6 +118,7 @@ button {
     display: inline-block;
     margin: 4px 2px;
     transition-duration: 0.4s;
+    font-family: 'Pacifico', cursive;
 }
 
 button:hover {
