@@ -8,13 +8,15 @@
 </head>
 <body>
     <div id="game-container">
-        <div class="image-wrap">
-            <img id="image1" src="image1.jpg" onclick="checkDifference(event, 'image1')">
-            <div class="overlay" id="overlay1"></div>
-        </div>
-        <div class="image-wrap">
-            <img id="image2" src="image2.jpg" onclick="checkDifference(event, 'image2')">
-            <div class="overlay" id="overlay2"></div>
+        <div id="image-container">
+            <div class="image-wrap">
+                <img id="image1" src="image1.jpg" onclick="checkDifference(event, 'image1')">
+                <div class="overlay" id="overlay1"></div>
+            </div>
+            <div class="image-wrap">
+                <img id="image2" src="image2.jpg" onclick="checkDifference(event, 'image2')">
+                <div class="overlay" id="overlay2"></div>
+            </div>
         </div>
         <div id="status">
             <span id="strikes">Strikes: 0</span>
