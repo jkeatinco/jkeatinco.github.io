@@ -10,6 +10,7 @@ const differences = [
 
 function startGame() {
     timer = setInterval(updateTimer, 1000);
+    displayCorrectSpots(); // Ensure images are loaded before displaying spots
 }
 
 function updateTimer() {
@@ -41,9 +42,10 @@ function isCorrectSpot(event, imageId) {
     const clickY = (event.clientY - rect.top) * scaleY;
 
     for (let diff of differences) {
-        if (!diff.found && clickX >= diff.x && clickX <= diff.x + diff.width &&
-            clickY >= diff.y && clickY <= diff.y + diff.height) {
+        if (!diff.found && clickX >= diff.x && clickX <= (diff.x + diff.width) &&
+            clickY >= diff.y && clickY <= (diff.y + diff.height)) {
             diff.found = true;
+            console.log(differences);
             showSparkleAnimation(event.clientX, event.clientY);
             return true;
         }
@@ -51,13 +53,13 @@ function isCorrectSpot(event, imageId) {
     return false;
 }
 
+
 function showSparkleAnimation(x, y) {
     const sparkle = document.createElement('div');
     sparkle.className = 'sparkle';
-    sparkle.style.left = x + 'px';
-    sparkle.style.top = y + 'px';
+    sparkle.style.left = (x - 25) + 'px'; // Adjusted for animation size
+    sparkle.style.top = (y - 25) + 'px'; // Adjusted for animation size
     document.body.appendChild(sparkle);
-
     setTimeout(() => sparkle.remove(), 1000);
 }
 
@@ -67,27 +69,41 @@ function endGame(message) {
     // Reset game or navigate to game over screen.
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    startGame();
-    displayCorrectSpots(); // Call this function to display the overlays
-});
-
 function displayCorrectSpots() {
-    const overlays = [document.getElementById('overlay1'), document.getElementById('overlay2')];
-    
-    overlays.forEach((overlay, index) => {
-        const image = document.getElementById(`image${index + 1}`);
-        const rect = image.getBoundingClientRect();
-        const scaleX = image.naturalWidth / rect.width;
-        const scaleY = image.naturalHeight / rect.height;
+    const images = [document.getElementById('image1'), document.getElementById('image2')];
+    images.forEach((image, index) => {
+        // Wait for the image to load to get accurate dimensions
+        const handleImageLoad = () => {
+            const rect = image.getBoundingClientRect();
+            const scaleX = image.naturalWidth / rect.width;
+            const scaleY = image.naturalHeight / rect.height;
+            const overlay = document.getElementById(`overlay${index + 1}`);
+            overlay.innerHTML = ''; // Clear previous spots
 
-        differences.forEach(diff => {
-            const spot = document.createElement('div');
-            spot.style.left = (diff.x / scaleX) + 'px';
-            spot.style.top = (diff.y / scaleY) + 'px';
-            spot.style.width = (diff.width / scaleX) + 'px';
-            spot.style.height = (diff.height / scaleY) + 'px';
-            overlay.appendChild(spot);
-        });
+            differences.forEach(diff => {
+                if (!diff.found) {
+                    const spot = document.createElement('div');
+                    spot.style.position = 'absolute';
+                    // Adjust positions based on the scale
+                    spot.style.left = (rect.left + (diff.x / scaleX)) + 'px';
+                    spot.style.top = (rect.top + (diff.y / scaleY)) + 'px';
+                    spot.style.width = (diff.width / scaleX) + 'px';
+                    spot.style.height = (diff.height / scaleY) + 'px';
+                    spot.style.border = '2px solid red'; // For visibility
+                    document.body.appendChild(spot); // Append to body to avoid relative positioning issues
+                }
+            });
+        };
+
+        if (image.complete) {
+            handleImageLoad();
+        } else {
+            image.addEventListener('load', handleImageLoad);
+        }
     });
 }
+
+
+
+// Wait for images to load before starting the game
+window.onload = startGame;
