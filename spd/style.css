@@ -34,3 +34,19 @@ body {
     border: 2px solid red; /* Visible border for testing */
 }
 
+.sparkle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('sparkle.gif'); /* Replace with your sparkle gif */
+    background-size: cover;
+    pointer-events: none; /* Prevents the animation from being clickable */
+    animation: sparkle-animation 1s ease-out;
+}
+
+@keyframes sparkle-animation {
+    from { transform: scale(0.5); opacity: 1; }
+    to { transform: scale(1.5); opacity: 0; }
+}
+
+
