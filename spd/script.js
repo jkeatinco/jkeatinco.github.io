@@ -21,18 +21,11 @@ function updateTimer() {
 }
 
 function checkDifference(event, imageId) {
-
     if (isCorrectSpot(event, imageId)) {
-        // Logic for correct spot
         console.log("Correct spot!");
-
-        // You can add more code here to handle what happens when the player finds a correct spot.
-        // For example, marking the spot, updating a score, etc.
     } else {
-        // Logic for wrong spot
         strikes++;
         document.getElementById('strikes').textContent = `Strikes: ${strikes}`;
-
         if (strikes >= 3) {
             endGame("Out of strikes!");
         }
@@ -50,21 +43,34 @@ function isCorrectSpot(event, imageId) {
     for (let diff of differences) {
         if (!diff.found && clickX >= diff.x && clickX <= diff.x + diff.width &&
             clickY >= diff.y && clickY <= diff.y + diff.height) {
-            diff.found = true; // Mark as found
-            showSparkleAnimation(event.clientX, event.clientY); // Trigger animation
+            diff.found = true;
+            showSparkleAnimation(event.clientX, event.clientY);
             return true;
         }
     }
     return false;
 }
 
+function showSparkleAnimation(x, y) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    document.body.appendChild(sparkle);
 
+    setTimeout(() => sparkle.remove(), 1000);
+}
 
 function endGame(message) {
     clearInterval(timer);
     alert(message);
     // Reset game or navigate to game over screen.
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    startGame();
+    displayCorrectSpots(); // Call this function to display the overlays
+});
 
 function displayCorrectSpots() {
     const overlays = [document.getElementById('overlay1'), document.getElementById('overlay2')];
@@ -85,20 +91,3 @@ function displayCorrectSpots() {
         });
     });
 }
-
-function showSparkleAnimation(x, y) {
-    const sparkle = document.createElement('div');
-    sparkle.className = 'sparkle';
-    sparkle.style.left = x + 'px';
-    sparkle.style.top = y + 'px';
-    document.body.appendChild(sparkle);
-
-    setTimeout(() => sparkle.remove(), 1000); // Remove after animation
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    startGame();
-    displayCorrectSpots(); // Call this function to display the overlays
-});
-
