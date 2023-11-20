@@ -21,16 +21,18 @@ function updateTimer() {
 }
 
 function checkDifference(event, imageId) {
-    // Placeholder for checking the correct spot.
-    // You need to define the logic to determine if the clicked spot is correct.
 
     if (isCorrectSpot(event, imageId)) {
         // Logic for correct spot
         console.log("Correct spot!");
+
+        // You can add more code here to handle what happens when the player finds a correct spot.
+        // For example, marking the spot, updating a score, etc.
     } else {
         // Logic for wrong spot
         strikes++;
         document.getElementById('strikes').textContent = `Strikes: ${strikes}`;
+
         if (strikes >= 3) {
             endGame("Out of strikes!");
         }
@@ -64,5 +66,28 @@ function endGame(message) {
     // Reset game or navigate to game over screen.
 }
 
-// Start the game when the page loads
-document.addEventListener('DOMContentLoaded', startGame);
+function displayCorrectSpots() {
+    const overlays = [document.getElementById('overlay1'), document.getElementById('overlay2')];
+    
+    overlays.forEach((overlay, index) => {
+        const image = document.getElementById(`image${index + 1}`);
+        const rect = image.getBoundingClientRect();
+        const scaleX = image.naturalWidth / rect.width;
+        const scaleY = image.naturalHeight / rect.height;
+
+        differences.forEach(diff => {
+            const spot = document.createElement('div');
+            spot.style.left = (diff.x / scaleX) + 'px';
+            spot.style.top = (diff.y / scaleY) + 'px';
+            spot.style.width = (diff.width / scaleX) + 'px';
+            spot.style.height = (diff.height / scaleY) + 'px';
+            overlay.appendChild(spot);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    startGame();
+    displayCorrectSpots(); // Call this function to display the overlays
+});
+

@@ -17,3 +17,20 @@ body {
     margin-top: 20px;
     font-size: 1.2em;
 }
+
+.image-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay div {
+    position: absolute;
+    border: 2px solid red; /* Visible border for testing */
+}
+
