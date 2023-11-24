@@ -26,6 +26,7 @@ body {
 .game-image {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
+    touch-action: none; /* Prevents default browser pinch-zoom */
     /* border: 2px solid black; */
 }
 

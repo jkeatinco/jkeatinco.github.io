@@ -24,6 +24,7 @@
         interact('.game-image')
           .gesturable({
             onmove: function (event) {
+            event.preventDefault(); // Prevents default browser actions on pinch/zoom
               var scale = event.scale,
                   rotation = event.rotation;
         
