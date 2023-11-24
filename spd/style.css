@@ -1,65 +1,83 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333; /* Dark background for contrast */
+    color: white; /* High contrast text */
+    font-family: 'Arial', sans-serif; /* Modern, clean font */
 }
 
-#game-container {
-    padding: 20px;
+#game {
+    display: flex;
+    justify-content: space-around;
+    max-width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
-.image-wrap {
+.image-container {
     position: relative;
-    display: inline-block;
+    width: 45%; /* Adjust based on your preference */
+    /* padding: 10px;  */
+    background-color: #fff; /* Light background around images */
+    /* border-radius: 5px; */
 }
 
-#image-container img {
-    max-width: 45%; /* Adjust based on screen size */
-    margin: 10px;
+.game-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    /* border: 2px solid black; */
 }
 
-#status {
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-.overlay {
+#score {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
 }
 
-.overlay div {
+#timer {
     position: absolute;
-    border: 2px solid red; /* Visible border for testing */
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
 }
 
-.sparkle {
+.difference-marker {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: yellow; /* Central pixel */
-    box-shadow: 
-        20px 0 0 red,   /* Right pixel */
-        -20px 0 0 blue, /* Left pixel */
-        0 20px 0 0 green, /* Bottom pixel */
-        0 -20px 0 0 orange; /* Top pixel */
-    pointer-events: none;
-    animation: explode 0.5s ease-out forwards;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 0, 0.3); /* Semi-transparent green circle */
+    width: 5px;  /* Double the radius */
+    height: 5px; /* Double the radius */
+    pointer-events: none; /* Prevent the marker from capturing clicks */
 }
 
-@keyframes explode {
-    0% {
-        transform: scale(1);
-        opacity: 1;
+#magnifier {
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 100px;  /* Size of the magnifier */
+    height: 100px; /* Size of the magnifier */
+    overflow: hidden;
+    display: none; /* Initially hidden */
+    z-index: 20;
+    background-repeat: no-repeat;
+    pointer-events: none; /* Ignore pointer events */
+}
+
+
+
+/* Existing CSS styles for larger screens */
+
+@media screen and (max-width: 600px) { /* Adjust the max-width as needed for your design */
+    #game {
+        flex-direction: column; /* Stack the images vertically */
     }
-    100% {
-        transform: scale(3);
-        opacity: 0;
-        box-shadow:
-            50px 0 0 red,   
-            -50px 0 0 blue, 
-            0 50px 0 0 green, 
-            0 -50px 0 0 orange;
+
+    .image-container {
+        width: 100%; /* Make each image container take full width */
+        margin-bottom: 10px; /* Add some space between the images */
     }
 }
+
+
