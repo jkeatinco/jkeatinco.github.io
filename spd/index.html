@@ -21,33 +21,17 @@
     <script src="script.js"></script>
 
     <script>
-        interact('.game-image')
-          .gesturable({
-            onmove: function (event) {
+        interact('.game-image').gesturable({
+        onmove: function (event) {
             event.preventDefault(); // Prevents default browser actions on pinch/zoom
-              var scale = event.scale,
-                  rotation = event.rotation;
-        
-              // Adjust the transform property of the image based on scale and rotation
-              event.target.style.transform =
-                'rotate(' + rotation + 'deg)' +
-                'scale(' + scale + ')';
+            var scale = event.scale;
+
+            // Adjust the transform property of the image based on scale
+            event.target.style.transform = 'scale(' + scale + ')';
             }
-          })
-          .draggable({
-            onmove: function (event) {
-              var x = (parseFloat(event.target.getAttribute('data-x')) || 0) + event.dx,
-                  y = (parseFloat(event.target.getAttribute('data-y')) || 0) + event.dy;
-        
-              // Translate the element
-              event.target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-        
-              // Update the position attributes
-              event.target.setAttribute('data-x', x);
-              event.target.setAttribute('data-y', y);
-            }
-          });
-        </script>
+        });
+          
+    </script>
 </body>
 </html>
 
