@@ -6,77 +6,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <!-- <div id="game">
+    <div id="game">
         <div class="image-container" id="container1">
             <img id="image1" class="game-image" src="image1.jpg">
         </div>
         <div class="image-container" id="container2">
             <img id="image2" class="game-image" src="image2.jpg">
         </div>        
-    </div>     -->
-
-    <div id="game">
-        <div id="pixi-container"></div>
-    </div>
+    </div>    
+    
     <div id="score">Score: 0</div>
     <div id="timer">Time Left: 30s</div>
     
     <script src="script.js"></script>
-
-    <!-- <script>
-        interact('.game-image').gesturable({
-        onmove: function (event) {
-            event.preventDefault(); // Prevents default browser actions on pinch/zoom
-            var scale = event.scale;
-
-            // Adjust the transform property of the image based on scale
-            event.target.style.transform = 'scale(' + scale + ')';
-            }
-        });
-          
-    </script> -->
-
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
-<script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const app = new PIXI.Application({ 
-        width: window.innerWidth, // Full width of the window
-        height: window.innerHeight, // Full height of the window
-        backgroundColor: 0xffffff, // Background color
-    });
-    document.getElementById('pixi-container').appendChild(app.view);
-
-    const image1 = PIXI.Sprite.from('image1.jpg');
-    const image2 = PIXI.Sprite.from('image2.jpg');
-
-    // Function to scale and center images
-    function setupImage(image) {
-        // Adjust scale and position of the image
-        image.anchor.set(0.5); // Center the anchor point
-        image.x = app.screen.width / 2; // Center horizontally
-        image.y = app.screen.height / 2; // Center vertically
-
-        // Scale the image as needed
-        // For example, image.scale.set(0.5);
-    }
-
-    setupImage(image1);
-    setupImage(image2);
-
-    app.stage.addChild(image1);
-    app.stage.addChild(image2);
-
-    // Handle window resizing for responsiveness
-    window.addEventListener('resize', () => {
-        app.renderer.resize(window.innerWidth, window.innerHeight);
-        setupImage(image1);
-        setupImage(image2);
-    });
-});
-
-</script>
 
 </body>
 </html>
