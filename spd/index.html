@@ -4,23 +4,26 @@
     <title>Spot the Difference Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 </head>
 <body>
-    <div id="game">
+    <!-- <div id="game">
         <div class="image-container" id="container1">
             <img id="image1" class="game-image" src="image1.jpg">
         </div>
         <div class="image-container" id="container2">
             <img id="image2" class="game-image" src="image2.jpg">
         </div>        
-    </div>    
+    </div>     -->
+
+    <div id="game">
+        <div id="pixi-container"></div>
+    </div>
     <div id="score">Score: 0</div>
     <div id="timer">Time Left: 30s</div>
     
     <script src="script.js"></script>
 
-    <script>
+    <!-- <script>
         interact('.game-image').gesturable({
         onmove: function (event) {
             event.preventDefault(); // Prevents default browser actions on pinch/zoom
@@ -31,7 +34,33 @@
             }
         });
           
-    </script>
+    </script> -->
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const app = new PIXI.Application({ 
+            width: 800,  // Width of the canvas
+            height: 600, // Height of the canvas
+            backgroundColor: 0xffffff, // Background color
+        });
+        document.getElementById('pixi-container').appendChild(app.view);
+
+        const image1 = PIXI.Sprite.from('image1.jpg');
+        // Set up image1 (position, size, etc.)
+
+        const image2 = PIXI.Sprite.from('image2.jpg');
+        // Set up image2 (position, size, etc.)
+
+        app.stage.addChild(image1);
+        app.stage.addChild(image2);
+
+        // Add touch event listeners to handle pinch-to-zoom
+    });
+</script>
+
 </body>
 </html>
 
