@@ -40,25 +40,42 @@
 
     <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const app = new PIXI.Application({ 
-            width: 800,  // Width of the canvas
-            height: 600, // Height of the canvas
-            backgroundColor: 0xffffff, // Background color
-        });
-        document.getElementById('pixi-container').appendChild(app.view);
-
-        const image1 = PIXI.Sprite.from('image1.jpg');
-        // Set up image1 (position, size, etc.)
-
-        const image2 = PIXI.Sprite.from('image2.jpg');
-        // Set up image2 (position, size, etc.)
-
-        app.stage.addChild(image1);
-        app.stage.addChild(image2);
-
-        // Add touch event listeners to handle pinch-to-zoom
+   document.addEventListener('DOMContentLoaded', function() {
+    const app = new PIXI.Application({ 
+        width: window.innerWidth, // Full width of the window
+        height: window.innerHeight, // Full height of the window
+        backgroundColor: 0xffffff, // Background color
     });
+    document.getElementById('pixi-container').appendChild(app.view);
+
+    const image1 = PIXI.Sprite.from('image1.jpg');
+    const image2 = PIXI.Sprite.from('image2.jpg');
+
+    // Function to scale and center images
+    function setupImage(image) {
+        // Adjust scale and position of the image
+        image.anchor.set(0.5); // Center the anchor point
+        image.x = app.screen.width / 2; // Center horizontally
+        image.y = app.screen.height / 2; // Center vertically
+
+        // Scale the image as needed
+        // For example, image.scale.set(0.5);
+    }
+
+    setupImage(image1);
+    setupImage(image2);
+
+    app.stage.addChild(image1);
+    app.stage.addChild(image2);
+
+    // Handle window resizing for responsiveness
+    window.addEventListener('resize', () => {
+        app.renderer.resize(window.innerWidth, window.innerHeight);
+        setupImage(image1);
+        setupImage(image2);
+    });
+});
+
 </script>
 
 </body>
