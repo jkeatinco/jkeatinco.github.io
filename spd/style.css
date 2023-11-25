@@ -1,84 +1,84 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #333; /* Dark background for contrast */
-    color: white; /* High contrast text */
-    font-family: 'Arial', sans-serif; /* Modern, clean font */
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#game {
-    display: flex;
-    justify-content: space-around;
-    max-width: 90%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Placeholder for background */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333; /* Placeholder for header background */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-style: italic;
 }
 
 .image-container {
-    position: relative;
-    width: 45%; /* Adjust based on your preference */
-    /* padding: 10px;  */
-    background-color: #fff; /* Light background around images */
-    /* border-radius: 5px; */
+    margin: 1rem auto;
+    width: 80%; /* Adjust based on layout */
+    padding: 0.5rem;
+    border: 5px solid #333; /* Placeholder for border */
 }
 
-.game-image {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    touch-action: none; /* Prevents default browser pinch-zoom */
-    /* border: 2px solid black; */
+
+
+/* Style for Leaflet map */
+.leaflet-container {
+    height: 400px; /* Adjust based on layout */
+    border-radius: 8px;
 }
 
-#score {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+#scoreboard {
+    background-color: #333; /* Placeholder for scoreboard background */
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
 }
 
-#timer {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 24px;
+#game-controls {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+#game-controls button {
+    background-color: #444; /* Placeholder for button background */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+#game-controls button:hover {
+    background-color: #555;
 }
 
 .difference-marker {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 0, 0.3); /* Semi-transparent green circle */
-    width: 5px;  /* Double the radius */
-    height: 5px; /* Double the radius */
-    pointer-events: none; /* Prevent the marker from capturing clicks */
-}
-
-#magnifier {
-    position: absolute;
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 100px;  /* Size of the magnifier */
-    height: 100px; /* Size of the magnifier */
-    overflow: hidden;
-    display: none; /* Initially hidden */
-    z-index: 20;
-    background-repeat: no-repeat;
-    pointer-events: none; /* Ignore pointer events */
+    width: 20px; /* Set the size of the clickable area */
+    height: 20px;
+    background: green; /* Invisible */
+    cursor: pointer; /* Change cursor to indicate clickable area */
 }
 
 
-
-/* Existing CSS styles for larger screens */
-
-@media screen and (max-width: 600px) { /* Adjust the max-width as needed for your design */
-    #game {
-        flex-direction: column; /* Stack the images vertically */
-    }
-
+/* Media query for responsiveness */
+@media (max-width: 768px) {
     .image-container {
-        width: 100%; /* Make each image container take full width */
-        margin-bottom: 10px; /* Add some space between the images */
+        width: 95%;
     }
 }
-
-

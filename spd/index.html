@@ -1,27 +1,46 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Spot the Difference Game</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Spot the Difference Game</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS (latest version) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Leaflet JavaScript (latest version) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.sync@0.2.4/L.Map.Sync.min.js" crossorigin=""></script>
 </head>
 <body>
-    <div id="game">
-        <div class="image-container" id="container1">
-            <img id="image1" class="game-image" src="image1.jpg">
-        </div>
-        <div class="image-container" id="container2">
-            <img id="image2" class="game-image" src="image2.jpg">
-        </div>        
-    </div>    
+    <header>
+        <h1>Spot the Difference</h1>
+        <p>or something 🌞</p>
+    </header>
     
-    <div id="score">Score: 0</div>
-    <div id="timer">Time Left: 30s</div>
-    
-    <script src="script.js"></script>
+    <main>
+        <section id="image-container-1" class="image-container">
+            <!-- Image 1 will go here -->
+        </section>
+        <section id="image-container-2" class="image-container">
+            <!-- Image 2 will go here -->
+        </section>
+    </main>
 
+    <aside id="scoreboard">
+        <div id="timer">Time: <span id="time">00:00</span></div>
+        <div id="score">Score: <span id="score-value">0</span></div>
+    </aside>
+
+    <nav id="game-controls">
+        <button id="start-game">Start Game</button>
+        <button id="zoom-in">Zoom In</button>
+        <button id="zoom-out">Zoom Out</button>
+        <button id="reset-game">Reset Game</button>
+    </nav>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
