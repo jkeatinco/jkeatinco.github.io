@@ -29,7 +29,8 @@ header p {
 
 .image-container {
     margin: 1rem auto;
-    width: 80%; /* Adjust based on layout */
+    width: 100%; /* Adjust based on layout */
+    max-width: 480px;
     padding: 0.5rem;
     border: 5px solid #333; /* Placeholder for border */
 }
@@ -38,7 +39,7 @@ header p {
 
 /* Style for Leaflet map */
 .leaflet-container {
-    height: 400px; /* Adjust based on layout */
+    height: 480px; /* Adjust based on layout */
     border-radius: 8px;
 }
 
@@ -68,17 +69,54 @@ header p {
     background-color: #555;
 }
 
+/* Custom Zoom Controls Styling */
+#custom-zoom-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; /* Ensure it's above the map */
+}
+
+#zoom-in-btn, #zoom-out-btn {
+    background-color: #fff; /* Example: white background */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    /* Add more styling as needed */
+}
+
 .difference-marker {
     width: 20px; /* Set the size of the clickable area */
     height: 20px;
-    background: green; /* Invisible */
+    background: red; /* Invisible */
     cursor: pointer; /* Change cursor to indicate clickable area */
 }
 
+.difference-found {
+    background: url('success.png') no-repeat center center;
+    background-size: cover;
+    animation: foundAnimation 1s;
+}
 
-/* Media query for responsiveness */
+@keyframes foundAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+    grid-gap: 10px; /* Adjust the gap between grid items */
+    padding: 10px; /* Padding around the grid */
+}
+
+/* Mobile layout - stacked */
 @media (max-width: 768px) {
-    .image-container {
-        width: 95%;
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column for mobile */
     }
 }

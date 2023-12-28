@@ -33,9 +33,15 @@ function updateScore(points) {
     document.getElementById('score-value').textContent = score;
 }
 
-function differenceFound() {
+function differenceFound(marker) {
     differencesFound++;
-    updateScore(10); // Increment the score by 10, for example
+    updateScore(10); // Increment the score
+    marker.setIcon(L.divIcon({ className: 'difference-found' })); // Change marker icon
+
+    // Play sound (if you've added sound)
+    var audio = new Audio('path_to_success_sound.mp3');
+    audio.play();
+
     if(differencesFound === totalDifferences) {
         endGame();
     }
@@ -65,23 +71,14 @@ function addDifferencesToMap(map) {
         
         marker.on('click', function() {
             // Call this when the difference is clicked
-            differenceFound();
-            marker.remove(); // Remove the marker or hide it
+            differenceFound(marker);
+            //marker.remove(); // Remove the marker or hide it
         });
         
         marker.addTo(map);
     });
 }
 
-function zoomIn() {
-    map1.zoomIn();
-    map2.zoomIn();
-}
-
-function zoomOut() {
-    map1.zoomOut();
-    map2.zoomOut();
-}
 
 // DOMContentLoaded event ensures the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -90,27 +87,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Initialize the first map
     var map1 = L.map('image-container-1', {
         center: [0, 0],
-        zoom: 1,
-        minZoom: 1,
+        zoom: 2,
+        minZoom: 2,
         maxZoom: 4,
         crs: L.CRS.Simple,
-        zoomControl: false, // We will add custom zoom controls later
+        zoomControl: false, // Custom zoom controls will be added later
         attributionControl: false // Hide the default attribution
     });
 
     // Initialize the second map
     var map2 = L.map('image-container-2', {
         center: [0, 0],
-        zoom: 1,
-        minZoom: 1,
+        zoom: 2,
+        minZoom: 2,
         maxZoom: 4,
         crs: L.CRS.Simple,
-        zoomControl: false, // We will add custom zoom controls later
+        zoomControl: false, // Custom zoom controls will be added later
         attributionControl: false // Hide the default attribution
     });
 
     // Assuming you have a dimensions variable for your images
-    var dimensions = [1000, 1000]; // Replace with your image dimensions
+    var dimensions = [1920, 1920]; // Replace with your image dimensions
     var bounds1 = new L.LatLngBounds(
         map1.unproject([0, dimensions[1]], map1.getMaxZoom()),
         map1.unproject([dimensions[0], 0], map1.getMaxZoom())
@@ -120,9 +117,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         map2.unproject([dimensions[0], 0], map2.getMaxZoom())
     );
 
+    // Set the maxBounds and maxBoundsViscosity for both maps
+    map1.setMaxBounds(bounds1);
+    map1.options.maxBoundsViscosity = 1.0;
+    map2.setMaxBounds(bounds2);
+    map2.options.maxBoundsViscosity = 1.0;
+
     // Add the images to the maps
     L.imageOverlay('image1.jpg', bounds1).addTo(map1);
     L.imageOverlay('image2.jpg', bounds2).addTo(map2);
+
 
     // Sync the maps to each other for scrolling and zooming
     map1.sync(map2);
@@ -141,6 +145,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     document.getElementById('reset-game').addEventListener('click', resetGame);
-    document.getElementById('zoom-in').addEventListener('click', zoomIn);
-    document.getElementById('zoom-out').addEventListener('click', zoomOut);
+
+    // Assuming map1 and map2 are your Leaflet map instances
+
+    function customZoomIn() {
+        if(map1 && map2) {
+            map1.zoomIn();
+            map2.zoomIn();
+        }
+    }
+    
+    function customZoomOut() {
+        if(map1 && map2) {
+            map1.zoomOut();
+            map2.zoomOut();
+        }
+    }
+
+    document.getElementById('zoom-in-btn').addEventListener('click', customZoomIn);
+    document.getElementById('zoom-out-btn').addEventListener('click', customZoomOut);
+
+
+    // var tempMarker = L.marker(map1.unproject([200, 300], map1.getMaxZoom()), {
+    //     draggable: true
+    // }).addTo(map1);
+    
+    // tempMarker.on('dragend', function(event) {
+    //     var marker = event.target;
+    //     var position = marker.getLatLng();
+    //     var newCoords = map1.project(position, map1.getMaxZoom());
+    //     console.log("New Coordinates: ", newCoords);
+    // });
 });
+
+
+
