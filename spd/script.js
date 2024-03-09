@@ -2,7 +2,7 @@
 var timer = null;
 var score = 0;
 var differencesFound = 0; // You'll need to define the total number of differences
-var totalDifferences = 5; // Example value
+var totalDifferences = 2; // Example value
 var map1, map2; // Declare maps globally to access them in functions
 
 // Assuming you have the coordinates of the differences
