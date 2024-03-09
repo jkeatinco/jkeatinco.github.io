@@ -69,3 +69,16 @@ body {
     align-items: center;
     z-index: 100;
 }
+.status {
+    /* put underneath sk-wave and centered  */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+
+
+}
