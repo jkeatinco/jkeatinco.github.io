@@ -1,3 +1,34 @@
+
+Hugging Face's logo Hugging Face
+
+Models
+Datasets
+Spaces
+Posts
+Docs
+Pricing
+
+Spaces:
+Scrimba
+/
+vanilla-js-object-detector
+App
+Files
+Community
+vanilla-js-object-detector
+/ style.css
+perborgen's picture
+perborgen
+Add project files
+065fc14
+6 months ago
+raw
+history
+blame
+contribute
+delete
+No virus
+871 Bytes
 html,
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -19,7 +50,7 @@ body {
     border: 2px solid black;
     padding: 8px 16px;
     cursor: pointer;
-    border-radius: 6px;
+	border-radius: 6px;
 }
 
 #file-upload {
@@ -43,10 +74,15 @@ body {
 .bounding-box {
     position: absolute;
     box-sizing: border-box;
-  }
-  
-  .bounding-box-label {
-    position: absolute;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.bounding-box-label {
     color: white;
+    position: absolute;
     font-size: 12px;
-  }
+    margin-top: -16px;
+    margin-left: -2px;
+    padding: 1px;
+}
