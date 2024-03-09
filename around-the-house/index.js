@@ -7,11 +7,13 @@ env.allowLocalModels = false;
 const status = document.getElementById('status');
 const fileUpload = document.getElementById('file-upload');
 const imageContainer = document.getElementById('image-container');
+const fancyStatus = document.getElementById('fancy-status');
 
 // Create a new object detection pipeline
 status.textContent = 'Loading model...';
 const detector = await pipeline('object-detection', 'Xenova/detr-resnet-50');
 status.textContent = 'Ready';
+fancyStatus.style.display = 'none';
 
 fileUpload.addEventListener('change', function (e) {
     const file = e.target.files[0];
