@@ -34,7 +34,8 @@ fileUpload.addEventListener('change', async function (e) {
     }
 
     const reader = new FileReader();
-    reader.onload = async function (e2) {
+
+    reader.onload = function (e2) {
         imageContainer.innerHTML = '';
         const image = document.createElement('img');
         image.src = e2.target.result;
@@ -87,7 +88,7 @@ async function detect(img) {
     });
     status.textContent = '';
     output.forEach(renderBox);
-    output.forEach(itemCheck);
+    // output.forEach(itemCheck);
     console.log("output", output);
 }
 
