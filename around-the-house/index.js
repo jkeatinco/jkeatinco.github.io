@@ -23,9 +23,13 @@ itemsToFind.forEach(item => {
     itemsContainer.appendChild(listItem);
 });
 
+
+const candidate_labels = ['television', 'fan', 'lamp', 'water bottle', 'elephant'];
+
+
 // Create a new object detection pipeline
 status.textContent = 'Loading model...';
-const detector = await pipeline('object-detection', 'Xenova/detr-resnet-101');
+const detector = await pipeline('zero-shot-object-detection', 'Xenova/owlvit-base-patch32');
 status.textContent = 'Ready';
 fancyStatus.style.display = 'none';
 
@@ -53,10 +57,7 @@ fileUpload.addEventListener('change', function (e) {
 async function detect(img) {
     fancyStatus.style.display = 'block';
     status.textContent = 'Analysing...';
-    const output = await detector(img.src, {
-        threshold: 0.5,
-        percentage: true,
-    });
+    const output = await detector(img.src, candidate_labels);
     fancyStatus.style.display = 'none';
     status.textContent = '';
     output.forEach(renderBox);
