@@ -15,19 +15,16 @@ let itemsToFind = ['elephant', 'item2', 'item3', 'item4', 'item5'];
 let gameStarted = false;
 let gameTimer = null;
 
-// Initialize the object detection pipeline and set status
-async function loadModel() {
-    status.textContent = 'Loading model...';
-    const detector = await pipeline('object-detection', 'Xenova/detr-resnet-50');
-    status.textContent = 'Ready';
-    fancyStatus.style.display = 'none';
-    return detector;
-}
 
-// The model loader is called immediately to load the model
-const detectorPromise = loadModel();
+status.textContent = 'Loading model...';
+const detector = await pipeline('object-detection', 'Xenova/detr-resnet-50');
+status.textContent = 'Ready';
+fancyStatus.style.display = 'none';
 
-fileUpload.addEventListener('change', async function (e) {
+
+
+
+fileUpload.addEventListener('change', function (e) {
     const file = e.target.files[0];
     if (!file) {
         return;
