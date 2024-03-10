@@ -1,9 +1,10 @@
+// Import the required functions from transformers.js
 import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.6.0';
 
-// Since we will download the model from the Hugging Face Hub, we can skip the local model check
+// Since we will download the model from the Hugging Face Hub, disable local model checks
 env.allowLocalModels = false;
 
-// Reference the elements that we will need
+// Reference the DOM elements we will interact with
 const status = document.getElementById('status');
 const fileUpload = document.getElementById('file-upload');
 const imageContainer = document.getElementById('image-container');
@@ -14,33 +15,38 @@ let itemsToFind = ['elephant', 'item2', 'item3', 'item4', 'item5'];
 let gameStarted = false;
 let gameTimer = null;
 
+// Initialize the object detection pipeline and set status
+async function loadModel() {
+    status.textContent = 'Loading model...';
+    const detector = await pipeline('object-detection', 'Xenova/detr-resnet-50');
+    status.textContent = 'Ready';
+    fancyStatus.style.display = 'none';
+    return detector;
+}
 
-// Create a new object detection pipeline
-status.textContent = 'Loading model...';
-const detector = await pipeline('object-detection', 'Xenova/detr-resnet-50');
-status.textContent = 'Ready';
-fancyStatus.style.display = 'none';
+// The model loader is called immediately to load the model
+const detectorPromise = loadModel();
 
-fileUpload.addEventListener('change', function (e) {
+fileUpload.addEventListener('change', async function (e) {
     const file = e.target.files[0];
     if (!file) {
         return;
     }
 
     const reader = new FileReader();
-
-    // Set up a callback when the file is loaded
     reader.onload = async function (e2) {
         imageContainer.innerHTML = '';
         const image = document.createElement('img');
         image.src = e2.target.result;
         imageContainer.appendChild(image);
 
+        // Ensure the game starts upon image load
         if (!gameStarted) {
             gameStarted = true;
             startGame();
         }
 
+        const detector = await detectorPromise; // Wait for the model to load
         const detections = await detector(image);
         detections.forEach(detection => {
             const index = itemsToFind.indexOf(detection.label);
@@ -54,6 +60,8 @@ fileUpload.addEventListener('change', function (e) {
     };
     reader.readAsDataURL(file);
 });
+
+// Rest of the game logic remains the same
 
 
 
