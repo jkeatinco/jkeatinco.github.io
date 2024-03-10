@@ -14,6 +14,14 @@ let itemsToFind = ['television', 'fan', 'lamp', 'water bottle', 'elephant'];
 let gameStarted = false;
 let gameTimer = null;
 
+const itemsContainer = document.getElementById('items');
+
+itemsToFind.forEach(item => {
+    const listItem = document.createElement('div');
+    listItem.textContent = item;
+    itemsContainer.appendChild(listItem);
+});
+
 // Create a new object detection pipeline
 status.textContent = 'Loading model...';
 const detector = await pipeline('object-detection', 'Xenova/detr-resnet-50');
@@ -42,6 +50,7 @@ fileUpload.addEventListener('change', function (e) {
 
 // Detect objects in the image
 async function detect(img) {
+    fancyStatus.style.display = 'block';
     status.textContent = 'Analysing...';
     const output = await detector(img.src, {
         threshold: 0.5,
@@ -49,6 +58,21 @@ async function detect(img) {
     });
     status.textContent = '';
     output.forEach(renderBox);
+    output.forEach(findItem);
+}
+
+function findItem({ label }) {
+    if (itemsToFind.includes(label)) {
+        itemsToFind = itemsToFind.filter((item) => item !== label);
+        console.log(itemsToFind)
+        if (itemsToFind.length === 0) {
+            if (gameStarted) {
+                clearInterval(gameTimer);
+                alert('You found all the items!');
+                gameStarted = false;
+            }
+        }
+    }
 }
 
 // Render a bounding box and label on the image
