@@ -1,9 +1,4 @@
-import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.16.0';
-
-// Since we will download the model from the Hugging Face Hub, we can skip the local model check
-env.allowLocalModels = false;
-
-// Reference the DOM elements we will interact with
+// index.js
 const status = document.getElementById('status');
 const fileUpload = document.getElementById('file-upload');
 const imageContainer = document.getElementById('image-container');
@@ -23,15 +18,26 @@ itemsToFind.forEach(item => {
     itemsContainer.appendChild(listItem);
 });
 
-
 const candidate_labels = ['television', 'fan', 'lamp', 'water bottle', 'elephant'];
 
-
-// Create a new object detection pipeline
 status.textContent = 'Loading model...';
-const detector = await pipeline('zero-shot-object-detection', 'Xenova/owlvit-base-patch32');
-status.textContent = 'Ready';
-fancyStatus.style.display = 'none';
+const worker = new Worker('worker.js');
+worker.postMessage({ cmd: 'init' });
+
+worker.onmessage = (event) => {
+  switch (event.data.status) {
+    case 'ready':
+      status.textContent = 'Ready';
+      fancyStatus.style.display = 'none';
+      break;
+    case 'result':
+      fancyStatus.style.display = 'none';
+      status.textContent = '';
+      event.data.output.forEach(renderBox);
+      event.data.output.forEach(findItem);
+      break;
+  }
+};
 
 fileUpload.addEventListener('change', function (e) {
     const file = e.target.files[0];
@@ -41,16 +47,17 @@ fileUpload.addEventListener('change', function (e) {
 
     const reader = new FileReader();
 
-    // Set up a callback when the file is loaded
     reader.onload = function (e2) {
         imageContainer.innerHTML = '';
         const image = document.createElement('img');
         image.src = e2.target.result;
         imageContainer.appendChild(image);
-        detect(image);
+        worker.postMessage({ cmd: 'detect', imgSrc: image.src, candidate_labels });
     };
     reader.readAsDataURL(file);
 });
+
+// Rest of the code remains the same...
 
 
 // Detect objects in the image
