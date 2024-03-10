@@ -44,6 +44,7 @@ async function detect(img) {
     });
     status.textContent = '';
     output.forEach(renderBox);
+    console.log("output", output);
 }
 
 // Render a bounding box and label on the image
