@@ -3,15 +3,22 @@ import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers
 // Since we will download the model from the Hugging Face Hub, we can skip the local model check
 env.allowLocalModels = false;
 
-// Reference the elements that we will need
+// Reference the DOM elements we will interact with
 const status = document.getElementById('status');
 const fileUpload = document.getElementById('file-upload');
 const imageContainer = document.getElementById('image-container');
+const fancyStatus = document.getElementById('fancy-status');
+const timerElement = document.getElementById('timer');
+
+let itemsToFind = ['television', 'fan', 'lamp', 'water bottle', 'elephant'];
+let gameStarted = false;
+let gameTimer = null;
 
 // Create a new object detection pipeline
 status.textContent = 'Loading model...';
 const detector = await pipeline('object-detection', 'Xenova/detr-resnet-50');
 status.textContent = 'Ready';
+fancyStatus.style.display = 'none';
 
 fileUpload.addEventListener('change', function (e) {
     const file = e.target.files[0];
