@@ -47,7 +47,7 @@ fileUpload.addEventListener('change', async function (e) {
         }
 
         const detector = await detectorPromise; // Wait for the model to load
-        const detections = await detector(img.src);
+        const detections = await detector(image.src);
         detections.forEach(detection => {
             const index = itemsToFind.indexOf(detection.label);
             if (index !== -1) {
