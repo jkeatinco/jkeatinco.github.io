@@ -18,6 +18,7 @@ const itemsContainer = document.getElementById('items');
 
 itemsToFind.forEach(item => {
     const listItem = document.createElement('div');
+    listItem.id = item; 
     listItem.textContent = item;
     itemsContainer.appendChild(listItem);
 });
@@ -53,7 +54,7 @@ async function detect(img) {
     fancyStatus.style.display = 'block';
     status.textContent = 'Analysing...';
     const output = await detector(img.src, {
-        threshold: 0.5,
+        threshold: 0.8,
         percentage: true,
     });
     status.textContent = '';
@@ -63,7 +64,9 @@ async function detect(img) {
 
 function findItem({ label }) {
     if (itemsToFind.includes(label)) {
+        // label.style.display = 'none';
         itemsToFind = itemsToFind.filter((item) => item !== label);
+        
         console.log(itemsToFind)
         if (itemsToFind.length === 0) {
             if (gameStarted) {
