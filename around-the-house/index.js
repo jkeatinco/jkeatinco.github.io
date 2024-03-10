@@ -5,9 +5,20 @@ const imageContainer = document.getElementById('image-container');
 const fancyStatus = document.getElementById('fancy-status');
 const timerElement = document.getElementById('timer');
 
+let score = 0; // Add this line
+const scoreElement = document.getElementById('score'); // Add this line
+
 let itemsToFind = ['television', 'plant', 'table', 'cup', 'chair'];
 let gameStarted = false;
 let gameTimer = null;
+
+const itemsDiv = document.getElementById('items');
+itemsToFind.forEach((item) => {
+  const itemElement = document.createElement('div');
+  itemElement.textContent = item;
+  itemElement.id = `item-${item}`;
+  itemsDiv.appendChild(itemElement);
+});
 
 
 
@@ -80,6 +91,8 @@ fileUpload.addEventListener('change', function (e) {
 function findItem({ label }) {
     if (itemsToFind.includes(label)) {
         // label.style.display = 'none';
+        score++; // Increment score
+        scoreElement.textContent = `Score: ${score}`; // Update score display
         const itemElement = document.getElementById(`item-${label}`);
         itemElement.style.textDecoration = 'line-through';
         itemsToFind = itemsToFind.filter((item) => item !== label);
@@ -124,13 +137,9 @@ function renderBox({ box, label }) {
 }
 
 function startGame() {
-    const itemsDiv = document.getElementById('items');
-    itemsToFind.forEach((item) => {
-      const itemElement = document.createElement('div');
-      itemElement.textContent = item;
-      itemElement.id = `item-${item}`;
-      itemsDiv.appendChild(itemElement);
-    });
+    score = 0; // Reset score
+    scoreElement.textContent = `Score: ${score}`; // Update score display
+   
 
     let timeLeft = 60;
     timerElement.textContent = `Time left: ${timeLeft} seconds`;
