@@ -48,15 +48,16 @@ fileUpload.addEventListener('change', async function (e) {
 
         const detector = await detectorPromise; // Wait for the model to load
         const detections = await detector(image.src);
-        detections.forEach(detection => {
-            const index = itemsToFind.indexOf(detection.label);
-            if (index !== -1) {
-                itemsToFind.splice(index, 1);
-                if (itemsToFind.length === 0) {
-                    endGame(true);
-                }
-            }
-        });
+        console.log(detection.label);
+        // detections.forEach(detection => {
+        //     const index = itemsToFind.indexOf(detection.label);
+        //     if (index !== -1) {
+        //         itemsToFind.splice(index, 1);
+        //         if (itemsToFind.length === 0) {
+        //             endGame(true);
+        //         }
+        //     }
+        // });
     };
     reader.readAsDataURL(file);
 });
