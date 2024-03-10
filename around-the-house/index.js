@@ -54,9 +54,10 @@ async function detect(img) {
     fancyStatus.style.display = 'block';
     status.textContent = 'Analysing...';
     const output = await detector(img.src, {
-        threshold: 0.8,
+        threshold: 0.5,
         percentage: true,
     });
+    fancyStatus.style.display = 'none';
     status.textContent = '';
     output.forEach(renderBox);
     output.forEach(findItem);
