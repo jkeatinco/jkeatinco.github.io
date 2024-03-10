@@ -24,21 +24,26 @@ modelStatus.textContent = 'Loading model...';
 const worker = new Worker('worker.js');
 worker.postMessage({ cmd: 'init' });
 
+// index.js
 worker.onmessage = (event) => {
-  switch (event.data.status) {
-    case 'ready':
-      console.log('Received ready message'); // Add this line
-      modelStatus.textContent = 'Ready';
-      fancyStatus.style.display = 'none';
-      break;
-    case 'result':
-      fancyStatus.style.display = 'none';
-      modelStatus.textContent = '';
-      event.data.output.forEach(renderBox);
-      event.data.output.forEach(findItem);
-      break;
-  }
-};
+    switch (event.data.status) {
+      case 'ready':
+        console.log('Received ready message'); // Add this line
+        modelStatus.textContent = 'Ready';
+        fancyStatus.style.display = 'none';
+        break;
+      case 'result':
+        fancyStatus.style.display = 'none';
+        modelStatus.textContent = '';
+        event.data.output.forEach(renderBox);
+        event.data.output.forEach(findItem);
+        break;
+      case 'error':
+        console.error('Error in worker:', event.data.message);
+        modelStatus.textContent = 'Error loading model';
+        break;
+    }
+  };
 
 fileUpload.addEventListener('change', function (e) {
     const file = e.target.files[0];
