@@ -1,5 +1,5 @@
 // index.js
-const status = document.getElementById('status');
+const modelStatus = document.getElementById('status');
 const fileUpload = document.getElementById('file-upload');
 const imageContainer = document.getElementById('image-container');
 const fancyStatus = document.getElementById('fancy-status');
@@ -20,19 +20,20 @@ itemsToFind.forEach(item => {
 
 const candidate_labels = ['television', 'fan', 'lamp', 'water bottle', 'elephant'];
 
-status.textContent = 'Loading model...';
+modelStatus.textContent = 'Loading model...';
 const worker = new Worker('worker.js');
 worker.postMessage({ cmd: 'init' });
 
 worker.onmessage = (event) => {
   switch (event.data.status) {
     case 'ready':
-      status.textContent = 'Ready';
+      console.log('Received ready message'); // Add this line
+      modelStatus.textContent = 'Ready';
       fancyStatus.style.display = 'none';
       break;
     case 'result':
       fancyStatus.style.display = 'none';
-      status.textContent = '';
+      modelStatus.textContent = '';
       event.data.output.forEach(renderBox);
       event.data.output.forEach(findItem);
       break;
@@ -61,15 +62,15 @@ fileUpload.addEventListener('change', function (e) {
 
 
 // Detect objects in the image
-async function detect(img) {
-    fancyStatus.style.display = 'block';
-    status.textContent = 'Analysing...';
-    const output = await detector(img.src, candidate_labels);
-    fancyStatus.style.display = 'none';
-    status.textContent = '';
-    output.forEach(renderBox);
-    output.forEach(findItem);
-}
+// async function detect(img) {
+//     fancyStatus.style.display = 'block';
+//     modelStatus.textContent = 'Analysing...';
+//     const output = await detector(img.src, candidate_labels);
+//     fancyStatus.style.display = 'none';
+//     modelStatus.textContent = '';
+//     output.forEach(renderBox);
+//     output.forEach(findItem);
+// }
 
 function findItem({ label }) {
     if (itemsToFind.includes(label)) {
