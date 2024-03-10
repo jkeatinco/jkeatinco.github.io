@@ -5,23 +5,16 @@ const imageContainer = document.getElementById('image-container');
 const fancyStatus = document.getElementById('fancy-status');
 const timerElement = document.getElementById('timer');
 
-let itemsToFind = ['television', 'fan', 'lamp', 'water bottle', 'elephant'];
+let itemsToFind = ['television', 'plant', 'table', 'cup', 'chair'];
 let gameStarted = false;
 let gameTimer = null;
 
-const itemsContainer = document.getElementById('items');
 
-itemsToFind.forEach(item => {
-    const listItem = document.createElement('div');
-    listItem.id = item; 
-    listItem.textContent = item;
-    itemsContainer.appendChild(listItem);
-});
 
-const candidate_labels = ['television', 'fan', 'lamp', 'water bottle', 'elephant'];
+const candidate_labels = ['television', 'plant', 'table', 'cup', 'chair'];
 
 modelStatus.textContent = 'Loading model...';
-const worker = new Worker('worker.js');
+const worker = new Worker('worker.js', { type: 'module' });
 worker.postMessage({ cmd: 'init' });
 
 // index.js
@@ -58,7 +51,14 @@ fileUpload.addEventListener('change', function (e) {
         const image = document.createElement('img');
         image.src = e2.target.result;
         imageContainer.appendChild(image);
+        fancyStatus.style.display = 'block';
+        modelStatus.textContent = 'Analysing...';
         worker.postMessage({ cmd: 'detect', imgSrc: image.src, candidate_labels });
+          // Ensure the game starts upon image load
+          if (!gameStarted) {
+            gameStarted = true;
+            startGame();
+        }
     };
     reader.readAsDataURL(file);
 });
@@ -80,6 +80,8 @@ fileUpload.addEventListener('change', function (e) {
 function findItem({ label }) {
     if (itemsToFind.includes(label)) {
         // label.style.display = 'none';
+        const itemElement = document.getElementById(`item-${label}`);
+        itemElement.style.textDecoration = 'line-through';
         itemsToFind = itemsToFind.filter((item) => item !== label);
         
         console.log(itemsToFind)
@@ -119,4 +121,37 @@ function renderBox({ box, label }) {
 
     boxElement.appendChild(labelElement);
     imageContainer.appendChild(boxElement);
+}
+
+function startGame() {
+    const itemsDiv = document.getElementById('items');
+    itemsToFind.forEach((item) => {
+      const itemElement = document.createElement('div');
+      itemElement.textContent = item;
+      itemElement.id = `item-${item}`;
+      itemsDiv.appendChild(itemElement);
+    });
+
+    let timeLeft = 60;
+    timerElement.textContent = `Time left: ${timeLeft} seconds`;
+
+    gameTimer = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `Time left: ${timeLeft} seconds`;
+        if (timeLeft <= 0) {
+            endGame(false);
+        }
+    }, 1000);
+}
+
+function endGame(won) {
+    clearInterval(gameTimer);
+    gameStarted = false;
+    if (won) {
+        fancyStatus.style.display = 'block';
+        modelStatus.textContent = 'You Won!';
+    } else {
+        fancyStatus.style.display = 'block';
+        modelStatus.textContent = 'You Lost!';
+    }
 }
