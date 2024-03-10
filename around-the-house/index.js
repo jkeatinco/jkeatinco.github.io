@@ -39,25 +39,13 @@ fileUpload.addEventListener('change', async function (e) {
         const image = document.createElement('img');
         image.src = e2.target.result;
         imageContainer.appendChild(image);
+        detect(image);
 
         // Ensure the game starts upon image load
         if (!gameStarted) {
             gameStarted = true;
             startGame();
         }
-
-        const detector = await detectorPromise; // Wait for the model to load
-        const detections = await detector(image.src);
-        console.log(detection.label);
-        // detections.forEach(detection => {
-        //     const index = itemsToFind.indexOf(detection.label);
-        //     if (index !== -1) {
-        //         itemsToFind.splice(index, 1);
-        //         if (itemsToFind.length === 0) {
-        //             endGame(true);
-        //         }
-        //     }
-        // });
     };
     reader.readAsDataURL(file);
 });
@@ -99,6 +87,7 @@ async function detect(img) {
     });
     status.textContent = '';
     output.forEach(renderBox);
+    output.forEach(itemCheck);
     console.log("output", output);
 }
 
