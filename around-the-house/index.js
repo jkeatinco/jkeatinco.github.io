@@ -8,6 +8,12 @@ const status = document.getElementById('status');
 const fileUpload = document.getElementById('file-upload');
 const imageContainer = document.getElementById('image-container');
 const fancyStatus = document.getElementById('fancy-status');
+const timerElement = document.getElementById('timer');
+
+let itemsToFind = ['elephant', 'item2', 'item3', 'item4', 'item5'];
+let gameStarted = false;
+let gameTimer = null;
+
 
 // Create a new object detection pipeline
 status.textContent = 'Loading model...';
@@ -24,15 +30,55 @@ fileUpload.addEventListener('change', function (e) {
     const reader = new FileReader();
 
     // Set up a callback when the file is loaded
-    reader.onload = function (e2) {
+    reader.onload = async function (e2) {
         imageContainer.innerHTML = '';
         const image = document.createElement('img');
         image.src = e2.target.result;
         imageContainer.appendChild(image);
-        detect(image);
+
+        if (!gameStarted) {
+            gameStarted = true;
+            startGame();
+        }
+
+        const detections = await detector.detect(image);
+        detections.forEach(detection => {
+            const index = itemsToFind.indexOf(detection.label);
+            if (index !== -1) {
+                itemsToFind.splice(index, 1);
+                if (itemsToFind.length === 0) {
+                    endGame(true);
+                }
+            }
+        });
     };
     reader.readAsDataURL(file);
 });
+
+
+
+function startGame() {
+    let timeLeft = 60;
+    timerElement.textContent = `Time left: ${timeLeft} seconds`;
+
+    gameTimer = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = `Time left: ${timeLeft} seconds`;
+        if (timeLeft <= 0) {
+            endGame(false);
+        }
+    }, 1000);
+}
+
+function endGame(won) {
+    clearInterval(gameTimer);
+    gameStarted = false;
+    if (won) {
+        status.textContent = 'You won!';
+    } else {
+        status.textContent = 'You lost!';
+    }
+}
 
 
 // Detect objects in the image
