@@ -41,7 +41,7 @@ fileUpload.addEventListener('change', function (e) {
             startGame();
         }
 
-        const detections = await detector.predict(image);
+        const detections = await detector(image);
         detections.forEach(detection => {
             const index = itemsToFind.indexOf(detection.label);
             if (index !== -1) {
