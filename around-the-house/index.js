@@ -25,7 +25,7 @@ itemsToFind.forEach(item => {
 
 // Create a new object detection pipeline
 status.textContent = 'Loading model...';
-const detector = await pipeline('object-detection', 'Xenova/yolov9-c');
+const detector = await pipeline('object-detection', 'Xenova/detr-resnet-101');
 status.textContent = 'Ready';
 fancyStatus.style.display = 'none';
 
