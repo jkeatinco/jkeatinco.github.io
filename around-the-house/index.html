@@ -1,49 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="spinkit.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Angkor&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🏠 Around The House</title>
+    <title>around the house</title>
+    
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+
+
 </head>
 
 <body>
     <div id="fancy-status" class="loading-screen">
         <div class="sk-wave sk-center">
-            <div class="sk-wave-rect"></div>
-            <div class="sk-wave-rect"></div>
-            <div class="sk-wave-rect"></div>
-            <div class="sk-wave-rect"></div>
-            <div class="sk-wave-rect"></div>
+            <div class="sk-wave-rect" id="rect1"></div>
+            <div class="sk-wave-rect" id="rect2"></div>
+            <div class="sk-wave-rect" id="rect3"></div>
+            <div class="sk-wave-rect" id="rect4"></div>
+            <div class="sk-wave-rect" id="rect5"></div>
         </div>
         <div id="status" class="status"></div>
-    </div>
-    <aside id="scoreboard">
-        <div id="timer">Time: <span id="time">00:00</span></div>
-        <div id="score">Score: <span id="score-value">0</span></div>
-    </aside>
-
-    <div id="game-controls">
-        <!-- <button id="start-game">Start Game</button> -->
-        <button id="reset-game">Reset Game</button>
-    </div>
-
-    <div id="items">
-        
-    </div>
+    </div>   
+  
     <main class="container">
-        <h1>🏠 Around The House</h1>
+
+        <aside id="scoreboard">
+            <div id="timer">time: <span id="time">00:00</span></div>
+            <div id="score">score: <span id="score-value">0</span></div>
+        </aside>
+       
+        <h1>
+            <span> around the </span>
+            <span>
+              &nbsp; <img style="min-width:clamp(1rem, 2vw + 1rem, 4rem); padding-left:10px;" src="around-the-house-icon.svg" alt="Around the house icon" />
+              <span class="pops">
+                <span class="pop"></span>
+                <span class="pop"></span>
+                <span class="pop"></span>
+                <span class="pop"></span>
+                <span class="pop"></span>
+              </span>
+              
+            </span>
+            <span></span>
+          </h1>
+       
+        <p>🏡✨ get ready for a whirlwind 🌪️ photo challenge! 📸 dash around your house 🚶‍♂️🚶‍♀️, capturing 5 items 🖼️ within just 60 seconds ⏰. speed, creativity, and a keen eye 👀 are your keys to victory 🏆. will you master the art of the snapshot 🎯, or will time slip away? 🕰️ let the frenzy begin! 🎉</p>
+
+        <h3>items to find 🔍</h3>
+        <div id="items" class="button-container">
+           
+        </div>
+       
         <label class="custom-file-upload">
             <input id="file-upload" type="file" accept="image/*" />
-            <img class="upload-icon" src="https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/upload-icon.png" />
-            Upload image
+            <i class="fa-solid fa-camera-retro"></i>
+            say cheese and click
         </label>
+        <p style="text-align: center; font-size: small;">(snap a photo, start the clock! 📸⏱️ your timer begins with the first shot.)</p>
         <div id="image-container"></div>
-        <!-- <p id="status"></p> -->
+       
+        <div class="footer ">
+            <div class="bubbles">
+              <div class="bubble" style="--size:4.824332743804077rem; --distance:6.927901199739309rem; --position:29.199806760373782%; --time:2.1277717097538664s; --delay:-3.7889141395799277s;"></div>
+              <div class="bubble" style="--size:4.697814888124025rem; --distance:6.695202074946933rem; --position:69.30761563814531%; --time:2.7878160218477768s; --delay:-3.5623924879040705s;"></div>
+              <div class="bubble" style="--size:2.0682185431268527rem; --distance:9.375112585028168rem; --position:8.34661411398753%; --time:2.8285206975520993s; --delay:-2.1810039003913246s;"></div>
+              <div class="bubble" style="--size:2.693568857885272rem; --distance:8.440616442788226rem; --position:28.52608910620056%; --time:3.145215094683255s; --delay:-2.7889179516768987s;"></div>
+              <div class="bubble" style="--size:5.054444411895608rem; --distance:9.171876155822707rem; --position:66.12114486137916%; --time:2.496544913426366s; --delay:-3.7200298962556313s;"></div>
+              <div class="bubble" style="--size:3.1858700071607755rem; --distance:7.190279893355057rem; --position:72.2851046777175%; --time:2.152021389940569s; --delay:-2.5336529956204736s;"></div>
+              <div class="bubble" style="--size:2.9644662933581367rem; --distance:8.779004469836892rem; --position:97.52179295175023%; --time:3.7425152066033687s; --delay:-2.265942353378209s;"></div>
+              <div class="bubble" style="--size:5.241433714421981rem; --distance:6.452617618357896rem; --position:8.799304326925883%; --time:3.1325222664620913s; --delay:-3.008129404745326s;"></div>
+              <div class="bubble" style="--size:4.582147934925119rem; --distance:9.838379774036031rem; --position:33.313562178008326%; --time:3.5703016263340595s; --delay:-2.983548861177153s;"></div>
+              <div class="bubble" style="--size:4.477302155625177rem; --distance:8.418399083774116rem; --position:96.65442586557658%; --time:2.8250081835329017s; --delay:-2.6166030875415185s;"></div>
+              <div class="bubble" style="--size:5.61264884518981rem; --distance:6.026566342293721rem; --position:49.014354549175955%; --time:3.5753561757846493s; --delay:-3.9998093358303057s;"></div>
+              <div class="bubble" style="--size:2.464003167920189rem; --distance:9.119280408906025rem; --position:88.03946031487786%; --time:2.7714849690872976s; --delay:-3.400079259134796s;"></div>
+              <div class="bubble" style="--size:4.161041907465077rem; --distance:9.84071435911078rem; --position:87.94416333490827%; --time:2.3160319383736145s; --delay:-2.6610948188588863s;"></div>
+              <div class="bubble" style="--size:5.084014761357944rem; --distance:8.858248783417217rem; --position:38.06951167359107%; --time:3.8616581527575904s; --delay:-3.068443766230517s;"></div>
+              <div class="bubble" style="--size:3.700060976717161rem; --distance:6.815201670187856rem; --position:19.015233242444996%; --time:2.030265808164878s; --delay:-3.5160033611479258s;"></div>
+              <div class="bubble" style="--size:3.9653915094330694rem; --distance:6.071308961753405rem; --position:26.240203553695824%; --time:3.048675248511479s; --delay:-2.7392014414686754s;"></div>
+              <div class="bubble" style="--size:3.8503406919721117rem; --distance:9.106604066032155rem; --position:98.66975764698057%; --time:2.525682796606336s; --delay:-3.3999788772772415s;"></div>
+              <div class="bubble" style="--size:3.586311142873223rem; --distance:6.331672555875511rem; --position:6.949587603833249%; --time:3.5487567864217016s; --delay:-3.4644318581563205s;"></div>
+              <div class="bubble" style="--size:3.45213419502271rem; --distance:8.476186502527572rem; --position:90.85606010928576%; --time:3.3520088013106824s; --delay:-2.9447882277498936s;"></div>
+              <div class="bubble" style="--size:4.585504741588458rem; --distance:6.070189405084864rem; --position:95.64323333830286%; --time:3.271942448379926s; --delay:-2.263868906710663s;"></div>
+              <div class="bubble" style="--size:5.175221577751566rem; --distance:9.437962634425315rem; --position:66.78141185417061%; --time:2.8035824576597377s; --delay:-3.9163167966634624s;"></div>
+              <div class="bubble" style="--size:5.362402090131728rem; --distance:6.409019575143009rem; --position:55.5735359564301%; --time:2.8022918555826712s; --delay:-3.2811628074439736s;"></div>
+              <div class="bubble" style="--size:4.266821064750767rem; --distance:9.381965597369195rem; --position:86.5175971656693%; --time:3.262053412401368s; --delay:-3.4092683206133563s;"></div>
+            </div>
+            <div class="footer-content">
+              <div>
+                <div><b>made with ❤️</b><a href="https://twitter.com/jkeatin" target="_blank">@jkeatin </a> | &nbsp;<span id="one" class="modal-link" style="cursor: pointer;">  design and code inspiration <i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <svg style="position:fixed; top:100vh">
+            <defs>
+              <filter id="blob">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
+              </filter>
+            </defs>
+          </svg>
     </main>
-    <script src="./index.js" type="module"></script>
-</body>
 
+    <div id="modal-container">
+      <div class="modal-background">
+        <div class="modal" style="color:black;">
+          <span class="fas fa-times" style="position:absolute; top:10px; right:10px; cursor:pointer;"></span>
+          <h2>Credits:</h2>
+          <p>Fun little project made with <a href="https://huggingface.co/docs/transformers.js/en/index" target="_blank">transformers.js 🔗</a> to expirement with. <br>Model currently being used is a zero-shot-object-detection model on <a href="https://huggingface.co/" target="_blank">🤗 Hugging Face</a> from <a href="https://huggingface.co/Xenova/owlvit-base-patch32">Xenova/owlvit-base-patch32 🔗</a>. <br>Make sure to <a href="https://twitter.com/xenovacom" target="_blank">follow Xenova</a> for awesome new updates to transformers.js.<br> Then I just made it more cool looking thanks to a bunch of awesome things people made on codepen.io</p>
+          <p>
+            <a class="no-underline" href="https://codepen.io/jh3y/pen/PoLmpOB" target="_blank">Jhey 🔗</a><br>
+            <a class="no-underline" href="https://codepen.io/tsuhre/pen/YzgEWPa" target="_blank">Ben Matthews 🔗</a><br>
+            <a class="no-underline" href="https://codepen.io/z-/pen/zYxdRQy" target="_blank">Zed Dash 🔗</a><br>
+            <a class="no-underline" href="https://codepen.io/designcouch/pen/obvKxm" target="_blank">Jesse Couch 🔗</a><br>
+            <a class="no-underline" href="https://codepen.io/Juxtopposed/pen/JjVXRey" target="_blank">Juxtopposed 🔗</a><br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="found-items-modal">
+      <div class="modal-background">
+        <div class="modal" style="color:black;">
+          <span class="fas fa-times" style="position:absolute; top:10px; right:10px; cursor:pointer;"></span>
+            <h2>Found Items</h2>
+            <ul id="found-items">
+            </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./modal.js"></script>
+    <script src="./index.js" type="module"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js'></script><script  src="./script.js"></script>
+   
+  </body>
 </html>

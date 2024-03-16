@@ -14,9 +14,30 @@ let gameTimer = null;
 
 const itemsDiv = document.getElementById('items');
 itemsToFind.forEach((item) => {
-  const itemElement = document.createElement('div');
-  itemElement.textContent = item;
+  const itemElement = document.createElement('button');
+  const iconElement = document.createElement('i');
+  
+  // Assign different icons based on the item
+  if (item === 'television') {
+    iconElement.className = 'fa-solid fa-tv';
+  } else if (item === 'plant') {
+    iconElement.className = 'fa-solid fa-plant-wilt';
+  } else if (item === 'table') {
+    iconElement.className = 'fa-solid fa-table';
+  } else if (item === 'cup') {
+    iconElement.className = 'fa-solid fa-mug-hot';
+  } else if (item === 'chair') {
+    iconElement.className = 'fa-solid fa-chair';
+  }
+  itemElement.innerHTML = item + '&nbsp;';
   itemElement.id = `item-${item}`;
+  itemElement.className = 'glowbtn';
+  
+
+
+  // Append the icon to the button
+  itemElement.appendChild(iconElement);
+  
   itemsDiv.appendChild(itemElement);
 });
 
@@ -24,7 +45,7 @@ itemsToFind.forEach((item) => {
 
 const candidate_labels = ['television', 'plant', 'table', 'cup', 'chair'];
 
-modelStatus.textContent = 'Loading model...';
+modelStatus.textContent = 'Summoning the AI magic... ✨';
 const worker = new Worker('worker.js', { type: 'module' });
 worker.postMessage({ cmd: 'init' });
 
@@ -62,8 +83,8 @@ fileUpload.addEventListener('change', function (e) {
         const image = document.createElement('img');
         image.src = e2.target.result;
         imageContainer.appendChild(image);
-        fancyStatus.style.display = 'block';
-        modelStatus.textContent = 'Analysing...';
+        fancyStatus.style.display = 'flex';
+        modelStatus.textContent = 'Hmmm... 🤔 data magic is happening...';
         worker.postMessage({ cmd: 'detect', imgSrc: image.src, candidate_labels });
           // Ensure the game starts upon image load
           if (!gameStarted) {
@@ -95,18 +116,57 @@ function findItem({ label }) {
         scoreElement.textContent = `Score: ${score}`; // Update score display
         const itemElement = document.getElementById(`item-${label}`);
         itemElement.style.textDecoration = 'line-through';
+        itemElement.classList.add('found');
         itemsToFind = itemsToFind.filter((item) => item !== label);
+        
+        openModalAndPopulate(label);
         
         console.log(itemsToFind)
         if (itemsToFind.length === 0) {
             if (gameStarted) {
                 clearInterval(gameTimer);
-                alert('You found all the items!');
+                endGame(true);
                 gameStarted = false;
             }
         }
     }
 }
+
+function openModalAndPopulate(item) {
+  // Get the modal element
+  const modal = document.getElementById('found-items-modal');
+  
+  modal.className = '';
+  modal.classList.add('two');
+  document.body.classList.add('modal-active');
+
+  // Get the element in the modal where the found items are to be displayed
+  const foundItemsElement = document.getElementById('found-items');
+
+  // Append the found item to the list of found items in the modal
+  const listItem = document.createElement('li');
+  
+  // Create Font Awesome icon
+  const iconElement = document.createElement('i');
+
+  // Assign different icons based on the item
+  if (item === 'television') {
+    iconElement.className = 'fa-solid fa-tv';
+  } else if (item === 'plant') {
+    iconElement.className = 'fa-solid fa-plant-wilt';
+  } else if (item === 'table') {
+    iconElement.className = 'fa-solid fa-table';
+  } else if (item === 'cup') {
+    iconElement.className = 'fa-solid fa-mug-hot';
+  } else if (item === 'chair') {
+    iconElement.className = 'fa-solid fa-chair';
+  }
+
+  listItem.textContent = item + ' ';
+  listItem.appendChild(iconElement);
+  foundItemsElement.appendChild(listItem);
+}
+
 
 // Render a bounding box and label on the image
 function renderBox({ box, label }) {
@@ -119,7 +179,7 @@ function renderBox({ box, label }) {
     const boxElement = document.createElement('div');
     boxElement.className = 'bounding-box';
     Object.assign(boxElement.style, {
-        borderColor: color,
+        
         left: 100 * xmin + '%',
         top: 100 * ymin + '%',
         width: 100 * (xmax - xmin) + '%',
@@ -130,7 +190,27 @@ function renderBox({ box, label }) {
     const labelElement = document.createElement('span');
     labelElement.textContent = label;
     labelElement.className = 'bounding-box-label';
-    labelElement.style.backgroundColor = color;
+
+    // Create Font Awesome icon
+    const iconElement = document.createElement('i');
+    
+
+        // Assign different icons based on the item
+    if (label === 'television') {
+        iconElement.className = 'fa-solid fa-tv';
+    } else if (label === 'plant') {
+        iconElement.className = 'fa-solid fa-plant-wilt';
+    } else if (label === 'table') {
+        iconElement.className = 'fa-solid fa-table';
+    } else if (label === 'cup') {
+        iconElement.className = 'fa-solid fa-mug-hot';
+    } else if (label === 'chair') {
+        iconElement.className = 'fa-solid fa-chair';
+  }
+    labelElement.innerHTML = label + '&nbsp;';
+    // Add icon to label
+    labelElement.appendChild(iconElement);
+    
 
     boxElement.appendChild(labelElement);
     imageContainer.appendChild(boxElement);
@@ -154,13 +234,71 @@ function startGame() {
 }
 
 function endGame(won) {
-    clearInterval(gameTimer);
-    gameStarted = false;
-    if (won) {
-        fancyStatus.style.display = 'block';
-        modelStatus.textContent = 'You Won!';
-    } else {
-        fancyStatus.style.display = 'block';
-        modelStatus.textContent = 'You Lost!';
-    }
+  clearInterval(gameTimer);
+  gameStarted = false;
+  if (won) {
+      fancyStatus.style.display = 'flex';
+      modelStatus.textContent = 'You Won!';
+  } else {
+      fancyStatus.style.display = 'flex';
+      modelStatus.textContent = 'You Lost!';
+  }
+
+  // Create restart button
+  var restartButton = document.createElement('button');
+  restartButton.textContent = 'Restart Game';
+  restartButton.onclick = restartGame; // restartGame is a function you need to implement
+
+  // Add class to the button
+  restartButton.classList.add('restart-button');
+
+  // Append restart button to fancyStatus
+  fancyStatus.appendChild(restartButton);
+}
+
+function restartGame() {
+  // Reset game variables
+  score = 0;
+  itemsToFind = ['television', 'plant', 'table', 'cup', 'chair'];
+  gameStarted = false;
+  gameTimer = null;
+
+  // Clear the image container
+  imageContainer.innerHTML = '';
+
+  // Reset the score display
+  scoreElement.textContent = `Score: ${score}`;
+
+  // Reset the timer display
+  timerElement.textContent = `Time left: 60 seconds`;
+
+  // Reset the status display
+  modelStatus.textContent = 'Ready';
+  fancyStatus.style.display = 'none';
+
+  // Remove the restart button
+  const restartButton = document.querySelector('#fancy-status button');
+  if (restartButton) {
+      fancyStatus.removeChild(restartButton);
+  }
+
+  // Reset the items display
+  const itemElements = document.querySelectorAll('#items button');
+  itemElements.forEach((itemElement) => {
+      itemElement.style.textDecoration = 'none';
+      itemElement.classList.remove('found');
+  });
+
+  // Reset the found items modal
+  const foundItemsElement = document.getElementById('found-items');
+  foundItemsElement.innerHTML = '';
+
+   // Close the modal if it's open
+   if (document.body.classList.contains('modal-active')) {
+    document.getElementById('found-items-modal').click();
+  }
+
+
+  // Start a new game
+  // startGame();
 }
