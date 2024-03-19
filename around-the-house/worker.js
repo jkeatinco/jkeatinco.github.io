@@ -10,12 +10,12 @@ self.onmessage = async (event) => {
   try {
     switch (event.data.cmd) {
       case 'init':
-        detector = await pipeline('zero-shot-object-detection', 'Xenova/owlvit-base-patch32');
+        detector = await pipeline('zero-shot-object-detection', 'Xenova/owlv2-base-patch16-ensemble');
         console.log('Model initialized'); // Add this line
         self.postMessage({ status: 'ready' });
         break;
       case 'detect':
-        const output = await detector(event.data.imgSrc, event.data.candidate_labels, {threshold: 0.1, percentage: true});
+        const output = await detector(event.data.imgSrc, event.data.candidate_labels, {topk: 4, threshold: 0.05, percentage: true});
         self.postMessage({ status: 'result', output });
         break;
     }
