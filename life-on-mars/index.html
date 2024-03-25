@@ -122,6 +122,28 @@
     <footer class="blockquote-footer">Made with 💜 by <cite title="Source Title"><a class="text-success" href="https://twitter.com/jkeatin"
         target="_blank">jkeatin</a></cite></footer>
   </div>
+  <script>
+    fetch('images.json')
+  .then(response => response.json())
+  .then(images => {
+    const container = document.querySelector('.your-class');
+    images.forEach(image => {
+      const slide = document.createElement('div');
+      slide.className = 'slideimg';
+      const img = document.createElement('img');
+      img.setAttribute('data-lazy', `img/v2/${image}`);
+      const caption = document.createElement('div');
+      caption.className = 'slide__caption';
+      const span = document.createElement('span');
+      span.className = 'p-2 sm-fnt';
+      span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
+      caption.appendChild(span);
+      slide.appendChild(img);
+      slide.appendChild(caption);
+      container.appendChild(slide);
+    });
+  });
+  </script>
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -139,6 +161,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+ 
 
   <script>
     $(document).ready(function () {
@@ -193,38 +216,17 @@
             itemSelector: '.slideimg img'
           });
           // Preload first two images
-        var images = $('.your-class').find('.slideimg img');
-        if (images.length > 0) {
-          $('<img/>')[0].src = images[0].src;
-          if (images.length > 1) {
-            $('<img/>')[0].src = images[1].src;
-          }
-        }
+        // var images = $('.your-class').find('.slideimg img');
+        // if (images.length > 0) {
+        //   $('<img/>')[0].src = images[0].src;
+        //   if (images.length > 1) {
+        //     $('<img/>')[0].src = images[1].src;
+        //   }
+        // }
         });
   </script>
 
-  <script>
-    fetch('images.json')
-  .then(response => response.json())
-  .then(images => {
-    const container = document.querySelector('.your-class');
-    images.forEach(image => {
-      const slide = document.createElement('div');
-      slide.className = 'slideimg';
-      const img = document.createElement('img');
-      img.setAttribute('data-lazy', `img/v2/${image}`);
-      const caption = document.createElement('div');
-      caption.className = 'slide__caption';
-      const span = document.createElement('span');
-      span.className = 'p-2 sm-fnt';
-      span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
-      caption.appendChild(span);
-      slide.appendChild(img);
-      slide.appendChild(caption);
-      container.appendChild(slide);
-    });
-  });
-  </script>
+
 
 </body>
 
