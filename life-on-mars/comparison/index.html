@@ -1,59 +1,162 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!doctype html>
+<html class="no-js" lang="">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Life on Mars 👽 🚀 🌌 - Image Comparison</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8">
+  <title>Life on Mars 👽 🚀 🌌 : Image Comparison</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:title" content="Life on Mars...">
+  <meta property="og:description" content="is a collection of hundreds of previously black and white raw images from the Mars Curiosity Rover ran through DeOldify. It is now 2024, four years since I originally did this, and I have upsacled them all with models in ComfyUI! These images are not meant to be an accurate representation of the true color on the surface of Mars but will hopefully offer you an insightful new perspective of the planet.">
+  <meta property="og:image" content="https://jkeatinco.github.io/life-on-mars/img/purplebgfacebookimage.jpg">
+  <meta property="og:url" content="https://jkeatinco.github.io/life-on-mars/">
+
+  <meta name="twitter:title" content="Life on Mars...">
+  <meta name="twitter:description" content="is a collection of hundreds of previously black and white raw images from the Mars Curiosity Rover ran through DeOldify. It is now 2024, four years since I originally did this, and I have upsacled them all with models in ComfyUI! These images are not meant to be an accurate representation of the true color on the surface of Mars but will hopefully offer you an insightful new perspective of the planet.">
+  <meta name="twitter:image" content="https://jkeatinco.github.io/life-on-mars/img/purplebgtwitterimage.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace.js" ></script>
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/brands.min.css" />
+
+
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/main.css">
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+  <!-- <script type="text/javascript">
+   
+    var random_images_array = ['00000001.JPG', '00000003.JPG', '00000005.JPG', '00000007.JPG'];
+
+    function getRandomImage(imgAr, path) {
+      path = path || 'img/'; // default path here
+      var num = Math.floor(Math.random() * imgAr.length);
+      var img = imgAr[num];
+      var imgStr = '<div class="slideimg"><img src="'+ path + img +'"></div>';
+      
+
+      document.write(imgStr); document.close();
+    }
+
+  </script> -->
+
+
+  <meta name="theme-color" content="#fafafa">
+
+  
 
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="container">
- <div class="inner">
-	 
-	 <h1>Life on Mars 👽 🚀 🌌 Image Comparison</h1>
 
-	 <h3>This is just a little example of the images before and after upscaling.</h3>
-	 
+<body class="roboto-mono-normal">
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
 
-	 
-	 <!-- COMPARISON SLIDER CODE START -->
-	 
-	 <div class="comparison-slider-wrapper">
-		<!-- Comparison Slider - this div contain the slider with the individual images captions -->
-	 	<div class="comparison-slider">
-			<div class="overlay">2024 Upscaled Version</div>
-		 <img src="../img/v2/mars_00001_.jpg" alt="Upscaled Version">
-		 <!-- Div containing the image layed out on top from the left -->
-		 <div class="resize">
-			 <div class="overlay">2020 Version</div>
-			<img src="../img/v1/00000067.JPG" alt="Original DeOldify Version">
-		 </div>
-		 <!-- Divider where user will interact with the slider -->
-		 <div class="divider"></div>
-		</div>
-		<!-- All global captions if exist can go on the div bellow -->
-	 	<div class="caption">Life on Mars 👽 🚀 🌌 version made 4 years ago with DeOldify and then now with upscaled version.</div>
-	 </div>
-	 
-	 <!-- COMPARISON SLIDER CODE END -->
-	 
-	 <div class="split">
-	 	<p>Originally, back in 2020, I colorized Mars photos to get a unique perspective on how Mars might look.</p>
+  <!-- Add your site or application content here -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top black-navbar roboto-mono-bold">
+    <div class="container">
+      <a class="navbar-brand" href="#">Life on Mars 👽 🚀 🌌</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../">🏠 Home
+             
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href=".../comparison" target="_blank">🖼️ Image Comparison</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index-v1.html" target="_blank">📜 2020 Version</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-		<p>Now in 2024, I finally upscaled all the images to provide an even more interesting perspective. Enjoy!</p>
-	 </div>
-	 
+<style>sl-image-comparer img {
+	width: 100%; /* or any specific value */
+	height: auto;
+  }</style>
 
-		 
+  
+  <!-- Page Content -->
+  <section class="py-1">
+    <div class="container">
+		<sl-image-comparer position="15">
+			<img
+			  slot="before"
+			  src="img/00000067.JPG"
+			  alt="Original DeOldify Version (2020)"
+			/>
+			<img
+			  slot="after"
+			  src="img/mars_00001_.jpg"
+			  alt="Upscaled Version (2024)"
+			/>
+		  </sl-image-comparer>
+      <h1 class="display-4">Life on Mars... 👽 🚀 🌌</h1>
+      <p class="lead">version made 4 years ago with DeOldify and then now with upscaled version.</p>
+      <!-- <a href="comparison" target="_blank" class="btn btn-light">🖼️ Image Comparison</a><br><br> -->
+      <!-- <a href="index-v1.html" target="_blank" class="btn btn-light">Check Out Version 1 (Before Upscaling)</a> -->
+    </div>
+  </section>
+  <div class="container pb-5">
+    <footer class="blockquote-footer">Made with 💜 by <cite title="Source Title"><a class="text-success" href="https://twitter.com/jkeatin"
+        target="_blank">jkeatin</a></cite></footer>
+  </div>
+  
 
- </div>
-</div>
-
-
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src="../js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  
+ 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+  <script src="../js/plugins.js"></script>
+  <script src="../js/main.js"></script>
+ 
 
 </body>
+
 </html>
