@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js sl-theme-dark" lang="">
 
 <head>
   <meta charset="utf-8">
@@ -77,10 +77,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="comparison" target="_blank">🖼️ Image Comparison</a>
+            <a class="nav-link" href="comparison">🖼️ Image Comparison</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index-v1.html" target="_blank">📜 2020 Version</a>
+            <a class="nav-link" href="index-v1.html">📜 2020 Version</a>
           </li>
         </ul>
       </div>
@@ -106,7 +106,14 @@
     <div class="container">
       <h1 class="display-4">Life on Mars... 👽 🚀 🌌</h1>
       <p class="lead">is a collection of hundreds of previously black and white raw images from the <a class="text-success" href="https://mars.nasa.gov/msl/multimedia/raw-images/?order=sol+desc%2Cinstrument_sort+asc%2Csample_type_sort+asc%2C+date_taken+desc&per_page=50&page=0&mission=msl">Mars Curiosity Rover</a> ran through <a class="text-success" href="https://github.com/jantic/DeOldify" target="_blank">DeOldify back in 2020</a>. Fast forward 4 AI years, I have now upsacled them all using models in <a class="text-success" href="https://github.com/comfyanonymous/ComfyUI" target="_blank">ComfyUI</a>! These images are not meant to be an accurate representation of the true color on the surface of Mars but will hopefully offer you an insightful new perspective of the planet.</p>
-      <a href="comparison" target="_blank" class="btn btn-light">🖼️ Image Comparison</a><br><br>
+      <div class="animation-form">
+        <sl-animation name="rubberBand" duration="1000" iterations="1">
+          <sl-button>🖼️ Image Comparison</sl-button>
+        </sl-animation>
+      </div>
+      
+      
+      <br><br>
       
     </div>
   </section>
@@ -126,7 +133,10 @@
         const slide = document.createElement('div');
         slide.className = 'swiper-slide';
         const img = document.createElement('img');
-        img.src = `img/v2/${image}`;
+        img.src = `img/v2/${image}`; // Use src
+        img.loading = 'lazy'; // Add loading="lazy"
+        const preloader = document.createElement('div');
+        preloader.className = 'swiper-lazy-preloader swiper-lazy-preloader-white';
         const caption = document.createElement('div');
         caption.className = 'slide__caption';
         const span = document.createElement('span');
@@ -134,14 +144,26 @@
         span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
         caption.appendChild(span);
         slide.appendChild(img);
+        slide.appendChild(preloader);
         slide.appendChild(caption);
         container.appendChild(slide);
       });
-    
-      
-     
     });
-    </script>
+</script>
+
+<script>
+  const container = document.querySelector('.animation-form');
+  const animation = container.querySelector('sl-animation');
+  const button = container.querySelector('sl-button');
+
+  button.addEventListener('click', () => {
+      animation.play = true;
+
+      animation.addEventListener('sl-finish', () => {
+          window.location.href = 'comparison/index.html'; // replace with your comparison page URL
+      });
+  });
+</script>
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -162,8 +184,7 @@
   window.addEventListener('load', function() {
     var swiper = new Swiper(".mySwiper", {
       cssMode: true,
-      lazy: true,
-      // autoHeight: true,
+      lazy: true, // Enable lazy loading
       centeredSlides: true,
       navigation: {
         nextEl: ".swiper-button-next",
@@ -175,9 +196,13 @@
       },
       mousewheel: true,
       keyboard: true,
+      autoplay: {
+        delay: 3500, // delay between transitions in ms
+        disableOnInteraction: false, // autoplay will not stop on user interactions
+      },
     });
   });
-  </script>
+</script>
 
 </body>
 
