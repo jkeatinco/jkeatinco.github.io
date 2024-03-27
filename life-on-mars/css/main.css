@@ -173,6 +173,14 @@ img {
   height: 100%;
   object-fit: cover;
 }
+.mySwiper {
+  --swiper-transition-duration: 2000ms!important;
+  transition-duration: 2000ms !important;
+}
+.swiper-wrapper{
+  transition-duration: 2000ms !important;
+  --swiper-transition-duration: 2000ms!important;
+}
 
 
 
@@ -246,6 +254,13 @@ img {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+.nav-animation[play] .nav-link {
+  animation: var(--sl-animation-name) var(--sl-animation-duration) var(--sl-animation-timing-function) var(--sl-animation-delay) var(--sl-animation-iteration-count) var(--sl-animation-direction) var(--sl-animation-fill-mode) var(--sl-animation-play-state);
+}
+.navanim sl-animation, .nav-item sl-animation {
+  visibility: hidden;
 }
 
 /* ==========================================================================
