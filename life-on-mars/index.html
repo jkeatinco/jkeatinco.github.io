@@ -232,6 +232,7 @@
   window.addEventListener('load', function() {
     var swiper = new Swiper(".mySwiper", {
       cssMode: true,
+      lazy: true, // Enable lazy loading
       centeredSlides: true,
       navigation: {
         nextEl: ".swiper-button-next",
@@ -269,7 +270,7 @@ window.onclick = function(event) {
   });
 </script>
 
-<script>
+<!-- <script>
   const containers = document.querySelectorAll('.animation-scroll');
 
   containers.forEach(container => {
@@ -288,7 +289,7 @@ window.onclick = function(event) {
     });
     observer.observe(text);
   });
-</script>
+</script> -->
 
 <!-- <script>
   window.addEventListener('DOMContentLoaded', () => {
