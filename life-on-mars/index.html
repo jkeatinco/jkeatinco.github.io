@@ -27,6 +27,10 @@
   <meta name="twitter:image" content="https://jkeatinco.github.io/life-on-mars/img/purplebgtwitterimage.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/dark.css" />
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js"></script>
+
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,9 +39,6 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/brands.min.css" />
 
 
@@ -258,23 +259,25 @@
 
  <!-- Initialize Swiper -->
  <script>
-  var swiper = new Swiper(".mySwiper", {
-    cssMode: true,
-    lazy: true,
-    autoHeight: true,
-    centeredSlides: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
-    mousewheel: true,
-    keyboard: true,
+  window.addEventListener('load', function() {
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      lazy: true,
+      // autoHeight: true,
+      centeredSlides: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
   });
-</script>
+  </script>
 
 </body>
 
