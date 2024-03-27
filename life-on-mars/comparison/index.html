@@ -28,14 +28,14 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/light.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace.js" ></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace.js" ></script>
 
 
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -45,32 +45,20 @@
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/main.css">
 
-  
+
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 
-  <!-- <script type="text/javascript">
-   
-    var random_images_array = ['00000001.JPG', '00000003.JPG', '00000005.JPG', '00000007.JPG'];
-
-    function getRandomImage(imgAr, path) {
-      path = path || 'img/'; // default path here
-      var num = Math.floor(Math.random() * imgAr.length);
-      var img = imgAr[num];
-      var imgStr = '<div class="slideimg"><img src="'+ path + img +'"></div>';
-      
-
-      document.write(imgStr); document.close();
-    }
-
-  </script> -->
-
-
   <meta name="theme-color" content="#fafafa">
 
-  
+  <style>
+	sl-image-comparer img {
+	width: 100%; /* or any specific value */
+	height: auto;
+	}
+  </style>
 
 </head>
 
@@ -101,39 +89,33 @@
           <li class="nav-item">
             <a class="nav-link" href="../index-v1.html" target="_blank">📜 2020 Version</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li> -->
+          
         </ul>
       </div>
     </div>
   </nav>
 
-<style>sl-image-comparer img {
-	width: 100%; /* or any specific value */
-	height: auto;
-  }</style>
+
 
   
   <!-- Page Content -->
   <section class="py-1">
-    <div class="container">
-		<sl-image-comparer position="15">
-			<img
-			  slot="before"
-			  src="img/00000067.JPG"
-			  alt="Original DeOldify Version (2020)"
-			/>
-			<img
-			  slot="after"
-			  src="img/mars_00001_.jpg"
-			  alt="Upscaled Version (2024)"
-			/>
-		  </sl-image-comparer>
+    <div class="container" style="margin-top:72px;">
+		
       <h1 class="display-4">Life on Mars... 👽 🚀 🌌</h1>
       <p class="lead">version made 4 years ago with DeOldify and then now with upscaled version.</p>
-      <!-- <a href="comparison" target="_blank" class="btn btn-light">🖼️ Image Comparison</a><br><br> -->
-      <!-- <a href="index-v1.html" target="_blank" class="btn btn-light">Check Out Version 1 (Before Upscaling)</a> -->
+      <sl-image-comparer position="15">
+		<img
+		  slot="before"
+		  src="img/00000067.JPG"
+		  alt="Original DeOldify Version (2020)"
+		/>
+		<img
+		  slot="after"
+		  src="img/mars_00001_.jpg"
+		  alt="Upscaled Version (2024)"
+		/>
+	  </sl-image-comparer>
     </div>
   </section>
   <div class="container pb-5">
