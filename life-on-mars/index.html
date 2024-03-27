@@ -98,7 +98,8 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
   </div>
-    
+
+ 
 
   
   <!-- Page Content -->
@@ -121,34 +122,56 @@
     <footer class="blockquote-footer">Made with 💜 by <cite title="Source Title"><a class="text-success" href="https://twitter.com/jkeatin"
         target="_blank">jkeatin</a></cite></footer>
   </div>
-  <script>
-    fetch('images.json')
-    .then(response => response.json())
-    .then(images => {
-      // Shuffle images array
-      images.sort(() => Math.random() - 0.5);
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
     
-      const container = document.querySelector('.swiper-wrapper');
-      images.forEach(image => {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
-        const img = document.createElement('img');
-        img.src = `img/v2/${image}`; // Use src
-        img.loading = 'lazy'; // Add loading="lazy"
-        const preloader = document.createElement('div');
-        preloader.className = 'swiper-lazy-preloader swiper-lazy-preloader-white';
-        const caption = document.createElement('div');
-        caption.className = 'slide__caption';
-        const span = document.createElement('span');
-        span.className = 'p-2 sm-fnt';
-        span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
-        caption.appendChild(span);
-        slide.appendChild(img);
-        slide.appendChild(preloader);
-        slide.appendChild(caption);
-        container.appendChild(slide);
-      });
-    });
+  <script>
+ fetch('images.json')
+.then(response => response.json())
+.then(images => {
+  // Shuffle images array
+  images.sort(() => Math.random() - 0.5);
+
+  const container = document.querySelector('.swiper-wrapper');
+  images.forEach(image => {
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+    const img = document.createElement('img');
+    img.src = `img/v2/${image}`;
+    img.loading = 'lazy';
+    const downloadIcon = document.createElement('span'); // Use a span element instead of an i element
+    downloadIcon.textContent = '🔍➕'; // Use an emoji as the download icon
+    downloadIcon.className = 'download-icon';
+    downloadIcon.dataset.src = img.src; // Store the src of the img element as a data attribute in the downloadIcon
+    const preloader = document.createElement('div');
+    preloader.className = 'swiper-lazy-preloader swiper-lazy-preloader-white';
+    const caption = document.createElement('div');
+    caption.className = 'slide__caption';
+    const span = document.createElement('span');
+    span.className = 'p-2 sm-fnt';
+    span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
+    caption.appendChild(span);
+    slide.appendChild(img);
+    slide.appendChild(downloadIcon);
+    slide.appendChild(preloader);
+    slide.appendChild(caption);
+    container.appendChild(slide);
+  });
+
+  // Event delegation
+  container.addEventListener('click', function(event) {
+    if (event.target.matches('.download-icon')) {
+      const modal = document.getElementById('myModal');
+      const modalImg = document.getElementById('img01');
+      modal.style.display = 'block';
+      modalImg.src = event.target.dataset.src; // Retrieve the src from the data attribute of the downloadIcon
+    }
+  });
+});
 </script>
 
 <script>
@@ -198,11 +221,29 @@
       keyboard: true,
       autoplay: {
         delay: 3500, // delay between transitions in ms
-        disableOnInteraction: false, // autoplay will not stop on user interactions
+        disableOnInteraction: true, // autoplay will not stop on user interactions
       },
     });
+      // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
   });
 </script>
+
 
 </body>
 
