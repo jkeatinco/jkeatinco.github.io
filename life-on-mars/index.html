@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Life on Mars 👽 🚀 🌌</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
   
 
@@ -28,6 +28,10 @@
   <meta name="twitter:card" content="summary_large_image">
 
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -40,9 +44,14 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
+  
 
-  <script type="text/javascript">
-    // place your images in this array
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+  <!-- <script type="text/javascript">
+   
     var random_images_array = ['00000001.JPG', '00000003.JPG', '00000005.JPG', '00000007.JPG'];
 
     function getRandomImage(imgAr, path) {
@@ -55,7 +64,7 @@
       document.write(imgStr); document.close();
     }
 
-  </script>
+  </script> -->
 
 
   <meta name="theme-color" content="#fafafa">
@@ -64,14 +73,14 @@
 
 </head>
 
-<body>
+<body class="roboto-mono-normal">
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
   <!-- Add your site or application content here -->
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top black-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top black-navbar roboto-mono-bold">
     <div class="container">
       <a class="navbar-brand" href="#">Life on Mars 👽 🚀 🌌</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -81,15 +90,15 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="#">🏠 Home
              
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="comparison" target="_blank">Image Comparison</a>
+            <a class="nav-link" href="comparison" target="_blank">🖼️ Image Comparison</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index-v1.html" target="_blank">Version 1</a>
+            <a class="nav-link" href="index-v1.html" target="_blank">📜 2020 Version</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -98,24 +107,29 @@
       </div>
     </div>
   </nav>
-  
-  <header>
-    <div class="container-fluid slide-container">
-      <div class="your-class">
+
+    
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
       
-      </div>
     </div>
-    <div style="position:relative; bottom:88px; right:20px; text-align:right; width:100%; pointer-events: none;"><i class="fas fa-expand" style="font-size:36px;"></i></div>
-    <div class="slide__caption" style="position: relative;bottom: 71px;"><span class="p-2 sm-fnt">Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI</span></div>
-  </header>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+    <!-- <div style="position:relative; bottom:88px; right:20px; text-align:right; width:100%; pointer-events: none;"><i class="fas fa-expand" style="font-size:36px;"></i></div>
+    <div class="slide__caption" style="position: relative;bottom: 71px;"><span class="p-2 sm-fnt">Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI</span></div> -->
+
   
   <!-- Page Content -->
   <section class="py-1">
     <div class="container">
       <h1 class="display-4">Life on Mars... 👽 🚀 🌌</h1>
-      <p class="lead">is a collection of hundreds of previously black and white raw images from the <a class="text-success" href="https://mars.nasa.gov/msl/multimedia/raw-images/?order=sol+desc%2Cinstrument_sort+asc%2Csample_type_sort+asc%2C+date_taken+desc&per_page=50&page=0&mission=msl">Mars Curiosity Rover</a> ran through <a class="text-success" href="https://github.com/jantic/DeOldify" target="_blank">DeOldify</a>. It is now 2024, 4 years later since I originally did this, and I have now upsacled them all using models in <a class="text-success" href="https://github.com/comfyanonymous/ComfyUI" target="_blank">ComfyUI</a>! These images are not meant to be an accurate representation of the true color on the surface of Mars but will hopefully offer you an insightful new perspective of the planet.</p>
-      <a href="comparison" target="_blank" class="btn btn-light">Image Comparison (Before/After Upscaling)</a>
-      <a href="index-v1.html" target="_blank" class="btn btn-light">Check Out Version 1 (Before Upscaling)</a>
+      <p class="lead">is a collection of hundreds of previously black and white raw images from the <a class="text-success" href="https://mars.nasa.gov/msl/multimedia/raw-images/?order=sol+desc%2Cinstrument_sort+asc%2Csample_type_sort+asc%2C+date_taken+desc&per_page=50&page=0&mission=msl">Mars Curiosity Rover</a> ran through <a class="text-success" href="https://github.com/jantic/DeOldify" target="_blank">DeOldify back in 2020</a>. Fast forward 4 AI years, I have now upsacled them all using models in <a class="text-success" href="https://github.com/comfyanonymous/ComfyUI" target="_blank">ComfyUI</a>! These images are not meant to be an accurate representation of the true color on the surface of Mars but will hopefully offer you an insightful new perspective of the planet.</p>
+      <a href="comparison" target="_blank" class="btn btn-light">🖼️ Image Comparison</a><br><br>
+      <!-- <a href="index-v1.html" target="_blank" class="btn btn-light">Check Out Version 1 (Before Upscaling)</a> -->
     </div>
   </section>
   <div class="container pb-5">
@@ -124,46 +138,62 @@
   </div>
   <script>
     fetch('images.json')
-  .then(response => response.json())
-  .then(images => {
-    const container = document.querySelector('.your-class');
-    images.forEach(image => {
-      const slide = document.createElement('div');
-      slide.className = 'slideimg';
-      const img = document.createElement('img');
-      img.setAttribute('data-lazy', `img/v2/${image}`);
-      const caption = document.createElement('div');
-      caption.className = 'slide__caption';
-      const span = document.createElement('span');
-      span.className = 'p-2 sm-fnt';
-      span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
-      caption.appendChild(span);
-      slide.appendChild(img);
-      slide.appendChild(caption);
-      container.appendChild(slide);
+    .then(response => response.json())
+    .then(images => {
+      // Shuffle images array
+      images.sort(() => Math.random() - 0.5);
+    
+      const container = document.querySelector('.swiper-wrapper');
+      images.forEach(image => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        const img = document.createElement('img');
+        img.src = `img/v2/${image}`;
+        const caption = document.createElement('div');
+        caption.className = 'slide__caption';
+        const span = document.createElement('span');
+        span.className = 'p-2 sm-fnt';
+        span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
+        caption.appendChild(span);
+        slide.appendChild(img);
+        slide.appendChild(caption);
+        container.appendChild(slide);
+      });
+    
+      // var swiper = new Swiper('.swiper-container', {
+      //   lazy: true,
+      //   autoHeight: true,
+      //   centeredSlides: true,
+      //   pagination: {
+      //   el: ".swiper-pagination",
+      //   dynamicBullets: true,
+      //   },
+      //   navigation: {
+      //     nextEl: '.swiper-button-next',
+      //     prevEl: '.swiper-button-prev',
+      //   },
+       
+        
+      // });
     });
-  });
-  </script>
+    </script>
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+ 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
  
 
-  <script>
+  <!-- <script>
     $(document).ready(function () {
       $.fn.randomize = function (selector) {
         var $elems = selector ? $(this).find(selector) : $(this).children(),
@@ -187,13 +217,13 @@
            cssEase: 'linear'
         });
     });
-  </script>
+  </script> -->
   <!-- <script>
     $(document).ready(function () {
         $('.scroller').css('height', $(window).height() + 'px');
       });
   </script> -->
-  <script>
+  <!-- <script>
     $(document).ready(function () {
         $.fn.randomize = function (selector) {
           var $elems = selector ? $(this).find(selector) : $(this).children(),
@@ -215,18 +245,36 @@
             lazy: true,
             itemSelector: '.slideimg img'
           });
-          // Preload first two images
-        // var images = $('.your-class').find('.slideimg img');
-        // if (images.length > 0) {
-        //   $('<img/>')[0].src = images[0].src;
-        //   if (images.length > 1) {
-        //     $('<img/>')[0].src = images[1].src;
-        //   }
-        // }
+          Preload first two images
+        var images = $('.your-class').find('.slideimg img');
+        if (images.length > 0) {
+          $('<img/>')[0].src = images[0].src;
+          if (images.length > 1) {
+            $('<img/>')[0].src = images[1].src;
+          }
+        }
         });
-  </script>
+  </script> -->
 
-
+ <!-- Initialize Swiper -->
+ <script>
+  var swiper = new Swiper(".mySwiper", {
+    cssMode: true,
+    lazy: true,
+    autoHeight: true,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+    },
+    mousewheel: true,
+    keyboard: true,
+  });
+</script>
 
 </body>
 
