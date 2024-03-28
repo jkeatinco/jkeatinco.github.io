@@ -153,51 +153,59 @@
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
-<!--     
-  <script>
- fetch('images.json')
-.then(response => response.json())
-.then(images => {
-  // Shuffle images array
-  images.sort(() => Math.random() - 0.5);
+    <script>
+    fetch('images.json')
+    .then(response => response.json())
+    .then(images => {
+      images.sort(() => Math.random() - 0.5);
 
-  const container = document.querySelector('.swiper-wrapper');
-  images.forEach(image => {
-    const slide = document.createElement('div');
-    slide.className = 'swiper-slide';
-    const img = document.createElement('img');
-    img.src = `img/v2/${image}`;
-    img.loading = 'lazy';
-    const downloadIcon = document.createElement('span'); // Use a span element instead of an i element
-    downloadIcon.textContent = '🔍➕'; // Use an emoji as the download icon
-    downloadIcon.className = 'download-icon';
-    downloadIcon.dataset.src = img.src; // Store the src of the img element as a data attribute in the downloadIcon
-    const preloader = document.createElement('div');
-    preloader.className = 'swiper-lazy-preloader swiper-lazy-preloader-white';
-    const caption = document.createElement('div');
-    caption.className = 'slide__caption';
-    const span = document.createElement('span');
-    span.className = 'p-2 sm-fnt';
-    span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
-    caption.appendChild(span);
-    slide.appendChild(img);
-    slide.appendChild(downloadIcon);
-    slide.appendChild(preloader);
-    slide.appendChild(caption);
-    container.appendChild(slide);
-  });
+      const container = document.querySelector('.swiper-wrapper');
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            observer.unobserve(img);
+          }
+        });
+      });
 
-  // Event delegation
-  container.addEventListener('click', function(event) {
-    if (event.target.matches('.download-icon')) {
-      const modal = document.getElementById('myModal');
-      const modalImg = document.getElementById('img01');
-      modal.style.display = 'block';
-      modalImg.src = event.target.dataset.src; // Retrieve the src from the data attribute of the downloadIcon
-    }
-  });
-});
-</script> -->
+      images.forEach(image => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+        const img = document.createElement('img');
+        img.dataset.src = `img/v2/${image}`; // Store the src in data-src
+        img.loading = 'lazy';
+        observer.observe(img); // Observe the image
+        const downloadIcon = document.createElement('span');
+        downloadIcon.textContent = '🔍➕';
+        downloadIcon.className = 'download-icon';
+        downloadIcon.dataset.src = img.dataset.src; // Store the src of the img element as a data attribute in the downloadIcon
+        const preloader = document.createElement('div');
+        preloader.className = 'swiper-lazy-preloader swiper-lazy-preloader-white';
+        const caption = document.createElement('div');
+        caption.className = 'slide__caption';
+        const span = document.createElement('span');
+        span.className = 'p-2 sm-fnt';
+        span.textContent = 'Courtesy NASA/JPL-Caltech | Colorized by DeOldify | Upscaled in ComfyUI';
+        caption.appendChild(span);
+        slide.appendChild(img);
+        slide.appendChild(downloadIcon);
+        slide.appendChild(preloader);
+        slide.appendChild(caption);
+        container.appendChild(slide);
+      });
+
+      container.addEventListener('click', function(event) {
+        if (event.target.matches('.download-icon')) {
+          const modal = document.getElementById('myModal');
+          const modalImg = document.getElementById('img01');
+          modal.style.display = 'block';
+          modalImg.src = event.target.dataset.src;
+        }
+      });
+    });
+    </script>
 
 <script>
   const container = document.querySelector('.animation-form');
