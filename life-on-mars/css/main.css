@@ -214,11 +214,10 @@ img {
 }
 
 @keyframes borderGlow {
-  0% { border-color: #ff00ff; } /* Neon Pink */
-  33% { border-color: #00ffff; } /* Neon Cyan */
-  66% { border-color: #00ff00; } /* Neon Green */
-  100% { border-color: #ff00ff; } /* Neon Pink */
-} */
+  0% { border-color: #ff00ff; } 
+  33% { border-color: #00ffff; } 
+  66% { border-color: #00ff00; } 
+  100% { border-color: #ff00ff; } 
 
 /* The Modal (background) */
 .modal {
