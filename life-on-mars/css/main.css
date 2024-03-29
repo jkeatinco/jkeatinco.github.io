@@ -205,7 +205,7 @@ img {
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid; /* Add a border */
-  animation: spin 5s linear infinite, borderGlow 2s infinite; Add animations
+  /* animation: spin 5s linear infinite, borderGlow 2s infinite; Add animations */
 }
 
 /* @keyframes spin {
