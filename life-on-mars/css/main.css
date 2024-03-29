@@ -205,10 +205,10 @@ img {
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid; /* Add a border */
-  animation: spin 5s linear infinite, borderGlow 2s infinite; /* Add animations */
+  animation: spin 5s linear infinite, borderGlow 2s infinite; Add animations
 }
 
-@keyframes spin {
+/* @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
@@ -218,7 +218,7 @@ img {
   33% { border-color: #00ffff; } /* Neon Cyan */
   66% { border-color: #00ff00; } /* Neon Green */
   100% { border-color: #ff00ff; } /* Neon Pink */
-}
+} */
 
 /* The Modal (background) */
 .modal {
