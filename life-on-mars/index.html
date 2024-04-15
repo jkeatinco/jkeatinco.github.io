@@ -73,14 +73,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <sl-animation class="nav-animation" name="fadeInRight" duration="1000" iterations="1" >
-              <a class="nav-link" href="#">🏠 Home</a>
+              <a class="nav-link active" href="#">🏠 Home</a>
             </sl-animation>
           </li>
           <li class="nav-item">
             <sl-animation class="nav-animation" name="fadeInRight" duration="1000" iterations="1" >
-              <a class="nav-link" href="comparison">🖼️ Image Comparison</a>
+              <a class="nav-link" href="gallery.html">🖼️ Gallery</a>
+            </sl-animation>
+          </li>
+          <li class="nav-item">
+            <sl-animation class="nav-animation" name="fadeInRight" duration="1000" iterations="1" >
+              <a class="nav-link" href="comparison">👀 Comparison</a>
             </sl-animation>
           </li>
           <li class="nav-item">
@@ -126,17 +131,26 @@
         </sl-animation>
       </div>
 
-      <div class="animation-scroll">
+      <div class="animation-scroll mb-2">
         <sl-animation name="jackInTheBox" duration="2000" iterations="1">
-
-      <div class="animation-form">
-        <sl-animation name="rubberBand" duration="1000" iterations="1">
-          <sl-button>🖼️ Image Comparison</sl-button>
+          <div class="animation-formz">
+            <sl-animation name="rubberBand" duration="1000" iterations="1">
+              <sl-button id="galleryButton">🖼️ Gallery</sl-button>
+            </sl-animation>
+          </div>
         </sl-animation>
       </div>
 
-      </sl-animation>
-    </div>
+      <div class="animation-scroll mb-2">
+        <sl-animation name="jackInTheBox" duration="2000" iterations="1">
+          <div class="animation-form">
+            <sl-animation name="rubberBand" duration="1000" iterations="1">
+              <sl-button>👀 Comparison</sl-button>
+            </sl-animation>
+          </div>
+        </sl-animation>
+      </div>
+    
       
       
       <br><br>
@@ -221,6 +235,20 @@
   });
 </script>
 
+<script>
+  const galleryContainer = document.querySelector('.animation-formz');
+  const galleryAnimation = galleryContainer.querySelector('sl-animation');
+  const galleryButton = document.getElementById('galleryButton');
+
+  galleryButton.addEventListener('click', () => {
+      galleryAnimation.play = true;
+
+      galleryAnimation.addEventListener('sl-finish', () => {
+          window.location.href = 'gallery.html';
+      });
+});
+</script>
+
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -283,7 +311,7 @@ window.onclick = function(event) {
 
   containers.forEach(container => {
     const animation = container.querySelector('sl-animation');
-    const text = animation.querySelector('h1, p, .animation-form');
+    const text = animation.querySelector('h1, p, .animation-form, .animation-formz');
 
     // Watch for the text to enter and exit the viewport. Note that we're observing the text, not the animation element!
     const observer = new IntersectionObserver(entries => {
