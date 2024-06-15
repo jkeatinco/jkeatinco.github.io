@@ -150,6 +150,16 @@
           </div>
         </sl-animation>
       </div>
+
+      <div class="animation-scroll mb-2">
+        <sl-animation name="jackInTheBox" duration="1000" iterations="1">
+          <div class="animation-formmusic">
+            <sl-animation name="rubberBand" duration="1000" iterations="1">
+              <sl-button>🎶 Life On Mars - AI Song</sl-button>
+            </sl-animation>
+          </div>
+        </sl-animation>
+      </div>
     
       
       
@@ -248,6 +258,23 @@
       });
 });
 </script>
+
+<script>
+  const galleryContainer2 = document.querySelector('.animation-formmusic');
+  const galleryAnimation2 = galleryContainer.querySelector('sl-animation');
+  const galleryButton2 = document.getElementById('galleryButton');
+
+  galleryButton2.addEventListener('click', () => {
+      galleryAnimation2.play = true;
+
+      galleryAnimation2.addEventListener('sl-finish', () => {
+          window.location.href = 'https://suno.com/song/7b257d13-0a7f-4f2c-b898-200016397087';
+      });
+});
+</script>
+
+
+
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
