@@ -338,7 +338,7 @@ window.onclick = function(event) {
 
   containers.forEach(container => {
     const animation = container.querySelector('sl-animation');
-    const text = animation.querySelector('h1, p, .animation-form, .animation-formz');
+    const text = animation.querySelector('h1, p, .animation-form, .animation-formz, .animation-formmusic');
 
     // Watch for the text to enter and exit the viewport. Note that we're observing the text, not the animation element!
     const observer = new IntersectionObserver(entries => {
