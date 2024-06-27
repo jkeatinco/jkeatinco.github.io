@@ -7,8 +7,8 @@ var map1, map2; // Declare maps globally to access them in functions
 
 // Assuming you have the coordinates of the differences
 var differences = [
-    { id: 1, coords: [1186, 1231] },
-    { id: 2, coords: [931, 1208] },
+    { id: 1, coords: [1202, 1252] },
+    { id: 2, coords: [508, 1489] },
     // ... other differences
 ];
 
@@ -69,10 +69,10 @@ function addDifferencesToMap(map) {
             icon: L.divIcon({ className: 'difference-marker' }) // An invisible icon
         });
         
-        marker.on('click', function() {
+        marker.addEventListener('click', function() {
             // Call this when the difference is clicked
             differenceFound(marker);
-            //marker.remove(); // Remove the marker or hide it
+            marker.remove(); // Remove the marker or hide it
         });
         
         marker.addTo(map);

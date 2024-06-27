@@ -86,10 +86,13 @@ header p {
 }
 
 .difference-marker {
-    width: 20px; /* Set the size of the clickable area */
-    height: 20px;
+    width: 12px!important; /* Set the size of the clickable area */
+    height: 12px!important;
     background: red; /* Invisible */
-    cursor: pointer; /* Change cursor to indicate clickable area */
+    cursor: grab !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    opacity: 0;
 }
 
 .difference-found {
@@ -112,6 +115,7 @@ header p {
     grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
     grid-gap: 10px; /* Adjust the gap between grid items */
     padding: 10px; /* Padding around the grid */
+    margin: 10px;
 }
 
 /* Mobile layout - stacked */
