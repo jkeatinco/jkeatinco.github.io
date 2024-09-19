@@ -1,0 +1,38 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background for the orange, slightly larger to give a subtle shadow effect -->
+  <circle cx="100" cy="100" r="95" fill="#ff8c00" />
+  
+  <!-- Main body of the orange -->
+  <circle cx="100" cy="100" r="90" fill="#ffa500" />
+  
+  <!-- Texturing for a more realistic look -->
+  <defs>
+    <pattern id="orangeTexture" patternUnits="userSpaceOnUse" width="10" height="10">
+      <circle cx="5" cy="5" r="2" fill="#ff9500" fill-opacity="0.7"/>
+    </pattern>
+  </defs>
+  <circle cx="100" cy="100" r="90" fill="url(#orangeTexture)"/>
+  
+  <!-- Highlight to give a 3D effect -->
+  <path d="M100 10 
+           A80 80 0 0 1 180 100
+           A80 80 0 0 1 100 190
+           A80 80 0 0 1 20 100
+           A80 80 0 0 1 100 10 Z" 
+        fill="white" fill-opacity="0.1"/>
+  
+  <!-- Stem -->
+  <path d="M100 60 
+           L95 50 
+           L105 50 
+           Z" 
+        fill="#654321"/>
+  
+  <!-- Leaf -->
+  <path d="M100 50 
+           Q 110 30 120 50 
+           T 100 50
+           Q 90 30 80 50 
+           T 100 50 Z" 
+        fill="#228B22"/>
+</svg>

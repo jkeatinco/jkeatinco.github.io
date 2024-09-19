@@ -1,0 +1,23 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background for the watermelon -->
+  <circle cx="100" cy="100" r="95" fill="#FF6B6B"/>
+  
+  <!-- Green Rind -->
+  <path d="M100,5 A95,95 0 0,1 195,100 A95,95 0 0,1 100,195 A95,95 0 0,1 5,100 A95,95 0 0,1 100,5 Z" 
+        fill="none" stroke="#1A535C" stroke-width="10"/>
+  
+  <!-- White part of the rind -->
+  <path d="M100,10 A90,90 0 0,1 190,100 A90,90 0 0,1 100,190 A90,90 0 0,1 10,100 A90,90 0 0,1 100,10 Z" 
+        fill="none" stroke="#F7FFF7" stroke-width="10"/>
+  
+  <!-- Seeds -->
+  <ellipse cx="70" cy="100" rx="5" ry="10" fill="#333333"/>
+  <ellipse cx="130" cy="100" rx="5" ry="10" fill="#333333"/>
+  <ellipse cx="100" cy="70" rx="5" ry="10" fill="#333333"/>
+  <ellipse cx="100" cy="130" rx="5" ry="10" fill="#333333"/>
+  <ellipse cx="50" cy="80" rx="5" ry="10" fill="#333333"/>
+  <ellipse cx="150" cy="120" rx="5" ry="10" fill="#333333"/>
+  
+  <!-- Highlight for a bit of shine -->
+  <path d="M120,30 A60,60 0 0,0 170,100" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.5"/>
+</svg>

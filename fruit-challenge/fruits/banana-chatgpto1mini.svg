@@ -1,0 +1,45 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+>
+  <!-- Banana Body -->
+  <path
+    d="M60,140 
+       C40,100 160,100 140,140 
+       C120,180 80,180 60,140 Z"
+    fill="#FFE135"
+    stroke="#B8860B"
+    stroke-width="2"
+  />
+  
+  <!-- Banana Stem -->
+  <path
+    d="M140,140 
+       C150,130 160,120 155,110"
+    stroke="#B8860B"
+    stroke-width="4"
+    fill="none"
+    stroke-linecap="round"
+  />
+  
+  <!-- Highlights -->
+  <path
+    d="M80,130 
+       C85,125 95,135 90,140"
+    stroke="rgba(255,255,255,0.6)"
+    stroke-width="2"
+    fill="none"
+    stroke-linecap="round"
+  />
+  
+  <path
+    d="M100,150 
+       C105,145 115,155 110,160"
+    stroke="rgba(255,255,255,0.6)"
+    stroke-width="2"
+    fill="none"
+    stroke-linecap="round"
+  />
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+
+  <path d="M50,10
+           C30,10 20,30 20,50
+           C20,70 35,90 50,90
+           C65,90 80,70 80,50
+           C80,30 70,10 50,10 Z" 
+        fill="red" />
+
+  <path d="M50,5
+           L45,15
+           L55,15 Z" 
+        fill="green" />
+
+  <path d="M50,15
+           L50,5" 
+        stroke="brown" stroke-width="2" />
+
+  <path d="M60,40
+           C60,30 50,25 40,30
+           C30,35 35,45 40,50
+           C45,55 55,50 60,40 Z" 
+        fill="white" fill-opacity="0.3" />
+
+</svg>

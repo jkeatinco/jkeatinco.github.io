@@ -1,0 +1,17 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blueberry body -->
+  <circle cx="100" cy="100" r="50" fill="#4f86f7" />
+
+  <!-- Blueberry crown -->
+  <path d="M100,60 Q90,70 80,60 Q90,80 70,90 Q90,85 100,100 Q110,85 130,90 Q110,80 120,60 Q110,70 100,60" fill="#2c4ca3"/>
+
+  <!-- Shading to give depth -->
+  <radialGradient id="shading" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+    <stop offset="30%" style="stop-color:#ffffff;stop-opacity:0.2" />
+    <stop offset="100%" style="stop-color:#4f86f7;stop-opacity:1" />
+  </radialGradient>
+  <circle cx="100" cy="100" r="50" fill="url(#shading)" />
+
+  <!-- Small highlight -->
+  <circle cx="115" cy="85" r="10" fill="#ffffff" opacity="0.5" />
+</svg>

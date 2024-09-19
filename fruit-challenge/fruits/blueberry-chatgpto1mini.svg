@@ -1,0 +1,46 @@
+<svg
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Define gradients -->
+  <defs>
+    <!-- Radial gradient for the blueberry -->
+    <radialGradient id="blueberryGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4A90E2" />
+      <stop offset="100%" stop-color="#1C3D5A" />
+    </radialGradient>
+    <!-- Linear gradient for the leaf -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#76B947" />
+      <stop offset="100%" stop-color="#4A7D2B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Blueberry body -->
+  <circle cx="100" cy="100" r="60" fill="url(#blueberryGradient)" />
+
+  <!-- Highlight to give a shiny effect -->
+  <path
+    d="M70,80 C75,70 95,70 100,80 C95,85 75,85 70,80 Z"
+    fill="rgba(255, 255, 255, 0.6)"
+  />
+
+  <!-- Stem -->
+  <path
+    d="M100,40 Q100,20 110,30"
+    stroke="#5A3E1B"
+    stroke-width="4"
+    fill="none"
+    stroke-linecap="round"
+  />
+
+  <!-- Leaf -->
+  <path
+    d="M110,30 Q130,35 120,50 Q110,35 110,30 Z"
+    fill="url(#leafGradient)"
+    stroke="#4A7D2B"
+    stroke-width="2"
+  />
+</svg>

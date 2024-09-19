@@ -1,0 +1,56 @@
+<svg
+  width="200"
+  height="250"
+  viewBox="0 0 200 250"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Define gradients for grapes -->
+  <defs>
+    <radialGradient id="grapeGradient1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8A2BE2; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4B0082; stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="grapeGradient2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#9B30FF; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A5ACD; stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="grapeGradient3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7B68EE; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#483D8B; stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="grapeGradient4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#9370DB; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6A5ACD; stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="grapeGradient5" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#BA55D3; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4B0082; stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <!-- Stem -->
+  <path
+    d="M100,20
+       C 100,50 130,80 100,120"
+    stroke="#8B4513"
+    stroke-width="5"
+    fill="none"
+  />
+
+  <!-- Leaf -->
+  <path
+    d="M100,60
+       C 80,50 70,70 90,80
+       C 110,90 120,70 100,60"
+    fill="#228B22"
+    stroke="#006400"
+    stroke-width="2"
+  />
+
+  <!-- Grapes -->
+  <circle cx="80" cy="120" r="15" fill="url(#grapeGradient1)" stroke="#4B0082" stroke-width="2"/>
+  <circle cx="95" cy="105" r="12" fill="url(#grapeGradient2)" stroke="#4B0082" stroke-width="2"/>
+  <circle cx="110" cy="120" r="15" fill="url(#grapeGradient3)" stroke="#4B0082" stroke-width="2"/>
+  <circle cx="95" cy="135" r="12" fill="url(#grapeGradient4)" stroke="#4B0082" stroke-width="2"/>
+  <circle cx="80" cy="150" r="15" fill="url(#grapeGradient5)" stroke="#4B0082" stroke-width="2"/>
+</svg>

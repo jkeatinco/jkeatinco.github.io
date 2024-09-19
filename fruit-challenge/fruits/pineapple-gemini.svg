@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150">
+  <defs>
+    <linearGradient id="pineappleGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2ce1b"/>
+      <stop offset="100%" stop-color="#e77417"/>
+    </linearGradient>
+  </defs>
+
+  <g>
+    <path d="M50,10 C20,30 20,80 50,120 C80,80 80,30 50,10 Z" fill="url(#pineappleGradient)" />
+
+    <g transform="translate(50,0)">
+      <path d="M0,0 L-10,-20 L0,-30 L10,-20 Z" fill="#349837"/>
+      <path d="M0,-10 L-15,-30 L0,-40 L15,-30 Z" fill="#349837"/>
+      <path d="M0,-20 L-20,-40 L0,-50 L20,-40 Z" fill="#349837"/>
+      </g>
+
+    <g>
+      <path d="M50,20 L45,30 L55,30 Z" fill="#e0a810" />
+      <path d="M50,30 L45,40 L55,40 Z" fill="#e0a810" />
+      <path d="M50,40 L45,50 L55,50 Z" fill="#e0a810" />
+      </g>
+  </g>
+</svg>

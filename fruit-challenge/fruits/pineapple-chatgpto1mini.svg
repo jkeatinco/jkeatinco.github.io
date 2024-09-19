@@ -1,0 +1,42 @@
+<svg
+  width="200"
+  height="300"
+  viewBox="0 0 200 300"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Pineapple Body -->
+  <ellipse cx="100" cy="180" rx="60" ry="100" fill="#FFC107" stroke="#FF9800" stroke-width="4"/>
+
+  <!-- Diamond Pattern -->
+  <g stroke="#FF9800" stroke-width="2">
+    <!-- Repeat diamond shapes vertically -->
+    <g id="diamond" transform="translate(40, 80)">
+      <polygon points="20,0 40,10 20,20 0,10" fill="#FFEB3B"/>
+    </g>
+    <!-- Clone diamonds down the body -->
+    <use href="#diamond" y="20"/>
+    <use href="#diamond" y="40"/>
+    <use href="#diamond" y="60"/>
+    <use href="#diamond" y="80"/>
+    <use href="#diamond" y="100"/>
+    <use href="#diamond" y="120"/>
+    <use href="#diamond" y="140"/>
+  </g>
+
+  <!-- Pineapple Leaves -->
+  <g fill="#4CAF50" stroke="#388E3C" stroke-width="2">
+    <!-- Leaf 1 -->
+    <path d="M100,80 Q90,30 130,50 Q110,40 100,80" />
+    <!-- Leaf 2 -->
+    <path d="M100,80 Q70,20 110,60 Q90,40 100,80" />
+    <!-- Leaf 3 -->
+    <path d="M100,80 Q110,20 150,55 Q120,35 100,80" />
+    <!-- Leaf 4 -->
+    <path d="M100,80 Q80,25 120,65 Q100,45 100,80" />
+    <!-- Leaf 5 -->
+    <path d="M100,80 Q95,15 140,60 Q115,40 100,80" />
+  </g>
+
+  <!-- Optional: Add a stem -->
+  <rect x="95" y="180" width="10" height="30" fill="#8D6E63" />
+</svg>

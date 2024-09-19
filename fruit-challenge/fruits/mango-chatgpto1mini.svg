@@ -1,0 +1,49 @@
+<svg
+  width="200"
+  height="300"
+  viewBox="0 0 200 300"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Mango Body -->
+  <path
+    d="M100,20 
+       C140,20 180,80 150,200 
+       C120,280 80,280 50,200 
+       C20,80 60,20 100,20 Z"
+    fill="#FFB347"
+    stroke="#E99600"
+    stroke-width="2"
+  />
+
+  <!-- Mango Shine -->
+  <ellipse
+    cx="130"
+    cy="80"
+    rx="15"
+    ry="8"
+    fill="rgba(255, 255, 255, 0.6)"
+    transform="rotate(-30 130 80)"
+  />
+
+  <!-- Stem -->
+  <rect
+    x="95"
+    y="20"
+    width="10"
+    height="30"
+    fill="#8B4513"
+    rx="5"
+    ry="5"
+  />
+
+  <!-- Leaf -->
+  <path
+    d="M100,20 
+       C110,10 130,20 120,40 
+       C110,60 90,60 80,40 
+       C70,20 90,10 100,20 Z"
+    fill="#228B22"
+    stroke="#006400"
+    stroke-width="2"
+  />
+</svg>

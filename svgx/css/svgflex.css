@@ -1,0 +1,393 @@
+/* ================================
+   1. Reset & Base Styles
+   ================================ */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles for HTML and Body */
+html, body {
+    min-height: 100%;
+    width: 100%;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Optional: global background */
+}
+
+/* Responsive Images and Media */
+img, video, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* SVG Container */
+#svg-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Foreign Object Styling */
+foreignObject {
+    overflow: visible;
+}
+
+/* ================================
+   2. Typography
+   ================================ */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    p {
+        font-size: 1.25rem;
+    }
+}
+
+/* ================================
+   3. Layout System
+   ================================ */
+
+/* Container */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 1rem;
+    }
+}
+
+/* Grid System */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -10px; /* To offset column padding */
+}
+
+.col {
+    flex: 1 0 0%;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .col {
+        flex: 0 0 100%;
+    }
+}
+
+/* ================================
+   4. Components
+   ================================ */
+
+/* Button Component */
+.button-container-svg {
+ background-color: none;
+}
+.button-container {
+    background-color: none;
+    margin: 0rem;
+    padding: 0rem;
+    box-shadow: none;
+
+}
+.svg-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin: 0.5rem;
+    text-decoration: none;
+}
+
+.svg-button:hover {
+    background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+    .svg-button {
+        font-size: 1.25rem;
+        padding: 1.2rem 2.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .svg-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        margin: 0.3rem;
+    }
+}
+
+/* Card Component */
+.svg-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.svg-card-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.svg-card-container p {
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (min-width: 1024px) {
+    .svg-card-container {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .svg-card-container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ================================
+   5. Utilities and Helpers
+   ================================ */
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Margin Utilities */
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Padding Utilities */
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+/* Display Utilities */
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.d-none {
+    display: none;
+}
+
+/* Flex Utilities */
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+/* Background Color Utilities */
+.bg-primary {
+    background-color: #007BFF;
+}
+
+.bg-secondary {
+    background-color: #6c757d;
+}
+
+.bg-success {
+    background-color: #28a745;
+}
+
+.bg-danger {
+    background-color: #dc3545;
+}
+
+.bg-warning {
+    background-color: #ffc107;
+}
+
+.bg-info {
+    background-color: #17a2b8;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.bg-dark {
+    background-color: #343a40;
+}
+
+/* Text Color Utilities */
+.text-white {
+    color: #ffffff;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.text-primary {
+    color: #007BFF;
+}
+
+.text-secondary {
+    color: #6c757d;
+}
+
+.text-success {
+    color: #28a745;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+.text-warning {
+    color: #ffc107;
+}
+
+.text-info {
+    color: #17a2b8;
+}
+
+/* Border Utilities */
+.border {
+    border: 1px solid #dee2e6;
+}
+
+.border-top {
+    border-top: 1px solid #dee2e6;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.border-left {
+    border-left: 1px solid #dee2e6;
+}
+
+.border-right {
+    border-right: 1px solid #dee2e6;
+}
+
+/* Rounded Corners */
+.rounded {
+    border-radius: 0.25rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}

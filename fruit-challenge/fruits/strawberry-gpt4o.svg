@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <!-- Strawberry Body -->
+  <ellipse cx="50" cy="70" rx="30" ry="40" fill="red"/>
+  
+  <!-- Seeds -->
+  <circle cx="40" cy="60" r="2" fill="yellow"/>
+  <circle cx="60" cy="60" r="2" fill="yellow"/>
+  <circle cx="35" cy="75" r="2" fill="yellow"/>
+  <circle cx="65" cy="75" r="2" fill="yellow"/>
+  <circle cx="50" cy="80" r="2" fill="yellow"/>
+  <circle cx="45" cy="90" r="2" fill="yellow"/>
+  <circle cx="55" cy="90" r="2" fill="yellow"/>
+  
+  <!-- Leaf -->
+  <path d="M50 30 Q40 10 30 30 Q20 20 10 30 Q30 0 50 20 Q70 0 90 30 Q80 20 70 30 Q60 10 50 30" fill="green"/>
+  
+  <!-- Stem -->
+  <rect x="47" y="10" width="6" height="20" fill="green"/>
+</svg>

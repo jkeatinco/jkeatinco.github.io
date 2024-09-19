@@ -1,0 +1,30 @@
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="200"
+    height="200"
+    viewBox="0 0 200 200"
+>
+    <!-- Apple Body -->
+    <circle cx="100" cy="120" r="60" fill="red" />
+
+    <!-- Apple Highlight -->
+    <circle cx="75" cy="95" r="20" fill="rgba(255, 255, 255, 0.3)" />
+
+    <!-- Apple Stem -->
+    <rect
+        x="90"
+        y="50"
+        width="20"
+        height="50"
+        fill="brown"
+        transform="rotate(-15 100 100)"
+    />
+
+    <!-- Apple Leaf -->
+    <path
+        d="M120 50 C 140 20, 180 80, 120 90"
+        fill="green"
+        transform="rotate(-45 110 75)"
+    />
+</svg>

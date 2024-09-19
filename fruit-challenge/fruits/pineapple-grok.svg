@@ -1,0 +1,42 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pineapple body -->
+  <path d="M100 40 
+           Q150 100 100 160 
+           Q50 100 100 40 Z" 
+        fill="#FFD700" 
+        stroke="#DAA520" 
+        stroke-width="2"/>
+  
+  <!-- Pineapple texture -->
+  <path d="M100 40 
+           L85 60 M115 60 
+           L70 80 M130 80 
+           L55 100 M145 100 
+           L40 120 M160 120 
+           L25 140 M175 140 
+           L10 160 M190 160" 
+        stroke="#DAA520" 
+        stroke-width="2" 
+        stroke-linecap="round"/>
+  
+  <!-- Pineapple leaves -->
+  <path d="M100 40 
+           L90 20 Q85 10 90 0 
+           L110 0 Q115 10 110 20 Z" 
+        fill="#008000"/>
+  
+  <path d="M110 40 
+           L115 25 Q120 15 115 5 
+           L135 5 Q140 15 135 25 Z" 
+        fill="#008000"/>
+  
+  <path d="M90 40 
+           L85 25 Q80 15 85 5 
+           L65 5 Q70 15 65 25 Z" 
+        fill="#008000"/>
+  
+  <path d="M100 50 
+           L100 30 Q105 20 100 10 
+           L90 20 Q85 10 90 30 Z" 
+        fill="#008000"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Draw the outer green rind -->
+  <path d="M50,150 
+           C30,100 30,100 50,50 
+           L150,50 
+           C170,100 170,100 150,150 
+           Z" 
+        fill="#3BB143" stroke="#2F7A2F" stroke-width="2"/>
+  
+  <!-- Draw the inner red flesh -->
+  <path d="M55,145 
+           C35,95 35,95 55,55 
+           L145,55 
+           C165,95 165,95 145,145 
+           Z" 
+        fill="#FF4F4F" stroke="#E04343" stroke-width="2"/>
+  
+  <!-- Add black seeds -->
+  <ellipse cx="80" cy="80" rx="5" ry="8" fill="#000"/>
+  <ellipse cx="120" cy="80" rx="5" ry="8" fill="#000"/>
+  <ellipse cx="80" cy="120" rx="5" ry="8" fill="#000"/>
+  <ellipse cx="120" cy="120" rx="5" ry="8" fill="#000"/>
+</svg>

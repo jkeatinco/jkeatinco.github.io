@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Banana body -->
+  <path d="M50 100 Q75 20 150 100 Q125 180 100 200 Q75 190 50 100" 
+        fill="none" stroke="#FFD700" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Banana peel details -->
+  <path d="M50 100 Q75 30 150 100" 
+        fill="none" stroke="#8B4513" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Stem -->
+  <rect x="97" y="80" width="6" height="20" fill="#8B4513" rx="3"/>
+  
+  <!-- Tip of the banana -->
+  <ellipse cx="100" cy="190" rx="10" ry="5" fill="#8B4513"/>
+  
+  <!-- Highlight for a bit of realism -->
+  <path d="M60 110 Q80 40 140 110" 
+        fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+</svg>

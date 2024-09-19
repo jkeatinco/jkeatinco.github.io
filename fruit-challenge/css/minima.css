@@ -1,0 +1,65 @@
+/*
+ * Minima CSS Framework ⚡ v0.1.0 
+ * A lightweight foundation for your web projects.
+ */
+
+ :root {
+    --font-family: system-ui, sans-serif;
+    --line-height: 1.5;
+    --font-size: 1rem;
+    --border-radius: 0.25rem;
+
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-info: #17a2b8;
+    --color-light: #f8f9fa;
+    --color-dark: #343a40;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 3rem;
+}
+
+/* Basic Typography */
+body {
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+    font-size: var(--font-size);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Basic Layout */
+.container {
+    width: 100%;
+    max-width: 960px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+/* ... Add more background colors as needed */
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+/* ... Add more text colors as needed */
+
+/* ... Add more utility classes for spacing, borders, etc. */

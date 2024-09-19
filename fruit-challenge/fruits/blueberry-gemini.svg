@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <radialGradient id="blueberryGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#3366CC" /> 
+      <stop offset="100%" stop-color="#113366" /> 
+    </radialGradient>
+  </defs>
+
+  <circle cx="25" cy="25" r="20" fill="url(#blueberryGradient)" />
+
+  <g transform="translate(25,25)">
+    <circle cx="-5" cy="-8" r="1" fill="white" />
+    <circle cx="5" cy="-5" r="1.2" fill="white" />
+    <circle cx="0" cy="8" r="0.8" fill="white" />
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Apple Body -->
+  <path
+    d="M100,20
+       C130,20 160,60 160,100
+       C160,140 130,180 100,180
+       C70,180 40,140 40,100
+       C40,60 70,20 100,20 Z"
+    fill="#FF4C4C"
+    stroke="#CC0000"
+    stroke-width="2"
+  />
+
+  <!-- Apple Leaf -->
+  <path
+    d="M100,20
+       C110,10 130,20 120,40
+       C115,35 105,35 100,40 Z"
+    fill="#228B22"
+    stroke="#006400"
+    stroke-width="2"
+  />
+
+  <!-- Apple Shine -->
+  <ellipse
+    cx="70"
+    cy="70"
+    rx="15"
+    ry="25"
+    fill="rgba(255,255,255,0.4)"
+    transform="rotate(-30 70 70)"
+  />
+</svg>

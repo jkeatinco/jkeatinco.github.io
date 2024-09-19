@@ -1,0 +1,76 @@
+<svg
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Strawberry Body -->
+  <path
+    d="
+      M100,20 
+      C140,20 180,60 180,100 
+      C180,150 140,180 100,180 
+      C60,180 20,150 20,100 
+      C20,60 60,20 100,20 
+      Z
+    "
+    fill="#FF4D4D"
+    stroke="#CC0000"
+    stroke-width="2"
+  />
+
+  <!-- Strawberry Seeds -->
+  <circle cx="70" cy="80" r="2" fill="#FFFFFF" />
+  <circle cx="130" cy="80" r="2" fill="#FFFFFF" />
+  <circle cx="85" cy="100" r="2" fill="#FFFFFF" />
+  <circle cx="115" cy="100" r="2" fill="#FFFFFF" />
+  <circle cx="70" cy="120" r="2" fill="#FFFFFF" />
+  <circle cx="130" cy="120" r="2" fill="#FFFFFF" />
+  <circle cx="100" cy="140" r="2" fill="#FFFFFF" />
+
+  <!-- Strawberry Leaves -->
+  <path
+    d="
+      M100,20 
+      L90,10 
+      L80,20 
+      Z
+    "
+    fill="#228B22"
+    stroke="#006400"
+    stroke-width="1"
+  />
+  <path
+    d="
+      M100,20 
+      L110,10 
+      L120,20 
+      Z
+    "
+    fill="#228B22"
+    stroke="#006400"
+    stroke-width="1"
+  />
+  <path
+    d="
+      M95,15 
+      L85,5 
+      L75,15 
+      Z
+    "
+    fill="#228B22"
+    stroke="#006400"
+    stroke-width="1"
+  />
+  <path
+    d="
+      M105,15 
+      L115,5 
+      L125,15 
+      Z
+    "
+    fill="#228B22"
+    stroke="#006400"
+    stroke-width="1"
+  />
+</svg>
