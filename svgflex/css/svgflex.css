@@ -145,6 +145,73 @@ p {
    4. Components
    ================================ */
 
+  /* Navigation Bar */
+.nav-container {
+    background-color: #333;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-items {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    background-color: #fff;
+    height: 2px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+@media (max-width: 767px) {
+    .nav-items {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000; /* Ensure the menu is on top */
+    }
+
+    .nav-items.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+}
+
 /* Button Component */
 .button-container-svg {
  background-color: none;

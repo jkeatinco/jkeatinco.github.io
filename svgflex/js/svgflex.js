@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Fetch and load button.svg and card.svg content first
+    // Fetch and load button.svg, card.svg, and navigation.svg content first
     Promise.all([
         fetch('components/button.svg').then(response => response.text()),
-        fetch('components/card.svg').then(response => response.text())
+        fetch('components/card.svg').then(response => response.text()),
+        fetch('components/navigation.svg').then(response => response.text())
     ])
-    .then(([buttonSvgContent, cardSvgContent]) => {
+    .then(([buttonSvgContent, cardSvgContent, navigationSvgContent]) => {
         // Insert the fetched SVG content into all elements with the respective class names
         document.querySelectorAll('.button-container-svg').forEach(element => {
             element.innerHTML = buttonSvgContent;
         });
         document.querySelectorAll('.card-container-svg').forEach(element => {
             element.innerHTML = cardSvgContent;
+        });
+        document.querySelectorAll('.nav-container-svg').forEach(element => {
+            element.innerHTML = navigationSvgContent;
         });
 
         // Add click event listeners to elements with data-link attribute
@@ -22,6 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+
+        // Hamburger menu toggle
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navItems = document.querySelector('.nav-items');
+
+        if (hamburgerMenu && navItems) {
+            hamburgerMenu.addEventListener('click', () => {
+                navItems.classList.toggle('active');
+                adjustNavSVGSize(); // Adjust size after toggling
+            });
+        }
 
         // Proceed with the rest of the logic after the SVG is loaded
         const container = document.querySelector('.container');
@@ -83,11 +98,33 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // Function to adjust the height of the SVG and foreignObject based on .nav-container-svg
+        function adjustNavSVGSize() {
+            document.querySelectorAll('.nav-container-svg').forEach(navContainerSvg => {
+                const svgNavContainer = navContainerSvg.querySelector('svg');
+                const foreignContentNav = navContainerSvg.querySelector('.foreign-content-nav');
+                if (svgNavContainer && foreignContentNav) {
+                    const navContainer = navContainerSvg.querySelector('.nav-container');
+                    if (navContainer) {
+                        const navContainerHeight = navContainer.getBoundingClientRect().height;
+                        const navItemsHeight = navItems.classList.contains('active') ? navItems.getBoundingClientRect().height : 0;
+                        const totalHeight = navContainerHeight + navItemsHeight;
+                        if (totalHeight > 0) {
+                            foreignContentNav.setAttribute('height', totalHeight);
+                            svgNavContainer.setAttribute('height', totalHeight);
+                            navContainerSvg.style.height = `${totalHeight}px`;
+                        }
+                    }
+                }
+            });
+        }
+
         // Initial adjustment using requestAnimationFrame to ensure content is rendered
         requestAnimationFrame(() => {
             adjustSVGSize();
             adjustButtonSVGSize();
             adjustCardSVGSize();
+            adjustNavSVGSize();
         });
 
         // Adjust on window resize with debounce
@@ -98,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 adjustSVGSize();
                 adjustButtonSVGSize();
                 adjustCardSVGSize();
+                adjustNavSVGSize();
             }, 100);
         });
 
@@ -120,11 +158,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     cardResizeObserver.observe(cardContainer);
                 }
             });
+            document.querySelectorAll('.nav-container-svg').forEach(navContainerSvg => {
+                const navContainer = navContainerSvg.querySelector('.nav-container');
+                if (navContainer) {
+                    const navResizeObserver = new ResizeObserver(adjustNavSVGSize);
+                    navResizeObserver.observe(navContainer);
+                }
+            });
         } else {
             // Fallback for browsers without ResizeObserver
             window.addEventListener('resize', adjustSVGSize);
             window.addEventListener('resize', adjustButtonSVGSize);
             window.addEventListener('resize', adjustCardSVGSize);
+            window.addEventListener('resize', adjustNavSVGSize);
         }
     })
     .catch(error => console.error('Error loading SVG:', error));
