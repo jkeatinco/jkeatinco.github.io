@@ -15,7 +15,7 @@ html, body {
     width: 100%;
     overflow: auto;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Optional: global background */
+    background-color: #000000; /* Optional: global background */
 }
 
 /* Responsive Images and Media */
@@ -150,7 +150,7 @@ p {
  background-color: none;
 }
 .button-container {
-    background-color: none;
+    background :none;
     margin: 0rem;
     padding: 0rem;
     box-shadow: none;
@@ -193,6 +193,10 @@ p {
 }
 
 /* Card Component */
+
+.card-container-svg {
+    margin: 1rem;
+}
 .svg-card-container {
     display: flex;
     flex-direction: column;
@@ -205,7 +209,14 @@ p {
     border-radius: 0.5rem;
     background-color: #f9f9f9;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
+}
+.card-container {
+    background-color: none;
+    margin: 0rem;
+    padding: 0rem;
+    box-shadow: none;
+
 }
 
 .svg-card-container h2 {
