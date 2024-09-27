@@ -355,6 +355,34 @@ p {
     }
 }
 
+
+/* Table Component */
+.table-container-svg {
+    margin: 1rem;
+}
+
+.svg-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.svg-table th, .svg-table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.svg-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+.svg-table td {
+    background-color: white;
+}
+
 /* ================================
    5. Utilities and Helpers
    ================================ */

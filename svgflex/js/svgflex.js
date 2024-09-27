@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('components/button.svg').then(response => response.text()),
         fetch('components/card.svg').then(response => response.text()),
         fetch('components/navigation.svg').then(response => response.text()),
-        fetch('components/image.svg').then(response => response.text())
+        fetch('components/image.svg').then(response => response.text()),
+        fetch('components/table.svg').then(response => response.text())
     ])
-    .then(([buttonSvgContent, cardSvgContent, navigationSvgContent, imageSvgContent]) => {
+    .then(([buttonSvgContent, cardSvgContent, navigationSvgContent, imageSvgContent, tableSvgContent]) => {
         // Insert the fetched SVG content into all elements with the respective class names
         document.querySelectorAll('.button-container-svg').forEach(element => {
             const buttonText = element.getAttribute('data-button-text') || 'Click Me';
@@ -35,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     imgElement.setAttribute('src', imgLink);
                 }
             }
+        });
+
+        document.querySelectorAll('.table-container-svg').forEach(element => {
+            element.innerHTML = tableSvgContent;
         });
 
         // Add click event listeners to elements with data-link attribute
@@ -155,6 +160,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+         // Function to adjust the height of the SVG and foreignObject based on .table-container-svg
+         function adjustTableSVGSize() {
+            document.querySelectorAll('.table-container-svg').forEach(tableContainerSvg => {
+                const tableHeight = tableContainerSvg.getBoundingClientRect().height;
+                if (tableHeight > 0) {
+                    tableContainerSvg.querySelector('svg').setAttribute('height', tableHeight);
+                }
+            });
+        }
+
         // Initial adjustment using requestAnimationFrame to ensure content is rendered
         requestAnimationFrame(() => {
             adjustSVGSize();
@@ -162,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
             adjustCardSVGSize();
             adjustNavSVGSize();
             adjustImageSVGSize();
+            adjustTableSVGSize();
         });
 
         // Adjust on window resize with debounce
@@ -174,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 adjustCardSVGSize();
                 adjustNavSVGSize();
                 adjustImageSVGSize();
+                adjustTableSVGSize();
             }, 100);
         });
 
@@ -210,6 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     imageResizeObserver.observe(imageContainer);
                 }
             });
+            document.querySelectorAll('.table-container-svg').forEach(tableContainerSvg => {
+                const resizeObserverTable = new ResizeObserver(adjustTableSVGSize);
+                resizeObserverTable.observe(tableContainerSvg);
+            });
         } else {
             // Fallback for browsers without ResizeObserver
             window.addEventListener('resize', adjustSVGSize);
@@ -217,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.addEventListener('resize', adjustCardSVGSize);
             window.addEventListener('resize', adjustNavSVGSize);
             window.addEventListener('resize', adjustImageSVGSize);
+            window.addEventListener('resize', adjustTableSVGSize);
         }
     })
     .catch(error => console.error('Error loading SVG:', error));
