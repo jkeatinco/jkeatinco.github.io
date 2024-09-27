@@ -1,20 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Fetch and load button.svg, card.svg, and navigation.svg content first
+    // Fetch and load button.svg, card.svg, navigation.svg, and image.svg content first
     Promise.all([
         fetch('components/button.svg').then(response => response.text()),
         fetch('components/card.svg').then(response => response.text()),
-        fetch('components/navigation.svg').then(response => response.text())
+        fetch('components/navigation.svg').then(response => response.text()),
+        fetch('components/image.svg').then(response => response.text())
     ])
-    .then(([buttonSvgContent, cardSvgContent, navigationSvgContent]) => {
+    .then(([buttonSvgContent, cardSvgContent, navigationSvgContent, imageSvgContent]) => {
         // Insert the fetched SVG content into all elements with the respective class names
         document.querySelectorAll('.button-container-svg').forEach(element => {
-            element.innerHTML = buttonSvgContent;
+            const buttonText = element.getAttribute('data-button-text') || 'Click Me';
+            const customizedButtonSvgContent = buttonSvgContent.replace('Click Me', buttonText);
+            element.innerHTML = customizedButtonSvgContent;
         });
         document.querySelectorAll('.card-container-svg').forEach(element => {
-            element.innerHTML = cardSvgContent;
+            const cardTitle = element.getAttribute('data-card-title') || 'Card Title';
+            const cardContent = element.getAttribute('data-card-content') || 'Card Content';
+            let customizedCardSvgContent = cardSvgContent.replace('Card Title', cardTitle);
+            customizedCardSvgContent = customizedCardSvgContent.replace('Card Content', cardContent);
+            element.innerHTML = customizedCardSvgContent;
         });
         document.querySelectorAll('.nav-container-svg').forEach(element => {
             element.innerHTML = navigationSvgContent;
+        });
+        document.querySelectorAll('.image-container-svg').forEach(element => {
+            element.innerHTML = imageSvgContent;
+
+            // Get the data-img-link attribute value
+            const imgLink = element.getAttribute('data-img-link');
+            if (imgLink) {
+                // Set the src attribute of the img element inside the image.svg content
+                const imgElement = element.querySelector('.svg-image');
+                if (imgElement) {
+                    imgElement.setAttribute('src', imgLink);
+                }
+            }
         });
 
         // Add click event listeners to elements with data-link attribute
@@ -72,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (buttonContainerHeight > 0) {
                             foreignContentButton.setAttribute('height', buttonContainerHeight);
                             svgButtonContainer.setAttribute('height', buttonContainerHeight);
-                            buttonContainerSvg.style.height = `${buttonContainerHeight}px`;
                         }
                     }
                 }
@@ -91,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (cardContainerHeight > 0) {
                             foreignContentCard.setAttribute('height', cardContainerHeight);
                             svgCardContainer.setAttribute('height', cardContainerHeight);
-                            cardContainerSvg.style.height = `${cardContainerHeight}px`;
                         }
                     }
                 }
@@ -119,12 +137,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // Function to adjust the height of the SVG and foreignObject based on .image-container-svg
+        function adjustImageSVGSize() {
+            document.querySelectorAll('.image-container-svg').forEach(imageContainerSvg => {
+                const svgImageContainer = imageContainerSvg.querySelector('svg');
+                const foreignContentImage = imageContainerSvg.querySelector('.foreign-content-image');
+                if (svgImageContainer && foreignContentImage) {
+                    const imageContainer = imageContainerSvg.querySelector('.image-container');
+                    if (imageContainer) {
+                        const imageContainerHeight = imageContainer.getBoundingClientRect().height;
+                        if (imageContainerHeight > 0) {
+                            foreignContentImage.setAttribute('height', imageContainerHeight);
+                            svgImageContainer.setAttribute('height', imageContainerHeight);
+                        }
+                    }
+                }
+            });
+        }
+
         // Initial adjustment using requestAnimationFrame to ensure content is rendered
         requestAnimationFrame(() => {
             adjustSVGSize();
             adjustButtonSVGSize();
             adjustCardSVGSize();
             adjustNavSVGSize();
+            adjustImageSVGSize();
         });
 
         // Adjust on window resize with debounce
@@ -136,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 adjustButtonSVGSize();
                 adjustCardSVGSize();
                 adjustNavSVGSize();
+                adjustImageSVGSize();
             }, 100);
         });
 
@@ -165,12 +203,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     navResizeObserver.observe(navContainer);
                 }
             });
+            document.querySelectorAll('.image-container-svg').forEach(imageContainerSvg => {
+                const imageContainer = imageContainerSvg.querySelector('.image-container');
+                if (imageContainer) {
+                    const imageResizeObserver = new ResizeObserver(adjustImageSVGSize);
+                    imageResizeObserver.observe(imageContainer);
+                }
+            });
         } else {
             // Fallback for browsers without ResizeObserver
             window.addEventListener('resize', adjustSVGSize);
             window.addEventListener('resize', adjustButtonSVGSize);
             window.addEventListener('resize', adjustCardSVGSize);
             window.addEventListener('resize', adjustNavSVGSize);
+            window.addEventListener('resize', adjustImageSVGSize);
         }
     })
     .catch(error => console.error('Error loading SVG:', error));

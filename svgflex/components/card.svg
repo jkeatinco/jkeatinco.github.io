@@ -1,12 +1,10 @@
 <svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%">
-
   <foreignObject class="foreign-content-card" x="0" y="0" width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml" class="container card-container">
       <div class="svg-card-container">
-                    <h2>Card 1</h2>
-                    <p>This is some content for card 1.</p>
+        <h2>Card Title</h2>
+        <p>Card Content</p>
       </div>
     </div>
   </foreignObject>
-
 </svg>
