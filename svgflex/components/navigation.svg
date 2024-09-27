@@ -4,10 +4,7 @@
       <nav class="navbar">
         <div class="nav-logo">SVGFlex</div>
         <ul class="nav-items">
-          <li class="nav-item"><a href="#home">Home</a></li>
-          <li class="nav-item"><a href="#about">About</a></li>
-          <li class="nav-item"><a href="#services">Services</a></li>
-          <li class="nav-item"><a href="#contact">Contact</a></li>
+         
         </ul>
         <div class="hamburger-menu">
           <span></span>

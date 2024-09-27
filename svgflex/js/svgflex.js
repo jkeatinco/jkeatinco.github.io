@@ -22,7 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
             element.innerHTML = customizedCardSvgContent;
         });
         document.querySelectorAll('.nav-container-svg').forEach(element => {
-            element.innerHTML = navigationSvgContent;
+            let customizedNavSvgContent = navigationSvgContent;
+            const navItems = element.getAttribute('data-nav-items');
+            if (navItems) {
+                const navItemsArray = JSON.parse(navItems);
+                const navItemsHtml = navItemsArray.map(item => `<li class="nav-item"><a href="${item.href}">${item.text}</a></li>`).join('');
+                customizedNavSvgContent = customizedNavSvgContent.replace(
+                    /<ul class="nav-items">.*<\/ul>/s,
+                    `<ul class="nav-items">${navItemsHtml}</ul>`
+                );
+            }
+            element.innerHTML = customizedNavSvgContent;
         });
         document.querySelectorAll('.image-container-svg').forEach(element => {
             element.innerHTML = imageSvgContent;
