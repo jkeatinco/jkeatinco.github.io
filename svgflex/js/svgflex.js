@@ -11,8 +11,40 @@ document.addEventListener('DOMContentLoaded', () => {
         // Insert the fetched SVG content into all elements with the respective class names
         document.querySelectorAll('.button-container-svg').forEach(element => {
             const buttonText = element.getAttribute('data-button-text') || 'Click Me';
-            const customizedButtonSvgContent = buttonSvgContent.replace('Click Me', buttonText);
-            element.innerHTML = customizedButtonSvgContent;
+            const buttonColor = element.getAttribute('data-button-color');
+            let customizedButtonSvgContent = buttonSvgContent.replace('Click Me', buttonText);
+
+            // Create a temporary container to manipulate the SVG content
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = customizedButtonSvgContent;
+
+            // Find the svg-button element and add the class based on data-button-color
+            const svgButton = tempContainer.querySelector('.svg-button');
+            switch (buttonColor) {
+                case 'secondary':
+                    svgButton.classList.add('svg-button-secondary');
+                    break;
+                case 'warning':
+                    svgButton.classList.add('svg-button-warning');
+                    break;
+                case 'danger':
+                    svgButton.classList.add('svg-button-danger');
+                    break;
+                case 'success':
+                    svgButton.classList.add('svg-button-success');
+                    break;
+                case 'black':
+                    svgButton.classList.add('svg-button-black');
+                    break;
+                case 'white':
+                    svgButton.classList.add('svg-button-white');
+                    break;
+                default:
+                    break;
+            }
+
+            // Set the modified SVG content back to the element
+            element.innerHTML = tempContainer.innerHTML;
         });
         document.querySelectorAll('.card-container-svg').forEach(element => {
             const cardTitle = element.getAttribute('data-card-title') || 'Card Title';
