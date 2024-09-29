@@ -1,13 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const fileInput = document.getElementById('file');
+    const fileChosen = document.getElementById('file-chosen');
+
+    fileInput.addEventListener('change', function() {
+        fileChosen.textContent = this.files.length > 0 ? this.files[0].name : "No file chosen";
+    });
     // Fetch and load button.svg, card.svg, navigation.svg, and image.svg content first
     Promise.all([
         fetch('components/button.svg').then(response => response.text()),
         fetch('components/card.svg').then(response => response.text()),
         fetch('components/navigation.svg').then(response => response.text()),
         fetch('components/image.svg').then(response => response.text()),
-        fetch('components/table.svg').then(response => response.text())
+        fetch('components/table.svg').then(response => response.text()),
+        fetch('components/input.svg').then(response => response.text()) // Fetch input.svg
     ])
-    .then(([buttonSvgContent, cardSvgContent, navigationSvgContent, imageSvgContent, tableSvgContent]) => {
+    .then(([buttonSvgContent, cardSvgContent, navigationSvgContent, imageSvgContent, tableSvgContent, inputSvgContent]) => {
         // Insert the fetched SVG content into all elements with the respective class names
         document.querySelectorAll('.button-container-svg').forEach(element => {
             const buttonText = element.getAttribute('data-button-text') || 'Click Me';
@@ -45,6 +53,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Set the modified SVG content back to the element
             element.innerHTML = tempContainer.innerHTML;
+        });
+
+        document.querySelectorAll('.input-container-svg').forEach(element => {
+            const inputLabel = element.getAttribute('data-input-label') || 'Label';
+            const inputLabelClass = element.getAttribute('data-input-label-class') || '';
+            const inputType = element.getAttribute('data-input-type') || 'text';
+            const inputId = element.getAttribute('data-input-id') || 'input-id';
+            const inputName = element.getAttribute('data-input-name') || 'input-name';
+            const inputClass = element.getAttribute('data-input-class') || 'svg-input';
+            const inputRequired = element.getAttribute('data-input-required') === 'true' ? 'required' : '';
+            const inputMin = element.getAttribute('data-input-min') || '';
+            const inputMax = element.getAttribute('data-input-max') || '';
+            const inputDisabled = element.getAttribute('data-input-disabled') === 'true' ? 'disabled' : '';
+            const inputPlaceholder = element.getAttribute('data-input-placeholder') || '';
+            const inputReadonly = element.getAttribute('data-input-readonly') === 'true' ? 'readonly' : '';
+
+            let customizedInputSvgContent = inputSvgContent
+                .replace('Label', inputLabel)
+                .replace('class="svg-input-label"', `class="svg-input-label ${inputLabelClass}"`)
+                .replace('type="text"', `type="${inputType}"`)
+                .replace('id="input-id"', `id="${inputId}"`)
+                .replace('name="input-name"', `name="${inputName}"`)
+                .replace('class="svg-input"', `class="${inputClass}"`)
+                if (inputRequired) {
+                    customizedInputSvgContent = customizedInputSvgContent.replace('<input', `<input ${inputRequired}`);
+                }
+                if (inputMin) {
+                    customizedInputSvgContent = customizedInputSvgContent.replace('<input', `<input min="${inputMin}"`);
+                }
+                if (inputMax) {
+                    customizedInputSvgContent = customizedInputSvgContent.replace('<input', `<input max="${inputMax}"`);
+                }
+                if (inputDisabled) {
+                    customizedInputSvgContent = customizedInputSvgContent.replace('<input', `<input ${inputDisabled}`);
+                }
+                if (inputPlaceholder) {
+                    customizedInputSvgContent = customizedInputSvgContent.replace('<input', `<input placeholder="${inputPlaceholder}"`);
+                }
+                if (inputReadonly) {
+                    customizedInputSvgContent = customizedInputSvgContent.replace('<input', `<input ${inputReadonly}`);
+                }
+
+            element.innerHTML = customizedInputSvgContent;
         });
         document.querySelectorAll('.card-container-svg').forEach(element => {
             const cardTitle = element.getAttribute('data-card-title') || 'Card Title';
@@ -145,6 +196,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        function adjustInputSVGSize() {
+            document.querySelectorAll('.input-container-svg').forEach(inputContainerSvg => {
+                const svgInputContainer = inputContainerSvg.querySelector('svg');
+                const foreignContentInput = inputContainerSvg.querySelector('.foreign-content-input');
+                if (svgInputContainer && foreignContentInput) {
+                    const inputContainer = inputContainerSvg.querySelector('.input-container');
+                    if (inputContainer) {
+                        const inputContainerHeight = inputContainer.getBoundingClientRect().height;
+                        if (inputContainerHeight > 0) {
+                            foreignContentInput.setAttribute('height', inputContainerHeight);
+                            svgInputContainer.setAttribute('height', inputContainerHeight);
+                        }
+                    }
+                }
+            });
+        }
+
         // Function to adjust the height of the SVG and foreignObject based on .card-container-svg
         function adjustCardSVGSize() {
             document.querySelectorAll('.card-container-svg').forEach(cardContainerSvg => {
@@ -220,6 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
             adjustNavSVGSize();
             adjustImageSVGSize();
             adjustTableSVGSize();
+            adjustInputSVGSize();
         });
 
         // Adjust on window resize with debounce
@@ -233,6 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 adjustNavSVGSize();
                 adjustImageSVGSize();
                 adjustTableSVGSize();
+                adjustInputSVGSize();
             }, 100);
         });
 
@@ -248,6 +318,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     buttonResizeObserver.observe(buttonContainer);
                 }
             });
+                document.querySelectorAll('.input-container-svg').forEach(inputContainerSvg => {
+        const inputContainer = inputContainerSvg.querySelector('.input-container');
+        if (inputContainer) {
+            const inputResizeObserver = new ResizeObserver(adjustInputSVGSize);
+            inputResizeObserver.observe(inputContainer);
+        }
+    });
             document.querySelectorAll('.card-container-svg').forEach(cardContainerSvg => {
                 const cardContainer = cardContainerSvg.querySelector('.card-container');
                 if (cardContainer) {
@@ -277,6 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Fallback for browsers without ResizeObserver
             window.addEventListener('resize', adjustSVGSize);
             window.addEventListener('resize', adjustButtonSVGSize);
+            window.addEventListener('resize', adjustInputSVGSize);
             window.addEventListener('resize', adjustCardSVGSize);
             window.addEventListener('resize', adjustNavSVGSize);
             window.addEventListener('resize', adjustImageSVGSize);

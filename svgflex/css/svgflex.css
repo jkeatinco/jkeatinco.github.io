@@ -622,13 +622,20 @@ h1 {
 }
 
 /* Forms */
+
+.input-container {
+    background-color: none;
+    margin: 0rem;
+    padding: 0rem;
+    box-shadow: none;
+}
 .form-group,
 .form-check {
     margin-bottom: 1.5rem;
 }
 
 /* Label Styling */
-.form-label {
+.svg-input-label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
@@ -636,7 +643,7 @@ h1 {
 }
 
 /* Input Styling */
-.form-control {
+.svg-input {
     width: 100%;
     padding: 0.75rem 1rem;
     font-size: 1rem;
@@ -645,27 +652,27 @@ h1 {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-control:focus {
+.svg-input:focus {
     border-color: #007bff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     outline: none;
 }
 
 /* Styling for Different Input Types */
-.form-control[type="date"],
-.form-control[type="color"],
-.form-control[type="number"],
-.form-control[type="range"],
-.form-control[type="file"] {
+.svg-input[type="date"],
+.svg-input[type="color"],
+.svg-input[type="number"],
+.svg-input[type="range"],
+.svg-input[type="file"] {
     padding: 0.5rem 1rem;
     background-color: #f9f9f9;
 }
 
-.form-control[type="range"] {
+.svg-input[type="range"] {
     padding: 0;
 }
 
-textarea.form-control {
+textarea.svg-input {
     resize: vertical;
     height: 120px;
 }
@@ -683,6 +690,44 @@ textarea.form-control {
     cursor: pointer;
 }
 
+.custom-file {
+    display: flex;
+    align-items: center;
+}
+
+.custom-file-label {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-file-label:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 91, 187, 0.2);
+}
+
+.file-chosen-text {
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: #666666;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* When a file is chosen, update the file-chosen-text */
+input[type="file"]:valid + .custom-file-label {
+    background-color: var(--color-primary);
+}
+
+input[type="file"]:valid + .custom-file-label + .file-chosen-text {
+    color: var(--color-black);
+    font-weight: 500;
+}
 
 
 /* ================================

@@ -142,53 +142,56 @@
               <h2 class="text-center">Forms</h2>
               <form class="container">
                 <h2 class="form-title">Personal Information</h2>
-            
-                <div class="form-group">
-                    <label for="name" class="form-label">Name:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>  
-            
-            
-                <div class="form-group">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>  
-            
-            
-                <div class="form-group">
-                    <label for="password"  
-             class="form-label">Password:</label>
-                    <input type="password" id="password" name="password" class="form-control" required>
-                </div>
-            
-                <div class="form-group">
-                    <label  
-             for="birthday" class="form-label">Birthday:</label>
-                    <input type="date" id="birthday" name="birthday" class="form-control">
-                </div>
-            
-                <div class="form-group">  
-            
-                    <label for="phone" class="form-label">Phone:</label>
-                    <input type="tel" id="phone" name="phone" class="form-control">  
-            
-                </div>
-            
-                <div class="form-group">
-                    <label for="website" class="form-label">Website:</label>
-                    <input type="url" id="website" name="website" class="form-control">  
-            
-                </div>
-            
-                <div class="form-group">
-                    <label for="color" class="form-label">Favorite Color:</label>
-                    <input type="color" id="color" name="color" class="form-control">
-                </div>
-            
-                <div class="form-group">
-                    <label for="number" class="form-label">Number:</label>
-                    <input type="number" id="number" name="number" class="form-control">
-                </div>
+
+               <!-- Input Component for Name -->
+<div class="input-container-svg" data-input-label="Name" data-input-label-class="custom-label-class" data-input-type="text" data-input-id="name" data-input-name="name" data-input-class="svg-input" data-input-required="true" data-input-placeholder="First and Last Name">
+  <!-- Input will be injected here -->
+</div>
+
+  <!-- Input Component for Name -->
+  <div class="input-container-svg" data-input-label="Something" data-input-label-class="custom-label-class" data-input-type="text" data-input-id="something" data-input-name="something" data-input-class="svg-input" data-input-required="true" data-input-disabled="true">
+    <!-- Input will be injected here -->
+  </div>
+
+<!-- Input Component for Email -->
+<div class="input-container-svg" data-input-label="Email" data-input-label-class="custom-label-class" data-input-type="email" data-input-id="email" data-input-name="email" data-input-class="svg-input" data-input-required="true" data-input-readonly="true">
+  <!-- Input will be injected here -->
+</div>
+
+<!-- Input Component for Password -->
+<div class="input-container-svg" data-input-label="Password" data-input-label-class="custom-label-class" data-input-type="password" data-input-id="password" data-input-name="password" data-input-class="svg-input" data-input-required="true">
+  <!-- Input will be injected here -->
+</div>
+
+<!-- Input Component for Birthday -->
+<div class="input-container-svg" data-input-label="Birthday" data-input-label-class="custom-label-class" data-input-type="date" data-input-id="birthday" data-input-name="birthday" data-input-class="svg-input">
+  <!-- Input will be injected here -->
+</div>
+
+<!-- Input Component for Phone -->
+<div class="input-container-svg" data-input-label="Phone" data-input-label-class="custom-label-class" data-input-type="tel" data-input-id="phone" data-input-name="phone" data-input-class="svg-input">
+  <!-- Input will be injected here -->
+</div>
+
+<!-- Input Component for Website -->
+<div class="input-container-svg" data-input-label="Website" data-input-label-class="custom-label-class" data-input-type="url" data-input-id="website" data-input-name="website" data-input-class="svg-input">
+  <!-- Input will be injected here -->
+</div>
+
+<!-- Input Component for Favorite Color -->
+<div class="input-container-svg" data-input-label="Favorite Color" data-input-label-class="custom-label-class" data-input-type="color" data-input-id="color" data-input-name="color" data-input-class="svg-input">
+  <!-- Input will be injected here -->
+</div>
+
+<!-- Input Component for Number -->
+<div class="input-container-svg" data-input-label="Number" data-input-label-class="custom-label-class" data-input-type="number" data-input-id="number" data-input-name="number" data-input-class="svg-input">
+  <!-- Input will be injected here -->
+</div>
+
+<!-- Input Component for Range -->
+<div class="input-container-svg" data-input-label="Range" data-input-label-class="custom-label-class" data-input-type="range" data-input-id="range" data-input-name="range" data-input-class="svg-input" data-input-min="0" data-input-max="100">
+  <!-- Input will be injected here -->
+</div>
             
                 <div class="form-group">
                     <label for="range" class="form-label">Range:</label>
@@ -219,15 +222,18 @@
                     <label for="female" class="form-check-label">Female</label>
                 </div>
             
-                <div class="form-group">  
-            
-                    <label for="file" class="form-label">Upload File:</label>
-                    <input type="file" id="file" name="file" class="form-control-file">
-                </div>
+                <div class="form-group">
+                  <label for="file" class="form-label">Upload File:</label>
+                  <div class="custom-file">
+                      <input type="file" id="file" name="file" class="form-control-file" hidden>
+                      <label for="file" class="custom-file-label svg-button">Choose File</label>
+                      <span id="file-chosen" class="file-chosen-text">No file chosen</span>
+                  </div>
+              </div>
             
                 <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-primary">
-                    <input type="reset" value="Reset" class="btn btn-secondary">  
+                    <input type="submit" value="Submit" class="svg-button">
+                    <input type="reset" value="Reset" class="svg-button">  
             
                 </div>
             
