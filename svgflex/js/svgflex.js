@@ -137,7 +137,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             document.querySelectorAll('.table-container-svg').forEach(element => {
-                element.innerHTML = tableSvgContent;
+                const headers = JSON.parse(element.getAttribute('data-table-headers') || '[]');
+                const contents = JSON.parse(element.getAttribute('data-table-contents') || '[]');
+            
+                console.log('Headers:', headers);
+                console.log('Contents:', contents);
+            
+                let customizedTableSvgContent = tableSvgContent;
+            
+                // Create table headers
+                let headersHtml = headers.map(header => `<th>${header}</th>`).join('');
+                customizedTableSvgContent = customizedTableSvgContent.replace('<tr id="table-headers-placeholder"></tr>', `<tr>${headersHtml}</tr>`);
+            
+                // Create table contents
+                let contentsHtml = contents.map(row => {
+                    return `<tr>${row.map(data => `<td>${data}</td>`).join('')}</tr>`;
+                }).join('');
+                customizedTableSvgContent = customizedTableSvgContent.replace('<tbody id="table-contents-placeholder"></tbody>', `<tbody>${contentsHtml}</tbody>`);
+            
+                console.log('Customized Table SVG Content:', customizedTableSvgContent);
+            
+                element.innerHTML = customizedTableSvgContent;
             });
 
             document.querySelectorAll('.video-container-svg').forEach(element => {
@@ -289,15 +309,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Function to adjust the height of the SVG and foreignObject based on .table-container-svg
-            function adjustTableSVGSize() {
-                document.querySelectorAll('.table-container-svg').forEach(tableContainerSvg => {
-                    const tableHeight = tableContainerSvg.getBoundingClientRect().height;
-                    if (tableHeight > 0) {
-                        tableContainerSvg.querySelector('svg').setAttribute('height', tableHeight);
-                    }
-                });
+           // Function to adjust the height of the SVG and foreignObject based on .svg-table
+function adjustTableSVGSize() {
+    document.querySelectorAll('.table-container-svg').forEach(tableContainerSvg => {
+        const svgTableElement = tableContainerSvg.querySelector('.svg-table');
+        if (svgTableElement) {
+            const tableHeight = svgTableElement.getBoundingClientRect().height;
+            console.log('SVG Table Height:', tableHeight);
+
+            if (tableHeight > 0) {
+                const svgElement = tableContainerSvg.querySelector('svg');
+                if (svgElement) {
+                    svgElement.setAttribute('height', tableHeight);
+                    console.log('SVG Height Set To:', tableHeight);
+                } else {
+                    console.error('SVG element not found within .table-container-svg');
+                }
             }
+        } else {
+            console.error('.svg-table element not found within .table-container-svg');
+        }
+    });
+}
 
              // Function to adjust the height of the SVG and foreignObject based on .video-container-svg
         function adjustVideoSVGSize() {
