@@ -9,16 +9,17 @@
   <script src="js/svgflex.js" defer></script>
 </head>
 
-<body>
+<body id="svg-container">
   <!-- Framework Container (SVG) -->
-  <div id="svg-container">
+  
     <svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%">
       <!-- Main Content -->
       <foreignObject id="foreign-content" x="0" y="0" width="100%" height="100%">
         <!-- Container for Responsive Layout with XHTML Namespace -->
         <div xmlns="http://www.w3.org/1999/xhtml" class="container">
           <!-- Navigation Component -->
-          <div class="nav-container-svg" data-nav-items='[{"text":"Home","href":"#home"},{"text":"Docs","href":"#docs"},{"text":"Contact","href":"#contact"}]'>
+          <div class="nav-container-svg"
+            data-nav-items='[{"text":"Home","href":"#home"},{"text":"Docs","href":"#docs"},{"text":"Contact","href":"#contact"}]'>
             <!-- Navigation will be injected here -->
           </div>
           <!-- Title Section -->
@@ -34,7 +35,7 @@
             </div>
           </div> -->
           <div class="row">
-            <p class="text-center mb-2">Trying to cram as much into the SVG as possible, meaning even more SVGs and a
+            <p class="text-center mb-2">Trying to cram as much into the SVG 'foreignObject' as possible, meaning even more SVGs and a
               fully functional website experience. With a sprinkle of html, css, and javascript. Think of this as the
               <b>first ever SVG Framework</b>! But really just an experiment but maybe something interesting will come
               of it.
@@ -54,12 +55,13 @@
               <h6>H6.Size</h6>
               <p>p.Size</p>
               <p><a class="link link-primary" href="https://x.com/jkeatin" target="_blank">Primary Link</a><br>
-              <a class="link link-secondary" href="https://x.com/jkeatin" target="_blank">Secondary Link</a><br>
-<a class="link link-warning" href="https://x.com/jkeatin" target="_blank">Warning Link</a><br>
-<a class="link link-danger" href="https://x.com/jkeatin" target="_blank">Danger Link</a><br>
-<a class="link link-success" href="https://x.com/jkeatin" target="_blank">Success Link</a><br>
-<a class="link link-black" href="https://x.com/jkeatin" target="_blank">Black Link</a><br>
-<a class="link link-white" href="https://x.com/jkeatin" target="_blank">White Link</a><br></p>
+                <a class="link link-secondary" href="https://x.com/jkeatin" target="_blank">Secondary Link</a><br>
+                <a class="link link-warning" href="https://x.com/jkeatin" target="_blank">Warning Link</a><br>
+                <a class="link link-danger" href="https://x.com/jkeatin" target="_blank">Danger Link</a><br>
+                <a class="link link-success" href="https://x.com/jkeatin" target="_blank">Success Link</a><br>
+                <a class="link link-black" href="https://x.com/jkeatin" target="_blank">Black Link</a><br>
+                <a class="link link-white" href="https://x.com/jkeatin" target="_blank">White Link</a><br>
+              </p>
             </div>
           </div>
 
@@ -72,14 +74,14 @@
           <div class="row">
             <div class="col">
               <!-- Image Component -->
-              <div class="image-container-svg" data-img-link="img/horsebattlejpg.jpg">
+              <div class="image-container-svg" data-img-link="img/90scolorful.jpg">
                 <!-- Image will be injected here -->
               </div>
 
             </div>
             <div class="col">
               <!-- Image Component -->
-              <div class="image-container-svg" data-img-link="img/Untitled.jpg">
+              <div class="image-container-svg" data-img-link="img/90scolorful2.jpg">
                 <!-- Image will be injected here -->
               </div>
 
@@ -88,32 +90,60 @@
 
           <div class="row">
             <div class="col">
+              <h2 class="text-center">Video</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <!-- Video Component -->
+              <div class="video-container-svg" data-video-link="vid/colorful.mp4">
+                <!-- Video will be injected here -->
+              </div>
+            </div>
+            <div class="col">
+              <!-- Video Component -->
+              <div class="video-container-svg" data-video-link="vid/colorful2.mp4">
+                <!-- Video will be injected here -->
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
               <h2 class="text-center">Buttons</h2>
-               <!-- Button Component -->
-               <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Primary Button" data-button-color="">
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io"
+                data-button-text="Primary Button" data-button-color="">
                 <!-- Button will be injected here -->
               </div>
               <!-- Button Component -->
-              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Secondary Button" data-button-color="secondary">
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io"
+                data-button-text="Secondary Button" data-button-color="secondary">
                 <!-- Button will be injected here -->
               </div>
-               <!-- Button Component -->
-               <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Warning Button" data-button-color="warning">
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io"
+                data-button-text="Warning Button" data-button-color="warning">
                 <!-- Button will be injected here -->
               </div> <!-- Button Component -->
-              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Danger Button" data-button-color="danger">
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Danger Button"
+                data-button-color="danger">
                 <!-- Button will be injected here -->
               </div>
-               <!-- Button Component -->
-               <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Success Button" data-button-color="success">
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io"
+                data-button-text="Success Button" data-button-color="success">
                 <!-- Button will be injected here -->
               </div>
-               <!-- Button Component -->
-               <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Black Button" data-button-color="black">
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Black Button"
+                data-button-color="black">
                 <!-- Button will be injected here -->
               </div>
-               <!-- Button Component -->
-               <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="White Button" data-button-color="white">
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="White Button"
+                data-button-color="white">
                 <!-- Button will be injected here -->
               </div>
             </div>
@@ -143,107 +173,135 @@
               <form class="container">
                 <h2 class="form-title">Personal Information</h2>
 
-               <!-- Input Component for Name -->
-<div class="input-container-svg" data-input-label="Name" data-input-label-class="custom-label-class" data-input-type="text" data-input-id="name" data-input-name="name" data-input-class="svg-input" data-input-required="true" data-input-placeholder="First and Last Name">
-  <!-- Input will be injected here -->
-</div>
-
-  <!-- Input Component for Name -->
-  <div class="input-container-svg" data-input-label="Something" data-input-label-class="custom-label-class" data-input-type="text" data-input-id="something" data-input-name="something" data-input-class="svg-input" data-input-required="true" data-input-disabled="true">
-    <!-- Input will be injected here -->
-  </div>
-
-<!-- Input Component for Email -->
-<div class="input-container-svg" data-input-label="Email" data-input-label-class="custom-label-class" data-input-type="email" data-input-id="email" data-input-name="email" data-input-class="svg-input" data-input-required="true" data-input-readonly="true">
-  <!-- Input will be injected here -->
-</div>
-
-<!-- Input Component for Password -->
-<div class="input-container-svg" data-input-label="Password" data-input-label-class="custom-label-class" data-input-type="password" data-input-id="password" data-input-name="password" data-input-class="svg-input" data-input-required="true">
-  <!-- Input will be injected here -->
-</div>
-
-<!-- Input Component for Birthday -->
-<div class="input-container-svg" data-input-label="Birthday" data-input-label-class="custom-label-class" data-input-type="date" data-input-id="birthday" data-input-name="birthday" data-input-class="svg-input">
-  <!-- Input will be injected here -->
-</div>
-
-<!-- Input Component for Phone -->
-<div class="input-container-svg" data-input-label="Phone" data-input-label-class="custom-label-class" data-input-type="tel" data-input-id="phone" data-input-name="phone" data-input-class="svg-input">
-  <!-- Input will be injected here -->
-</div>
-
-<!-- Input Component for Website -->
-<div class="input-container-svg" data-input-label="Website" data-input-label-class="custom-label-class" data-input-type="url" data-input-id="website" data-input-name="website" data-input-class="svg-input">
-  <!-- Input will be injected here -->
-</div>
-
-<!-- Input Component for Favorite Color -->
-<div class="input-container-svg" data-input-label="Favorite Color" data-input-label-class="custom-label-class" data-input-type="color" data-input-id="color" data-input-name="color" data-input-class="svg-input">
-  <!-- Input will be injected here -->
-</div>
-
-<!-- Input Component for Number -->
-<div class="input-container-svg" data-input-label="Number" data-input-label-class="custom-label-class" data-input-type="number" data-input-id="number" data-input-name="number" data-input-class="svg-input">
-  <!-- Input will be injected here -->
-</div>
-
-<!-- Input Component for Range -->
-<div class="input-container-svg" data-input-label="Range" data-input-label-class="custom-label-class" data-input-type="range" data-input-id="range" data-input-name="range" data-input-class="svg-input" data-input-min="0" data-input-max="100">
-  <!-- Input will be injected here -->
-</div>
-            
-                <div class="form-group">
-                    <label for="range" class="form-label">Range:</label>
-                    <input type="range" id="range" name="range" min="0" max="100" class="form-control">
+                <!-- Input Component for Name -->
+                <div class="input-container-svg" data-input-label="Name" data-input-label-class="custom-label-class" data-input-label-for="name"
+                  data-input-type="text" data-input-id="name" data-input-name="name" data-input-class="svg-input"
+                  data-input-required="true" data-input-placeholder="First and Last Name">
+                  <!-- Input will be injected here -->
                 </div>
-            
+
+                <!-- Input Component for Name -->
+                <div class="input-container-svg" data-input-label="Something"
+                  data-input-label-class="custom-label-class" data-input-label-for="something" data-input-type="text" data-input-id="something"
+                  data-input-name="something" data-input-class="svg-input" data-input-required="true"
+                  data-input-disabled="true">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Email -->
+                <div class="input-container-svg" data-input-label="Email" data-input-label-class="custom-label-class" data-input-label-for="email"
+                  data-input-type="email" data-input-id="email" data-input-name="email" data-input-class="svg-input"
+                  data-input-required="true" data-input-readonly="true" data-input-value="test@svgflex.com">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Password -->
+                <div class="input-container-svg" data-input-label="Password" data-input-label-class="custom-label-class" data-input-label-for="password"
+                  data-input-type="password" data-input-id="password" data-input-name="password"
+                  data-input-class="svg-input" data-input-required="true">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Birthday -->
+                <div class="input-container-svg" data-input-label="Birthday" data-input-label-class="custom-label-class" data-input-label-for="birthday"
+                  data-input-type="date" data-input-id="birthday" data-input-name="birthday"
+                  data-input-class="svg-input">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Phone -->
+                <div class="input-container-svg" data-input-label="Phone" data-input-label-class="custom-label-class" data-input-label-for="phone"
+                  data-input-type="tel" data-input-id="phone" data-input-name="phone" data-input-class="svg-input">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Website -->
+                <div class="input-container-svg" data-input-label="Website" data-input-label-class="custom-label-class" data-input-label-for="website"
+                  data-input-type="url" data-input-id="website" data-input-name="website" data-input-class="svg-input">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Favorite Color -->
+                <div class="input-container-svg" data-input-label="Favorite Color"
+                  data-input-label-class="custom-label-class" data-input-label-for="color" data-input-type="color" data-input-id="color"
+                  data-input-name="color" data-input-class="svg-input">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Number -->
+                <div class="input-container-svg" data-input-label="Number" data-input-label-class="custom-label-class" data-input-label-for="number"
+                  data-input-type="number" data-input-id="number" data-input-name="number" data-input-class="svg-input">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Range -->
+                <div class="input-container-svg" data-input-label="Range" data-input-label-class="custom-label-class" data-input-label-for="range"
+                  data-input-type="range" data-input-id="range" data-input-name="range" data-input-class="svg-input"
+                  data-input-min="0" data-input-max="100">
+                  <!-- Input will be injected here -->
+                </div>
+
                 <h2 class="form-title">Additional Details</h2>
-            
-                <div class="form-group">
-                    <label for="message" class="form-label">Message:</label><br>
-                    <textarea id="message" name="message" class="form-control"></textarea>  
-            
+
+                <!-- Input Component for Textarea -->
+                <div class="input-container-svg" data-input-label="Text Area"
+                  data-input-label-class="custom-label-class" data-input-label-for="textarea" data-input-type="textarea" data-input-id="textarea"
+                  data-input-name="textarea" data-input-class="svg-input">
+                  <!-- Input will be injected here -->
                 </div>
-            
-                <div class="form-check">
-                    <input type="checkbox" id="terms" name="terms" value="agree" class="form-check-input">
-                    <label for="terms" class="form-check-label"> I agree to the terms and conditions</label>
+
+
+
+
+
+
+
+                <!-- Input Component for Checkbox -->
+                <div class="input-container-svg" data-input-label="I agree to the terms and conditions"
+                  data-input-label-class="form-check-label" data-input-label-for="terms" data-input-type="checkbox" data-input-id="terms"
+                  data-input-name="terms" data-input-class="form-check-input" data-input-value="agree">
+                  <!-- Input will be injected here -->
                 </div>
-            
-                <div class="form-check">
-                    <input type="radio" id="male" name="gender" value="male" class="form-check-input">
-                    <label for="male" class="form-check-label">Male</label>  
-            
+
+                <!-- Input Component for Radio (Happy) -->
+                <div class="input-container-svg" data-input-label="Happy" data-input-label-class="form-check-label" data-input-label-for="happy"
+                  data-input-type="radio" data-input-id="happy" data-input-name="feeling"
+                  data-input-class="form-check-input" data-input-value="happy">
+                  <!-- Input will be injected here -->
                 </div>
-                <div class="form-check">
-                    <input type="radio" id="female"  
-             name="gender" value="female" class="form-check-input">
-                    <label for="female" class="form-check-label">Female</label>
+
+                <!-- Input Component for Radio (Sad) -->
+                <div class="input-container-svg" data-input-label="Sad" data-input-label-class="form-check-label" data-input-label-for="sad"
+                  data-input-type="radio" data-input-id="sad" data-input-name="feeling"
+                  data-input-class="form-check-input" data-input-value="sad">
+                  <!-- Input will be injected here -->
                 </div>
-            
-                <div class="form-group">
-                  <label for="file" class="form-label">Upload File:</label>
-                  <div class="custom-file">
-                      <input type="file" id="file" name="file" class="form-control-file" hidden>
-                      <label for="file" class="custom-file-label svg-button">Choose File</label>
-                      <span id="file-chosen" class="file-chosen-text">No file chosen</span>
-                  </div>
-              </div>
-            
-                <div class="form-group">
-                    <input type="submit" value="Submit" class="svg-button">
-                    <input type="reset" value="Reset" class="svg-button">  
-            
+
+                <!-- Input Component for File -->
+                <div class="input-container-svg" data-input-label="Upload File:" data-input-label-class="form-label" data-input-label-for="file"
+                  data-input-type="file" data-input-id="file" data-input-name="file"
+                  data-input-class="form-control-file">
+                  <!-- Input will be injected here -->
                 </div>
-            
-            </form>   
+
+                <!-- Input Component for Submit -->
+                <div class="input-container-svg" data-input-label="" data-input-type="submit" data-input-value="Submit" data-input-label-for="submit" data-input-id="submit" data-input-name="submit"
+                  data-input-class="svg-button">
+                  <!-- Input will be injected here -->
+                </div>
+
+                <!-- Input Component for Reset -->
+                <div class="input-container-svg" data-input-label="" data-input-type="reset" data-input-value="Reset" data-input-label-for="reset" data-input-id="reset" data-input-name="reset"
+                  data-input-class="svg-button">
+                  <!-- Input will be injected here -->
+                </div>
+
+              </form>
             </div>
           </div>
         </div>
       </foreignObject>
     </svg>
-  </div>
 </body>
 
 </html>

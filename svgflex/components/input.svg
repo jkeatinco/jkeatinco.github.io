@@ -1,9 +1,10 @@
 <svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%">
   <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
-    <div class="form-group">
-      <label class="svg-input-label">Label</label>
-      <input class="svg-input" type="text" id="input-id" name="input-name">
+      <div class="form-group">
+        <label class="svg-input-label">Label</label>
+        <!-- Placeholder for input or textarea -->
+        <div class="input-placeholder"></div>
       </div>
     </div>
   </foreignObject>
