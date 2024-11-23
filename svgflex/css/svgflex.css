@@ -550,6 +550,15 @@ h1 {
     background-color: white;
 }
 
+/* Table Overflow Handling for Small Screens */
+@media (max-width: 767px) {
+    .table-responsive {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    }
+  }
+
 /* Link Component */
 .link {
     text-decoration: none;

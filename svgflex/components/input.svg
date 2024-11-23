@@ -3,7 +3,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
       <div class="form-group">
         <label class="svg-input-label">Label</label>
-        <!-- Placeholder for input or textarea -->
+         <!-- Placeholder for input, textarea, or select -->
         <div class="input-placeholder"></div>
       </div>
     </div>

@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const inputPlaceholder = element.getAttribute('data-input-placeholder') || '';
                 const inputReadonly = element.getAttribute('data-input-readonly') === 'true' ? 'readonly' : '';
                 const inputValue = element.getAttribute('data-input-value') || '';
+                const inputOptions = JSON.parse(element.getAttribute('data-input-options') || '[]');
             
                 let customizedInputSvgContent = inputSvgContent
                     .replace('Label', inputLabel)
@@ -94,6 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <span id="file-chosen" class="file-chosen-text">No file chosen</span>`;
                 } else if (inputType === 'submit' || inputType === 'reset') {
                     inputElement = `<input class="${inputClass} svg-button" id="${inputId}" type="${inputType}" value="${inputValue}" />`;
+                } else if (inputType === 'select') {
+                    const optionsHtml = inputOptions.map(option => `<option value="${option.value}">${option.text}</option>`).join('');
+                    inputElement = `<select class="${inputClass}" id="${inputId}" name="${inputName}" ${inputRequired} ${inputDisabled}>${optionsHtml}</select>`;
                 } else {
                     inputElement = `<input class="${inputClass}" type="${inputType}" id="${inputId}" name="${inputName}" value="${inputValue}" ${inputRequired} ${inputMin} ${inputMax} ${inputDisabled} ${inputReadonly} placeholder="${inputPlaceholder}" />`;
                 }

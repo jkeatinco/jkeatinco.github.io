@@ -1,0 +1,514 @@
+<svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="7253">
+      <!-- Main Content -->
+      <foreignObject id="foreign-content" x="0" y="0" width="100%" height="7253">
+        <!-- Container for Responsive Layout with XHTML Namespace -->
+        <div xmlns="http://www.w3.org/1999/xhtml" class="container">
+          <!-- Navigation Component -->
+          <div class="nav-container-svg" data-nav-items="[{&quot;text&quot;:&quot;Home&quot;,&quot;href&quot;:&quot;#home&quot;},{&quot;text&quot;:&quot;Docs&quot;,&quot;href&quot;:&quot;#docs&quot;},{&quot;text&quot;:&quot;Contact&quot;,&quot;href&quot;:&quot;#contact&quot;}]" style="height: 67.6px;"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="67.60000610351562">
+  <foreignObject class="foreign-content-nav" x="0" y="0" width="100%" height="67.60000610351562">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container nav-container">
+      <nav class="navbar">
+        <div class="nav-logo">SVGFlex</div>
+        <ul class="nav-items"><li class="nav-item"><a href="#home">Home</a></li><li class="nav-item"><a href="#docs">Docs</a></li><li class="nav-item"><a href="#contact">Contact</a></li></ul>
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </foreignObject>
+</svg></div>
+          <!-- Title Section -->
+          <div class="row">
+            <div class="col">
+              <h1 class="text-center">SVGFlex</h1>
+              <h3 class="text-center">SVG is all you needs 😜.</h3>
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="col">
+            <h3 class="text-center">SVG is all you needs 😜.</h3>
+            </div>
+          </div> -->
+          <div class="row">
+            <p class="text-center mb-2">Trying to cram as much into the SVG 'foreignObject' as possible, meaning even more SVGs and a
+              fully functional website experience. With a sprinkle of html, css, and javascript. Think of this as the
+              <b>first ever SVG Framework</b>! But really just an experiment but maybe something interesting will come
+              of it.
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h2 class="text-center mb-2">Typography</h2>
+            </div>
+            <div class="col">
+              <h1>H1.Size</h1>
+              <h2>H2.Size</h2>
+              <h3>H3.Size</h3>
+              <h4>H4.Size</h4>
+              <h5>H5.Size</h5>
+              <h6>H6.Size</h6>
+              <p>p.Size</p>
+              <p><a class="link link-primary" href="https://x.com/jkeatin" target="_blank">Primary Link</a>
+                <a class="link link-secondary" href="https://x.com/jkeatin" target="_blank">Secondary Link</a>
+                <a class="link link-warning" href="https://x.com/jkeatin" target="_blank">Warning Link</a>
+                <a class="link link-danger" href="https://x.com/jkeatin" target="_blank">Danger Link</a>
+                <a class="link link-success" href="https://x.com/jkeatin" target="_blank">Success Link</a>
+                <a class="link link-black" href="https://x.com/jkeatin" target="_blank">Black Link</a>
+                <a class="link link-white" href="https://x.com/jkeatin" target="_blank">White Link</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h2 class="text-center">Images</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <!-- Image Component -->
+              <div class="image-container-svg" data-img-link="img/90scolorful.jpg"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="537.4166870117188">
+
+  <foreignObject class="foreign-content-image" x="0" y="0" width="100%" height="537.4166870117188">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container image-container">
+      <img src="img/90scolorful.jpg" alt="" class="svg-image">
+    </div>
+  </foreignObject>
+
+</svg></div>
+
+            </div>
+            <div class="col">
+              <!-- Image Component -->
+              <div class="image-container-svg" data-img-link="img/90scolorful2.jpg"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="537.4166870117188">
+
+  <foreignObject class="foreign-content-image" x="0" y="0" width="100%" height="537.4166870117188">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container image-container">
+      <img src="img/90scolorful2.jpg" alt="" class="svg-image">
+    </div>
+  </foreignObject>
+
+</svg></div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h2 class="text-center">Video</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <!-- Video Component -->
+              <div class="video-container-svg" data-video-link="vid/colorful.mp4"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="436.73333740234375">
+  <foreignObject class="foreign-content-video" x="0" y="0" width="100%" height="436.73333740234375">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container video-container">
+      <video controls="" class="svg-video">
+        <source src="vid/colorful.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </foreignObject>
+</svg></div>
+            </div>
+            <div class="col">
+              <!-- Video Component -->
+              <div class="video-container-svg" data-video-link="vid/colorful2.mp4"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="436.73333740234375">
+  <foreignObject class="foreign-content-video" x="0" y="0" width="100%" height="436.73333740234375">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container video-container">
+      <video controls="" class="svg-video">
+        <source src="vid/colorful2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </foreignObject>
+</svg></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h2 class="text-center">Buttons</h2>
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Primary Button" data-button-color=""><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="49.600006103515625">
+
+  <foreignObject class="foreign-content-button" x="0" y="0" width="100%" height="49.600006103515625">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container button-container">
+      <div class="svg-button">Primary Button</div>
+    </div>
+  </foreignObject>
+
+</svg></div>
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Secondary Button" data-button-color="secondary"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="49.600006103515625">
+
+  <foreignObject class="foreign-content-button" x="0" y="0" width="100%" height="49.600006103515625">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container button-container">
+      <div class="svg-button svg-button-secondary">Secondary Button</div>
+    </div>
+  </foreignObject>
+
+</svg></div>
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Warning Button" data-button-color="warning"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="49.59999084472656">
+
+  <foreignObject class="foreign-content-button" x="0" y="0" width="100%" height="49.59999084472656">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container button-container">
+      <div class="svg-button svg-button-warning">Warning Button</div>
+    </div>
+  </foreignObject>
+
+</svg></div> <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Danger Button" data-button-color="danger"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="49.600006103515625">
+
+  <foreignObject class="foreign-content-button" x="0" y="0" width="100%" height="49.600006103515625">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container button-container">
+      <div class="svg-button svg-button-danger">Danger Button</div>
+    </div>
+  </foreignObject>
+
+</svg></div>
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Success Button" data-button-color="success"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="49.59999084472656">
+
+  <foreignObject class="foreign-content-button" x="0" y="0" width="100%" height="49.59999084472656">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container button-container">
+      <div class="svg-button svg-button-success">Success Button</div>
+    </div>
+  </foreignObject>
+
+</svg></div>
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="Black Button" data-button-color="black"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="49.600006103515625">
+
+  <foreignObject class="foreign-content-button" x="0" y="0" width="100%" height="49.600006103515625">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container button-container">
+      <div class="svg-button svg-button-black">Black Button</div>
+    </div>
+  </foreignObject>
+
+</svg></div>
+              <!-- Button Component -->
+              <div class="button-container-svg" data-link="https://jkeatinco.github.io" data-button-text="White Button" data-button-color="white"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="51.19999694824219">
+
+  <foreignObject class="foreign-content-button" x="0" y="0" width="100%" height="51.19999694824219">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container button-container">
+      <div class="svg-button svg-button-white">White Button</div>
+    </div>
+  </foreignObject>
+
+</svg></div>
+            </div>
+
+            <div class="col">
+              <h2 class="text-center">Cards</h2>
+              <!-- Card Components -->
+              <div class="card-container-svg" data-card-title="Custom Card Title" data-card-content="This is custom content for the card."><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="108.60000610351562">
+  <foreignObject class="foreign-content-card" x="0" y="0" width="100%" height="108.60000610351562">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container card-container">
+      <div class="svg-card-container">
+        <h2>Custom Card Title</h2>
+        <p>This is custom content for the card.</p>
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h2 class="text-center">Tables</h2>
+              <!-- Table Component -->
+              <div class="table-container-svg" data-table-headers="[&quot;Header 1&quot;, &quot;Header 2&quot;, &quot;Header 3&quot;, &quot;Header 4&quot;, &quot;Header 5&quot;, &quot;Header 6&quot;]" data-table-contents="[[&quot;Data 1&quot;, &quot;Data 2&quot;, &quot;Data 3&quot;, &quot;Data 4&quot;, &quot;Data 5&quot;, &quot;Data 6&quot;], [&quot;Data 7&quot;, &quot;Data 8&quot;, &quot;Data 9&quot;, &quot;Data 10&quot;, &quot;Data 11&quot;, &quot;Data 12&quot;], [&quot;Data 13&quot;, &quot;Data 14&quot;, &quot;Data 15&quot;, &quot;Data 16&quot;, &quot;Data 17&quot;, &quot;Data 18&quot;], [&quot;Data 19&quot;, &quot;Data 20&quot;, &quot;Data 21&quot;, &quot;Data 22&quot;, &quot;Data 23&quot;, &quot;Data 24&quot;]]"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="201.8000030517578">
+  <foreignObject class="foreign-content-table" x="0" y="0" width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container table-container table-responsive">
+      <table class="svg-table">
+        <thead>
+            <tr><th>Header 1</th><th>Header 2</th><th>Header 3</th><th>Header 4</th><th>Header 5</th><th>Header 6</th></tr>
+        </thead>
+        <tbody><tr><td>Data 1</td><td>Data 2</td><td>Data 3</td><td>Data 4</td><td>Data 5</td><td>Data 6</td></tr><tr><td>Data 7</td><td>Data 8</td><td>Data 9</td><td>Data 10</td><td>Data 11</td><td>Data 12</td></tr><tr><td>Data 13</td><td>Data 14</td><td>Data 15</td><td>Data 16</td><td>Data 17</td><td>Data 18</td></tr><tr><td>Data 19</td><td>Data 20</td><td>Data 21</td><td>Data 22</td><td>Data 23</td><td>Data 24</td></tr></tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg></div>
+                <!-- Table Component -->
+                <div class="table-container-svg" data-table-headers="[&quot;Name&quot;, &quot;Age&quot;, &quot;Occupation&quot;, &quot;Location&quot;]" data-table-contents="[[&quot;John Doe&quot;, &quot;30&quot;, &quot;Engineer&quot;, &quot;New York&quot;], [&quot;Jane Smith&quot;, &quot;25&quot;, &quot;Designer&quot;, &quot;San Francisco&quot;], [&quot;Sam Brown&quot;, &quot;40&quot;, &quot;Manager&quot;, &quot;Chicago&quot;], [&quot;Lisa White&quot;, &quot;35&quot;, &quot;Developer&quot;, &quot;Seattle&quot;]]"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="201.8000030517578">
+  <foreignObject class="foreign-content-table" x="0" y="0" width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container table-container table-responsive">
+      <table class="svg-table">
+        <thead>
+            <tr><th>Name</th><th>Age</th><th>Occupation</th><th>Location</th></tr>
+        </thead>
+        <tbody><tr><td>John Doe</td><td>30</td><td>Engineer</td><td>New York</td></tr><tr><td>Jane Smith</td><td>25</td><td>Designer</td><td>San Francisco</td></tr><tr><td>Sam Brown</td><td>40</td><td>Manager</td><td>Chicago</td></tr><tr><td>Lisa White</td><td>35</td><td>Developer</td><td>Seattle</td></tr></tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h2 class="text-center">Forms</h2>
+              <form class="container">
+                <h2 class="form-title">Personal Information</h2>
+
+                <!-- Input Component for Name -->
+                <div class="input-container-svg" data-input-label="Name" data-input-label-class="custom-label-class" data-input-label-for="name" data-input-type="text" data-input-id="name" data-input-name="name" data-input-class="svg-input" data-input-required="true" data-input-placeholder="First and Last Name"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="103.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="103.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="name" class="svg-input-label custom-label-class">Name</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="text" id="name" name="name" value="" required="" placeholder="First and Last Name">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Name -->
+                <div class="input-container-svg" data-input-label="Something" data-input-label-class="custom-label-class" data-input-label-for="something" data-input-type="text" data-input-id="something" data-input-name="something" data-input-class="svg-input" data-input-required="true" data-input-disabled="true"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="103.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="103.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="something" class="svg-input-label custom-label-class">Something</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="text" id="something" name="something" value="" required="" disabled="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Email -->
+                <div class="input-container-svg" data-input-label="Email" data-input-label-class="custom-label-class" data-input-label-for="email" data-input-type="email" data-input-id="email" data-input-name="email" data-input-class="svg-input" data-input-required="true" data-input-readonly="true" data-input-value="test@svgflex.com"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="103.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="103.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="email" class="svg-input-label custom-label-class">Email</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="email" id="email" name="email" value="test@svgflex.com" required="" readonly="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Password -->
+                <div class="input-container-svg" data-input-label="Password" data-input-label-class="custom-label-class" data-input-label-for="password" data-input-type="password" data-input-id="password" data-input-name="password" data-input-class="svg-input" data-input-required="true"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="103.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="103.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="password" class="svg-input-label custom-label-class">Password</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="password" id="password" name="password" value="" required="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Birthday -->
+                <div class="input-container-svg" data-input-label="Birthday" data-input-label-class="custom-label-class" data-input-label-for="birthday" data-input-type="date" data-input-id="birthday" data-input-name="birthday" data-input-class="svg-input"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="95">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="95">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="birthday" class="svg-input-label custom-label-class">Birthday</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="date" id="birthday" name="birthday" value="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Phone -->
+                <div class="input-container-svg" data-input-label="Phone" data-input-label-class="custom-label-class" data-input-label-for="phone" data-input-type="tel" data-input-id="phone" data-input-name="phone" data-input-class="svg-input"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="103.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="103.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="phone" class="svg-input-label custom-label-class">Phone</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="tel" id="phone" name="phone" value="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Website -->
+                <div class="input-container-svg" data-input-label="Website" data-input-label-class="custom-label-class" data-input-label-for="website" data-input-type="url" data-input-id="website" data-input-name="website" data-input-class="svg-input"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="103.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="103.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="website" class="svg-input-label custom-label-class">Website</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="url" id="website" name="website" value="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Favorite Color -->
+                <div class="input-container-svg" data-input-label="Favorite Color" data-input-label-class="custom-label-class" data-input-label-for="color" data-input-type="color" data-input-id="color" data-input-name="color" data-input-class="svg-input"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="88.40000915527344">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="88.40000915527344">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="color" class="svg-input-label custom-label-class">Favorite Color</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="color" id="color" name="color" value="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Number -->
+                <div class="input-container-svg" data-input-label="Number" data-input-label-class="custom-label-class" data-input-label-for="number" data-input-type="number" data-input-id="number" data-input-name="number" data-input-class="svg-input"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="95">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="95">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="number" class="svg-input-label custom-label-class">Number</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="number" id="number" name="number" value="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Range -->
+                <div class="input-container-svg" data-input-label="Range" data-input-label-class="custom-label-class" data-input-label-for="range" data-input-type="range" data-input-id="range" data-input-name="range" data-input-class="svg-input" data-input-min="0" data-input-max="100"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="82.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="82.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="range" class="svg-input-label custom-label-class">Range</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-input" type="range" id="range" name="range" value="" 0="" 100="" placeholder="">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <div class="input-container-svg" data-input-label="Select Option" data-input-label-class="custom-label-class" data-input-label-for="select" data-input-type="select" data-input-id="select" data-input-name="select" data-input-class="svg-input" data-input-required="true" data-input-options="[{&quot;value&quot;:&quot;option1&quot;,&quot;text&quot;:&quot;Option 1&quot;},{&quot;value&quot;:&quot;option2&quot;,&quot;text&quot;:&quot;Option 2&quot;},{&quot;value&quot;:&quot;option3&quot;,&quot;text&quot;:&quot;Option 3&quot;}]"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="103.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="103.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="select" class="svg-input-label custom-label-class">Select Option</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <select class="svg-input" id="select" name="select" required=""><option value="option1">Option 1</option><option value="option2">Option 2</option><option value="option3">Option 3</option></select>
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <h2 class="form-title">Additional Details</h2>
+
+                <!-- Input Component for Textarea -->
+                <div class="input-container-svg" data-input-label="Text Area" data-input-label-class="custom-label-class" data-input-label-for="textarea" data-input-type="textarea" data-input-id="textarea" data-input-name="textarea" data-input-class="svg-input"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="176.39999389648438">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="176.39999389648438">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="textarea" class="svg-input-label custom-label-class">Text Area</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <textarea class="svg-input" id="textarea" name="textarea" placeholder=""></textarea>
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+
+
+
+
+
+
+                <!-- Input Component for Checkbox -->
+                <div class="input-container-svg" data-input-label="I agree to the terms and conditions" data-input-label-class="form-check-label" data-input-label-for="terms" data-input-type="checkbox" data-input-id="terms" data-input-name="terms" data-input-class="form-check-input" data-input-value="agree"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="78.80000305175781">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="78.80000305175781">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="form-check-input" type="checkbox" id="terms" name="terms" value="agree">
+                                    <label for="terms" class="svg-input-label form-check-label">I agree to the terms and conditions</label>
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Radio (Happy) -->
+                <div class="input-container-svg" data-input-label="Happy" data-input-label-class="form-check-label" data-input-label-for="happy" data-input-type="radio" data-input-id="happy" data-input-name="feeling" data-input-class="form-check-input" data-input-value="happy"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="78.80000305175781">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="78.80000305175781">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="form-check-input" type="radio" id="happy" name="feeling" value="happy">
+                                    <label for="happy" class="svg-input-label form-check-label">Happy</label>
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Radio (Sad) -->
+                <div class="input-container-svg" data-input-label="Sad" data-input-label-class="form-check-label" data-input-label-for="sad" data-input-type="radio" data-input-id="sad" data-input-name="feeling" data-input-class="form-check-input" data-input-value="sad"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="78.80000305175781">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="78.80000305175781">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="form-check-input" type="radio" id="sad" name="feeling" value="sad">
+                                    <label for="sad" class="svg-input-label form-check-label">Sad</label>
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for File -->
+                <div class="input-container-svg" data-input-label="Upload File:" data-input-label-class="form-label" data-input-label-for="file" data-input-type="file" data-input-id="file" data-input-name="file" data-input-class="form-control-file"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="114.5">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="114.5">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="file" class="svg-input-label form-label">Upload File:</label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="form-control-file" type="file" id="file" name="file" hidden="">
+                                    <label for="file" class="custom-file-label svg-button">Choose File</label>
+                                    <span id="file-chosen" class="file-chosen-text">No file chosen</span>
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Submit -->
+                <div class="input-container-svg" data-input-label="" data-input-type="submit" data-input-value="Submit" data-input-label-for="submit" data-input-id="submit" data-input-name="submit" data-input-class="svg-button"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="81.19999694824219">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="81.19999694824219">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="submit" class="svg-input-label "></label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-button svg-button" id="submit" type="submit" value="Submit">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+                <!-- Input Component for Reset -->
+                <div class="input-container-svg" data-input-label="" data-input-type="reset" data-input-value="Reset" data-input-label-for="reset" data-input-id="reset" data-input-name="reset" data-input-class="svg-button"><svg class="auto-size" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="81.19999694824219">
+  <foreignObject class="foreign-content-input" x="0" y="0" width="100%" height="81.19999694824219">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="container input-container">
+      <div class="form-group">
+        <label for="reset" class="svg-input-label "></label>
+         <!-- Placeholder for input, textarea, or select -->
+        <input class="svg-button svg-button" id="reset" type="reset" value="Reset">
+      </div>
+    </div>
+  </foreignObject>
+</svg></div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </foreignObject>
+    </svg>
