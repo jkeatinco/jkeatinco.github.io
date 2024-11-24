@@ -1,0 +1,28 @@
+<svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define the gradient for the lemon -->
+  <defs>
+    <radialGradient id="LemonGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff700"/>
+      <stop offset="100%" stop-color="#f0c300"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Draw the lemon body -->
+  <path d="
+    M50,75
+    C50,35 100,25 150,75
+    C150,115 100,125 50,75
+    Z"
+    fill="url(#LemonGradient)" stroke="goldenrod" stroke-width="2"/>
+
+  <!-- Draw the stem -->
+  <rect x="95" y="15" width="10" height="20" fill="#8B4513"/>
+
+  <!-- Draw the leaf -->
+  <path d="
+    M105,25
+    C120,15 130,35 115,45
+    C100,55 90,35 105,25
+    Z"
+    fill="#228B22"/>
+</svg>

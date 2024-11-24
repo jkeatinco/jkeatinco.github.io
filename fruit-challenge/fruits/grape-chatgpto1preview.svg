@@ -1,0 +1,18 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Draw the stem -->
+  <line x1="100" y1="30" x2="100" y2="60" stroke="#8B4513" stroke-width="5"/>
+
+  <!-- Draw the leaves -->
+  <path d="M95,50 Q80,40 85,60 Q80,80 100,70 Q120,80 115,60 Q120,40 105,50 Z" fill="#228B22"/>
+
+  <!-- Draw the grapes -->
+  <circle cx="100" cy="80" r="15" fill="#6A0DAD"/>
+  <circle cx="85" cy="95" r="15" fill="#6A0DAD"/>
+  <circle cx="115" cy="95" r="15" fill="#6A0DAD"/>
+  <circle cx="70" cy="110" r="15" fill="#6A0DAD"/>
+  <circle cx="100" cy="110" r="15" fill="#6A0DAD"/>
+  <circle cx="130" cy="110" r="15" fill="#6A0DAD"/>
+  <circle cx="85" cy="125" r="15" fill="#6A0DAD"/>
+  <circle cx="115" cy="125" r="15" fill="#6A0DAD"/>
+  <circle cx="100" cy="140" r="15" fill="#6A0DAD"/>
+</svg>

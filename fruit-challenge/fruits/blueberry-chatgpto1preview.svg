@@ -1,0 +1,30 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define a radial gradient for the blueberry -->
+  <defs>
+    <radialGradient id="blueberryGradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#4B0082"/>
+      <stop offset="100%" stop-color="#000080"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Draw the main body of the blueberry -->
+  <circle cx="100" cy="100" r="50" fill="url(#blueberryGradient)"/>
+
+  <!-- Draw the calyx (the crown-like top of the blueberry) -->
+  <path d="
+    M100,65
+    L105.88,76.91
+    L119.02,78.82
+    L109.51,88.09
+    L116.18,96.76
+    L100,95
+    L83.82,96.76
+    L90.49,88.09
+    L80.98,78.82
+    L94.12,76.91
+    Z
+  " fill="#2F4F4F"/>
+
+  <!-- Add a subtle highlight to simulate glossiness -->
+  <ellipse cx="85" cy="85" rx="15" ry="10" fill="rgba(255,255,255,0.2)"/>
+</svg>

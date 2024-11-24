@@ -1,0 +1,29 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for gradients and patterns -->
+  <defs>
+    <!-- Gradient for the banana body -->
+    <linearGradient id="bananaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF68F; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE135; stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Banana Body -->
+  <path d="
+    M50,150
+    C70,90 130,90 150,50
+    C140,110 60,110 50,150
+    Z"
+    fill="url(#bananaGradient)" stroke="#C0C000" stroke-width="2"/>
+
+  <!-- Banana Tip -->
+  <ellipse cx="150" cy="50" rx="5" ry="8" fill="#8B4513"/>
+
+  <!-- Banana Stem -->
+  <path d="
+    M50,150
+    L45,155
+    Q50,160 55,155
+    Z"
+    fill="#8B4513"/>
+</svg>
