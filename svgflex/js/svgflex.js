@@ -279,18 +279,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.nav-container-svg').forEach(navContainerSvg => {
                     const svgNavContainer = navContainerSvg.querySelector('svg');
                     const foreignContentNav = navContainerSvg.querySelector('.foreign-content-nav');
+                    console.log('svgNavContainer:', svgNavContainer);
+                    console.log('foreignContentNav:', foreignContentNav);
+            
                     if (svgNavContainer && foreignContentNav) {
                         const navContainer = navContainerSvg.querySelector('.nav-container');
+                        console.log('navContainer:', navContainer);
+            
                         if (navContainer) {
                             const navContainerHeight = navContainer.getBoundingClientRect().height;
                             const navItemsHeight = navItems.classList.contains('active') ? navItems.getBoundingClientRect().height : 0;
                             const totalHeight = navContainerHeight + navItemsHeight;
+                            console.log('navContainerHeight:', navContainerHeight);
+                            console.log('navItemsHeight:', navItemsHeight);
+                            console.log('totalHeight:', totalHeight);
+            
                             if (totalHeight > 0) {
                                 foreignContentNav.setAttribute('height', totalHeight);
                                 svgNavContainer.setAttribute('height', totalHeight);
                                 navContainerSvg.style.height = `${totalHeight}px`;
                             }
+                        } else {
+                            console.error('.nav-container element not found within .nav-container-svg');
                         }
+                    } else {
+                        console.error('svgNavContainer or foreignContentNav not found within .nav-container-svg');
                     }
                 });
             }
