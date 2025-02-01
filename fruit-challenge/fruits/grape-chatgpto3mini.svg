@@ -1,0 +1,27 @@
+<svg width="200" height="200" viewBox="0 0 200 200"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Define a radial gradient for a nice grape-like color -->
+  <defs>
+    <radialGradient id="grapeGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b368c4" />
+      <stop offset="100%" stop-color="#6a1d73" />
+    </radialGradient>
+  </defs>
+
+  <!-- Group of circles forming a grape bunch -->
+  <g fill="url(#grapeGradient)" stroke="#4b004b" stroke-width="2">
+    <!-- Top grape -->
+    <circle cx="100" cy="60" r="15" />
+    <!-- Right upper grape -->
+    <circle cx="120" cy="80" r="15" />
+    <!-- Right lower grape -->
+    <circle cx="110" cy="100" r="15" />
+    <!-- Left lower grape -->
+    <circle cx="90" cy="100" r="15" />
+    <!-- Left upper grape -->
+    <circle cx="80" cy="80" r="15" />
+  </g>
+
+  <!-- A simple stem drawn with a path -->
+  <path d="M100,45 C100,30 110,30 110,45" stroke="green" stroke-width="3" fill="none" />
+</svg>

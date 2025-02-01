@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+  <!-- Pineapple Body -->
+  <g id="body">
+    <!-- The main body shape -->
+    <path
+      d="M100,60 
+         C65,60 45,110 45,145 
+         C45,195 65,245 100,245
+         C135,245 155,195 155,145
+         C155,110 135,60 100,60Z"
+      fill="#F5C942"
+      stroke="#E2B32C"
+      stroke-width="2"/>
+    
+    <!-- Detail pattern to mimic the pineapple's texture -->
+    <g id="pattern" stroke="#E2B32C" stroke-width="1">
+      <!-- Horizontal stripes -->
+      <line x1="55" y1="145" x2="145" y2="145"/>
+      <line x1="65" y1="120" x2="135" y2="120"/>
+      <line x1="65" y1="170" x2="135" y2="170"/>
+      <!-- Vertical details -->
+      <line x1="100" y1="90" x2="100" y2="205"/>
+      <line x1="85" y1="90" x2="85" y2="205"/>
+      <line x1="115" y1="90" x2="115" y2="205"/>
+    </g>
+  </g>
+  
+  <!-- Pineapple Leaves -->
+  <g id="leaves">
+    <!-- Left Leaf -->
+    <path
+      d="M100,60
+         C85,20 50,20 40,55
+         C30,90 60,85 70,70
+         C80,60 90,60 100,60Z"
+      fill="#3A9D23"
+      stroke="#2C7A1F"
+      stroke-width="2"/>
+    
+    <!-- Right Leaf -->
+    <path
+      d="M100,60
+         C115,20 150,20 160,55
+         C170,90 140,85 130,70
+         C120,60 110,60 100,60Z"
+      fill="#3A9D23"
+      stroke="#2C7A1F"
+      stroke-width="2"/>
+    
+    <!-- Center Leaf (tapered) -->
+    <path
+      d="M100,60
+         C100,20 100,20 100,20
+         C100,20 100,20 100,20
+         C100,20 100,20 100,60Z"
+      fill="#3A9D23"
+      stroke="#2C7A1F"
+      stroke-width="2"/>
+  </g>
+</svg>

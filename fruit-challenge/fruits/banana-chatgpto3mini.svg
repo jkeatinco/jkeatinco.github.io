@@ -1,0 +1,13 @@
+<svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Banana shape: A curved path filled with a banana-yellow color -->
+  <path
+    d="M50,80 
+       C30,40, 110,10, 170,40 
+       C210,60, 220,100, 190,120 
+       C150,140, 90,130, 60,100 
+       C40,90, 40,90, 50,80 Z"
+    fill="#FFEB3B"
+    stroke="#FBC02D"
+    stroke-width="2"
+  />
+</svg>

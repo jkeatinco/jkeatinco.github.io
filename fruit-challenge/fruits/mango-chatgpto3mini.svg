@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Define gradients for the mango -->
+  <defs>
+    <!-- A linear gradient for the mango body -->
+    <linearGradient id="mangoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB74D"/>
+      <stop offset="100%" stop-color="#FFA726"/>
+    </linearGradient>
+    <!-- A radial gradient for a subtle highlight -->
+    <radialGradient id="mangoHighlight" cx="30%" cy="30%" r="30%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Mango body -->
+  <path
+    d="M50,80 
+       C30,40, 70,20, 110,20 
+       C150,20, 190,40, 170,80 
+       C150,120, 110,150, 70,140 
+       C30,130, 10,100, 50,80 Z"
+    fill="url(#mangoGradient)"
+    stroke="#FB8C00"
+    stroke-width="2" />
+
+  <!-- Mango highlight -->
+  <path
+    d="M70,60 
+       C80,50, 90,50, 100,60 
+       C90,70, 80,70, 70,60 Z"
+    fill="url(#mangoHighlight)" />
+
+  <!-- Mango leaf -->
+  <path
+    d="M130,30 
+       C140,10, 170,10, 180,30 
+       C175,25, 160,25, 150,30 
+       C140,35, 130,35, 130,30 Z"
+    fill="#66BB6A"
+    stroke="#388E3C"
+    stroke-width="1" />
+</svg>

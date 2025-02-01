@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Apple Body -->
+  <path d="
+    M100,30
+    C70,30 50,70 50,90
+    C50,120 70,150 100,170
+    C130,150 150,120 150,90
+    C150,70 130,30 100,30
+    Z" 
+    fill="red" />
+    
+  <!-- Stem -->
+  <path d="
+    M100,30
+    C100,15 110,10 115,20" 
+    stroke="saddlebrown" stroke-width="4" fill="none" />
+    
+  <!-- Leaf -->
+  <path d="
+    M115,20
+    C130,10 140,20 130,30
+    Z" 
+    fill="green" />
+</svg>
