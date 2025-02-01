@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script defer type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+</head>
+<body>
+  <button onclick="runAgentTask()">Run Agent</button>
+  
+  <div class="python-example">
+    <button py-click="say_hello">Run Python</button>
+    <div id="output"></div>
+  </div>
+
+  
+  <script type="module">
+    import { HfInference } from 'https://cdn.jsdelivr.net/npm/@huggingface/inference@2.8.1/+esm';
+    import { createRepo, commit, deleteRepo, listFiles } from "https://cdn.jsdelivr.net/npm/@huggingface/hub@1.0.0/+esm";
+    import { runAgentTask } from './scripts/main.js';
+    window.runAgentTask = runAgentTask;
+  </script>
+  <script type="module" src="./scripts/main.js"></script>
+  <script type="py" src="./main.py" config="./pyscript.json"></script>
+</body>
+</html>

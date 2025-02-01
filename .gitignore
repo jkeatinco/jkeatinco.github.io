@@ -1,2 +1,4 @@
 *.db
 rainbowsun/img/Thumbs.db
+# Environment Files
+.env
