@@ -1,0 +1,81 @@
+<svg width="300" height="300" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!-- Drop Shadow for the berry -->
+                <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+                    <feOffset in="blur" dx="0" dy="15" result="offsetBlur"/>
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.4"/>
+                    </feComponentTransfer>
+                    <feMerge>
+                        <feMergeNode in="offsetBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+
+                <!-- Main Skin Gradient (Deep Purple/Blue) -->
+                <radialGradient id="skinGradient" cx="40%" cy="40%" r="70%" fx="30%" fy="30%">
+                    <stop offset="0%" stop-color="#4c669f" /> <!-- Lighter bloom spot -->
+                    <stop offset="30%" stop-color="#3b4c7a" />
+                    <stop offset="70%" stop-color="#1a237e" /> <!-- Deep Indigo -->
+                    <stop offset="100%" stop-color="#0d1333" /> <!-- Almost Black -->
+                </radialGradient>
+
+                <!-- The "Bloom" (Waxy coating) Texture -->
+                <radialGradient id="bloomGradient" cx="50%" cy="20%" r="60%" fx="50%" fy="20%">
+                    <stop offset="0%" stop-color="#a5b4fc" stop-opacity="0.4" />
+                    <stop offset="50%" stop-color="#6366f1" stop-opacity="0.1" />
+                    <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0" />
+                </radialGradient>
+
+                <!-- Leaf Gradient -->
+                <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#84cc16" /> <!-- Lime -->
+                    <stop offset="50%" stop-color="#65a30d" />
+                    <stop offset="100%" stop-color="#365314" /> <!-- Dark Green -->
+                </linearGradient>
+
+                <!-- Inside the Crown (Dark depth) -->
+                <radialGradient id="crownDeep" cx="50%" cy="50%" r="50%">
+                    <stop offset="70%" stop-color="#0f1226" />
+                    <stop offset="100%" stop-color="#262c52" />
+                </radialGradient>
+            </defs>
+
+            <!-- Shadow Shape (Separate element for better control than filter alone) -->
+            <ellipse cx="200" cy="290" rx="90" ry="20" fill="#000000" opacity="0.2" filter="url(#dropShadow)" />
+
+            <!-- Leaf (Behind) -->
+            <path d="M 220 130 Q 320 80 360 140 Q 300 200 250 160 L 220 130" 
+                  fill="url(#leafGradient)" stroke="#3f6212" stroke-width="1" />
+            <path d="M 220 130 Q 290 135 360 140" fill="none" stroke="#a3e635" stroke-width="2" opacity="0.6"/>
+
+            <!-- Main Blueberry Body -->
+            <circle cx="200" cy="200" r="110" fill="url(#skinGradient)" />
+
+            <!-- Waxy Bloom Overlay (Gives it that fresh look) -->
+            <circle cx="200" cy="200" r="108" fill="url(#bloomGradient)" />
+
+            <!-- The Calyx (Crown) Group -->
+            <g transform="translate(200, 140) scale(0.8)">
+                <!-- Dark interior of the crown -->
+                <path d="M -25 0 Q 0 15 25 0 Q 15 25 0 40 Q -15 25 -25 0" fill="url(#crownDeep)" />
+                
+                <!-- The jagged flaps of the crown -->
+                <path d="M -35 -10 
+                         C -40 5, -30 20, -20 25 
+                         C -10 35, 10 35, 20 25 
+                         C 30 20, 40 5, 35 -10 
+                         C 25 -5, 15 5, 0 5 
+                         C -15 5, -25 -5, -35 -10 Z" 
+                      fill="#283593" stroke="#1a237e" stroke-width="2" stroke-linejoin="round" />
+                
+                <!-- Highlight on the crown rim -->
+                <path d="M -32 -8 C -20 2, -10 2, -20 25" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.5" />
+                <path d="M 32 -8 C 20 2, 10 2, 20 25" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.5" />
+            </g>
+            
+            <!-- Subtle highlights for realism -->
+            <ellipse cx="160" cy="170" rx="30" ry="15" fill="#ffffff" opacity="0.1" transform="rotate(-20 160 170)" />
+            
+        </svg>

@@ -1,0 +1,71 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!-- Main Mango Gradient (Yellow to Orange) -->
+                <radialGradient id="mangoSkin" cx="40%" cy="40%" r="70%" fx="30%" fy="30%">
+                    <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" /> <!-- Gold -->
+                    <stop offset="60%" style="stop-color:#FFB300;stop-opacity:1" /> <!-- Amber -->
+                    <stop offset="100%" style="stop-color:#FF6F00;stop-opacity:1" /> <!-- Dark Orange -->
+                </radialGradient>
+
+                <!-- Blush Gradient (Reddish tint for ripeness) -->
+                <radialGradient id="mangoBlush" cx="70%" cy="30%" r="50%" fx="70%" fy="30%">
+                    <stop offset="0%" style="stop-color:#FF5722;stop-opacity:0.6" />
+                    <stop offset="100%" style="stop-color:#FF5722;stop-opacity:0" />
+                </radialGradient>
+
+                <!-- Leaf Gradient -->
+                <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#66BB6A;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+                </linearGradient>
+
+                <!-- Drop Shadow -->
+                <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                    <feOffset dx="2" dy="4" result="offsetblur"/>
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.2"/>
+                    </feComponentTransfer>
+                    <feMerge> 
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/> 
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <!-- Shadow under the mango -->
+            <ellipse cx="160" cy="230" rx="70" ry="15" fill="#000000" opacity="0.15" filter="url(#blur)" />
+
+            <!-- Mango Body -->
+            <!-- Asymmetrical kidney-like shape -->
+            <path d="M120,60 
+                     C180,50 230,100 230,160 
+                     C230,230 180,250 130,250 
+                     C80,250 50,200 60,130 
+                     C70,80 90,65 120,60 Z" 
+                  fill="url(#mangoSkin)" />
+            
+            <!-- Blush Overlay (The ripe spot) -->
+            <path d="M120,60 
+                     C180,50 230,100 230,160 
+                     C230,230 180,250 130,250 
+                     C80,250 50,200 60,130 
+                     C70,80 90,65 120,60 Z" 
+                  fill="url(#mangoBlush)" />
+
+            <!-- Highlight for glossiness -->
+            <ellipse cx="110" cy="110" rx="20" ry="35" transform="rotate(-20 110 110)" fill="#FFFFFF" opacity="0.25" />
+
+            <!-- Stem -->
+            <path d="M125,65 Q130,40 140,35 L135,35 Q120,45 115,63 Z" fill="#5D4037" />
+
+            <!-- Leaf -->
+            <g filter="url(#dropShadow)">
+                <path d="M135,45 
+                         Q180,20 200,50 
+                         Q160,80 135,45 Z" 
+                      fill="url(#leafGradient)" />
+                <!-- Leaf Vein -->
+                <path d="M135,45 Q168,35 200,50" stroke="#1B5E20" stroke-width="1" fill="none" opacity="0.5"/>
+            </g>
+        </svg>

@@ -1,0 +1,120 @@
+<svg
+  width="200"
+  height="260"
+  viewBox="0 0 200 260"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background (optional, remove if not needed) -->
+  <rect x="0" y="0" width="200" height="260" fill="none" />
+
+  <defs>
+    <!-- Strawberry body gradient -->
+    <linearGradient id="strawberryGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff4b6a" />
+      <stop offset="60%" stop-color="#e0314f" />
+      <stop offset="100%" stop-color="#b51f37" />
+    </linearGradient>
+
+    <!-- Highlight gradient -->
+    <radialGradient id="highlightGradient" cx="30%" cy="20%" r="40%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="white" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Leaf gradient -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4caf50" />
+      <stop offset="100%" stop-color="#2e7d32" />
+    </linearGradient>
+
+    <!-- Seed gradient -->
+    <linearGradient id="seedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe082" />
+      <stop offset="100%" stop-color="#ffa000" />
+    </linearGradient>
+  </defs>
+
+  <!-- Stem -->
+  <path
+    d="M95 25 C95 10, 105 10, 105 25
+       L105 55
+       C105 60, 95 60, 95 55 Z"
+    fill="#3e2723"
+  />
+
+  <!-- Leaves -->
+  <!-- Center leaf -->
+  <path
+    d="M100 55
+       C 85 40, 80 30, 100 25
+       C120 30, 115 40, 100 55 Z"
+    fill="url(#leafGradient)"
+    stroke="#1b5e20"
+    stroke-width="1.5"
+  />
+  <!-- Left leaf -->
+  <path
+    d="M100 55
+       C 75 45, 60 40, 60 30
+       C 80 28, 90 35, 100 55 Z"
+    fill="url(#leafGradient)"
+    stroke="#1b5e20"
+    stroke-width="1.5"
+  />
+  <!-- Right leaf -->
+  <path
+    d="M100 55
+       C 125 45, 140 40, 140 30
+       C 120 28, 110 35, 100 55 Z"
+    fill="url(#leafGradient)"
+    stroke="#1b5e20"
+    stroke-width="1.5"
+  />
+
+  <!-- Strawberry body -->
+  <path
+    d="M100 60
+       C 65 60, 40 85, 40 120
+       C 40 155, 55 185, 80 210
+       C 90 220, 100 230, 100 235
+       C 100 230, 110 220, 120 210
+       C 145 185, 160 155, 160 120
+       C 160 85, 135 60, 100 60 Z"
+    fill="url(#strawberryGradient)"
+    stroke="#7b1f2f"
+    stroke-width="2"
+  />
+
+  <!-- Highlight -->
+  <ellipse
+    cx="80"
+    cy="95"
+    rx="25"
+    ry="35"
+    fill="url(#highlightGradient)"
+  />
+
+  <!-- Seeds (small rotated ellipses) -->
+  <!-- Row 1 -->
+  <ellipse cx="80" cy="95" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(-15 80 95)" />
+  <ellipse cx="100" cy="90" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(-10 100 90)" />
+  <ellipse cx="120" cy="95" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(10 120 95)" />
+
+  <!-- Row 2 -->
+  <ellipse cx="70" cy="115" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(-15 70 115)" />
+  <ellipse cx="90" cy="115" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(-5 90 115)" />
+  <ellipse cx="110" cy="115" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(5 110 115)" />
+  <ellipse cx="130" cy="115" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(15 130 115)" />
+
+  <!-- Row 3 -->
+  <ellipse cx="65" cy="135" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(-20 65 135)" />
+  <ellipse cx="85" cy="135" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(-5 85 135)" />
+  <ellipse cx="105" cy="135" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(5 105 135)" />
+  <ellipse cx="125" cy="135" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(20 125 135)" />
+
+  <!-- Row 4 -->
+  <ellipse cx="75" cy="155" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(-10 75 155)" />
+  <ellipse cx="95" cy="155" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(0 95 155)" />
+  <ellipse cx="115" cy="155" rx="4" ry="6" fill="url(#seedGradient)" transform="rotate(10 115 155)" />
+
+</svg>

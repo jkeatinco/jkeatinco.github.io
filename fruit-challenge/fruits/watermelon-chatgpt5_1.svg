@@ -1,0 +1,78 @@
+<svg
+  width="300"
+  height="300"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Watermelon Slice</title>
+  <desc id="desc">A stylized vector illustration of a watermelon slice</desc>
+
+  <!-- Background (optional) -->
+  <rect width="200" height="200" fill="#f7f7f7" />
+
+  <defs>
+    <!-- Gradient for red flesh -->
+    <linearGradient id="fleshGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff5a6b" />
+      <stop offset="100%" stop-color="#e53950" />
+    </linearGradient>
+
+    <!-- Gradient for green rind -->
+    <linearGradient id="rindGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f9c4a" />
+      <stop offset="100%" stop-color="#0f7a36" />
+    </linearGradient>
+
+    <!-- Small highlight on seeds -->
+    <radialGradient id="seedHighlight" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Group the slice so it can be moved/scaled easily -->
+  <g transform="translate(30, 30)">
+    <!-- Outer rind arc -->
+    <path
+      d="M10 120
+         Q60 10 150 120
+         Q80 145 10 120 Z"
+      fill="url(#rindGradient)"
+    />
+
+    <!-- White pith / inner rind -->
+    <path
+      d="M20 115
+         Q60 20 140 115
+         Q80 135 20 115 Z"
+      fill="#fdfdfd"
+    />
+
+    <!-- Red flesh -->
+    <path
+      d="M30 110
+         Q60 30 130 110
+         Q80 125 30 110 Z"
+      fill="url(#fleshGradient)"
+    />
+
+    <!-- Seeds -->
+    <!-- You can duplicate/edit these ellipses for more/less seeds -->
+    <ellipse cx="65" cy="85" rx="3" ry="6" fill="url(#seedHighlight)" />
+    <ellipse cx="85" cy="75" rx="3" ry="6" fill="url(#seedHighlight)" />
+    <ellipse cx="105" cy="82" rx="3" ry="6" fill="url(#seedHighlight)" />
+    <ellipse cx="75" cy="95" rx="3" ry="6" fill="url(#seedHighlight)" />
+    <ellipse cx="95" cy="95" rx="3" ry="6" fill="url(#seedHighlight)" />
+
+    <!-- Subtle gloss on top of flesh -->
+    <path
+      d="M38 104
+         Q60 40 122 104
+         Q80 110 38 104 Z"
+      fill="#ffffff"
+      opacity="0.15"
+    />
+  </g>
+</svg>

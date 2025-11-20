@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc">
+  <title id="title">Watermelon Slice</title>
+  <desc id="desc">A stylized vector illustration of a triangular slice of watermelon with green rind, red flesh, and black seeds.</desc>
+
+  <!-- Dark green outer rind -->
+  <path d="M 200,50 
+           A 150,150 0 1,1 350,300
+           A 150,150 0 1,1 50,300
+           A 150,150 0 1,1 200,50
+           L 200,350
+           Z" 
+        fill="#10733B"/>
+
+  <!-- Light green/white inner rind -->
+  <path d="M 200,70 
+           A 130,130 0 1,1 330,300
+           A 130,130 0 1,1 70,300
+           A 130,130 0 1,1 200,70
+           L 200,330
+           Z" 
+        fill="#B8E986"/>
+
+  <!-- Red flesh -->
+  <path d="M 200,90 
+           A 110,110 0 1,1 310,300
+           A 110,110 0 1,1 90,300
+           A 110,110 0 1,1 200,90
+           L 200,310
+           Z" 
+        fill="#E94F5B"/>
+
+  <!-- Black seeds -->
+  <g fill="#1E1E1E">
+    <ellipse cx="160" cy="140" rx="8" ry="18" transform="rotate(-30 160 140)"/>
+    <ellipse cx="240" cy="140" rx="8" ry="18" transform="rotate(30 240 140)"/>
+    <ellipse cx="130" cy="210" rx="8" ry="18" transform="rotate(-45 130 210)"/>
+    <ellipse cx="270" cy="210" rx="8" ry="18" transform="rotate(45 270 210)"/>
+    <ellipse cx="200" cy="240" rx="8" ry="18" transform="rotate(90 200 240)"/>
+    <ellipse cx="170" cy="280" rx="8" ry="18" transform="rotate(-20 170 280)"/>
+    <ellipse cx="230" cy="280" rx="8" ry="18" transform="rotate(20 230 280)"/>
+  </g>
+
+  <!-- Optional subtle highlight on the red part for extra juiciness -->
+  <path d="M 200,90 
+           A 110,110 0 1,1 310,300
+           Q 200,200 90,300
+           A 110,110 0 1,1 200,90" 
+        fill="rgba(255,255,255,0.15)"/>
+</svg>

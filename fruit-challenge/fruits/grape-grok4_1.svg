@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (optional, remove if you want transparent) -->
+  <rect width="200" height="250" fill="none"/>
+
+  <!-- Stem -->
+  <path d="M100 30 Q 90 10, 80 20 Q 95 35, 100 30 Q 105 35, 120 20 Q 110 10, 100 30" 
+        fill="#5B8C5A"/>
+  <ellipse cx="100" cy="35" rx="12" ry="8" fill="#4A7043"/>
+
+  <!-- Main grape body (deep purple with radial gradient for volume) -->
+  <defs>
+    <radialGradient id="grapeGrad" cx="35%" cy="35%">
+      <stop offset="0%" stop-color="#D8B8FF"/>
+      <stop offset="60%" stop-color="#8A2BE2"/>
+      <stop offset="100%" stop-color="#4B0082"/>
+    </radialGradient>
+    <radialGradient id="highlightGrad" cx="30%" cy="30%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#E6CCFF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#8A2BE2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Grape shape (slightly irregular circle for realism) -->
+  <path d="M100 50
+           C 60 70, 50 120, 65 180
+           C 80 230, 120 230, 135 180
+           C 150 120, 140 70, 100 50
+           Z" 
+        fill="url(#grapeGrad)" stroke="#4B0082" stroke-width="4"/>
+
+  <!-- Shiny highlight -->
+  <path d="M90 80
+           C 75 90, 70 110, 80 140
+           C 90 160, 110 150, 105 120
+           C 100 95, 95 85, 90 80
+           Z" 
+        fill="url(#highlightGrad)" opacity="0.7"/>
+
+  <!-- Small secondary highlight -->
+  <circle cx="85" cy="100" r="12" fill="#FFFFFF" opacity="0.4"/>
+
+</svg>

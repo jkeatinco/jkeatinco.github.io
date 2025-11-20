@@ -1,0 +1,69 @@
+<svg width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a ripe yellow banana">
+            <defs>
+                <!-- Body Gradient: Gives the banana a rounded, 3D look -->
+                <linearGradient id="skinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FFE55C; stop-opacity:1" />
+                    <stop offset="40%" style="stop-color:#FFD700; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FFC107; stop-opacity:1" />
+                </linearGradient>
+
+                <!-- Stem Gradient: Greenish to yellow transition -->
+                <linearGradient id="stemGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#8ba140; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#aebf5e; stop-opacity:1" />
+                </linearGradient>
+
+                <!-- Soft Drop Shadow -->
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                    <feOffset dx="2" dy="4" result="offsetblur"/>
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.15"/> <!-- Subtle opacity -->
+                    </feComponentTransfer>
+                    <feMerge> 
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/> 
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <g filter="url(#shadow)" transform="rotate(-45, 100, 100) translate(10, 10)">
+                
+                <!-- The Stem -->
+                <path d="M30,85 
+                         Q25,85 20,90 
+                         L15,95 
+                         Q25,105 32,100 
+                         Z" 
+                      fill="url(#stemGradient)" stroke="#788a35" stroke-width="1"/>
+
+                <!-- Main Banana Body 
+                     Constructed using two quadratic Bezier curves (Q) to create the crescent shape.
+                -->
+                <path d="M30,85 
+                         Q100,20 170,85 
+                         L175,90 
+                         Q100,55 32,100 
+                         Z" 
+                      fill="url(#skinGradient)" 
+                      stroke="#e6b800" 
+                      stroke-width="1.5" 
+                      stroke-linejoin="round"/>
+
+                <!-- The Dark Tip -->
+                <path d="M173,88 L176,86 L178,91 Z" fill="#5D4037" opacity="0.9"/>
+
+                <!-- Subtle Highlight for glossiness -->
+                <path d="M45,80 Q100,35 160,82" 
+                      fill="none" 
+                      stroke="#FFFFFF" 
+                      stroke-width="3" 
+                      stroke-linecap="round" 
+                      opacity="0.4" />
+
+                <!-- Optional: Brown spots for ripeness texture -->
+                <circle cx="80" cy="60" r="1" fill="#8D6E63" opacity="0.6" />
+                <circle cx="120" cy="65" r="1.5" fill="#8D6E63" opacity="0.5" />
+                <circle cx="140" cy="75" r="0.8" fill="#8D6E63" opacity="0.7" />
+            </g>
+        </svg>

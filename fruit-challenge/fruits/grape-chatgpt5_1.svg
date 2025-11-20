@@ -1,0 +1,95 @@
+<svg
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Grape gradient -->
+    <radialGradient id="grapeGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f9e6ff" />
+      <stop offset="40%" stop-color="#b86cff" />
+      <stop offset="100%" stop-color="#5b1b7a" />
+    </radialGradient>
+
+    <!-- Leaf gradient -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7ed957" />
+      <stop offset="100%" stop-color="#2f7d32" />
+    </linearGradient>
+
+    <!-- Stem gradient -->
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8b5a2b" />
+      <stop offset="100%" stop-color="#5a3b1a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background (optional, remove if not needed) -->
+  <!-- <rect width="100%" height="100%" fill="#ffffff" /> -->
+
+  <!-- Stem -->
+  <path
+    d="M110 35
+       C115 20, 130 15, 140 20
+       C130 22, 122 30, 120 40
+       C118 48, 113 52, 108 52"
+    fill="none"
+    stroke="url(#stemGrad)"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+
+  <!-- Leaf -->
+  <path
+    d="M120 40
+       C135 30, 155 30, 165 45
+       C155 45, 150 55, 155 65
+       C142 62, 135 70, 130 80
+       C125 70, 115 65, 110 60
+       C115 55, 118 48, 120 40 Z"
+    fill="url(#leafGrad)"
+    stroke="#245522"
+    stroke-width="2"
+  />
+
+  <!-- Grapes (bunch of circles) -->
+  <!-- Top row -->
+  <circle cx="100" cy="70" r="12" fill="url(#grapeGrad)" />
+  <circle cx="120" cy="75" r="12" fill="url(#grapeGrad)" />
+
+  <!-- Second row -->
+  <circle cx="90" cy="90" r="13" fill="url(#grapeGrad)" />
+  <circle cx="110" cy="92" r="13" fill="url(#grapeGrad)" />
+  <circle cx="130" cy="95" r="13" fill="url(#grapeGrad)" />
+
+  <!-- Third row -->
+  <circle cx="85" cy="112" r="14" fill="url(#grapeGrad)" />
+  <circle cx="105" cy="115" r="14" fill="url(#grapeGrad)" />
+  <circle cx="125" cy="118" r="14" fill="url(#grapeGrad)" />
+
+  <!-- Fourth row -->
+  <circle cx="95" cy="138" r="15" fill="url(#grapeGrad)" />
+  <circle cx="115" cy="140" r="15" fill="url(#grapeGrad)" />
+
+  <!-- Bottom grape -->
+  <circle cx="105" cy="163" r="14" fill="url(#grapeGrad)" />
+
+  <!-- Subtle highlights (optional) -->
+  <ellipse
+    cx="93"
+    cy="80"
+    rx="4"
+    ry="7"
+    fill="white"
+    opacity="0.35"
+  />
+  <ellipse
+    cx="113"
+    cy="100"
+    rx="4"
+    ry="7"
+    fill="white"
+    opacity="0.35"
+  />
+</svg>

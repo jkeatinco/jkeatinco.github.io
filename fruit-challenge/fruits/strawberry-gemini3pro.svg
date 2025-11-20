@@ -1,0 +1,103 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="floating-berry drop-shadow-2xl">
+        <defs>
+            <!-- Main Body Gradient: Gives the strawberry a rounded, 3D look -->
+            <radialGradient id="bodyGradient" cx="0.3" cy="0.3" r="0.8">
+                <stop offset="0%" stop-color="#FF6B6B" /> <!-- Highlight -->
+                <stop offset="40%" stop-color="#EE2828" /> <!-- Midtone -->
+                <stop offset="100%" stop-color="#A30000" /> <!-- Shadow -->
+            </radialGradient>
+
+            <!-- Leaf Gradient -->
+            <linearGradient id="leafGradient" x1="0.5" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stop-color="#66BB6A" />
+                <stop offset="100%" stop-color="#2E7D32" />
+            </linearGradient>
+
+            <!-- Seed Shadow (Inset effect) -->
+            <filter id="seedInset" x="-50%" y="-50%" width="200%" height="200%">
+                <feOffset dx="0.5" dy="1" result="offset" />
+                <feGaussianBlur stdDeviation="0.5" result="blur" />
+                <feComposite in="SourceAlpha" in2="blur" operator="out" result="inverse" />
+                <feFlood flood-color="#8B0000" flood-opacity="0.6" result="color" />
+                <feComposite in="color" in2="inverse" operator="in" result="shadow" />
+                <feComposite in="shadow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+
+        <!-- Main Strawberry Shape -->
+        <!-- Uses bezier curves to create a natural, organic heart-like shape -->
+        <path d="M200 360 
+                 C 150 360, 60 280, 60 160 
+                 C 60 90, 120 50, 160 60 
+                 C 180 65, 190 75, 200 85
+                 C 210 75, 220 65, 240 60
+                 C 280 50, 340 90, 340 160 
+                 C 340 280, 250 360, 200 360 Z" 
+              fill="url(#bodyGradient)" 
+              stroke="#8B0000" 
+              stroke-width="2"/>
+
+        <!-- Seeds -->
+        <!-- Grouped for organization. Each seed is an ellipse rotated to follow the surface curvature -->
+        <g id="seeds" fill="#F4D03F" filter="url(#seedInset)">
+            <!-- Center column -->
+            <ellipse cx="200" cy="140" rx="3" ry="5" />
+            <ellipse cx="200" cy="180" rx="3" ry="5" />
+            <ellipse cx="200" cy="230" rx="3" ry="5" />
+            <ellipse cx="200" cy="280" rx="2.5" ry="4" />
+            
+            <!-- Left Side (Rotated slightly left) -->
+            <ellipse cx="160" cy="120" rx="3" ry="5" transform="rotate(-10 160 120)" />
+            <ellipse cx="155" cy="170" rx="3" ry="5" transform="rotate(-10 155 170)" />
+            <ellipse cx="160" cy="220" rx="3" ry="5" transform="rotate(-15 160 220)" />
+            <ellipse cx="170" cy="270" rx="2.5" ry="4" transform="rotate(-20 170 270)" />
+
+            <!-- Far Left (Rotated more) -->
+            <ellipse cx="120" cy="140" rx="3" ry="5" transform="rotate(-25 120 140)" />
+            <ellipse cx="115" cy="190" rx="3" ry="5" transform="rotate(-25 115 190)" />
+            <ellipse cx="130" cy="240" rx="2.5" ry="4" transform="rotate(-30 130 240)" />
+
+            <!-- Right Side (Rotated slightly right) -->
+            <ellipse cx="240" cy="120" rx="3" ry="5" transform="rotate(10 240 120)" />
+            <ellipse cx="245" cy="170" rx="3" ry="5" transform="rotate(10 245 170)" />
+            <ellipse cx="240" cy="220" rx="3" ry="5" transform="rotate(15 240 220)" />
+            <ellipse cx="230" cy="270" rx="2.5" ry="4" transform="rotate(20 230 270)" />
+
+             <!-- Far Right (Rotated more) -->
+            <ellipse cx="280" cy="140" rx="3" ry="5" transform="rotate(25 280 140)" />
+            <ellipse cx="285" cy="190" rx="3" ry="5" transform="rotate(25 285 190)" />
+            <ellipse cx="270" cy="240" rx="2.5" ry="4" transform="rotate(30 270 240)" />
+        </g>
+
+        <!-- Highlight (Gloss) -->
+        <!-- Adds specular reflection to make the surface look shiny -->
+        <path d="M100 140 Q 120 100 160 90" 
+              stroke="white" 
+              stroke-width="8" 
+              stroke-linecap="round" 
+              opacity="0.4" 
+              filter="blur(2px)"/>
+        <circle cx="130" cy="120" r="5" fill="white" opacity="0.6" />
+
+        <!-- Leaves (Calyx) -->
+        <g id="leaves" fill="url(#leafGradient)" stroke="#1B5E20" stroke-width="1" stroke-linejoin="round">
+             <!-- Stem -->
+             <path d="M195 65 L 192 30 L 208 30 L 205 65 Z" fill="#388E3C"/>
+
+             <!-- Individual leaves radiating from center -->
+             <!-- Central Leaf -->
+             <path d="M200 70 Q 210 90 200 120 Q 190 90 200 70" />
+             
+             <!-- Right Leaves -->
+             <path d="M200 70 Q 230 80 260 90 Q 230 60 200 70" />
+             <path d="M200 70 Q 250 60 290 50 Q 240 40 200 70" />
+
+             <!-- Left Leaves -->
+             <path d="M200 70 Q 170 80 140 90 Q 170 60 200 70" />
+             <path d="M200 70 Q 150 60 110 50 Q 160 40 200 70" />
+             
+             <!-- Back Leaves (Darker) -->
+             <path d="M200 70 Q 220 50 230 30 Q 210 40 200 70" fill="#2E7D32"/>
+             <path d="M200 70 Q 180 50 170 30 Q 190 40 200 70" fill="#2E7D32"/>
+        </g>
+    </svg>

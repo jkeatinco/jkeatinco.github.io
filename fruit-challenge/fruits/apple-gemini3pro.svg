@@ -1,0 +1,51 @@
+<svg width="512px" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for the Apple Body to give it a round, 3D look -->
+    <radialGradient id="appleGradient" cx="35%" cy="35%" r="60%" fx="30%" fy="30%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e63946;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a8242f;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Gradient for the Leaf -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8e063;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#56ab2f;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Filter for a soft shadow underneath -->
+    <filter id="blurFilter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+    </filter>
+  </defs>
+
+  <!-- Shadow (Oval underneath) -->
+  <ellipse cx="256" cy="460" rx="120" ry="15" fill="#000000" opacity="0.2" filter="url(#blurFilter)" />
+
+  <!-- Stem -->
+  <path d="M250,100 Q260,60 280,40 L290,45 Q275,70 265,105 Z" fill="#6d4c41" stroke="#5d4037" stroke-width="2"/>
+
+  <!-- Apple Body -->
+  <!-- Using Cubic Bezier curves to create the classic heart-like apple shape -->
+  <path d="M256,130 
+           C230,100 130,80 90,200 
+           C60,290 130,400 256,450 
+           C382,400 452,290 422,200 
+           C382,80 282,100 256,130 Z" 
+        fill="url(#appleGradient)" stroke="#8a1c25" stroke-width="2"/>
+
+  <!-- Leaf -->
+  <!-- A teardrop shape attached near the stem -->
+  <path d="M260,110 
+           Q320,60 380,90 
+           Q330,150 260,110 Z" 
+        fill="url(#leafGradient)" />
+
+  <!-- Highlight/Reflection -->
+  <!-- Adds a shiny spot on the upper left to indicate light source -->
+  <ellipse cx="180" cy="180" rx="30" ry="50" transform="rotate(-20, 180, 180)" fill="#ffffff" opacity="0.3" />
+  
+  <!-- Small notch highlight near the top center -->
+  <path d="M256,130 Q240,120 230,135" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.3" stroke-linecap="round"/>
+
+</svg>

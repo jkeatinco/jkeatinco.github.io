@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Gradient for the lemon body to give it a 3D round look -->
+    <radialGradient id="lemonGradient" cx="40%" cy="40%" r="60%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#FFF44F" /> <!-- Bright highlight -->
+      <stop offset="40%" stop-color="#FDD835" /> <!-- Main yellow -->
+      <stop offset="100%" stop-color="#FBC02D" /> <!-- Shadowy yellow -->
+    </radialGradient>
+
+    <!-- Gradient for the leaf -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#66BB6A" />
+      <stop offset="100%" stop-color="#2E7D32" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Lemon Body -->
+  <!-- Using a path to create the characteristic lemon shape with pointed ends -->
+  <path d="M20,110 
+           Q20,100 30,95 
+           Q60,60 100,60 
+           Q140,60 170,95 
+           Q180,100 180,110 
+           Q180,120 170,125 
+           Q140,160 100,160 
+           Q60,160 30,125 
+           Q20,120 20,110 z" 
+        fill="url(#lemonGradient)" stroke="#F9A825" stroke-width="1" transform="rotate(-15, 100, 110)" />
+
+  <!-- Texture/Pores (Subtle details) -->
+  <g opacity="0.3" fill="#F9A825">
+    <circle cx="60" cy="100" r="1.5" />
+    <circle cx="80" cy="120" r="1" />
+    <circle cx="120" cy="90" r="1.5" />
+    <circle cx="140" cy="110" r="1" />
+    <circle cx="90" cy="130" r="1.5" />
+    <circle cx="110" cy="115" r="1" />
+    <circle cx="50" cy="110" r="1" />
+    <circle cx="150" cy="100" r="1" />
+  </g>
+
+  <!-- Highlight reflection -->
+  <ellipse cx="75" cy="85" rx="20" ry="10" fill="#FFFFFF" opacity="0.4" transform="rotate(-15, 75, 85)" />
+
+  <!-- Stem -->
+  <path d="M40,85 Q35,80 30,70 L35,65 Q40,75 45,78 Z" fill="#5D4037" transform="rotate(-15, 100, 110)" />
+
+  <!-- Leaf -->
+  <path d="M35,70 Q15,50 15,20 Q50,30 65,65 Q50,70 35,70 Z" 
+        fill="url(#leafGradient)" stroke="#1B5E20" stroke-width="0.5" transform="rotate(-5, 35, 70)" />
+  
+  <!-- Leaf Vein -->
+  <path d="M35,70 Q30,45 15,20" fill="none" stroke="#1B5E20" stroke-width="1" opacity="0.5" transform="rotate(-5, 35, 70)" />
+
+</svg>

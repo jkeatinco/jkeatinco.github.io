@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Pineapple body gradient -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4D644"/>
+      <stop offset="50%" stop-color="#EFB91C"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Leaf gradient -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86B843"/>
+      <stop offset="60%" stop-color="#5A9A2E"/>
+      <stop offset="100%" stop-color="#3E7A1F"/>
+    </linearGradient>
+
+    <!-- Hex pattern for the skin texture -->
+    <pattern id="pineapplePattern" patternUnits="userSpaceOnUse" width="40" height="46" patternTransform="translate(10,30) scale(0.9)">
+      <path d="M20,0 L40,11.5 L40,34.5 L20,46 L0,34.5 L0,11.5 Z" fill="none" stroke="#C56A00" stroke-width="3" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Pineapple body -->
+  <ellipse cx="100" cy="180" rx="70" ry="120" fill="url(#bodyGrad)" stroke="#B35A00" stroke-width="4"/>
+  <ellipse cx="100" cy="180" rx="70" ry="120" fill="url(#pineapplePattern)"/>
+
+  <!-- Highlight on body -->
+  <ellipse cx="80" cy="140" rx="45" ry="90" fill="rgba(255,255,200,0.25)"/>
+
+  <!-- Crown leaves -->
+  <path d="M100,60 L85,10 L95,15 L90,40 Z" fill="url(#leafGrad)" stroke="#3E7A1F" stroke-width="3"/>
+  <path d="M100,60 L115,10 L105,15 L110,40 Z" fill="url(#leafGrad)" stroke="#3E7A1F" stroke-width="3"/>
+  <path d="M100,55 L65,15 L78,25 L80,50 Z" fill="url(#leafGrad)" stroke="#3E7A1F" stroke-width="3" transform="rotate(-25 100 55)"/>
+  <path d="M100,55 L135,15 L122,25 L120,50 Z" fill="url(#leafGrad)" stroke="#3E7A1F" stroke-width="3" transform="rotate(25 100 55)"/>
+  <path d="M100,65 L55,30 L70,40 L75,65 Z" fill="url(#leafGrad)" stroke="#3E7A1F" stroke-width="3" transform="rotate(-50 100 65)"/>
+  <path d="M100,65 L145,30 L130,40 L125,65 Z" fill="url(#leafGrad)" stroke="#3E7A1F" stroke-width="3" transform="rotate(50 100 65)"/>
+  <path d="M100,50 L75,0 L85,10 L85,40 Z" fill="url(#leafGrad)" stroke="#3E7A1F" stroke-width="3" transform="rotate(-70 100 50)"/>
+  <path d="M100,50 L125,0 L115,10 L115,40 Z" fill="url(#leafGrad)" stroke="#3E7A1F" stroke-width="3" transform="rotate(70 100 50)"/>
+
+  <!-- Small inner leaf details -->
+  <path d="M100,70 L92,40 L100,50 L108,40 Z" fill="#A3D96C" opacity="0.7"/>
+</svg>

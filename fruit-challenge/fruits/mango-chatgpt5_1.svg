@@ -1,0 +1,115 @@
+<svg
+  width="240"
+  height="240"
+  viewBox="0 0 240 240"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Mango body gradient -->
+    <linearGradient id="mangoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE066" />   <!-- bright yellow -->
+      <stop offset="45%" stop-color="#FFB347" />  <!-- orange -->
+      <stop offset="80%" stop-color="#FF7A3C" />  <!-- deeper orange -->
+      <stop offset="100%" stop-color="#E6453C" /> <!-- reddish edge -->
+    </linearGradient>
+
+    <!-- Highlight gradient -->
+    <radialGradient id="highlightGradient" cx="30%" cy="25%" r="40%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="white" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="white" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Leaf gradient -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3CA55C" />
+      <stop offset="100%" stop-color="#00A86B" />
+    </linearGradient>
+
+    <!-- Stem gradient -->
+    <linearGradient id="stemGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6B4A2B" />
+      <stop offset="100%" stop-color="#4F321B" />
+    </linearGradient>
+
+    <!-- Soft shadow under mango -->
+    <radialGradient id="shadowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="black" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="black" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse
+    cx="120"
+    cy="205"
+    rx="70"
+    ry="18"
+    fill="url(#shadowGradient)"
+    opacity="0.5"
+  />
+
+  <!-- Mango body -->
+  <path
+    d="
+      M 85 45
+      C 65 60, 55 85, 60 115
+      C 63 140, 80 170, 105 190
+      C 130 210, 165 200, 180 175
+      C 195 150, 195 115, 188 90
+      C 180 60, 155 40, 125 35
+      C 105 32, 93 38, 85 45
+      Z
+    "
+    fill="url(#mangoGradient)"
+  />
+
+  <!-- Highlight -->
+  <ellipse
+    cx="100"
+    cy="80"
+    rx="35"
+    ry="28"
+    fill="url(#highlightGradient)"
+    transform="rotate(-20 100 80)"
+  />
+
+  <!-- Stem -->
+  <path
+    d="
+      M 135 40
+      C 138 30, 145 24, 152 22
+      C 156 21, 160 22, 162 25
+      C 158 25, 152 30, 148 38
+      C 145 44, 140 48, 136 48
+      Z
+    "
+    fill="url(#stemGradient)"
+  />
+
+  <!-- Leaf -->
+  <path
+    d="
+      M 150 32
+      C 175 25, 200 30, 215 45
+      C 200 47, 187 53, 175 62
+      C 162 72, 150 84, 140 90
+      C 143 70, 145 52, 150 32
+      Z
+    "
+    fill="url(#leafGradient)"
+  />
+
+  <!-- Leaf vein -->
+  <path
+    d="
+      M 150 32
+      C 168 38, 185 46, 203 52
+    "
+    stroke="#E5F9E7"
+    stroke-width="2"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0.7"
+  />
+</svg>

@@ -1,0 +1,59 @@
+<svg width="300" height="350" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- Gradient for the Grapes (Purple) -->
+            <radialGradient id="grapeGradient" cx="30%" cy="30%" r="70%" fx="40%" fy="40%">
+                <stop offset="0%" style="stop-color:#d8b4fe;stop-opacity:1" />
+                <stop offset="40%" style="stop-color:#9333ea;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#581c87;stop-opacity:1" />
+            </radialGradient>
+            
+            <!-- Gradient for the Leaf (Green) -->
+            <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#86efac;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+            </linearGradient>
+
+            <!-- Gradient for the Stem (Brown) -->
+            <linearGradient id="stemGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#a8763e;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#78350f;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+
+        <!-- Stem -->
+        <path d="M100 40 Q 100 20 110 5" stroke="url(#stemGradient)" stroke-width="4" fill="none" stroke-linecap="round" />
+        
+        <!-- Stem connection to bunch -->
+        <path d="M100 40 L 85 60 M 100 40 L 115 60" stroke="url(#stemGradient)" stroke-width="2" fill="none" />
+
+        <!-- The Grape Cluster (Layered from back to front) -->
+        <g id="grape-cluster">
+            <!-- Back Layer -->
+            <circle cx="75" cy="65" r="18" fill="url(#grapeGradient)" />
+            <circle cx="125" cy="65" r="18" fill="url(#grapeGradient)" />
+            <circle cx="100" cy="130" r="18" fill="url(#grapeGradient)" />
+
+            <!-- Middle Layer -->
+            <circle cx="60" cy="90" r="19" fill="url(#grapeGradient)" />
+            <circle cx="140" cy="90" r="19" fill="url(#grapeGradient)" />
+            <circle cx="80" cy="115" r="19" fill="url(#grapeGradient)" />
+            <circle cx="120" cy="115" r="19" fill="url(#grapeGradient)" />
+            <circle cx="100" cy="160" r="19" fill="url(#grapeGradient)" />
+
+            <!-- Front Layer (Highlights) -->
+            <circle cx="100" cy="75" r="20" fill="url(#grapeGradient)" />
+            <circle cx="80" cy="90" r="20" fill="url(#grapeGradient)" />
+            <circle cx="120" cy="90" r="20" fill="url(#grapeGradient)" />
+            <circle cx="100" cy="105" r="20" fill="url(#grapeGradient)" />
+            <circle cx="100" cy="190" r="17" fill="url(#grapeGradient)" />
+        </g>
+
+        <!-- Leaf -->
+        <path d="M 100 42 C 100 42 60 30 60 60 C 60 75 85 65 100 42 Z" fill="url(#leafGradient)" />
+        <path d="M 100 42 C 100 42 140 20 150 50 C 155 65 120 60 100 42 Z" fill="url(#leafGradient)" />
+        
+        <!-- Leaf Veins -->
+        <path d="M 100 42 Q 80 50 70 55" stroke="#166534" stroke-width="0.5" fill="none"/>
+        <path d="M 100 42 Q 125 45 135 50" stroke="#166534" stroke-width="0.5" fill="none"/>
+
+    </svg>

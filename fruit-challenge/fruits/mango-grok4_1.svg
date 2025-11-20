@@ -1,0 +1,35 @@
+<svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mango body (main shape) -->
+  <path d="M100 30 
+           C 140 50, 180 100, 170 180
+           C 165 240, 140 280, 100 285
+           C 60 280, 35 240, 30 180
+           C 20 100, 60 50, 100 30
+           Z" fill="#FFB300" stroke="#E65100" stroke-width="4"/>
+
+  <!-- Red-orange blush on the "sunny" side -->
+  <path d="M100 50
+           C 150 70, 170 120, 165 180
+           C 155 240, 130 270, 100 280
+           C 90 250, 90 150, 100 50
+           Z" fill="#FF6D00" opacity="0.6"/>
+
+  <!-- Stem -->
+  <path d="M100 30 Q 90 10, 85 0" fill="none" stroke="#8B4513" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Leaf -->
+  <path d="M85 0
+           Q 50 -30, 30 -20
+           C 40 -10, 60 10, 85 0
+           C 110 10, 130 -10, 140 -20
+           Q 120 -30, 85 0
+           Z" fill="#4CAF50" stroke="#2E7D32" stroke-width="3"/>
+
+  <!-- Small highlight on the leaf -->
+  <path d="M85 0 Q 60 -15, 50 -10 Q 65 -5, 85 0" fill="#81C784" opacity="0.7"/>
+
+  <!-- Subtle specular highlight on the mango -->
+  <ellipse cx="120" cy="100" rx="30" ry="50" fill="#FFFFFF" opacity="0.3"/>
+  <ellipse cx="130" cy="90" rx="15" ry="25" fill="#FFFFFF" opacity="0.4"/>
+
+</svg>

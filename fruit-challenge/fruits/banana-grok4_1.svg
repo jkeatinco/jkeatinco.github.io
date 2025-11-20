@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-label="Banana">
+  <defs>
+    <!-- Yellow gradient for the peel -->
+    <linearGradient id="peelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFE7A"/>
+      <stop offset="50%" stop-color="#FFD423"/>
+      <stop offset="100%" stop-color="#FFC107"/>
+    </linearGradient>
+    
+    <!-- Stem gradient -->
+    <linearGradient id="stemGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B4513"/>
+      <stop offset="100%" stop-color="#5D2E0A"/>
+    </linearGradient>
+    
+    <!-- Light highlight -->
+    <radialGradient id="highlight" cx="30%" cy="30%" r="70%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Main banana body (curved peel shape) -->
+  <path d="M 100 350 
+           C 30 300, 20 200, 40 100
+           C 60 20, 80 0, 100 20
+           C 120 0, 140 20, 160 100
+           C 180 200, 170 300, 100 350
+           Z" 
+        fill="url(#peelGradient)" stroke="#B8860B" stroke-width="4"/>
+
+  <!-- Inner light highlight along the curve -->
+  <path d="M 60 100
+           C 70 180, 80 250, 90 320
+           C 100 280, 110 200, 120 120"
+        fill="none" stroke="url(#highlight)" stroke-width="40" opacity="0.7"/>
+
+  <!-- Stem at the top -->
+  <path d="M 85 40
+           C 85 20, 90 0, 100 0
+           C 110 0, 115 20, 115 40
+           L 112 70
+           C 112 80, 108 90, 100 90
+           C 92 90, 88 80, 88 70
+           Z" 
+        fill="url(#stemGradient)" stroke="#4A2500" stroke-width="3"/>
+
+  <!-- Small stem tip detail -->
+  <ellipse cx="100" cy="0" rx="12" ry="8" fill="#4A2500"/>
+
+</svg>

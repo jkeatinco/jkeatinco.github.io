@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft drop shadow -->
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="4" dy="8" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Radial gradient for the berry body (deep blue → lighter rim) -->
+    <radialGradient id="berryGrad" cx="35%" cy="30%">
+      <stop offset="0%" stop-color="#5C6BC0"/>
+      <stop offset="60%" stop-color="#3949AB"/>
+      <stop offset="90%" stop-color="#1A237E"/>
+      <stop offset="100%" stop-color="#3F51B5"/>
+    </radialGradient>
+
+    <!-- Glossy highlight -->
+    <radialGradient id="highlight" cx="30%" cy="25%">
+      <stop offset="0%" stop-color="#E8EAF6"/>
+      <stop offset="40%" stop-color="#C5CAE9" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7986CB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Main berry body -->
+  <ellipse cx="100" cy="110" rx="70" ry="75" fill="url(#berryGrad)" filter="url(#shadow)"/>
+
+  <!-- Glossy highlight / light reflection -->
+  <ellipse cx="80" cy="85" rx="40" ry="45" fill="url(#highlight)" opacity="0.7"/>
+
+  <!-- Small bloom specks (the powdery look blueberries sometimes have) -->
+  <circle cx="75" cy="100" r="4" fill="#E8EAF6" opacity="0.4"/>
+  <circle cx="120" cy="130" r="3" fill="#E8EAF6" opacity="0.3"/>
+  <circle cx="95" cy="160" r="3.5" fill="#E8EAF6" opacity="0.35"/>
+
+  <!-- Calyx / crown on top -->
+  <g transform="translate(100,45)">
+    <circle cx="0" cy="0" r="18" fill="#4CAF50"/>
+    <circle cx="0" cy="0" r="12" fill="#66BB6A"/>
+    
+    <!-- Five-pointed star-like sepals -->
+    <path d="M0,-20 L8,-8 L20,0 L8,8 L0,20 L-8,8 L-20,0 L-8,-8 Z" 
+          fill="#388E3C"/>
+    <path d="M0,-18 L6,-6 L15,0 L6,6 L0,16 L-6,6 L-15,0 L-6,-6 Z" 
+          fill="#4CAF50"/>
+  </g>
+
+  <!-- Tiny stem stub -->
+  <path d="M97,45 Q100,35 103,45" stroke="#2E7D32" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>

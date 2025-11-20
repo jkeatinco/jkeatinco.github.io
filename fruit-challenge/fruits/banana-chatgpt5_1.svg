@@ -1,0 +1,77 @@
+<svg
+  width="240"
+  height="240"
+  viewBox="0 0 240 240"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Banana skin gradient -->
+    <linearGradient id="bananaSkin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7a0"/>
+      <stop offset="40%" stop-color="#ffe45c"/>
+      <stop offset="100%" stop-color="#f4b93a"/>
+    </linearGradient>
+
+    <!-- Shadow gradient for inner curve -->
+    <linearGradient id="bananaShadow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.15)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main banana body -->
+  <path
+    d="M40 80
+       C 20 140, 70 200, 160 200
+       C 185 198, 205 190, 215 182
+       C 195 182, 170 177, 150 168
+       C 105 148, 75 115, 60 90
+       C 52 83, 46 80, 40 80 Z"
+    fill="url(#bananaSkin)"
+    stroke="#d3952f"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Inner curve shadow -->
+  <path
+    d="M58 92
+       C 72 120, 100 150, 145 170
+       C 166 179, 188 184, 206 185"
+    fill="none"
+    stroke="rgba(0,0,0,0.15)"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+
+  <!-- Stem -->
+  <path
+    d="M33 75
+       C 30 65, 32 55, 42 50
+       C 45 60, 45 70, 42 77
+       Z"
+    fill="#8b5a2b"
+    stroke="#5f3a18"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+
+  <!-- Tip -->
+  <circle
+    cx="217"
+    cy="184"
+    r="4"
+    fill="#5f3a18"
+  />
+
+  <!-- Small highlight along the outer curve -->
+  <path
+    d="M50 88
+       C 40 135, 80 180, 150 190"
+    fill="none"
+    stroke="rgba(255,255,255,0.6)"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+</svg>

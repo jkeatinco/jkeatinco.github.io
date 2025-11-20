@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Strawberry body (red gradient) -->
+  <defs>
+    <radialGradient id="berryGradient" cx="50%" cy="40%">
+      <stop offset="0%" stop-color="#ff4d4d"/>
+      <stop offset="70%" stop-color="#e60000"/>
+      <stop offset="100%" stop-color="#b30000"/>
+    </radialGradient>
+    
+    <!-- Green leaves gradient -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5cd65c"/>
+      <stop offset="100%" stop-color="#248028"/>
+    </linearGradient>
+    
+    <!-- Tiny seed -->
+    <g id="seed">
+      <path d="M0,0 Q-1.5,2 -0.8,3.5 Q0,4 0.8,3.5 Q1.5,2 0,0" fill="#fff9c9"/>
+      <path d="M0,0 Q-1.5,2 -0.8,3.5 Q0,4 0.8,3.5 Q1.5,2 0,0" fill="#ffe066" opacity="0.6"/>
+    </g>
+  </defs>
+
+  <!-- Main strawberry shape -->
+  <path d="M100,220 
+           Q60,200 45,160 
+           Q30,120 45,70 
+           Q60,30 100,20 
+           Q140,30 155,70 
+           Q170,120 155,160 
+           Q140,200 100,220 
+           Z" fill="url(#berryGradient)" stroke="#990000" stroke-width="3"/>
+
+  <!-- Highlight on the berry -->
+  <path d="M100,30 Q70,60 65,110 Q70,160 100,200" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Seeds (scattered) -->
+  <g opacity="0.9">
+    <use href="#seed" transform="translate(70,60) scale(0.8) rotate(-20)"/>
+    <use href="#seed" transform="translate(120,65) scale(0.75) rotate(30)"/>
+    <use href="#seed" transform="translate(85,90) scale(0.85) rotate(-10)"/>
+    <use href="#seed" transform="translate(110,95) scale(0.8) rotate(40)"/>
+    <use href="#seed" transform="translate(65,120) scale(0.7) rotate(-30)"/>
+    <use href="#seed" transform="translate(135,125) scale(0.8) rotate(20)"/>
+    <use href="#seed" transform="translate(80,140) scale(0.85)"/>
+    <use href="#seed" transform="translate(115,145) scale(0.75) rotate(50)"/>
+    <use href="#seed" transform="translate(95,170) scale(0.9) rotate(-15)"/>
+    <use href="#seed" transform="translate(75,175) scale(0.7) rotate(25)"/>
+    <use href="#seed" transform="translate(125,170) scale(0.8) rotate(-40)"/>
+  </g>
+
+  <!-- Green calyx / leaves on top -->
+  <g fill="url(#leafGradient)" stroke="#1e601e" stroke-width="2">
+    <path d="M100,20 Q85,5 70,15 Q80,0 95,10 Z" transform="rotate(-20 100 20)"/>
+    <path d="M100,20 Q90,0 105,5 Q115,00 120,15 Z"/>
+    <path d="M100,20 Q115,5 130,15 Q120,0 105,10 Z" transform="rotate(20 100 20)"/>
+    <path d="M100,20 Q80,-5 75,10 Q85,5 95,12 Z" transform="rotate(-40 100 20)"/>
+    <path d="M100,20 Q120,-5 125,10 Q115,5 105,12 Z" transform="rotate(40 100 20)"/>
+  </g>
+
+  <!-- Small stem -->
+  <path d="M100,15 Q98,5 100,0 Q102,5 100,15" fill="#4d9900" stroke="#336600" stroke-width="3"/>
+</svg>

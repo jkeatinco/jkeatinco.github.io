@@ -1,0 +1,141 @@
+<svg
+  width="240"
+  height="240"
+  viewBox="0 0 240 240"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Orange skin gradient -->
+    <radialGradient id="orangeSkin" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFE6A3" />
+      <stop offset="40%" stop-color="#FFA733" />
+      <stop offset="100%" stop-color="#E46A00" />
+    </radialGradient>
+
+    <!-- Subtle shading at bottom -->
+    <radialGradient id="orangeShadow" cx="50%" cy="100%" r="70%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.35)" />
+      <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+    </radialGradient>
+
+    <!-- Leaf gradient -->
+    <linearGradient id="leafFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8BE37A" />
+      <stop offset="100%" stop-color="#2E8A3A" />
+    </linearGradient>
+
+    <!-- Stem gradient -->
+    <linearGradient id="stemFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C3B1C" />
+      <stop offset="100%" stop-color="#3C2611" />
+    </linearGradient>
+
+    <!-- Highlight gloss -->
+    <linearGradient id="highlightFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+
+    <!-- Pores pattern -->
+    <pattern
+      id="pores"
+      x="0"
+      y="0"
+      width="12"
+      height="12"
+      patternUnits="userSpaceOnUse"
+    >
+      <circle cx="3" cy="3" r="1.2" fill="rgba(255,255,255,0.25)" />
+      <circle cx="9" cy="6" r="1.1" fill="rgba(255,255,255,0.20)" />
+      <circle cx="6" cy="10" r="1.1" fill="rgba(255,255,255,0.22)" />
+    </pattern>
+
+    <!-- Combined skin with texture -->
+    <mask id="skinMask">
+      <circle cx="120" cy="120" r="80" fill="white" />
+    </mask>
+  </defs>
+
+  <!-- Drop shadow -->
+  <ellipse
+    cx="120"
+    cy="186"
+    rx="65"
+    ry="20"
+    fill="rgba(0,0,0,0.25)"
+    filter="blur(3px)"
+  />
+
+  <!-- Orange base -->
+  <circle cx="120" cy="120" r="80" fill="url(#orangeSkin)" />
+
+  <!-- Texture overlay, clipped to orange -->
+  <g mask="url(#skinMask)">
+    <rect
+      x="40"
+      y="40"
+      width="160"
+      height="160"
+      fill="url(#pores)"
+      opacity="0.5"
+    />
+  </g>
+
+  <!-- Slight bottom shading -->
+  <circle
+    cx="120"
+    cy="132"
+    r="70"
+    fill="url(#orangeShadow)"
+    opacity="0.4"
+  />
+
+  <!-- Stem -->
+  <path
+    d="M117 66
+       C118 58, 122 50, 130 46
+       C134 44, 138 44, 141 45
+       C138 48, 136 52, 135 57
+       C133 64, 127 70, 120 72
+       Z"
+    fill="url(#stemFill)"
+  />
+
+  <!-- Leaf -->
+  <path
+    d="M133 60
+       C148 50, 168 48, 183 56
+       C176 72, 163 86, 145 90
+       C132 93, 121 85, 117 75
+       C121 70, 127 64, 133 60 Z"
+    fill="url(#leafFill)"
+  />
+  <!-- Leaf vein -->
+  <path
+    d="M133 60
+       C143 64, 155 68, 167 71"
+    stroke="rgba(255,255,255,0.45)"
+    stroke-width="1.5"
+    stroke-linecap="round"
+  />
+
+  <!-- Highlight -->
+  <path
+    d="M78 95
+       C85 80, 100 70, 118 70
+       C108 78, 102 88, 98 102
+       C94 108, 88 112, 82 112
+       C79 107, 77 101, 78 95 Z"
+    fill="url(#highlightFill)"
+    opacity="0.8"
+  />
+
+  <!-- Small specular dot -->
+  <circle
+    cx="92"
+    cy="88"
+    r="6"
+    fill="rgba(255,255,255,0.9)"
+    opacity="0.9"
+  />
+</svg>
