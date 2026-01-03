@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffff00">
     <title>Spot the Difference Game</title>
     <link rel="stylesheet" href="style.css">
     <!-- Leaflet CSS (latest version) -->
@@ -15,34 +15,37 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet.sync@0.2.4/L.Map.Sync.min.js" crossorigin=""></script>
 </head>
 <body>
-    <header>
-        <h1>Spot the Difference</h1>
-        <p>or something 🌞</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>SP<span class="glitch">O</span>T THE DIFF<span class="glitch-2">E</span>RENCE</h1>
+            <p class="tagline">visual perception challenge <span class="emoji">👁️‍🗨️</span></p>
+        </header>
+        
+        <main>
+            <div class="grid-container">
+                <div class="grid-label left">ORIGINAL</div>
+                <section id="image-container-1" class="image-container">
+                    <!-- Image 1 will go here -->
+                </section>
+                <div class="grid-label right">ALTERED</div>
+                <section id="image-container-2" class="image-container">
+                    <!-- Image 2 will go here -->
+                </section>
+            </div>
+        </main>
     
-    <main>
-        <div class="grid-container">
-            <section id="image-container-1" class="image-container">
-                <!-- Image 1 will go here -->
-            </section>
-            <section id="image-container-2" class="image-container">
-                <!-- Image 2 will go here -->
-            </section>
-        </div>
-    </main>
-
-    <aside id="scoreboard">
-        <div id="timer">Time: <span id="time">00:00</span></div>
-        <div id="score">Score: <span id="score-value">0</span></div>
-    </aside>
-
-    <nav id="game-controls">
-        <button id="start-game">Start Game</button>
-        <button id="zoom-in-btn">Zoom In</button>
-        <button id="zoom-out-btn">Zoom Out</button>
-        <button id="reset-game">Reset Game</button>
-    </nav>
-
+        <aside id="scoreboard">
+            <div id="timer">Time: <span id="time">00:00</span></div>
+            <div id="score">Score: <span id="score-value">0</span></div>
+        </aside>
+    
+        <nav id="game-controls">
+            <button id="start-game">Start Game</button>
+            <button id="zoom-in-btn">Zoom In</button>
+            <button id="zoom-out-btn">Zoom Out</button>
+            <button id="reset-game">Reset Game</button>
+        </nav>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
